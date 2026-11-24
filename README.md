@@ -41,6 +41,12 @@ What remains is AION.
 
 ## The philosophy
 
+**The brain is replaceable.**
+
+**The teacher is replaceable.**
+
+**The ability to learn is fundamental.**
+
 Experience becomes memory.
 
 Memory becomes relationships.
@@ -104,6 +110,27 @@ It's yours.
 - **We define the conditions for growth, not the final form of the thing that grows.**
 - Borrowed knowledge → Internalised knowledge → Independent capability.
 - NOMEN safeguard: naming never changes an entity's underlying identity, and never promotes an imagined concept to a verified fact. Names are AION's evolving interpretation of its world.
+
+### AION Plasticity Core (APC)
+
+The plastic neuron is the heart of AION — the part that makes it an organism that develops, rather than a model that runs.
+
+**Forward map:** `m_ij = a_ij·ψ(h_i, h_j, c_t)`, with `a_ij = 0.7·u_fast + 0.3·θ_slow`, `ŷ_j = Σᵢ a_ij·ψ_ij`.
+**Learning law:** `u_fast ← u_fast + 0.7·η·(y − ŷ)·ψ` — gradient-aligned for this forward path **while ψ is independent of the fast state**; if ψ ever depends on trainable plastic state, its derivative J_ψ joins the update.
+
+**Five protected properties** — preserve forever, or demonstrate a mathematically justified improvement:
+
+| Property | Why it matters |
+|---|---|
+| Forward-update consistency | The learning rule follows the actual computation |
+| Temporal credit assignment | Eligibility traces remember contributing activity |
+| Contextual plasticity | Relationships can change with circumstances |
+| Dual-timescale memory | Fast learning becomes persistent knowledge |
+| Stability | Learning doesn't destroy previous capabilities |
+
+**The learning contract:** every substrate AION attaches to — Qwen, Gemma, Pith, or something not yet discovered — must pass the same contract (controlled-task learning, coefficient recovery via the effective mapping, output-preservation invariants, held-out improvement) before any claim is made on it.
+
+**Status, honestly:** demonstrated on controlled tasks (network-level held-out −43.8%, coefficient recovery cos 0.999998). Conversational knowledge acquisition and dreaming benefits remain under test.
 
 ### Repo layout
 
