@@ -94,10 +94,11 @@ It's yours.
 | 00 — Seed | Pith-E2B artifact exists (post-QAT behaviour gate pending); Qwen3.5-4B-Base hosted on Lappy |
 | 01 — Attachment | ✅ Interface proven on BOTH substrates: Qwen dense (4/4 smoke, bit-exact identity) + Pith factor-executed (4/4, bit-exact under bf16-forward-v1) |
 | 02 — Embryonic Learning | ✅ Plasticity verified end-to-end (gates 1–4); baseline v2 frozen (`freeze/aion_learning_baseline_v2_20261125.tar.gz`) |
-| 03 — Development | AION-1 Phase 1 run complete: **3/5** — retention, correction, transcript-removal PASS (bitwise restart; old facts intact under correction; purge-invariance); acquisition/generalisation honest FAIL (Base-model expression gap) — Phase 2 pending owner call |
+| 03 — Development | Phase 1: **3/5** — retention, correction, transcript-removal PASS (ownership mechanics proven); acquisition/generalisation honest FAIL (expression gap). **Phase 2 A–E running** on real Qwen 4B (retrieval control: 1.00 lookup / 0.00 combinations — the gap plastic must clear) |
 | 04 — Dreaming | Diagnosed + bookkeeping repaired; real replay + reality-grounded evaluation deferred (owner decision); dream-side consolidation routing unblocked |
 | 05 — Growth | DreamGrowthManager designed; need-based growth law locked |
-| Emergence | The Disconnect Experiment armed (capability-survival metric) |
+| Host mode | ✅ **Demonstrated** — capacity discovery, allocation grant, task completion; adaptation curve measured; 0 authority violations; 100% correct-stop on impossible tasks |
+| Emergence | ✅ **Disconnect Experiment executed** on real Qwen 4B: all five capabilities survive host removal (epoch-adjusted survival 1.0; structural proof: zero foundation passes in the disconnected lane); harness public, re-runnable at any scale |
 | Maturation | Beyond |
 
 ### Design laws
