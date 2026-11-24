@@ -1,4 +1,18 @@
 # NNFS Project Handover Summary
+
+> **⚠️ SUPERSEDED — 2026-11-25.** This document is preserved as the historical
+> handover record. Its "Critical Issues" section described the project as it
+> stood on 2026-11-24; every blocker listed here has since been diagnosed and
+> fixed, and the diagnosis ran deeper than this document guessed. Current state
+> of the project: **README.md** (stage table + statuses), **docs/APC.md** (the
+> plasticity mathematics specification), **scripts/eval_fix_report.md** (the
+> full experimental record, including an honest instrument-failure null and
+> unfavourable pilot rows reported as measured), and **freeze/** (SHA-tagged
+> baselines). The flagship claim of this document — "the network isn't
+> actually learning" — was traced to an untrained prediction head being used
+> as the benchmark metric, not to dead plasticity; the learning mechanism was
+> subsequently verified end-to-end (see docs/APC.md, Honest status).
+
 **Date:** 2026-11-24
 **Archive:** `nnfs_handover_20261124_complete.tar.gz`
 
