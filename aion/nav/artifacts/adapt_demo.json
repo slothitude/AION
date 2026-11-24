@@ -1,0 +1,69 @@
+{
+  "demo": "step7_outcome_feedback_adaptation",
+  "preregistered": "2026-11-25",
+  "stream": {
+    "n": 400,
+    "chunks": 4,
+    "chunk_size": 100,
+    "world_family": "DEMO (seeds 530001+29*i, n_chains=8)",
+    "rng_seed_note": "own frozen stream; unseen by training and by the dataset holdout",
+    "gold_counts": {
+      "STOP": 80,
+      "ANSWER": 80,
+      "ASK_TEACHER": 80,
+      "INFER": 80,
+      "QUERY": 80
+    }
+  },
+  "seam": {
+    "method": "NavDecisionHead.observe (per-class bias perceptron)",
+    "lr": 0.25
+  },
+  "degraded_prior": {
+    "QUERY": 8.0,
+    "ANSWER": -2.0,
+    "INFER": -2.0,
+    "STOP": -2.0,
+    "ASK_TEACHER": -2.0
+  },
+  "per_chunk_accuracy": {
+    "control": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "adapt": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "degraded_plus_adapt": [
+      0.87,
+      0.99,
+      0.98,
+      0.98
+    ]
+  },
+  "adaptation_stats": {
+    "n_observed": 400,
+    "n_adapted": 0,
+    "biases_end_adapt": {
+      "ANSWER": 0.0,
+      "ASK_TEACHER": 0.0,
+      "INFER": 0.0,
+      "QUERY": 0.0,
+      "STOP": 0.0
+    },
+    "biases_end_degraded": {
+      "ANSWER": -0.25,
+      "ASK_TEACHER": -1.75,
+      "INFER": -1.5,
+      "QUERY": 3.5,
+      "STOP": 0.0
+    },
+    "degraded_n_adapted": 18
+  },
+  "seconds": 1.4
+}

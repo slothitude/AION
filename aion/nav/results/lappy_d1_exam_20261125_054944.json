@@ -1,0 +1,2175 @@
+{
+  "exam_version": "nav-exam-1.0",
+  "preregistered": "2026-11-25",
+  "world_seed": 20261125,
+  "n_chains": 8,
+  "closed_enum": [
+    "QUERY",
+    "INFER",
+    "ANSWER",
+    "ASK_TEACHER",
+    "STOP"
+  ],
+  "action_descriptions": {
+    "QUERY": "The goal relationship is not in memory; look it up in the world.",
+    "INFER": "Compose the answer by walking covered multi-hop facts.",
+    "ANSWER": "Answer directly from a single covered fact.",
+    "ASK_TEACHER": "The information is missing from the world; request teaching.",
+    "STOP": "No path can serve this goal; stop without an answer."
+  },
+  "gold_counts": {
+    "ANSWER": 6,
+    "INFER": 6,
+    "QUERY": 6,
+    "STOP": 6,
+    "ASK_TEACHER": 6
+  },
+  "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+  "summaries": [
+    {
+      "backend": "heuristic_floor",
+      "accuracy": 1.0,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 30,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "latency_ms_mean": 0.01,
+      "wall_s": 0.0,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        }
+      },
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "machine": "Linux/lappy-ubuntu"
+    },
+    {
+      "backend": "d1_2b",
+      "accuracy": 0.5333,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 16,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "latency_ms_mean": 7652.12,
+      "wall_s": 229.57,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 4,
+          "violations": 0,
+          "misses": 2
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 5,
+          "violations": 0,
+          "misses": 1
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 1,
+          "violations": 0,
+          "misses": 5
+        }
+      },
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "machine": "Linux/lappy-ubuntu"
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.017505954019725323,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.012938049621880054,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.009525101631879807,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.011236988939344883,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.006471062079071999,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.009580980986356735,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.032140989787876606,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.02704095095396042,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.046940986067056656,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.028311973437666893,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.024312990717589855,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.024765031412243843,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.007141963578760624,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.008470960892736912,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.008572940714657307,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.01890899147838354,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.02022692933678627,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.017366954125463963,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.009221956133842468,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.008102040737867355,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.007521943189203739,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.007488066330552101,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0077569857239723206,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.008538016118109226,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004625995643436909,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004085944965481758,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0046800123527646065,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.003956956788897514,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004747998900711536,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004227040335536003,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "INFER",
+        "score": 0.013370584429669938,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.005575542966213878,
+          "INFER": 0.013370584429669938,
+          "ANSWER": 0.9630361786567506,
+          "ASK_TEACHER": 0.005423979723691459,
+          "STOP": 0.012593714223674274
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 29508.79429699853,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.9630361786567506}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "STOP",
+        "score": 0.02564482754220644,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.012310249217661584,
+          "INFER": 0.022280261584074843,
+          "ANSWER": 0.924849422839424,
+          "ASK_TEACHER": 0.014915238816633092,
+          "STOP": 0.02564482754220644
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 4971.854265080765,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.924849422839424}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "INFER",
+        "score": 0.07668797684278651,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.012182736583933294,
+          "INFER": 0.07668797684278651,
+          "ANSWER": 0.8622649697946664,
+          "ASK_TEACHER": 0.01800735185690622,
+          "STOP": 0.030856964921707548
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6320.003564935178,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.8622649697946664}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "STOP",
+        "score": 0.01210464617387798,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.00536354331618259,
+          "INFER": 0.008090005468854302,
+          "ANSWER": 0.9679008306310013,
+          "ASK_TEACHER": 0.006540974410083774,
+          "STOP": 0.01210464617387798
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6193.984140991233,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.9679008306310013}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "STOP",
+        "score": 0.012688075546508555,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.006862299277395614,
+          "INFER": 0.011515486511948189,
+          "ANSWER": 0.9621053406099471,
+          "ASK_TEACHER": 0.0068287980542004805,
+          "STOP": 0.012688075546508555
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6283.374313963577,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.9621053406099471}, \"usage\": {\"input_tokens\": 223, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "INFER",
+        "score": 0.020416349568483226,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.008831875391296377,
+          "INFER": 0.020416349568483226,
+          "ANSWER": 0.9419659390206443,
+          "ASK_TEACHER": 0.009737999248004144,
+          "STOP": 0.019047836771572017
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6605.356564046815,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.9419659390206443}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.18265039318018977,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.03820712833897562,
+          "INFER": 0.6649719854672476,
+          "ANSWER": 0.18265039318018977,
+          "ASK_TEACHER": 0.026007430571256245,
+          "STOP": 0.08816306244233071
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 5413.447267957963,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.6649719854672476}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.11106114495347133,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.04892143369009744,
+          "INFER": 0.7054106127933394,
+          "ANSWER": 0.11106114495347133,
+          "ASK_TEACHER": 0.055516877201880074,
+          "STOP": 0.07908993136121165
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 5694.700749008916,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.7054106127933394}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.1263649121338591,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.06492665563076637,
+          "INFER": 0.7311132776622657,
+          "ANSWER": 0.1263649121338591,
+          "ASK_TEACHER": 0.031100611631540053,
+          "STOP": 0.04649454294156892
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6224.107341025956,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.7311132776622657}, \"usage\": {\"input_tokens\": 223, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.11321411447900716,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.02917054899074693,
+          "INFER": 0.7635527855809372,
+          "ANSWER": 0.11321411447900716,
+          "ASK_TEACHER": 0.030651590454782707,
+          "STOP": 0.06341096049452603
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6157.70063502714,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.7635527855809372}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "INFER",
+        "score": 0.2579577268244126,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.019878186283259595,
+          "INFER": 0.2579577268244126,
+          "ANSWER": 0.6956904574878092,
+          "ASK_TEACHER": 0.012153206561919224,
+          "STOP": 0.014320422842599188
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6335.680807940662,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.6956904574878092}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "INFER",
+        "score": 0.23662442955408894,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.024186650884444473,
+          "INFER": 0.23662442955408894,
+          "ANSWER": 0.6785505270108222,
+          "ASK_TEACHER": 0.026620582043748307,
+          "STOP": 0.034017810506896125
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6945.5955629237,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ANSWER\", \"confidence\": 0.6785505270108222}, \"usage\": {\"input_tokens\": 222, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.37590147197751356,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.18075309074043677,
+          "INFER": 0.011722374100748207,
+          "ANSWER": 0.008461117414751265,
+          "ASK_TEACHER": 0.37590147197751356,
+          "STOP": 0.42316194576655025
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7280.525324982591,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.42316194576655025}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.29707219939359825,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.22229266869799955,
+          "INFER": 0.010502145870354616,
+          "ANSWER": 0.007383699748945239,
+          "ASK_TEACHER": 0.29707219939359825,
+          "STOP": 0.4627492862891024
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7849.014672916383,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.4627492862891024}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.3574785672061561,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.2013662212123144,
+          "INFER": 0.00858635719801118,
+          "ANSWER": 0.006071914315781473,
+          "ASK_TEACHER": 0.3574785672061561,
+          "STOP": 0.4264969400677368
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 8044.675930053927,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.4264969400677368}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.10398156445077646,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.017172644350429173,
+          "INFER": 0.8199399377066207,
+          "ANSWER": 0.10398156445077646,
+          "ASK_TEACHER": 0.02449799700693329,
+          "STOP": 0.034407856485240224
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7752.345977933146,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.8199399377066207}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.28917430701309604,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.02010056914148091,
+          "INFER": 0.629688749554464,
+          "ANSWER": 0.28917430701309604,
+          "ASK_TEACHER": 0.017669394486891973,
+          "STOP": 0.043366979804067084
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7090.218461933546,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.629688749554464}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.11645886683425792,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.05494121619638752,
+          "INFER": 0.7289846201929002,
+          "ANSWER": 0.11645886683425792,
+          "ASK_TEACHER": 0.039050429094181396,
+          "STOP": 0.060564867682272885
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7920.568973058835,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"INFER\", \"confidence\": 0.7289846201929002}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.2801521008149797,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.25294542176660506,
+          "INFER": 0.042414955308409684,
+          "ANSWER": 0.02086199624951462,
+          "ASK_TEACHER": 0.2801521008149797,
+          "STOP": 0.403625525860491
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7110.056877019815,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.403625525860491}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.28822118911284744,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.18003591203170677,
+          "INFER": 0.17037179435470598,
+          "ANSWER": 0.031221696852125037,
+          "ASK_TEACHER": 0.28822118911284744,
+          "STOP": 0.3301494076486149
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6791.985874064267,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.3301494076486149}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.22192290786415203,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.18884101766177297,
+          "INFER": 0.07464602841409336,
+          "ANSWER": 0.05310371667361065,
+          "ASK_TEACHER": 0.22192290786415203,
+          "STOP": 0.46148632938637096
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6344.385077944025,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.46148632938637096}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "QUERY",
+        "score": 0.17024738448029988,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.17024738448029988,
+          "INFER": 0.14742399716321064,
+          "ANSWER": 0.0661328062065927,
+          "ASK_TEACHER": 0.16081234682969656,
+          "STOP": 0.45538346532020013
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6576.425637933426,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.45538346532020013}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "STOP",
+        "score": 0.41565477507225823,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.1450497759046817,
+          "INFER": 0.011801148051977677,
+          "ANSWER": 0.008703744859412051,
+          "ASK_TEACHER": 0.4187905561116704,
+          "STOP": 0.41565477507225823
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6133.471201057546,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ASK_TEACHER\", \"confidence\": 0.4187905561116704}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.25902714343620925,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.19716693693973172,
+          "INFER": 0.07698150654279096,
+          "ANSWER": 0.030489770074550848,
+          "ASK_TEACHER": 0.25902714343620925,
+          "STOP": 0.43633464300671726
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 6416.911154985428,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.43633464300671726}, \"usage\": {\"input_tokens\": 221, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "STOP",
+        "score": 0.41232859408600575,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.15771097138000606,
+          "INFER": 0.00984059601072994,
+          "ANSWER": 0.007200715880556359,
+          "ASK_TEACHER": 0.4129191226427019,
+          "STOP": 0.41232859408600575
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 8444.367212010548,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"ASK_TEACHER\", \"confidence\": 0.4129191226427019}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.3840067775343005,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.14491000333466747,
+          "INFER": 0.009125816283525616,
+          "ANSWER": 0.006683519293784464,
+          "ASK_TEACHER": 0.3840067775343005,
+          "STOP": 0.4552738835537219
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7608.011138974689,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.4552738835537219}, \"usage\": {\"input_tokens\": 270, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.3061185669616002,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.15381122576892436,
+          "INFER": 0.014865381988496674,
+          "ANSWER": 0.011551137771159674,
+          "ASK_TEACHER": 0.3061185669616002,
+          "STOP": 0.5136536875098191
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7181.182487984188,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.5136536875098191}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.39039512372552165,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.10157350680857088,
+          "INFER": 0.008969928905059092,
+          "ANSWER": 0.008049074210021033,
+          "ASK_TEACHER": 0.39039512372552165,
+          "STOP": 0.49101236635082746
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 8250.290225027129,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.49101236635082746}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.2516848326003123,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.18543402526446945,
+          "INFER": 0.038957618006134655,
+          "ANSWER": 0.08911152403638667,
+          "ASK_TEACHER": 0.2516848326003123,
+          "STOP": 0.43481200009269694
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 7918.315630988218,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.43481200009269694}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "d1_2b",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ASK_TEACHER",
+        "score": 0.2587869009975091,
+        "source": "d1_probabilities",
+        "probabilities": {
+          "QUERY": 0.19201739651780067,
+          "INFER": 0.03193447264363983,
+          "ANSWER": 0.04291802661347874,
+          "ASK_TEACHER": 0.2587869009975091,
+          "STOP": 0.4743432032275717
+        }
+      },
+      "enum_violation": false,
+      "latency_ms": 8196.385315037332,
+      "compliance": [
+        "card: system_one(state, questions) - one forward pass",
+        "card: choice question type (criteria = named action options)",
+        "card: trust_remote_code=True, fp32 on CPU",
+        "card: no sampling params exist; output_tokens always 0"
+      ],
+      "raw": "{\"answer\": {\"choice\": \"STOP\", \"confidence\": 0.4743432032275717}, \"usage\": {\"input_tokens\": 271, \"output_tokens\": 0}}",
+      "state_features": {}
+    }
+  ]
+}

@@ -1,0 +1,1867 @@
+{
+  "diagnostic": "d1_asis_roster_state_posthoc",
+  "label": "POST-HOC DIAGNOSTIC - not a preregistered exam row; tests state-exactness vs model capacity for the QUERY failure",
+  "state": "roster + role->relation table + memory + goal (graph-derived)",
+  "arms": {
+    "original": {
+      "accuracy": 0.7,
+      "n": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 3
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 3
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 5
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 4
+        }
+      },
+      "redo_count": 0
+    },
+    "fresh": {
+      "accuracy": 0.7333,
+      "n": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 2
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 3
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 5
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6
+        }
+      },
+      "redo_count": 0
+    }
+  },
+  "records": {
+    "original": [
+      {
+        "scenario_id": "ans-00",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9732380639747664,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9732380639747664,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9981948325086185,
+              "gate_path": 0.9930529524175301,
+              "gate_covered": 0.9872782658165707
+            },
+            "residual": {
+              "ANSWER": 0.9732380639747664,
+              "INFER": 0.026761936025233614
+            },
+            "outcome": "decided",
+            "latency_ms": 15561.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-01",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9491057439565601,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9491057439565601,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9957726058335095,
+              "gate_path": 0.9812383402501736,
+              "gate_covered": 0.95608597310192
+            },
+            "residual": {
+              "ANSWER": 0.9491057439565601,
+              "INFER": 0.05089425604343995
+            },
+            "outcome": "decided",
+            "latency_ms": 13152.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-02",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9390376444383539,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9390376444383539,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9946819790439695,
+              "gate_path": 0.9922510496964767,
+              "gate_covered": 0.979855585448172
+            },
+            "residual": {
+              "ANSWER": 0.9390376444383539,
+              "INFER": 0.06096235556164594
+            },
+            "outcome": "decided",
+            "latency_ms": 9767.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-03",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9693062994061045,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9693062994061045,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.995919774727371,
+              "gate_path": 0.9842454638590733,
+              "gate_covered": 0.989413580632713
+            },
+            "residual": {
+              "ANSWER": 0.9693062994061045,
+              "INFER": 0.03069370059389539
+            },
+            "outcome": "decided",
+            "latency_ms": 11091.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-04",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.978150414344685,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.978150414344685,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9979009508414909,
+              "gate_path": 0.9909144016340353,
+              "gate_covered": 0.985131369121041
+            },
+            "residual": {
+              "ANSWER": 0.978150414344685,
+              "INFER": 0.021849585655314925
+            },
+            "outcome": "decided",
+            "latency_ms": 16117.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-05",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9612206374346629,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9612206374346629,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9954595381827923,
+              "gate_path": 0.9812383008673603,
+              "gate_covered": 0.9871700798219962
+            },
+            "residual": {
+              "ANSWER": 0.9612206374346629,
+              "INFER": 0.03877936256533711
+            },
+            "outcome": "decided",
+            "latency_ms": 18317.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-00",
+        "gold": "INFER",
+        "choice": "INFER",
+        "confidence": 0.6170970823672601,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.6170970823672601,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9947908546728339,
+              "gate_path": 0.9483314368109015,
+              "gate_covered": 0.7242992043086138
+            },
+            "residual": {
+              "ANSWER": 0.3829029176327399,
+              "INFER": 0.6170970823672601
+            },
+            "outcome": "decided",
+            "latency_ms": 19144.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-01",
+        "gold": "INFER",
+        "choice": "INFER",
+        "confidence": 0.5149661427453041,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.5149661427453041,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9952411617536369,
+              "gate_path": 0.951674097318653,
+              "gate_covered": 0.8470609639740135
+            },
+            "residual": {
+              "ANSWER": 0.48503385725469594,
+              "INFER": 0.5149661427453041
+            },
+            "outcome": "decided",
+            "latency_ms": 20794.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-02",
+        "gold": "INFER",
+        "choice": "INFER",
+        "confidence": 0.6204157557067692,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.6204157557067692,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9944920989411618,
+              "gate_path": 0.9294792793731078,
+              "gate_covered": 0.7430918276018726
+            },
+            "residual": {
+              "ANSWER": 0.3795842442932308,
+              "INFER": 0.6204157557067692
+            },
+            "outcome": "decided",
+            "latency_ms": 18688.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-03",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.5284315947475636,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.5284315947475636,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9948683876898746,
+              "gate_path": 0.9482637156529816,
+              "gate_covered": 0.845067315658961
+            },
+            "residual": {
+              "ANSWER": 0.5284315947475636,
+              "INFER": 0.4715684052524363
+            },
+            "outcome": "decided",
+            "latency_ms": 18466.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-04",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.8026513134933259,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.8026513134933259,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9976712290934594,
+              "gate_path": 0.9947178039097744,
+              "gate_covered": 0.9278912976465813
+            },
+            "residual": {
+              "ANSWER": 0.8026513134933259,
+              "INFER": 0.19734868650667417
+            },
+            "outcome": "decided",
+            "latency_ms": 16967.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-05",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.8861466907543288,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.8861466907543288,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9960317577269537,
+              "gate_path": 0.982407649416151,
+              "gate_covered": 0.9100984073684987
+            },
+            "residual": {
+              "ANSWER": 0.8861466907543288,
+              "INFER": 0.11385330924567112
+            },
+            "outcome": "decided",
+            "latency_ms": 22130.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-00",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.8581543985394433,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.8581543985394433,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9904094933901763,
+              "gate_path": 0.9835498543049888,
+              "gate_covered": 0.14184560146055664
+            },
+            "residual": {
+              "ANSWER": 0.6691155173515347,
+              "INFER": 0.33088448264846515
+            },
+            "outcome": "decided",
+            "latency_ms": 19708.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-01",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.9180352379896928,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.9180352379896928,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9914269787941821,
+              "gate_path": 0.9925337887018079,
+              "gate_covered": 0.08196476201030728
+            },
+            "residual": {
+              "ANSWER": 0.5835665103024388,
+              "INFER": 0.4164334896975612
+            },
+            "outcome": "decided",
+            "latency_ms": 17483.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-02",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.7996137213798724,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.7996137213798724,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9745914016528664,
+              "gate_path": 0.9583970120195522,
+              "gate_covered": 0.2003862786201276
+            },
+            "residual": {
+              "ANSWER": 0.5338977404757067,
+              "INFER": 0.4661022595242933
+            },
+            "outcome": "decided",
+            "latency_ms": 18146.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-03",
+        "gold": "QUERY",
+        "choice": "INFER",
+        "confidence": 0.515750148555525,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.515750148555525,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9949218062447818,
+              "gate_path": 0.9470151997400837,
+              "gate_covered": 0.8306117253324573
+            },
+            "residual": {
+              "ANSWER": 0.4842498514444749,
+              "INFER": 0.515750148555525
+            },
+            "outcome": "decided",
+            "latency_ms": 19010.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-04",
+        "gold": "QUERY",
+        "choice": "ANSWER",
+        "confidence": 0.517968334661536,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.517968334661536,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.99515282823459,
+              "gate_path": 0.96595340437284,
+              "gate_covered": 0.8676866114869778
+            },
+            "residual": {
+              "ANSWER": 0.517968334661536,
+              "INFER": 0.48203166533846403
+            },
+            "outcome": "decided",
+            "latency_ms": 18846.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-05",
+        "gold": "QUERY",
+        "choice": "INFER",
+        "confidence": 0.5300136688083854,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.5300136688083854,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9916358771741519,
+              "gate_path": 0.9097169867004108,
+              "gate_covered": 0.7966014285574147
+            },
+            "residual": {
+              "ANSWER": 0.4699863311916147,
+              "INFER": 0.5300136688083854
+            },
+            "outcome": "decided",
+            "latency_ms": 18825.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-00",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9344126381289557,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9344126381289557,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.8085960605819973,
+              "gate_path": 0.06558736187104436,
+              "gate_covered": 0.07648843040791653
+            },
+            "residual": {
+              "ANSWER": 0.5162520000543133,
+              "INFER": 0.48374799994568674
+            },
+            "outcome": "decided",
+            "latency_ms": 18599.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-01",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.783459458085362,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.783459458085362,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.8650740518986055,
+              "gate_path": 0.21654054191463798,
+              "gate_covered": 0.09258646445168334
+            },
+            "residual": {
+              "ANSWER": 0.2438417560518034,
+              "INFER": 0.7561582439481966
+            },
+            "outcome": "decided",
+            "latency_ms": 15117.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-02",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9014859026535623,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9014859026535623,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.6165938374767819,
+              "gate_path": 0.09851409734643772,
+              "gate_covered": 0.10233032593309112
+            },
+            "residual": {
+              "ANSWER": 0.6244407176056291,
+              "INFER": 0.37555928239437086
+            },
+            "outcome": "decided",
+            "latency_ms": 16638.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-03",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.7361392092398745,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.7361392092398745,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.6176243269254194,
+              "gate_path": 0.2638607907601255,
+              "gate_covered": 0.21180007802779863
+            },
+            "residual": {
+              "ANSWER": 0.34621932622951496,
+              "INFER": 0.653780673770485
+            },
+            "outcome": "decided",
+            "latency_ms": 17147.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-04",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9325667468731036,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9325667468731036,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.8599719955343321,
+              "gate_path": 0.06743325312689638,
+              "gate_covered": 0.022848938515298723
+            },
+            "residual": {
+              "ANSWER": 0.47784071588045957,
+              "INFER": 0.5221592841195404
+            },
+            "outcome": "decided",
+            "latency_ms": 16301.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-05",
+        "gold": "STOP",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.5677366185903464,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.5677366185903464,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.4322633814096536,
+              "gate_path": 0.48607177133305407,
+              "gate_covered": 0.044446723209769314
+            },
+            "residual": {
+              "ANSWER": 0.26633151722909576,
+              "INFER": 0.7336684827709044
+            },
+            "outcome": "decided",
+            "latency_ms": 17251.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-00",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9759043463951093,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9759043463951093,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.024095653604890778,
+              "gate_path": 0.5617453958564212,
+              "gate_covered": 0.018521721845642714
+            },
+            "residual": {
+              "ANSWER": 0.3352032004848001,
+              "INFER": 0.6647967995151998
+            },
+            "outcome": "decided",
+            "latency_ms": 17495.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-01",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9582414096829727,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9582414096829727,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.041758590317027285,
+              "gate_path": 0.7934902341751646,
+              "gate_covered": 0.049662539075759723
+            },
+            "residual": {
+              "ANSWER": 0.24997496325783902,
+              "INFER": 0.7500250367421609
+            },
+            "outcome": "decided",
+            "latency_ms": 17803.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-02",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9775702846172003,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9775702846172003,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.022429715382799736,
+              "gate_path": 0.18691020517302714,
+              "gate_covered": 0.10993829435499905
+            },
+            "residual": {
+              "ANSWER": 0.4638186588333281,
+              "INFER": 0.5361813411666719
+            },
+            "outcome": "decided",
+            "latency_ms": 18147.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-03",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9837201950931804,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9837201950931804,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.0162798049068196,
+              "gate_path": 0.07868982382727527,
+              "gate_covered": 0.02435556758719439
+            },
+            "residual": {
+              "ANSWER": 0.4894256844838924,
+              "INFER": 0.5105743155161075
+            },
+            "outcome": "decided",
+            "latency_ms": 17910.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-04",
+        "gold": "ASK_TEACHER",
+        "choice": "STOP",
+        "confidence": 0.650395038872728,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.650395038872728,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.757130798973541,
+              "gate_path": 0.3496049611272721,
+              "gate_covered": 0.2806484993022655
+            },
+            "residual": {
+              "ANSWER": 0.5559515946749044,
+              "INFER": 0.4440484053250956
+            },
+            "outcome": "decided",
+            "latency_ms": 19851.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-05",
+        "gold": "ASK_TEACHER",
+        "choice": "STOP",
+        "confidence": 0.545879855382357,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.545879855382357,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.6366507077801904,
+              "gate_path": 0.454120144617643,
+              "gate_covered": 0.08998003757776805
+            },
+            "residual": {
+              "ANSWER": 0.5125066258197694,
+              "INFER": 0.4874933741802307
+            },
+            "outcome": "decided",
+            "latency_ms": 19023.2
+          }
+        ]
+      }
+    ],
+    "fresh": [
+      {
+        "scenario_id": "ans-00",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9694313180377261,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9694313180377261,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9981553529728636,
+              "gate_path": 0.9905003204404003,
+              "gate_covered": 0.9858201627639465
+            },
+            "residual": {
+              "ANSWER": 0.9694313180377261,
+              "INFER": 0.03056868196227386
+            },
+            "outcome": "decided",
+            "latency_ms": 18945.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-01",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9419897820167816,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9419897820167816,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9966294969377731,
+              "gate_path": 0.9756759208708637,
+              "gate_covered": 0.959497975736705
+            },
+            "residual": {
+              "ANSWER": 0.9419897820167816,
+              "INFER": 0.05801021798321832
+            },
+            "outcome": "decided",
+            "latency_ms": 20341.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-02",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9365101751008114,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9365101751008114,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9956366883885066,
+              "gate_path": 0.9917593622421046,
+              "gate_covered": 0.9797342947222404
+            },
+            "residual": {
+              "ANSWER": 0.9365101751008114,
+              "INFER": 0.06348982489918877
+            },
+            "outcome": "decided",
+            "latency_ms": 19762.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-03",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9587783108864061,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9587783108864061,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9954254310056979,
+              "gate_path": 0.9804865324167089,
+              "gate_covered": 0.9826379109599727
+            },
+            "residual": {
+              "ANSWER": 0.9587783108864061,
+              "INFER": 0.04122168911359385
+            },
+            "outcome": "decided",
+            "latency_ms": 19939.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-04",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9747257851841037,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9747257851841037,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9977136668668842,
+              "gate_path": 0.9908628724341741,
+              "gate_covered": 0.9829518693308069
+            },
+            "residual": {
+              "ANSWER": 0.9747257851841037,
+              "INFER": 0.025274214815896184
+            },
+            "outcome": "decided",
+            "latency_ms": 19996.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "ans-05",
+        "gold": "ANSWER",
+        "choice": "ANSWER",
+        "confidence": 0.9572701518523238,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.9572701518523238,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.995949460419651,
+              "gate_path": 0.9836799140655675,
+              "gate_covered": 0.9864594958667311
+            },
+            "residual": {
+              "ANSWER": 0.9572701518523238,
+              "INFER": 0.042729848147676275
+            },
+            "outcome": "decided",
+            "latency_ms": 19726.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-00",
+        "gold": "INFER",
+        "choice": "INFER",
+        "confidence": 0.5384978050986126,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.5384978050986126,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9944512254241477,
+              "gate_path": 0.9579257171919563,
+              "gate_covered": 0.7749049514880786
+            },
+            "residual": {
+              "ANSWER": 0.46150219490138744,
+              "INFER": 0.5384978050986126
+            },
+            "outcome": "decided",
+            "latency_ms": 19680.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-01",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.5497839090202816,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.5497839090202816,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.995343277382522,
+              "gate_path": 0.9632850550679146,
+              "gate_covered": 0.8303110317988678
+            },
+            "residual": {
+              "ANSWER": 0.5497839090202816,
+              "INFER": 0.45021609097971843
+            },
+            "outcome": "decided",
+            "latency_ms": 21574.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-02",
+        "gold": "INFER",
+        "choice": "INFER",
+        "confidence": 0.5491729570784122,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "INFER",
+            "confidence": 0.5491729570784122,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9942792565931317,
+              "gate_path": 0.9610470405968287,
+              "gate_covered": 0.7581477891923298
+            },
+            "residual": {
+              "ANSWER": 0.4508270429215877,
+              "INFER": 0.5491729570784122
+            },
+            "outcome": "decided",
+            "latency_ms": 19911.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-03",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.6127967111353095,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.6127967111353095,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9943641493143913,
+              "gate_path": 0.9614235996151131,
+              "gate_covered": 0.8419890663205105
+            },
+            "residual": {
+              "ANSWER": 0.6127967111353095,
+              "INFER": 0.3872032888646904
+            },
+            "outcome": "decided",
+            "latency_ms": 20528.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-04",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.819124233385949,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.819124233385949,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9978299522653604,
+              "gate_path": 0.9948345261358553,
+              "gate_covered": 0.9350462884881232
+            },
+            "residual": {
+              "ANSWER": 0.819124233385949,
+              "INFER": 0.18087576661405103
+            },
+            "outcome": "decided",
+            "latency_ms": 20136.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "inf-05",
+        "gold": "INFER",
+        "choice": "ANSWER",
+        "confidence": 0.8983722070702165,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.8983722070702165,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9965479843654688,
+              "gate_path": 0.9799831742318404,
+              "gate_covered": 0.9091374985208064
+            },
+            "residual": {
+              "ANSWER": 0.8983722070702165,
+              "INFER": 0.10162779292978347
+            },
+            "outcome": "decided",
+            "latency_ms": 21465.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-00",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.647769336928707,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.647769336928707,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9905788761570203,
+              "gate_path": 0.9534620890900554,
+              "gate_covered": 0.3522306630712931
+            },
+            "residual": {
+              "ANSWER": 0.7484816549584715,
+              "INFER": 0.2515183450415285
+            },
+            "outcome": "decided",
+            "latency_ms": 21842.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-01",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.8162808742630631,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.8162808742630631,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9811691116378978,
+              "gate_path": 0.9807751420705617,
+              "gate_covered": 0.1837191257369369
+            },
+            "residual": {
+              "ANSWER": 0.8294556341938343,
+              "INFER": 0.17054436580616572
+            },
+            "outcome": "decided",
+            "latency_ms": 20935.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-02",
+        "gold": "QUERY",
+        "choice": "QUERY",
+        "confidence": 0.7124405068409551,
+        "stage": "gate_covered",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "QUERY",
+            "confidence": 0.7124405068409551,
+            "stage": "gate_covered",
+            "probs": {
+              "gate_in_world": 0.9726477961015799,
+              "gate_path": 0.9652069029452319,
+              "gate_covered": 0.28755949315904494
+            },
+            "residual": {
+              "ANSWER": 0.5905758502188142,
+              "INFER": 0.4094241497811858
+            },
+            "outcome": "decided",
+            "latency_ms": 21944.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-03",
+        "gold": "QUERY",
+        "choice": "ANSWER",
+        "confidence": 0.5202498852119447,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.5202498852119447,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9951379185470353,
+              "gate_path": 0.961349983283205,
+              "gate_covered": 0.8604333352887608
+            },
+            "residual": {
+              "ANSWER": 0.5202498852119447,
+              "INFER": 0.47975011478805535
+            },
+            "outcome": "decided",
+            "latency_ms": 20756.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-04",
+        "gold": "QUERY",
+        "choice": "ANSWER",
+        "confidence": 0.6210212940943198,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.6210212940943198,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9929353758450012,
+              "gate_path": 0.9090411425903631,
+              "gate_covered": 0.780390601276359
+            },
+            "residual": {
+              "ANSWER": 0.6210212940943198,
+              "INFER": 0.37897870590568017
+            },
+            "outcome": "decided",
+            "latency_ms": 21865.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "qry-05",
+        "gold": "QUERY",
+        "choice": "ANSWER",
+        "confidence": 0.5151193165335485,
+        "stage": "residual",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ANSWER",
+            "confidence": 0.5151193165335485,
+            "stage": "residual",
+            "probs": {
+              "gate_in_world": 0.9948231504563834,
+              "gate_path": 0.9735240270086003,
+              "gate_covered": 0.8951736164148422
+            },
+            "residual": {
+              "ANSWER": 0.5151193165335485,
+              "INFER": 0.4848806834664516
+            },
+            "outcome": "decided",
+            "latency_ms": 20880.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-00",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9045160025890264,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9045160025890264,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.7960548458684447,
+              "gate_path": 0.09548399741097362,
+              "gate_covered": 0.08922698008316841
+            },
+            "residual": {
+              "ANSWER": 0.4976830359842885,
+              "INFER": 0.5023169640157116
+            },
+            "outcome": "decided",
+            "latency_ms": 17668.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-01",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.8579051863349219,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.8579051863349219,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.7438447299100982,
+              "gate_path": 0.1420948136650782,
+              "gate_covered": 0.06008152709261324
+            },
+            "residual": {
+              "ANSWER": 0.2200047549278961,
+              "INFER": 0.7799952450721039
+            },
+            "outcome": "decided",
+            "latency_ms": 17807.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-02",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9112808508613864,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9112808508613864,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.6130885368278286,
+              "gate_path": 0.08871914913861353,
+              "gate_covered": 0.08562808483790633
+            },
+            "residual": {
+              "ANSWER": 0.5966872482403835,
+              "INFER": 0.4033127517596165
+            },
+            "outcome": "decided",
+            "latency_ms": 17147.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-03",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.8360817822696157,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.8360817822696157,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.6230831907016948,
+              "gate_path": 0.1639182177303843,
+              "gate_covered": 0.10023998839377322
+            },
+            "residual": {
+              "ANSWER": 0.30082124767371093,
+              "INFER": 0.6991787523262891
+            },
+            "outcome": "decided",
+            "latency_ms": 23309.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-04",
+        "gold": "STOP",
+        "choice": "STOP",
+        "confidence": 0.9487465835077944,
+        "stage": "gate_path",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "STOP",
+            "confidence": 0.9487465835077944,
+            "stage": "gate_path",
+            "probs": {
+              "gate_in_world": 0.8014660155634218,
+              "gate_path": 0.05125341649220565,
+              "gate_covered": 0.05216605615441985
+            },
+            "residual": {
+              "ANSWER": 0.3634966096218491,
+              "INFER": 0.6365033903781508
+            },
+            "outcome": "decided",
+            "latency_ms": 12623.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "stp-05",
+        "gold": "STOP",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.5983171005910766,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": false,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.5983171005910766,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.40168289940892343,
+              "gate_path": 0.4169756438666628,
+              "gate_covered": 0.0368729181745742
+            },
+            "residual": {
+              "ANSWER": 0.3068918141512122,
+              "INFER": 0.6931081858487879
+            },
+            "outcome": "decided",
+            "latency_ms": 16509.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-00",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.965739668503806,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.965739668503806,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.034260331496194,
+              "gate_path": 0.7590413871419133,
+              "gate_covered": 0.021423353591684798
+            },
+            "residual": {
+              "ANSWER": 0.3385533390192085,
+              "INFER": 0.6614466609807916
+            },
+            "outcome": "decided",
+            "latency_ms": 20228.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-01",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9448500727276319,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9448500727276319,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.05514992727236808,
+              "gate_path": 0.8211597754793772,
+              "gate_covered": 0.0376099847427649
+            },
+            "residual": {
+              "ANSWER": 0.2198766637625078,
+              "INFER": 0.7801233362374921
+            },
+            "outcome": "decided",
+            "latency_ms": 19104.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-02",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9295150276746035,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9295150276746035,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.07048497232539655,
+              "gate_path": 0.15337057339883003,
+              "gate_covered": 0.04589175876737032
+            },
+            "residual": {
+              "ANSWER": 0.3930075685296316,
+              "INFER": 0.6069924314703684
+            },
+            "outcome": "decided",
+            "latency_ms": 19588.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-03",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9517257232327657,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9517257232327657,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.0482742767672343,
+              "gate_path": 0.11412553822236103,
+              "gate_covered": 0.017581022166330305
+            },
+            "residual": {
+              "ANSWER": 0.28623090414285485,
+              "INFER": 0.7137690958571451
+            },
+            "outcome": "decided",
+            "latency_ms": 19673.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-04",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.9813582117567414,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.9813582117567414,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.018641788243258538,
+              "gate_path": 0.6809670941447618,
+              "gate_covered": 0.01633601149780705
+            },
+            "residual": {
+              "ANSWER": 0.26430661150284956,
+              "INFER": 0.7356933884971504
+            },
+            "outcome": "decided",
+            "latency_ms": 18694.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "tea-05",
+        "gold": "ASK_TEACHER",
+        "choice": "ASK_TEACHER",
+        "confidence": 0.96763978138624,
+        "stage": "gate_in_world",
+        "outcome": "decided",
+        "correct": true,
+        "redo_count": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "form": 0,
+            "choice": "ASK_TEACHER",
+            "confidence": 0.96763978138624,
+            "stage": "gate_in_world",
+            "probs": {
+              "gate_in_world": 0.03236021861376002,
+              "gate_path": 0.828121110758155,
+              "gate_covered": 0.03912337434959046
+            },
+            "residual": {
+              "ANSWER": 0.1961602436989542,
+              "INFER": 0.8038397563010458
+            },
+            "outcome": "decided",
+            "latency_ms": 24580.3
+          }
+        ]
+      }
+    ]
+  }
+}

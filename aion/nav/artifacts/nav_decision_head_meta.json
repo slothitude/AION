@@ -1,0 +1,51 @@
+{
+  "artifact": "nav_decision_head",
+  "exam_version": "nav-head-exam-1.0",
+  "preregistered": "2026-11-25",
+  "split_freeze_date": "2026-11-25",
+  "model_kind": "logistic",
+  "candidates": {
+    "logistic": {
+      "val_accuracy": 1.0,
+      "train_fit_accuracy": 1.0,
+      "fit_seconds": 2.14
+    },
+    "boost": {
+      "val_accuracy": 1.0,
+      "train_fit_accuracy": 1.0,
+      "fit_seconds": 1.98
+    }
+  },
+  "selection_rule": "higher val accuracy on the last 15% of train rows; tie -> logistic",
+  "n_train": 2720,
+  "n_val": 480,
+  "holdout_accuracy": 1.0,
+  "n_holdout": 800,
+  "feature_names": [
+    "in_world",
+    "role_index",
+    "goal_is_reach",
+    "goal_relation_index",
+    "relation_possible",
+    "next_hop_covered",
+    "walk_hops_total",
+    "walk_hops_missing",
+    "walk_fully_covered",
+    "n_unknown_evidence",
+    "n_known_facts",
+    "memory_edge_coverage",
+    "subject_edges_in_memory"
+  ],
+  "classes": [
+    "ANSWER",
+    "ASK_TEACHER",
+    "INFER",
+    "QUERY",
+    "STOP"
+  ],
+  "machine_import": "sklearn+joblib, CPU only",
+  "adaptation": {
+    "kind": "per_class_bias_perceptron",
+    "lr": 0.25
+  }
+}

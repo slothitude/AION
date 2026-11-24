@@ -1,0 +1,2535 @@
+{
+  "exam_version": "nav-exam-1.0",
+  "preregistered": "2026-11-25",
+  "world_seed": 20261125,
+  "n_chains": 8,
+  "closed_enum": [
+    "QUERY",
+    "INFER",
+    "ANSWER",
+    "ASK_TEACHER",
+    "STOP"
+  ],
+  "action_descriptions": {
+    "QUERY": "The goal relationship is not in memory; look it up in the world.",
+    "INFER": "Compose the answer by walking covered multi-hop facts.",
+    "ANSWER": "Answer directly from a single covered fact.",
+    "ASK_TEACHER": "The information is missing from the world; request teaching.",
+    "STOP": "No path can serve this goal; stop without an answer."
+  },
+  "gold_counts": {
+    "ANSWER": 6,
+    "INFER": 6,
+    "QUERY": 6,
+    "STOP": 6,
+    "ASK_TEACHER": 6
+  },
+  "machine": "Windows 11 Rog",
+  "summaries": [
+    {
+      "backend": "heuristic_floor",
+      "accuracy": 1.0,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 30,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "latency_ms_mean": 0.01,
+      "wall_s": 0.0,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        }
+      },
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "machine": "Windows/Rog"
+    },
+    {
+      "backend": "larql_classifier",
+      "accuracy": 0.2,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 6,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "latency_ms_mean": 0.29,
+      "wall_s": 0.01,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        }
+      },
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "machine": "Windows/Rog"
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.017700003809295595,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.009700001101009548,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.006399997801054269,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.01189999602502212,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0035999983083456755,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.006399997801054269,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ANSWER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.022599997464567423,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.014700002793688327,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.014800003555137664,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.015899997379165143,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.015399993571918458,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.012399999832268804,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->INFER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0043000036384910345,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004399997123982757,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004499997885432094,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.013000004400964826,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.009399998816661537,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.01170000177808106,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->QUERY",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004800000169780105,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004800000169780105,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0043000036384910345,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.005199995939619839,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004499997885432094,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.005200003215577453,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->STOP",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0029000002541579306,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0029000002541579306,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0027999994927085936,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0016999983927235007,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.004699999408330768,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "rule_table"
+      },
+      "enum_violation": false,
+      "latency_ms": 0.0022000021999701858,
+      "compliance": [
+        "zero-model rules; deterministic; no download"
+      ],
+      "raw": "rule_table->ASK_TEACHER",
+      "state_features": {}
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.9859000056167133,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.34169999707955867,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.26879999495577067,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.24339999799849465,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.22909999825060368,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2460000032442622,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2640000020619482,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2525000018067658,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.301199994282797,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.26480000087758526,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.24760000087553635,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.0003888294081218796,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9986663535360947
+      },
+      "enum_violation": false,
+      "latency_ms": 0.23830000282032415,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.0003888294081218796, \"INFER\": 5.898772770649499e-06, \"QUERY\": 0.9986663535360947, \"REFORMULATE\": 0.0001624454908974695, \"STOP\": 1.665981032314085e-05, \"TRACE\": 0.0007598129817921243}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 0.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2567999981692992,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2367999986745417,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.26480000087758526,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.019429426936007743,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9790125078084342
+      },
+      "enum_violation": false,
+      "latency_ms": 0.26709999656304717,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.019429426936007743, \"INFER\": 7.366628547255892e-07, \"QUERY\": 0.9790125078084342, \"REFORMULATE\": 0.0013259824361368723, \"STOP\": 4.871882579955979e-05, \"TRACE\": 0.0001826273307668859}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 2.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.019429426936007743,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9790125078084342
+      },
+      "enum_violation": false,
+      "latency_ms": 0.25940000341506675,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.019429426936007743, \"INFER\": 7.366628547255892e-07, \"QUERY\": 0.9790125078084342, \"REFORMULATE\": 0.0013259824361368723, \"STOP\": 4.871882579955979e-05, \"TRACE\": 0.0001826273307668859}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 2.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.019429426936007743,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9790125078084342
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2595999976620078,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.019429426936007743, \"INFER\": 7.366628547255892e-07, \"QUERY\": 0.9790125078084342, \"REFORMULATE\": 0.0013259824361368723, \"STOP\": 4.871882579955979e-05, \"TRACE\": 0.0001826273307668859}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 2.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2426999999443069,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.47089999861782417,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.22699999681208283,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.31940000189933926,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.276099999609869,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.24319999647559598,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2190000013797544,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.23820000205887482,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.26220000290777534,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.22449999960372224,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.23160000273492187,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    },
+    {
+      "schema_version": "nav-1.0",
+      "backend": "larql_classifier",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "QUERY",
+        "INFER",
+        "ANSWER",
+        "ASK_TEACHER",
+        "STOP"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": "ANSWER",
+        "score": 0.002769618805125406,
+        "source": "classifier_proba",
+        "head_label": "QUERY",
+        "head_confidence": 0.9963565512327625
+      },
+      "enum_violation": false,
+      "latency_ms": 0.2249000026495196,
+      "compliance": [
+        "socket \u00a72.3: portable pickle load, pipeline.predict([vector])",
+        "socket: feature order from the artifact's feature_names (bound to DECISION_FEATURE_NAMES)",
+        "declared mapping: head QUERY/TRACE->QUERY, REFORMULATE->ASK_TEACHER (correspondence, not a card fact)",
+        "distribution shift: head trained on larql M6 states, probed on NAV chain-world states"
+      ],
+      "raw": "{\"head_label\": \"QUERY\", \"proba\": {\"ANSWER\": 0.002769618805125406, \"INFER\": 2.100514436488556e-06, \"QUERY\": 0.9963565512327625, \"REFORMULATE\": 0.0004676631683715624, \"STOP\": 2.8707401543370814e-05, \"TRACE\": 0.0003753588777607002}}",
+      "state_features": {
+        "thinking_level": 1.0,
+        "remaining_budget": 8.0,
+        "depth": 0.0,
+        "confidence": 0.0,
+        "n_observations": 0.0,
+        "n_directly_observed_refs": 0.0,
+        "n_layer_references": 0.0,
+        "n_queries": 0.0,
+        "n_reformulations": 0.0,
+        "last_query_ok": 0.0,
+        "search_done": 0.0,
+        "has_final_answer": 0.0,
+        "verification_status": 0.0,
+        "plan_progress": 0.0,
+        "n_unknown_evidence": 1.0,
+        "has_inference_result": 0.0
+      }
+    }
+  ]
+}

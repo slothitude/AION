@@ -1,0 +1,6562 @@
+{
+  "exam_version": "nav-head-exam-1.0",
+  "preregistered": "2026-11-25",
+  "amendments": [
+    "2026-11-25 A1: d1-as-is decomposed usage is the PRIMARY arm (zero training).",
+    "2026-11-25 A2: redo rule - calibrated confidence in [0.49,0.51] triggers a bounded re-presentation (max 2), final attempt scored; redo_count and ambiguity_rate reported per backend."
+  ],
+  "redo_band": [
+    0.49,
+    0.51
+  ],
+  "redo_max_representations": 2,
+  "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+  "exam_gold_counts": {
+    "original": {
+      "ANSWER": 1,
+      "INFER": 1,
+      "QUERY": 1,
+      "STOP": 1,
+      "ASK_TEACHER": 1
+    },
+    "fresh": {
+      "ANSWER": 1,
+      "INFER": 1,
+      "QUERY": 1,
+      "STOP": 1,
+      "ASK_TEACHER": 1
+    }
+  },
+  "summaries": [
+    {
+      "backend": "d1_asis",
+      "accuracy": 0.5333,
+      "accuracy_scored": 0.5333,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 16,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "redo_count": 2,
+      "n_ambiguous": 2,
+      "ambiguity_rate": 0.0667,
+      "confidence_mean": 0.7917,
+      "latency_ms_mean": 7757.46,
+      "wall_s": 232.72,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 3,
+          "violations": 0,
+          "misses": 3
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 3,
+          "violations": 0,
+          "misses": 3
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 4,
+          "violations": 0,
+          "misses": 2
+        }
+      },
+      "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+      "exam_variant": "original"
+    },
+    {
+      "backend": "d1_asis",
+      "accuracy": 0.5333,
+      "accuracy_scored": 0.5333,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 16,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "redo_count": 0,
+      "n_ambiguous": 0,
+      "ambiguity_rate": 0.0,
+      "confidence_mean": 0.8069,
+      "latency_ms_mean": 7871.67,
+      "wall_s": 236.15,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 1,
+          "violations": 0,
+          "misses": 5
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 0,
+          "violations": 0,
+          "misses": 6
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 3,
+          "violations": 0,
+          "misses": 3
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        }
+      },
+      "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+      "exam_variant": "fresh"
+    },
+    {
+      "backend": "heuristic_floor",
+      "accuracy": 1.0,
+      "accuracy_scored": 1.0,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 30,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "redo_count": 0,
+      "n_ambiguous": 0,
+      "ambiguity_rate": 0.0,
+      "confidence_mean": null,
+      "latency_ms_mean": 0.01,
+      "wall_s": 0.0,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        }
+      },
+      "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+      "exam_variant": "original"
+    },
+    {
+      "backend": "heuristic_floor",
+      "accuracy": 1.0,
+      "accuracy_scored": 1.0,
+      "n_scenarios": 30,
+      "n_scored": 30,
+      "n_correct": 30,
+      "enum_violations": 0,
+      "no_answer": 0,
+      "license_blocked": 0,
+      "unavailable": 0,
+      "redo_count": 0,
+      "n_ambiguous": 0,
+      "ambiguity_rate": 0.0,
+      "confidence_mean": null,
+      "latency_ms_mean": 0.01,
+      "wall_s": 0.0,
+      "records_complete": 30,
+      "by_gold_class": {
+        "ANSWER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "INFER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "QUERY": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "STOP": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        },
+        "ASK_TEACHER": {
+          "n": 6,
+          "correct": 6,
+          "violations": 0,
+          "misses": 0
+        }
+      },
+      "machine": "Linux 7.0.0-43-generic lappy-ubuntu",
+      "exam_variant": "fresh"
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9683948314573266,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9683948314573266,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9683948314573266,
+          "outcome": "decided",
+          "latency_ms": 10571.155
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 10571.155,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9934104475341863,
+          "gate_path": 0.9915167286487568,
+          "gate_covered": 0.9849554417090756
+        },
+        "residual": {
+          "ANSWER": 0.9683948314573266,
+          "INFER": 0.031605168542673374
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 10571.144593995996,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9444819529990616,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9444819529990616,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9444819529990616,
+          "outcome": "decided",
+          "latency_ms": 7116.619
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7116.619,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9837757846858914,
+          "gate_path": 0.981886928733591,
+          "gate_covered": 0.9643496389230237
+        },
+        "residual": {
+          "ANSWER": 0.9444819529990616,
+          "INFER": 0.055518047000938334
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 7116.591998958029,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9011908441315765,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9011908441315765,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9011908441315765,
+          "outcome": "decided",
+          "latency_ms": 5490.152
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 5490.152,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9747276999243702,
+          "gate_path": 0.9920345056280825,
+          "gate_covered": 0.9779405927990936
+        },
+        "residual": {
+          "ANSWER": 0.9011908441315765,
+          "INFER": 0.0988091558684236
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 277,
+          "output_tokens": 0
+        },
+        "latency_ms": 5490.143985021859,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9737048311049028,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9737048311049028,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9737048311049028,
+          "outcome": "decided",
+          "latency_ms": 6126.87
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6126.87,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9915395533309693,
+          "gate_path": 0.9875612545784844,
+          "gate_covered": 0.9832444770364848
+        },
+        "residual": {
+          "ANSWER": 0.9737048311049028,
+          "INFER": 0.026295168895097185
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 6126.861731987447,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9729718634099747,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9729718634099747,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9729718634099747,
+          "outcome": "decided",
+          "latency_ms": 7417.164
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7417.164,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9951767541349624,
+          "gate_path": 0.9845320050738633,
+          "gate_covered": 0.9832895994779095
+        },
+        "residual": {
+          "ANSWER": 0.9729718634099747,
+          "INFER": 0.027028136590025436
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "latency_ms": 7417.155717033893,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9621755656047989,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9621755656047989,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9621755656047989,
+          "outcome": "decided",
+          "latency_ms": 6025.819
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6025.819,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9871703688236705,
+          "gate_path": 0.9730889122261329,
+          "gate_covered": 0.9835550452989675
+        },
+        "residual": {
+          "ANSWER": 0.9621755656047989,
+          "INFER": 0.037824434395201174
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 6025.809390004724,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5328275563376279,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5328275563376279,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5328275563376279,
+          "outcome": "decided",
+          "latency_ms": 7538.47
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7538.47,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9804877329796449,
+          "gate_path": 0.8753980647434101,
+          "gate_covered": 0.6480354677693865
+        },
+        "residual": {
+          "ANSWER": 0.5328275563376279,
+          "INFER": 0.4671724436623721
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "latency_ms": 7538.461668067612,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.6088221269698829,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.6088221269698829,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": 0.6088221269698829,
+          "outcome": "decided",
+          "latency_ms": 6923.16
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6923.16,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.986307917144428,
+          "gate_path": 0.8686949617414548,
+          "gate_covered": 0.7948583112179979
+        },
+        "residual": {
+          "ANSWER": 0.3911778730301171,
+          "INFER": 0.6088221269698829
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "latency_ms": 6923.151700058952,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5499348145753649,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5499348145753649,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": 0.5499348145753649,
+          "outcome": "decided",
+          "latency_ms": 5688.134
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 5688.134,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9781751810310599,
+          "gate_path": 0.8931023298397848,
+          "gate_covered": 0.6706703219259542
+        },
+        "residual": {
+          "ANSWER": 0.4500651854246351,
+          "INFER": 0.5499348145753649
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 282,
+          "output_tokens": 0
+        },
+        "latency_ms": 5688.126138993539,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5262936054124235,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5262936054124235,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5079933209434889,
+          "outcome": "decided",
+          "latency_ms": 8179.195
+        },
+        {
+          "attempt": 2,
+          "form": 1,
+          "choice": "INFER",
+          "confidence": 0.5262936054124235,
+          "outcome": "decided",
+          "latency_ms": 6871.282
+        }
+      ],
+      "redo_count": 1,
+      "ambiguous": true,
+      "enum_violation": false,
+      "latency_ms": 15050.477,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9802822631060812,
+          "gate_path": 0.7786838617927172,
+          "gate_covered": 0.5731583037949045
+        },
+        "residual": {
+          "ANSWER": 0.4737063945875764,
+          "INFER": 0.5262936054124235
+        },
+        "form": 1,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 6871.273029013537,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7388063220389579,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7388063220389579,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.7388063220389579,
+          "outcome": "decided",
+          "latency_ms": 5481.031
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 5481.031,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9909307321658859,
+          "gate_path": 0.9916314845766177,
+          "gate_covered": 0.8745566230274335
+        },
+        "residual": {
+          "ANSWER": 0.7388063220389579,
+          "INFER": 0.26119367796104204
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 276,
+          "output_tokens": 0
+        },
+        "latency_ms": 5481.021933956072,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8037695281966487,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8037695281966487,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.8037695281966487,
+          "outcome": "decided",
+          "latency_ms": 7644.98
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7644.98,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.8943378788846137,
+          "gate_path": 0.8874203779208739,
+          "gate_covered": 0.8312143407260552
+        },
+        "residual": {
+          "ANSWER": 0.8037695281966487,
+          "INFER": 0.19623047180335126
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "latency_ms": 7644.97197791934,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9551573188802732,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9551573188802732,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9551573188802732,
+          "outcome": "decided",
+          "latency_ms": 7651.458
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7651.458,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.04484268111972676,
+          "gate_path": 0.3968136655707735,
+          "gate_covered": 0.012098442835613234
+        },
+        "residual": {
+          "ANSWER": 0.1978617158261808,
+          "INFER": 0.8021382841738193
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 324,
+          "output_tokens": 0
+        },
+        "latency_ms": 7651.425309013575,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9481587870398234,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9481587870398234,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9481587870398234,
+          "outcome": "decided",
+          "latency_ms": 6648.715
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6648.715,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.0518412129601766,
+          "gate_path": 0.28497573799751447,
+          "gate_covered": 0.012105881238381062
+        },
+        "residual": {
+          "ANSWER": 0.2446168750361749,
+          "INFER": 0.7553831249638252
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 325,
+          "output_tokens": 0
+        },
+        "latency_ms": 6648.7062950618565,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9684303973855944,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9684303973855944,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9684303973855944,
+          "outcome": "decided",
+          "latency_ms": 9686.495
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 9686.495,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.031569602614405536,
+          "gate_path": 0.3526788680335122,
+          "gate_covered": 0.01074614920636209
+        },
+        "residual": {
+          "ANSWER": 0.23510027053659913,
+          "INFER": 0.7648997294634009
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 324,
+          "output_tokens": 0
+        },
+        "latency_ms": 9686.485151061788,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.6050321026801453,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.6050321026801453,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": 0.6050321026801453,
+          "outcome": "decided",
+          "latency_ms": 6583.503
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6583.503,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.987876632472152,
+          "gate_path": 0.9355120293800244,
+          "gate_covered": 0.8063807599149198
+        },
+        "residual": {
+          "ANSWER": 0.3949678973198547,
+          "INFER": 0.6050321026801453
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 327,
+          "output_tokens": 0
+        },
+        "latency_ms": 6583.494098042138,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5381543469790417,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5381543469790417,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5002759625763579,
+          "outcome": "decided",
+          "latency_ms": 8421.906
+        },
+        {
+          "attempt": 2,
+          "form": 1,
+          "choice": "INFER",
+          "confidence": 0.5381543469790417,
+          "outcome": "decided",
+          "latency_ms": 7859.132
+        }
+      ],
+      "redo_count": 1,
+      "ambiguous": true,
+      "enum_violation": false,
+      "latency_ms": 16281.038,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9873316995472191,
+          "gate_path": 0.9318287710043843,
+          "gate_covered": 0.655174067859543
+        },
+        "residual": {
+          "ANSWER": 0.4618456530209582,
+          "INFER": 0.5381543469790417
+        },
+        "form": 1,
+        "usage": {
+          "input_tokens": 327,
+          "output_tokens": 0
+        },
+        "latency_ms": 7859.119685017504,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5112879471623246,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5112879471623246,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": 0.5112879471623246,
+          "outcome": "decided",
+          "latency_ms": 7001.677
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7001.677,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.985459194147893,
+          "gate_path": 0.9075996842537792,
+          "gate_covered": 0.6227853868657827
+        },
+        "residual": {
+          "ANSWER": 0.48871205283767544,
+          "INFER": 0.5112879471623246
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 330,
+          "output_tokens": 0
+        },
+        "latency_ms": 7001.6687519382685,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7799511898892828,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7799511898892828,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": 0.7799511898892828,
+          "outcome": "decided",
+          "latency_ms": 8146.984
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8146.984,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_covered",
+        "probs": {
+          "gate_in_world": 0.6779207232905458,
+          "gate_path": 0.5503073618678291,
+          "gate_covered": 0.22004881011071714
+        },
+        "residual": {
+          "ANSWER": 0.3497387396633358,
+          "INFER": 0.6502612603366642
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 8146.960386889987,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.6597388253175054,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.6597388253175054,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.6597388253175054,
+          "outcome": "decided",
+          "latency_ms": 5709.108
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 5709.108,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.8062998072175349,
+          "gate_path": 0.34026117468249456,
+          "gate_covered": 0.32336527728161224
+        },
+        "residual": {
+          "ANSWER": 0.34434263132544063,
+          "INFER": 0.6556573686745593
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 5709.098579012789,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5547621393320712,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5547621393320712,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.5547621393320712,
+          "outcome": "decided",
+          "latency_ms": 7029.718
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7029.718,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.5989243115737644,
+          "gate_path": 0.44523786066792875,
+          "gate_covered": 0.23494828537288706
+        },
+        "residual": {
+          "ANSWER": 0.5387978136953809,
+          "INFER": 0.461202186304619
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 7029.707450070418,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7313450626784079,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7313450626784079,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.7313450626784079,
+          "outcome": "decided",
+          "latency_ms": 6520.817
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6520.817,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.8526042344136842,
+          "gate_path": 0.268654937321592,
+          "gate_covered": 0.3778125103050636
+        },
+        "residual": {
+          "ANSWER": 0.42004321189964194,
+          "INFER": 0.5799567881003581
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 6520.809325040318,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8991456562433914,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8991456562433914,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.8991456562433914,
+          "outcome": "decided",
+          "latency_ms": 5797.359
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 5797.359,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.1008543437566086,
+          "gate_path": 0.2962713479909189,
+          "gate_covered": 0.0605646706606286
+        },
+        "residual": {
+          "ANSWER": 0.287483533201657,
+          "INFER": 0.7125164667983431
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 5797.350328997709,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9231856157129901,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9231856157129901,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9231856157129901,
+          "outcome": "decided",
+          "latency_ms": 7006.107
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7006.107,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.0768143842870099,
+          "gate_path": 0.19076784578221137,
+          "gate_covered": 0.051772889357362094
+        },
+        "residual": {
+          "ANSWER": 0.3558609609062633,
+          "INFER": 0.6441390390937368
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 273,
+          "output_tokens": 0
+        },
+        "latency_ms": 7006.096482044086,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9652481641287552,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9652481641287552,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9652481641287552,
+          "outcome": "decided",
+          "latency_ms": 7825.02
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7825.02,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.03475183587124474,
+          "gate_path": 0.30198487765826265,
+          "gate_covered": 0.011458912049320582
+        },
+        "residual": {
+          "ANSWER": 0.2543227600180022,
+          "INFER": 0.7456772399819978
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 324,
+          "output_tokens": 0
+        },
+        "latency_ms": 7825.010859989561,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9579712896994735,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9579712896994735,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9579712896994735,
+          "outcome": "decided",
+          "latency_ms": 6951.816
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6951.816,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.042028710300526434,
+          "gate_path": 0.39158026451407485,
+          "gate_covered": 0.014365815764028867
+        },
+        "residual": {
+          "ANSWER": 0.25153056130784635,
+          "INFER": 0.7484694386921537
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 324,
+          "output_tokens": 0
+        },
+        "latency_ms": 6951.808076933958,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9154891916018505,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9154891916018505,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9154891916018505,
+          "outcome": "decided",
+          "latency_ms": 8996.319
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8996.319,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.08451080839814955,
+          "gate_path": 0.1828337315504766,
+          "gate_covered": 0.03932738583044314
+        },
+        "residual": {
+          "ANSWER": 0.4777519343671906,
+          "INFER": 0.5222480656328093
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 328,
+          "output_tokens": 0
+        },
+        "latency_ms": 8996.309267939068,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9499394712815249,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9499394712815249,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9499394712815249,
+          "outcome": "decided",
+          "latency_ms": 7008.472
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7008.472,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.05006052871847509,
+          "gate_path": 0.2407902796351785,
+          "gate_covered": 0.022444143638835384
+        },
+        "residual": {
+          "ANSWER": 0.3471248914654998,
+          "INFER": 0.6528751085345001
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 327,
+          "output_tokens": 0
+        },
+        "latency_ms": 7008.463333011605,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7826477078079905,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7826477078079905,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.7826477078079905,
+          "outcome": "decided",
+          "latency_ms": 8758.365
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8758.365,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.7904348246252394,
+          "gate_path": 0.7114547205111101,
+          "gate_covered": 0.7268540751907002
+        },
+        "residual": {
+          "ANSWER": 0.7826477078079905,
+          "INFER": 0.21735229219200952
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 327,
+          "output_tokens": 0
+        },
+        "latency_ms": 8758.35656397976,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.622474419595672,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.622474419595672,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.622474419595672,
+          "outcome": "decided",
+          "latency_ms": 8046.79
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8046.79,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.6560885405942226,
+          "gate_path": 0.37752558040432804,
+          "gate_covered": 0.16171688908389592
+        },
+        "residual": {
+          "ANSWER": 0.5651987847234866,
+          "INFER": 0.43480121527651344
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 327,
+          "output_tokens": 0
+        },
+        "latency_ms": 8046.778740012087,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9648341834490439,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9648341834490439,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9648341834490439,
+          "outcome": "decided",
+          "latency_ms": 7458.786
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7458.786,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.991015912110845,
+          "gate_path": 0.9911189916953432,
+          "gate_covered": 0.983823835502775
+        },
+        "residual": {
+          "ANSWER": 0.9648341834490439,
+          "INFER": 0.03516581655095601
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 304,
+          "output_tokens": 0
+        },
+        "latency_ms": 7458.778642932884,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9298046936268357,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9298046936268357,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9298046936268357,
+          "outcome": "decided",
+          "latency_ms": 8113.448
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8113.448,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9813041666038236,
+          "gate_path": 0.9704465922028432,
+          "gate_covered": 0.9521995618309435
+        },
+        "residual": {
+          "ANSWER": 0.9298046936268357,
+          "INFER": 0.07019530637316444
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 304,
+          "output_tokens": 0
+        },
+        "latency_ms": 8113.439604989253,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8829824939921854,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8829824939921854,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.8829824939921854,
+          "outcome": "decided",
+          "latency_ms": 6490.95
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6490.95,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9720952482816579,
+          "gate_path": 0.9924549173215198,
+          "gate_covered": 0.9748862975969663
+        },
+        "residual": {
+          "ANSWER": 0.8829824939921854,
+          "INFER": 0.11701750600781469
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 305,
+          "output_tokens": 0
+        },
+        "latency_ms": 6490.9418660681695,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9583487074749868,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9583487074749868,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9583487074749868,
+          "outcome": "decided",
+          "latency_ms": 7790.523
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7790.523,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9856390299119406,
+          "gate_path": 0.9765743911105399,
+          "gate_covered": 0.9766689099793663
+        },
+        "residual": {
+          "ANSWER": 0.9583487074749868,
+          "INFER": 0.041651292525013116
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 304,
+          "output_tokens": 0
+        },
+        "latency_ms": 7790.515872999094,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9734834880396128,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9734834880396128,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9734834880396128,
+          "outcome": "decided",
+          "latency_ms": 7657.796
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7657.796,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9958933997053526,
+          "gate_path": 0.9872494303760025,
+          "gate_covered": 0.9828703864107674
+        },
+        "residual": {
+          "ANSWER": 0.9734834880396128,
+          "INFER": 0.026516511960387155
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 307,
+          "output_tokens": 0
+        },
+        "latency_ms": 7657.787951058708,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9520382394220291,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9520382394220291,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.9520382394220291,
+          "outcome": "decided",
+          "latency_ms": 7138.986
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7138.986,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9751132379313873,
+          "gate_path": 0.9735410045325209,
+          "gate_covered": 0.9825520448342592
+        },
+        "residual": {
+          "ANSWER": 0.9520382394220291,
+          "INFER": 0.04796176057797082
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 304,
+          "output_tokens": 0
+        },
+        "latency_ms": 7138.978069997393,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5398845541555336,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5398845541555336,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5398845541555336,
+          "outcome": "decided",
+          "latency_ms": 8998.16
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8998.16,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9785212565156198,
+          "gate_path": 0.9188856782723127,
+          "gate_covered": 0.6577766228376698
+        },
+        "residual": {
+          "ANSWER": 0.5398845541555336,
+          "INFER": 0.46011544584446645
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 307,
+          "output_tokens": 0
+        },
+        "latency_ms": 8998.153298976831,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5416033554395984,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5416033554395984,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": 0.5416033554395984,
+          "outcome": "decided",
+          "latency_ms": 6913.495
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6913.495,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9866699814864028,
+          "gate_path": 0.8490039254019094,
+          "gate_covered": 0.7818966381342051
+        },
+        "residual": {
+          "ANSWER": 0.45839664456040163,
+          "INFER": 0.5416033554395984
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 307,
+          "output_tokens": 0
+        },
+        "latency_ms": 6913.4846199303865,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5312170996637077,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5312170996637077,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5312170996637077,
+          "outcome": "decided",
+          "latency_ms": 7299.461
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7299.461,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9851155420252661,
+          "gate_path": 0.8913059489443448,
+          "gate_covered": 0.6009602827011089
+        },
+        "residual": {
+          "ANSWER": 0.5312170996637077,
+          "INFER": 0.4687829003362923
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 310,
+          "output_tokens": 0
+        },
+        "latency_ms": 7299.45282090921,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.6045816361805519,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.6045816361805519,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.6045816361805519,
+          "outcome": "decided",
+          "latency_ms": 9674.498
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 9674.498,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9767802466990352,
+          "gate_path": 0.8915173697148031,
+          "gate_covered": 0.7947739996588732
+        },
+        "residual": {
+          "ANSWER": 0.6045816361805519,
+          "INFER": 0.39541836381944806
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 307,
+          "output_tokens": 0
+        },
+        "latency_ms": 9674.48902898468,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7612400402126881,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7612400402126881,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.7612400402126881,
+          "outcome": "decided",
+          "latency_ms": 6773.986
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6773.986,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.990815071532967,
+          "gate_path": 0.9914018109067324,
+          "gate_covered": 0.8881289067728831
+        },
+        "residual": {
+          "ANSWER": 0.7612400402126881,
+          "INFER": 0.23875995978731182
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 304,
+          "output_tokens": 0
+        },
+        "latency_ms": 6773.977057076991,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8254411323466183,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8254411323466183,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.8254411323466183,
+          "outcome": "decided",
+          "latency_ms": 9544.545
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 9544.545,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9158599674302632,
+          "gate_path": 0.8371598789070714,
+          "gate_covered": 0.843745294813631
+        },
+        "residual": {
+          "ANSWER": 0.8254411323466183,
+          "INFER": 0.17455886765338172
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 307,
+          "output_tokens": 0
+        },
+        "latency_ms": 9544.536737026647,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-00",
+      "goal": "Who does Mavok operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9198144678824166,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9198144678824166,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9198144678824166,
+          "outcome": "decided",
+          "latency_ms": 8797.489
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8797.489,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.08018553211758339,
+          "gate_path": 0.3855395369929055,
+          "gate_covered": 0.011804027181983404
+        },
+        "residual": {
+          "ANSWER": 0.28475856313974496,
+          "INFER": 0.7152414368602551
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 355,
+          "output_tokens": 0
+        },
+        "latency_ms": 8797.479052911513,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-01",
+      "goal": "Where does Qarbe route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9635340637952401,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9635340637952401,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9635340637952401,
+          "outcome": "decided",
+          "latency_ms": 7485.528
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7485.528,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.0364659362047599,
+          "gate_path": 0.3019346763216385,
+          "gate_covered": 0.010668221663481527
+        },
+        "residual": {
+          "ANSWER": 0.30657216755776956,
+          "INFER": 0.6934278324422305
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 353,
+          "output_tokens": 0
+        },
+        "latency_ms": 7485.518852015957,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-02",
+      "goal": "Who does Sorni control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9392114731488163,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9392114731488163,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9392114731488163,
+          "outcome": "decided",
+          "latency_ms": 8764.813
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8764.813,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.060788526851183744,
+          "gate_path": 0.34712844678684535,
+          "gate_covered": 0.017786314359723592
+        },
+        "residual": {
+          "ANSWER": 0.24703947928074602,
+          "INFER": 0.7529605207192539
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 355,
+          "output_tokens": 0
+        },
+        "latency_ms": 8764.80571005959,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-03",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5202913539490152,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5202913539490152,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5202913539490152,
+          "outcome": "decided",
+          "latency_ms": 8011.85
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8011.85,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9792988289770239,
+          "gate_path": 0.9703408606991427,
+          "gate_covered": 0.8460944998444253
+        },
+        "residual": {
+          "ANSWER": 0.5202913539490152,
+          "INFER": 0.47970864605098484
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 358,
+          "output_tokens": 0
+        },
+        "latency_ms": 8011.842793086544,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-04",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.6306884386513546,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.6306884386513546,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.6306884386513546,
+          "outcome": "decided",
+          "latency_ms": 9163.282
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 9163.282,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9713711340571566,
+          "gate_path": 0.8712668813068849,
+          "gate_covered": 0.6459030435016168
+        },
+        "residual": {
+          "ANSWER": 0.6306884386513546,
+          "INFER": 0.3693115613486455
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 358,
+          "output_tokens": 0
+        },
+        "latency_ms": 9163.27422996983,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "qry-05",
+      "goal": "What does Corvan reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5963915390668507,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5963915390668507,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": 0.5963915390668507,
+          "outcome": "decided",
+          "latency_ms": 7058.945
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7058.945,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "residual",
+        "probs": {
+          "gate_in_world": 0.9912099275876948,
+          "gate_path": 0.9788271953941657,
+          "gate_covered": 0.8931245894049356
+        },
+        "residual": {
+          "ANSWER": 0.5963915390668507,
+          "INFER": 0.40360846093314934
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 355,
+          "output_tokens": 0
+        },
+        "latency_ms": 7058.936766930856,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7640917412708552,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7640917412708552,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": 0.7640917412708552,
+          "outcome": "decided",
+          "latency_ms": 7477.799
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7477.799,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_covered",
+        "probs": {
+          "gate_in_world": 0.6162089038992834,
+          "gate_path": 0.5307202125949242,
+          "gate_covered": 0.2359082587291448
+        },
+        "residual": {
+          "ANSWER": 0.36037794952408286,
+          "INFER": 0.6396220504759172
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 7477.791690034792,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8751795713243773,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8751795713243773,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.8751795713243773,
+          "outcome": "decided",
+          "latency_ms": 7159.979
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7159.979,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.6607731071391753,
+          "gate_path": 0.12482042867562265,
+          "gate_covered": 0.17164303573855794
+        },
+        "residual": {
+          "ANSWER": 0.2633520898581578,
+          "INFER": 0.7366479101418423
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 7159.9691569572315,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.5408398783388187,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.5408398783388187,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.5408398783388187,
+          "outcome": "decided",
+          "latency_ms": 7011.124
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7011.124,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.45916012166118125,
+          "gate_path": 0.4239683277247094,
+          "gate_covered": 0.22386792639032346
+        },
+        "residual": {
+          "ANSWER": 0.56042112325445,
+          "INFER": 0.43957887674555
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 7011.113604996353,
+        "residual_choice": "ANSWER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9063734006950741,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9063734006950741,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.9063734006950741,
+          "outcome": "decided",
+          "latency_ms": 7879.839
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7879.839,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.6190984631947638,
+          "gate_path": 0.09362659930492591,
+          "gate_covered": 0.23216686935381317
+        },
+        "residual": {
+          "ANSWER": 0.4374881174441833,
+          "INFER": 0.5625118825558166
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 7879.829665995203,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.7185084178409809,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.7185084178409809,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": 0.7185084178409809,
+          "outcome": "decided",
+          "latency_ms": 6935.45
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6935.45,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_path",
+        "probs": {
+          "gate_in_world": 0.7211889223823621,
+          "gate_path": 0.28149158215901915,
+          "gate_covered": 0.10746335219245226
+        },
+        "residual": {
+          "ANSWER": 0.3750022436741901,
+          "INFER": 0.6249977563258099
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 6935.439435066655,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": false,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9496310772164462,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9496310772164462,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9496310772164462,
+          "outcome": "decided",
+          "latency_ms": 7245.539
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7245.539,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.05036892278355375,
+          "gate_path": 0.1389857226781876,
+          "gate_covered": 0.025850966898932282
+        },
+        "residual": {
+          "ANSWER": 0.31999664538878453,
+          "INFER": 0.6800033546112154
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 0
+        },
+        "latency_ms": 7245.529692969285,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-00",
+      "goal": "Who does Quorvane operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9292117114311296,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9292117114311296,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9292117114311296,
+          "outcome": "decided",
+          "latency_ms": 8568.791
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8568.791,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.07078828856887037,
+          "gate_path": 0.48979507947493744,
+          "gate_covered": 0.013994396995066362
+        },
+        "residual": {
+          "ANSWER": 0.3022512944747308,
+          "INFER": 0.6977487055252692
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 358,
+          "output_tokens": 0
+        },
+        "latency_ms": 8568.77789797727,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-01",
+      "goal": "Who does Quorvane control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8843558181988466,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8843558181988466,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.8843558181988466,
+          "outcome": "decided",
+          "latency_ms": 8037.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8037.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.11564418180115342,
+          "gate_path": 0.5131640100709648,
+          "gate_covered": 0.017117714121266708
+        },
+        "residual": {
+          "ANSWER": 0.2525630466834223,
+          "INFER": 0.7474369533165777
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 358,
+          "output_tokens": 0
+        },
+        "latency_ms": 8036.99420101475,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-02",
+      "goal": "Where does Threnn route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8380594884805003,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8380594884805003,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.8380594884805003,
+          "outcome": "decided",
+          "latency_ms": 8685.548
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 8685.548,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.16194051151949976,
+          "gate_path": 0.19229116331472476,
+          "gate_covered": 0.046080745000827136
+        },
+        "residual": {
+          "ANSWER": 0.4694289720110471,
+          "INFER": 0.530571027988953
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 353,
+          "output_tokens": 0
+        },
+        "latency_ms": 8685.541454004124,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-03",
+      "goal": "What does Threnn produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.8885330976633667,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.8885330976633667,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.8885330976633667,
+          "outcome": "decided",
+          "latency_ms": 6923.041
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 6923.041,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.11146690233663321,
+          "gate_path": 0.22243386148003322,
+          "gate_covered": 0.01651536032524517
+        },
+        "residual": {
+          "ANSWER": 0.3085512439184284,
+          "INFER": 0.6914487560815715
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 352,
+          "output_tokens": 0
+        },
+        "latency_ms": 6923.031117999926,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-04",
+      "goal": "Who does Malzik operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9513890848925901,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9513890848925901,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9513890848925901,
+          "outcome": "decided",
+          "latency_ms": 9990.798
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 9990.798,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.04861091510740984,
+          "gate_path": 0.3807165827687528,
+          "gate_covered": 0.009635119310592122
+        },
+        "residual": {
+          "ANSWER": 0.2386776054404353,
+          "INFER": 0.7613223945595647
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 352,
+          "output_tokens": 0
+        },
+        "latency_ms": 9990.789361065254,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "d1_asis",
+      "scenario_id": "tea-05",
+      "goal": "Who does Malzik control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": 0.9256304822459738,
+        "source": "d1_asis_deciding_confidence"
+      },
+      "confidence": 0.9256304822459738,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": 0.9256304822459738,
+          "outcome": "decided",
+          "latency_ms": 7098.744
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 7098.744,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "stage": "gate_in_world",
+        "probs": {
+          "gate_in_world": 0.0743695177540262,
+          "gate_path": 0.40665625863844534,
+          "gate_covered": 0.01500570156516451
+        },
+        "residual": {
+          "ANSWER": 0.20780392285603166,
+          "INFER": 0.7921960771439683
+        },
+        "form": 0,
+        "usage": {
+          "input_tokens": 352,
+          "output_tokens": 0
+        },
+        "latency_ms": 7098.735446110368,
+        "residual_choice": "INFER"
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.014
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.014,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.009
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.009,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.009
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.009,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.005
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.005,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.024
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.024,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.019
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.019,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.02
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.02,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.018
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.018,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.017
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.017,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.016
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.016,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-00",
+      "goal": "Who does Corvan operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.005
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.005,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-01",
+      "goal": "Where does Harpa route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-02",
+      "goal": "Who does Cuvex control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-03",
+      "goal": "What does Quelos reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.014
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.014,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-04",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.012
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.012,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-05",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.014
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.014,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.028
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.028,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.01
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.01,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-00",
+      "goal": "Who does Velrix operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.004
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.004,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-01",
+      "goal": "Who does Velrix control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-02",
+      "goal": "Where does Ombaru route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-03",
+      "goal": "What does Ombaru produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-04",
+      "goal": "Who does Skelth operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-05",
+      "goal": "Who does Skelth control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-00",
+      "goal": "Who does Neral operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-01",
+      "goal": "Who does Kimo control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.008
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.008,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-02",
+      "goal": "Where does Rinpo route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-03",
+      "goal": "What does Blun produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-04",
+      "goal": "Who does Dravy operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.004
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.004,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "ans-05",
+      "goal": "What does Dovel produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ANSWER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ANSWER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ANSWER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-00",
+      "goal": "What does Neral reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.022
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.022,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-01",
+      "goal": "What does Sula reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.018
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.018,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-02",
+      "goal": "What does Dravy reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.017
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.017,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-03",
+      "goal": "What does Ombit reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.033
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.033,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-04",
+      "goal": "What does Tav reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.016
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.016,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "inf-05",
+      "goal": "What does Rinpo reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "INFER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "INFER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "INFER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.016
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.016,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-00",
+      "goal": "Who does Mavok operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.005
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.005,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-01",
+      "goal": "Where does Qarbe route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-02",
+      "goal": "Who does Sorni control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-03",
+      "goal": "What does Vantro reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.015
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.015,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-04",
+      "goal": "What does Bexil reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.013
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.013,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "qry-05",
+      "goal": "What does Corvan reach?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "QUERY",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "QUERY",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "QUERY",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.013
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.013,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-00",
+      "goal": "What does heat produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-01",
+      "goal": "Who does light control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-02",
+      "goal": "What does pressure produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-03",
+      "goal": "Who does torque control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.006
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.006,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-04",
+      "goal": "What does steam produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.007
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.007,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "stp-05",
+      "goal": "Who does glow control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "STOP",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "STOP",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "STOP",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.005
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.005,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-00",
+      "goal": "Who does Quorvane operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-01",
+      "goal": "Who does Quorvane control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.004
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.004,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-02",
+      "goal": "Where does Threnn route?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-03",
+      "goal": "What does Threnn produce?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-04",
+      "goal": "Who does Malzik operate?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    },
+    {
+      "schema_version": "nav-head-exam-1.0",
+      "backend": "heuristic_floor",
+      "scenario_id": "tea-05",
+      "goal": "Who does Malzik control?",
+      "options": [
+        "ANSWER",
+        "INFER",
+        "QUERY",
+        "STOP",
+        "ASK_TEACHER"
+      ],
+      "choice": "ASK_TEACHER",
+      "outcome": "decided",
+      "goal_achieved": true,
+      "gold": "ASK_TEACHER",
+      "counterfactual": {
+        "slot": null,
+        "score": null,
+        "source": "heuristic_floor_deciding_confidence"
+      },
+      "confidence": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "form": 0,
+          "choice": "ASK_TEACHER",
+          "confidence": null,
+          "outcome": "decided",
+          "latency_ms": 0.003
+        }
+      ],
+      "redo_count": 0,
+      "ambiguous": false,
+      "enum_violation": false,
+      "latency_ms": 0.003,
+      "compliance": [
+        "amended protocol: A2 bounded redos, final attempt scored; gold never an input"
+      ],
+      "aux": {
+        "form_invariant": true,
+        "confidence_declared": null
+      },
+      "record_complete": true
+    }
+  ]
+}
