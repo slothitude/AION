@@ -20,6 +20,7 @@ import os
 import sys
 import tempfile
 
+import pytest
 import torch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # repo root
@@ -75,6 +76,7 @@ def test_standin() -> None:
     print("[loader] stand-in public path PASS")
 
 
+@pytest.mark.skipif(not os.path.isdir(REAL_DIR), reason="real checkpoint only exists on Lappy (/mnt/seagate)")
 def test_real() -> None:
     """Real Qwen3.5-4B-Base through the public path (Lappy, CPU BF16)."""
     assert os.path.isdir(REAL_DIR), f"real checkpoint not found: {REAL_DIR}"
