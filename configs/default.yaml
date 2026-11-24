@@ -1,0 +1,52 @@
+# Default experiment configuration
+
+# Model configurations (matched parameter counts)
+models:
+  standard:
+    hidden_dims: [256, 128, 64]
+    activation: "relu"
+    dropout: 0.1
+  
+  multiplicative:
+    hidden_dims: [256, 128, 64]
+    interaction_rank: 8
+    activation: "relu"
+    dropout: 0.1
+  
+  geometric:
+    hidden_dims: [256, 128, 64]
+    activation: "relu"
+    dropout: 0.1
+
+# Training configuration
+training:
+  batch_size: 128
+  learning_rate: 1e-3
+  weight_decay: 1e-4
+  epochs: 50
+  early_stopping_patience: 10
+  scheduler: "cosine"
+  warmup_epochs: 5
+
+# Experiment configuration
+experiment:
+  seed: 42
+  device: "cpu"  # or "cuda"
+  num_runs: 3
+  tasks:
+    - "mnist"
+    - "fashion_mnist"
+    - "cifar10_flattened"
+  
+# Logging
+logging:
+  log_dir: "logs"
+  save_checkpoints: true
+  plot_results: true
+
+# Pilot experiment configuration (Phase 5)
+pilot:
+  # Steps between consolidation sweeps (10/25/50/100).
+  # Use ONE value across all compared configurations so the total
+  # consolidation budget is matched.
+  consolidation_interval: 50

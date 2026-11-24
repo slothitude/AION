@@ -1,0 +1,77 @@
+{
+  "checkpoint": "/home/aaron/pith-pilot/runs/pith-e2b-1p5-dualsvid",
+  "fixture": 0,
+  "artifact_sha256_before": "8a4c8f54b5bc8201442a79cefe9955f60eb7834e7ec2a0b1aafced6e1ee57aa1",
+  "meta": {
+    "ok": true,
+    "hidden": 1536,
+    "layers": 35,
+    "vocab": 262144,
+    "embed_scale": 39.191837,
+    "softcap": 30,
+    "ple_dim": 256,
+    "factor_tensors": 315
+  },
+  "factor_fingerprint_before": "62168fd41f06907d",
+  "c2_pairs": [
+    "0->1 (sliding_attn->sliding_attn)",
+    "3->4 (sliding_attn->global_attn)",
+    "14->15 (global_attn->sliding_attn)",
+    "33->34 (sliding_attn->global_attn)"
+  ],
+  "c2_hidden_dim": 1536,
+  "c3_stage_equals_native": true,
+  "c3_gamma0_bit_exact": true,
+  "c4": {
+    "u_fast_before": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "u_fast_after": [
+      0.047412898391485214,
+      0.022552749142050743,
+      0.01736912876367569,
+      0.016054514795541763
+    ],
+    "r_max_delta": 0.007031674962490797,
+    "logits_max_delta": 0.0950469970703125,
+    "logits_cosine_vs_stage": 0.9999983310699463
+  },
+  "factor_fingerprint_after": "62168fd41f06907d",
+  "artifact_sha256_after": "8a4c8f54b5bc8201442a79cefe9955f60eb7834e7ec2a0b1aafced6e1ee57aa1",
+  "c1_frozen": true,
+  "behavior": {
+    "native_top5": [
+      [
+        168663,
+        0.0004842038033530116
+      ],
+      [
+        152787,
+        0.0004842038033530116
+      ],
+      [
+        94370,
+        0.0004842038033530116
+      ],
+      [
+        66783,
+        0.0004842038033530116
+      ],
+      [
+        175702,
+        0.0004842038033530116
+      ]
+    ],
+    "entropy_nats": 8.287178039550781,
+    "note": "Pith-E2B v1 fails its behavior gate (r3b: logits cosine median 0.14 vs dense BF16, argmax 0/53; coordinator: hidden cosine 0.118). Degraded brain is EXPECTED; these numbers are the post-QAT baseline. NO learning-quality claims."
+  },
+  "verdict": {
+    "1_frozen": true,
+    "2_hooks": true,
+    "3_identity": true,
+    "4_nnfs": true
+  }
+}

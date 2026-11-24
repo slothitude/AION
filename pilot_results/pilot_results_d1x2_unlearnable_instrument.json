@@ -1,0 +1,1998 @@
+{
+  "changing_rotation": {
+    "plastic_d1_replay": {
+      "seed_42": {
+        "final_mse": 1.003717565536499,
+        "online_mse_final": 1.0047820127010345,
+        "connection_mse_final": 1.0047820127010345,
+        "state_mse_final": 0.4685094824433327,
+        "readout_mse_final": 1.1146347403526307,
+        "phase_a_mse": 1.001364895105362,
+        "phase_b_mse": 1.001662266254425,
+        "phase_c_mse": 1.003717565536499,
+        "phase_a_state_mse": 0.4697790765762329,
+        "phase_b_state_mse": 0.6277970862388611,
+        "phase_c_state_mse": 0.47071111798286436,
+        "phase_a_readout_mse": 1.1122645187377929,
+        "phase_b_readout_mse": 1.1152513003349305,
+        "phase_c_readout_mse": 1.114526505470276,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 1.0023494636596877,
+        "discovery_score": 0.0,
+        "relative_to_oracle": 0.0,
+        "relative_to_random": 0.0,
+        "oracle_mse": 0.0,
+        "random_mse": 0.0,
+        "initial_connections": 36,
+        "final_connections": 36,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.02764557628087521,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.17124700546264648,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 178.11606574058533,
+        "initial_topology": [
+          [
+            8,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            14,
+            11
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            6,
+            15
+          ]
+        ],
+        "final_topology": [
+          [
+            8,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            14,
+            11
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            6,
+            15
+          ]
+        ]
+      },
+      "seed_43": {
+        "final_mse": 1.0042704796791078,
+        "online_mse_final": 1.0026236802339554,
+        "connection_mse_final": 1.0026236802339554,
+        "state_mse_final": 0.4671679466962814,
+        "readout_mse_final": 1.117912768125534,
+        "phase_a_mse": 0.9982398676872254,
+        "phase_b_mse": 1.0004781901836395,
+        "phase_c_mse": 1.0042704796791078,
+        "phase_a_state_mse": 0.46738680005073546,
+        "phase_b_state_mse": 0.6254174125194549,
+        "phase_c_state_mse": 0.4704477804899216,
+        "phase_a_readout_mse": 1.1131619572639466,
+        "phase_b_readout_mse": 1.1114404559135438,
+        "phase_c_readout_mse": 1.1159421753883363,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 1.0060412453830905,
+        "discovery_score": 0.0,
+        "relative_to_oracle": 0.0,
+        "relative_to_random": 0.0,
+        "oracle_mse": 0.0,
+        "random_mse": 0.0,
+        "initial_connections": 37,
+        "final_connections": 37,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.026956302309477126,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.1744060516357422,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 214.8283338546753,
+        "initial_topology": [
+          [
+            0,
+            4
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            15,
+            0
+          ]
+        ],
+        "final_topology": [
+          [
+            0,
+            4
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            15,
+            0
+          ]
+        ]
+      },
+      "seed_44": {
+        "final_mse": 1.004584847688675,
+        "online_mse_final": 1.0044311970472335,
+        "connection_mse_final": 1.0044311970472335,
+        "state_mse_final": 0.4689010101556778,
+        "readout_mse_final": 1.1163714563846587,
+        "phase_a_mse": 1.0011638975143433,
+        "phase_b_mse": 0.9986307752132416,
+        "phase_c_mse": 1.004584847688675,
+        "phase_a_state_mse": 0.46893371164798736,
+        "phase_b_state_mse": 0.6257796287536621,
+        "phase_c_state_mse": 0.47046894013881685,
+        "phase_a_readout_mse": 1.112357017993927,
+        "phase_b_readout_mse": 1.109676389694214,
+        "phase_c_readout_mse": 1.1177919673919678,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 1.0034169731677551,
+        "discovery_score": 0.0,
+        "relative_to_oracle": 0.0,
+        "relative_to_random": 0.0,
+        "oracle_mse": 0.0,
+        "random_mse": 0.0,
+        "initial_connections": 34,
+        "final_connections": 34,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.029282010348090835,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.20934820175170898,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 189.4636800289154,
+        "initial_topology": [
+          [
+            4,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            6,
+            4
+          ]
+        ],
+        "final_topology": [
+          [
+            4,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            6,
+            4
+          ]
+        ]
+      }
+    }
+  },
+  "compositional_discovery": {
+    "plastic_d1_replay": {
+      "seed_42": {
+        "final_mse": 1.0029203973611196,
+        "online_mse_final": 1.002319302558899,
+        "connection_mse_final": 1.002319302558899,
+        "state_mse_final": 1.297506787776947,
+        "readout_mse_final": 1.114576939344406,
+        "phase_a_mse": 0.0,
+        "phase_b_mse": 0.0,
+        "phase_c_mse": 0.0,
+        "phase_a_state_mse": 0.0,
+        "phase_b_state_mse": 0.0,
+        "phase_c_state_mse": 0.0,
+        "phase_a_readout_mse": 0.0,
+        "phase_b_readout_mse": 0.0,
+        "phase_c_readout_mse": 0.0,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 0.0,
+        "discovery_score": 1.0029203973611196,
+        "relative_to_oracle": 0.08904605242243052,
+        "relative_to_random": 0.0001112781477057695,
+        "oracle_mse": 0.0025028756845535505,
+        "random_mse": 2.002829881774055,
+        "initial_connections": 36,
+        "final_connections": 36,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.02771350178217832,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.1890106201171875,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 208.17536425590515,
+        "initial_topology": [
+          [
+            8,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            14,
+            11
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            6,
+            15
+          ]
+        ],
+        "final_topology": [
+          [
+            8,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            14,
+            11
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            6,
+            15
+          ]
+        ]
+      },
+      "seed_43": {
+        "final_mse": 1.0030887069569694,
+        "online_mse_final": 1.0026068216562272,
+        "connection_mse_final": 1.0026068216562272,
+        "state_mse_final": 1.2843934297561646,
+        "readout_mse_final": 1.11073312997818,
+        "phase_a_mse": 0.0,
+        "phase_b_mse": 0.0,
+        "phase_c_mse": 0.0,
+        "phase_a_state_mse": 0.0,
+        "phase_b_state_mse": 0.0,
+        "phase_c_state_mse": 0.0,
+        "phase_a_readout_mse": 0.0,
+        "phase_b_readout_mse": 0.0,
+        "phase_c_readout_mse": 0.0,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 0.0,
+        "discovery_score": 1.0030887069569694,
+        "relative_to_oracle": 0.08905906710997023,
+        "relative_to_random": 0.00011128092686709838,
+        "oracle_mse": 0.0025029298956247255,
+        "random_mse": 2.00311596804195,
+        "initial_connections": 37,
+        "final_connections": 37,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.026956755572818184,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.17777061462402344,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 212.16027164459229,
+        "initial_topology": [
+          [
+            0,
+            4
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            15,
+            0
+          ]
+        ],
+        "final_topology": [
+          [
+            0,
+            4
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            13,
+            5
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            15,
+            0
+          ]
+        ]
+      },
+      "seed_44": {
+        "final_mse": 1.0035037104023827,
+        "online_mse_final": 1.0039195281267166,
+        "connection_mse_final": 1.0039195281267166,
+        "state_mse_final": 1.3167759120464324,
+        "readout_mse_final": 1.1150224494934082,
+        "phase_a_mse": 0.0,
+        "phase_b_mse": 0.0,
+        "phase_c_mse": 0.0,
+        "phase_a_state_mse": 0.0,
+        "phase_b_state_mse": 0.0,
+        "phase_c_state_mse": 0.0,
+        "phase_a_readout_mse": 0.0,
+        "phase_b_readout_mse": 0.0,
+        "phase_c_readout_mse": 0.0,
+        "adaptation_steps_b": null,
+        "adaptation_steps_c": null,
+        "retention_ratio": 0.0,
+        "discovery_score": 1.0035037104023827,
+        "relative_to_oracle": 0.08914359430796015,
+        "relative_to_random": 0.0001112844002238756,
+        "oracle_mse": 0.002501591126822556,
+        "random_mse": 2.003882162147098,
+        "initial_connections": 34,
+        "final_connections": 34,
+        "connections_created": 0,
+        "connections_pruned": 0,
+        "structural_efficiency": 0.02929693454689921,
+        "dream_hypotheses_generated": 0,
+        "dream_hypotheses_accepted": 0,
+        "dream_precision": null,
+        "dream_time": 0.17031335830688477,
+        "consolidation_calls": 17,
+        "consolidated_total": 0,
+        "gated_consolidated_total": 0,
+        "gate_mean_avg": 0.0,
+        "gate_open_fraction_avg": 0.0,
+        "theta_slow_norm_initial": 0.0,
+        "theta_slow_norm_final": 0.0,
+        "consolidation_output_max_diff": 0.0,
+        "total_time": 182.45915365219116,
+        "initial_topology": [
+          [
+            4,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            6,
+            4
+          ]
+        ],
+        "final_topology": [
+          [
+            4,
+            1
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            6,
+            4
+          ]
+        ]
+      }
+    }
+  }
+}

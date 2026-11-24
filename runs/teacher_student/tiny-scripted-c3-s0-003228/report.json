@@ -1,0 +1,2226 @@
+{
+ "run": {
+  "tag": "tiny-scripted-c3-s0-003228",
+  "date": "2026-11-25 00:33:38",
+  "foundation": "tiny-standin(Llama-4L-64D, CPU, FROZEN)",
+  "teacher": "ScriptedTeacher (offline stub)",
+  "teacher_discovery": {
+   "reachable": false,
+   "alias": null,
+   "note": "scripted by request"
+  },
+  "seed": 0,
+  "chains": 3,
+  "relationships": 12,
+  "questions": 39,
+  "gate_steps_per_fact": 1,
+  "answer_tokens": 8,
+  "mode_note": "batteries run in MEASUREMENT mode (verdicts logged, plastic writes suppressed); the run's only plastic correction is the RETAIN-phase reroute"
+ },
+ "timings_s": {
+  "world_gen_s": 0.0,
+  "foundation_load_s": 0.0,
+  "teach_s": 0.7,
+  "battery_test_s": 5.9,
+  "test_s": 5.9,
+  "battery_paraphrase-pre-restart_s": 1.6,
+  "restart_s": 0.4,
+  "battery_paraphrase-post-restart_s": 1.7,
+  "correction_s": 1.7,
+  "retain_s": 5.3
+ },
+ "world_verify_failures": [],
+ "teach": {
+  "facts_learned": 12,
+  "lessons": 3,
+  "gate_steps_per_fact": 1,
+  "u_fast_norms_before": [
+   0.0,
+   0.0
+  ],
+  "u_fast_norms_after": [
+   0.12391,
+   0.124062
+  ],
+  "teacher_teach_log": [],
+  "n_facts_suppressed_in_checks": 0
+ },
+ "theta_slow_norms": [
+  0.0,
+  0.0
+ ],
+ "theta_slow_empty": true,
+ "test": {
+  "batteries": {
+   "direct": {
+    "n": 12,
+    "mean_chance": 0.3333,
+    "accuracy": {
+     "FULL": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "PLASTIC": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "CONSOLIDATED": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "RETRIEVED": {
+      "exact": 0.75,
+      "lenient": 0.75,
+      "contains": 0.75
+     }
+    },
+    "provenance_histogram": {
+     "RETRIEVED": 9,
+     "NONE": 3
+    }
+   },
+   "combination": {
+    "n": 9,
+    "mean_chance": 0.4444,
+    "accuracy": {
+     "FULL": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "PLASTIC": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "CONSOLIDATED": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "RETRIEVED": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     }
+    },
+    "provenance_histogram": {
+     "NONE": 9
+    }
+   },
+   "paraphrase": {
+    "n": 12,
+    "mean_chance": 0.3333,
+    "accuracy": {
+     "FULL": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "PLASTIC": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "CONSOLIDATED": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "RETRIEVED": {
+      "exact": 0.6667,
+      "lenient": 0.6667,
+      "contains": 0.6667
+     }
+    },
+    "provenance_histogram": {
+     "NONE": 4,
+     "RETRIEVED": 8
+    }
+   },
+   "intervention": {
+    "n": 6,
+    "mean_chance": 0.3333,
+    "accuracy": {
+     "FULL": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "PLASTIC": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "CONSOLIDATED": {
+      "exact": 0.0,
+      "lenient": 0.0,
+      "contains": 0.0
+     },
+     "RETRIEVED": {
+      "exact": 0.1667,
+      "lenient": 0.1667,
+      "contains": 0.1667
+     }
+    },
+    "provenance_histogram": {
+     "NONE": 5,
+     "RETRIEVED": 1
+    }
+   },
+   "ALL": {
+    "n": 39,
+    "provenance_histogram": {
+     "RETRIEVED": 18,
+     "NONE": 21
+    }
+   }
+  },
+  "rows": [
+   {
+    "qid": "direct-000",
+    "battery": "direct",
+    "question": "Who does Neral operate?",
+    "gold": "Tav",
+    "answers": {
+     "FULL": "jkwf,f,f",
+     "PLASTIC": "jkwf,f,f",
+     "CONSOLIDATED": "jkwf,f,f",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-001",
+    "battery": "direct",
+    "question": "Where does Tav route?",
+    "gold": "Kimo",
+    "answers": {
+     "FULL": "jwo,f,f,",
+     "PLASTIC": "jwo,f,f,",
+     "CONSOLIDATED": "jwo,f,f,",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "direct-002",
+    "battery": "direct",
+    "question": "Who does Kimo control?",
+    "gold": "Zor",
+    "answers": {
+     "FULL": "j'p",
+     "PLASTIC": "j'p",
+     "CONSOLIDATED": "j'p",
+     "RETRIEVED": "Zor"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-003",
+    "battery": "direct",
+    "question": "What does Zor produce?",
+    "gold": "heat",
+    "answers": {
+     "FULL": "jwqf,qfp",
+     "PLASTIC": "jwqf,qfp",
+     "CONSOLIDATED": "jwqf,qfp",
+     "RETRIEVED": "heat"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-004",
+    "battery": "direct",
+    "question": "Who does Sula operate?",
+    "gold": "Rinpo",
+    "answers": {
+     "FULL": "j'pwf'pw",
+     "PLASTIC": "j'pwf'pw",
+     "CONSOLIDATED": "j'pwf'pw",
+     "RETRIEVED": "Rinpo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-005",
+    "battery": "direct",
+    "question": "Where does Rinpo route?",
+    "gold": "Drel",
+    "answers": {
+     "FULL": "jwjwjwow",
+     "PLASTIC": "jwjwjwow",
+     "CONSOLIDATED": "jwjwjwow",
+     "RETRIEVED": "Rinpo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "direct-006",
+    "battery": "direct",
+    "question": "Who does Drel control?",
+    "gold": "Blun",
+    "answers": {
+     "FULL": "j'pwf'pw",
+     "PLASTIC": "j'pwf'pw",
+     "CONSOLIDATED": "j'pwf'pw",
+     "RETRIEVED": "Blun"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-007",
+    "battery": "direct",
+    "question": "What does Blun produce?",
+    "gold": "light",
+    "answers": {
+     "FULL": "jwqf,f,q",
+     "PLASTIC": "jwqf,f,q",
+     "CONSOLIDATED": "jwqf,f,q",
+     "RETRIEVED": "light"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-008",
+    "battery": "direct",
+    "question": "Who does Dravy operate?",
+    "gold": "Skell",
+    "answers": {
+     "FULL": "jk'p",
+     "PLASTIC": "jk'p",
+     "CONSOLIDATED": "jk'p",
+     "RETRIEVED": "Skell"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-009",
+    "battery": "direct",
+    "question": "Where does Skell route?",
+    "gold": "Vash",
+    "answers": {
+     "FULL": "jwqwqwqw",
+     "PLASTIC": "jwqwqwqw",
+     "CONSOLIDATED": "jwqwqwqw",
+     "RETRIEVED": "Skell"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "direct-010",
+    "battery": "direct",
+    "question": "Who does Vash control?",
+    "gold": "Crat",
+    "answers": {
+     "FULL": "j'pwf,f,",
+     "PLASTIC": "j'pwf,f,",
+     "CONSOLIDATED": "j'pwf,f,",
+     "RETRIEVED": "Crat"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "direct-011",
+    "battery": "direct",
+    "question": "What does Crat produce?",
+    "gold": "pressure",
+    "answers": {
+     "FULL": "qf,qqqqq",
+     "PLASTIC": "qf,qqqqq",
+     "CONSOLIDATED": "qf,qqqqq",
+     "RETRIEVED": "pressure"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "combo-reach-000",
+    "battery": "combination",
+    "question": "What does Neral reach?",
+    "gold": "heat",
+    "answers": {
+     "FULL": "qwqwqwqw",
+     "PLASTIC": "qwqwqwqw",
+     "CONSOLIDATED": "qwqwqwqw",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-yes-000",
+    "battery": "combination",
+    "question": "Does Neral reach Zor?",
+    "gold": "yes",
+    "answers": {
+     "FULL": "jk''''''",
+     "PLASTIC": "jk''''''",
+     "CONSOLIDATED": "jk''''''",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-no-000",
+    "battery": "combination",
+    "question": "Does Neral reach Crat?",
+    "gold": "no",
+    "answers": {
+     "FULL": "jk'if'if",
+     "PLASTIC": "jk'if'if",
+     "CONSOLIDATED": "jk'if'if",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-reach-001",
+    "battery": "combination",
+    "question": "What does Sula reach?",
+    "gold": "light",
+    "answers": {
+     "FULL": "qf,qqqqq",
+     "PLASTIC": "qf,qqqqq",
+     "CONSOLIDATED": "qf,qqqqq",
+     "RETRIEVED": "Rinpo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-yes-001",
+    "battery": "combination",
+    "question": "Does Sula reach Blun?",
+    "gold": "yes",
+    "answers": {
+     "FULL": "-if,f,f,",
+     "PLASTIC": "-if,f,f,",
+     "CONSOLIDATED": "-if,f,f,",
+     "RETRIEVED": "Rinpo"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-no-001",
+    "battery": "combination",
+    "question": "Does Sula reach Zor?",
+    "gold": "no",
+    "answers": {
+     "FULL": "-if'p",
+     "PLASTIC": "-if'p",
+     "CONSOLIDATED": "-if'p",
+     "RETRIEVED": "heat"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-reach-002",
+    "battery": "combination",
+    "question": "What does Dravy reach?",
+    "gold": "pressure",
+    "answers": {
+     "FULL": "qf,qf,qq",
+     "PLASTIC": "qf,qf,qq",
+     "CONSOLIDATED": "qf,qf,qq",
+     "RETRIEVED": "Skell"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-yes-002",
+    "battery": "combination",
+    "question": "Does Dravy reach Crat?",
+    "gold": "yes",
+    "answers": {
+     "FULL": "jk'if'if",
+     "PLASTIC": "jk'if'if",
+     "CONSOLIDATED": "jk'if'if",
+     "RETRIEVED": "Skell"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "combo-no-002",
+    "battery": "combination",
+    "question": "Does Dravy reach Zor?",
+    "gold": "no",
+    "answers": {
+     "FULL": "jk''''''",
+     "PLASTIC": "jk''''''",
+     "CONSOLIDATED": "jk''''''",
+     "RETRIEVED": "heat"
+    },
+    "chance": 0.5,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "para-000",
+    "battery": "paraphrase",
+    "question": "Tav is operated by whom?",
+    "gold": "Neral",
+    "answers": {
+     "FULL": ",,,,,,r,",
+     "PLASTIC": ",,,,,,r,",
+     "CONSOLIDATED": ",,,,,,r,",
+     "RETRIEVED": "Tav"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "para-001",
+    "battery": "paraphrase",
+    "question": "Tav sends its flow through which relay?",
+    "gold": "Kimo",
+    "answers": {
+     "FULL": ",,,,f,f,",
+     "PLASTIC": ",,,,f,f,",
+     "CONSOLIDATED": ",,,,f,f,",
+     "RETRIEVED": "Kimo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-002",
+    "battery": "paraphrase",
+    "question": "Kimo governs which device?",
+    "gold": "Zor",
+    "answers": {
+     "FULL": "jk''''''",
+     "PLASTIC": "jk''''''",
+     "CONSOLIDATED": "jk''''''",
+     "RETRIEVED": "Zor"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-003",
+    "battery": "paraphrase",
+    "question": "Zor emits what?",
+    "gold": "heat",
+    "answers": {
+     "FULL": "xd,rf,rf",
+     "PLASTIC": "xd,rf,rf",
+     "CONSOLIDATED": "xd,rf,rf",
+     "RETRIEVED": "heat"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-004",
+    "battery": "paraphrase",
+    "question": "Rinpo is operated by whom?",
+    "gold": "Sula",
+    "answers": {
+     "FULL": "j'''''''",
+     "PLASTIC": "j'''''''",
+     "CONSOLIDATED": "j'''''''",
+     "RETRIEVED": "Rinpo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "para-005",
+    "battery": "paraphrase",
+    "question": "Rinpo sends its flow through which relay?",
+    "gold": "Drel",
+    "answers": {
+     "FULL": "j',m',m'",
+     "PLASTIC": "j',m',m'",
+     "CONSOLIDATED": "j',m',m'",
+     "RETRIEVED": "Drel"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-006",
+    "battery": "paraphrase",
+    "question": "Which device is controlled by Drel?",
+    "gold": "Blun",
+    "answers": {
+     "FULL": "jwf,f,f,",
+     "PLASTIC": "jwf,f,f,",
+     "CONSOLIDATED": "jwf,f,f,",
+     "RETRIEVED": "Blun"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-007",
+    "battery": "paraphrase",
+    "question": "light is produced by which device?",
+    "gold": "Blun",
+    "answers": {
+     "FULL": "j'''''''",
+     "PLASTIC": "j'''''''",
+     "CONSOLIDATED": "j'''''''",
+     "RETRIEVED": "light"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "para-008",
+    "battery": "paraphrase",
+    "question": "Skell is operated by whom?",
+    "gold": "Dravy",
+    "answers": {
+     "FULL": "x'p,fp",
+     "PLASTIC": "x'p,fp",
+     "CONSOLIDATED": "x'p,fp",
+     "RETRIEVED": "Skell"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "para-009",
+    "battery": "paraphrase",
+    "question": "Which relay does Skell route to?",
+    "gold": "Vash",
+    "answers": {
+     "FULL": "jwf,f,f,",
+     "PLASTIC": "jwf,f,f,",
+     "CONSOLIDATED": "jwf,f,f,",
+     "RETRIEVED": "Vash"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-010",
+    "battery": "paraphrase",
+    "question": "Which device is controlled by Vash?",
+    "gold": "Crat",
+    "answers": {
+     "FULL": "jwf,f,f,",
+     "PLASTIC": "jwf,f,f,",
+     "CONSOLIDATED": "jwf,f,f,",
+     "RETRIEVED": "Crat"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "para-011",
+    "battery": "paraphrase",
+    "question": "Crat emits what?",
+    "gold": "pressure",
+    "answers": {
+     "FULL": "jm,m,m,m",
+     "PLASTIC": "jm,m,m,m",
+     "CONSOLIDATED": "jm,m,m,m",
+     "RETRIEVED": "pressure"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   },
+   {
+    "qid": "int-reach-000",
+    "battery": "intervention",
+    "question": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "gold": "light",
+    "answers": {
+     "FULL": ",,,,,,,,",
+     "PLASTIC": ",,,,,,,,",
+     "CONSOLIDATED": ",,,,,,,,",
+     "RETRIEVED": "Kimo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "int-route-000",
+    "battery": "intervention",
+    "question": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "gold": "Drel",
+    "answers": {
+     "FULL": ",,,,,,,,",
+     "PLASTIC": ",,,,,,,,",
+     "CONSOLIDATED": ",,,,,,,,",
+     "RETRIEVED": "Kimo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "int-reach-001",
+    "battery": "intervention",
+    "question": "Rinpo is rerouted to relay Vash. What does Sula reach now?",
+    "gold": "pressure",
+    "answers": {
+     "FULL": "j',m',m'",
+     "PLASTIC": "j',m',m'",
+     "CONSOLIDATED": "j',m',m'",
+     "RETRIEVED": "Drel"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "int-route-001",
+    "battery": "intervention",
+    "question": "Rinpo is rerouted to relay Vash. Which relay does Sula route through now?",
+    "gold": "Vash",
+    "answers": {
+     "FULL": ",m',m',m",
+     "PLASTIC": ",m',m',m",
+     "CONSOLIDATED": ",m',m',m",
+     "RETRIEVED": "Drel"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "int-reach-002",
+    "battery": "intervention",
+    "question": "Skell is rerouted to relay Kimo. What does Dravy reach now?",
+    "gold": "heat",
+    "answers": {
+     "FULL": "'p,f'p,f",
+     "PLASTIC": "'p,f'p,f",
+     "CONSOLIDATED": "'p,f'p,f",
+     "RETRIEVED": "Kimo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": false
+    },
+    "provenance_exact": "NONE",
+    "provenance_lenient": "NONE"
+   },
+   {
+    "qid": "int-route-002",
+    "battery": "intervention",
+    "question": "Skell is rerouted to relay Kimo. Which relay does Dravy route through now?",
+    "gold": "Kimo",
+    "answers": {
+     "FULL": ",f,f,f,f",
+     "PLASTIC": ",f,f,f,f",
+     "CONSOLIDATED": ",f,f,f,f",
+     "RETRIEVED": "Kimo"
+    },
+    "chance": 0.3333,
+    "exact": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "lenient": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "contains": {
+     "FULL": false,
+     "PLASTIC": false,
+     "CONSOLIDATED": false,
+     "RETRIEVED": true
+    },
+    "provenance_exact": "RETRIEVED",
+    "provenance_lenient": "RETRIEVED"
+   }
+  ]
+ },
+ "retain": {
+  "restart": {
+   "state_restored_exact": true,
+   "restore_diffs": [],
+   "probes_regenerate_identically": false,
+   "probe_diffs": [
+    "Neral|operates|Tav",
+    "Tav|routes-to|Kimo",
+    "Kimo|controls|Zor",
+    "Zor|produces|heat",
+    "Sula|operates|Rinpo",
+    "Rinpo|routes-to|Drel",
+    "Drel|controls|Blun",
+    "Blun|produces|light"
+   ],
+   "loaded_from_disk_only": true,
+   "episodic_events_reloaded": 12,
+   "fact_index_reloaded": 12
+  },
+  "paraphrase_survival": {
+   "accuracy_exact_pre": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.6667
+   },
+   "accuracy_exact_post": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.6667
+   },
+   "answers_identical_fraction": {
+    "FULL": 1.0,
+    "PLASTIC": 1.0,
+    "CONSOLIDATED": 1.0,
+    "RETRIEVED": 1.0
+   },
+   "state_restored_exact": true,
+   "survival_ok": true
+  },
+  "correction": {
+   "correction_sentence": "Tav is rerouted to relay Drel.",
+   "new_key": "Tav|routes-to|Drel",
+   "old_key": "Tav|routes-to|Kimo",
+   "new_fact_plastic_strength": 0.028616,
+   "old_fact_plastic_strength_after": 0.028506,
+   "new_fact_learned": true,
+   "old_facts_present_after": "12/12",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.251,
+   "max_relative_strength_change_old_facts": 0.3506,
+   "probe_answers": [
+    {
+     "qid": "direct-000",
+     "mode": "FULL",
+     "affected": true,
+     "before": "jkwf,f,f",
+     "after": "jkwf,f,f",
+     "identical": true
+    },
+    {
+     "qid": "direct-000",
+     "mode": "PLASTIC",
+     "affected": true,
+     "before": "jkwf,f,f",
+     "after": "jkwf,f,f",
+     "identical": true
+    },
+    {
+     "qid": "direct-001",
+     "mode": "FULL",
+     "affected": true,
+     "before": "jwo,f,f,",
+     "after": "jwo,f,f,",
+     "identical": true
+    },
+    {
+     "qid": "direct-001",
+     "mode": "PLASTIC",
+     "affected": true,
+     "before": "jwo,f,f,",
+     "after": "jwo,f,f,",
+     "identical": true
+    },
+    {
+     "qid": "direct-002",
+     "mode": "FULL",
+     "affected": false,
+     "before": "j'p",
+     "after": "j'p",
+     "identical": true
+    },
+    {
+     "qid": "direct-002",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "j'p",
+     "after": "j'p",
+     "identical": true
+    },
+    {
+     "qid": "direct-003",
+     "mode": "FULL",
+     "affected": false,
+     "before": "jwqf,qfp",
+     "after": "jwqf,qfp",
+     "identical": true
+    },
+    {
+     "qid": "direct-003",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "jwqf,qfp",
+     "after": "jwqf,qfp",
+     "identical": true
+    },
+    {
+     "qid": "direct-004",
+     "mode": "FULL",
+     "affected": false,
+     "before": "j'pwf'pw",
+     "after": "j'pwf'pw",
+     "identical": true
+    },
+    {
+     "qid": "direct-004",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "j'pwf'pw",
+     "after": "j'pwf'pw",
+     "identical": true
+    },
+    {
+     "qid": "direct-005",
+     "mode": "FULL",
+     "affected": false,
+     "before": "jwjwjwow",
+     "after": "jwjwjwow",
+     "identical": true
+    },
+    {
+     "qid": "direct-005",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "jwjwjwow",
+     "after": "jwjwjwow",
+     "identical": true
+    },
+    {
+     "qid": "direct-006",
+     "mode": "FULL",
+     "affected": false,
+     "before": "j'pwf'pw",
+     "after": "j'pwf'pw",
+     "identical": true
+    },
+    {
+     "qid": "direct-006",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "j'pwf'pw",
+     "after": "j'pwf'pw",
+     "identical": true
+    },
+    {
+     "qid": "direct-007",
+     "mode": "FULL",
+     "affected": false,
+     "before": "jwqf,f,q",
+     "after": "jwqf,f,q",
+     "identical": true
+    },
+    {
+     "qid": "direct-007",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "jwqf,f,q",
+     "after": "jwqf,f,q",
+     "identical": true
+    },
+    {
+     "qid": "direct-008",
+     "mode": "FULL",
+     "affected": false,
+     "before": "jk'p",
+     "after": "jk'p",
+     "identical": true
+    },
+    {
+     "qid": "direct-008",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "jk'p",
+     "after": "jk'p",
+     "identical": true
+    },
+    {
+     "qid": "direct-009",
+     "mode": "FULL",
+     "affected": false,
+     "before": "jwqwqwqw",
+     "after": "jwqwqwqw",
+     "identical": true
+    },
+    {
+     "qid": "direct-009",
+     "mode": "PLASTIC",
+     "affected": false,
+     "before": "jwqwqwqw",
+     "after": "jwqwqwqw",
+     "identical": true
+    }
+   ],
+   "unaffected_probe_identical": "16/16",
+   "unaffected_probe_all_identical": true,
+   "route_answer_before": "jwo,f,f,",
+   "route_answer_after": "jwo,f,f,",
+   "ledger_supersession": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Tav",
+      "relation": "routes-to",
+      "object": "Kimo",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Tav routes to relay Kimo."
+     },
+     "after": {
+      "subject": "Tav",
+      "relation": "routes-to",
+      "object": "Drel",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Tav is rerouted to relay Drel."
+     },
+     "transcript_id": "retain-correction",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Tav routes to Drel.",
+       "n_tokens": 19,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 3.554722309112549,
+         "gate_norms": [
+          -1.8535902199801058e-05,
+          -1.8625803932081908e-05
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "adaptation_ok": true
+  },
+  "pre_paraphrase": {
+   "n": 12,
+   "mean_chance": 0.3333,
+   "accuracy": {
+    "FULL": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "PLASTIC": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "CONSOLIDATED": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "RETRIEVED": {
+     "exact": 0.6667,
+     "lenient": 0.6667,
+     "contains": 0.6667
+    }
+   },
+   "provenance_histogram": {
+    "NONE": 4,
+    "RETRIEVED": 8
+   }
+  },
+  "post_paraphrase": {
+   "n": 12,
+   "mean_chance": 0.3333,
+   "accuracy": {
+    "FULL": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "PLASTIC": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "CONSOLIDATED": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0
+    },
+    "RETRIEVED": {
+     "exact": 0.6667,
+     "lenient": 0.6667,
+     "contains": 0.6667
+    }
+   },
+   "provenance_histogram": {
+    "NONE": 4,
+    "RETRIEVED": 8
+   }
+  }
+ },
+ "transcript_removal": {
+  "episodic_events_before": 13,
+  "purge": {
+   "removed": 13,
+   "kept": 1,
+   "orphaned_update_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "episodic_events_after": 1,
+  "probe_rows": [
+   {
+    "qid": "direct-000",
+    "mode": "FULL",
+    "before": "jkwf,f,f",
+    "after": "jkwf,f,f",
+    "identical": true
+   },
+   {
+    "qid": "direct-000",
+    "mode": "PLASTIC",
+    "before": "jkwf,f,f",
+    "after": "jkwf,f,f",
+    "identical": true
+   },
+   {
+    "qid": "direct-001",
+    "mode": "FULL",
+    "before": "jwo,f,f,",
+    "after": "jwo,f,f,",
+    "identical": true
+   },
+   {
+    "qid": "direct-001",
+    "mode": "PLASTIC",
+    "before": "jwo,f,f,",
+    "after": "jwo,f,f,",
+    "identical": true
+   },
+   {
+    "qid": "direct-002",
+    "mode": "FULL",
+    "before": "j'p",
+    "after": "j'p",
+    "identical": true
+   },
+   {
+    "qid": "direct-002",
+    "mode": "PLASTIC",
+    "before": "j'p",
+    "after": "j'p",
+    "identical": true
+   },
+   {
+    "qid": "direct-003",
+    "mode": "FULL",
+    "before": "jwqf,qfp",
+    "after": "jwqf,qfp",
+    "identical": true
+   },
+   {
+    "qid": "direct-003",
+    "mode": "PLASTIC",
+    "before": "jwqf,qfp",
+    "after": "jwqf,qfp",
+    "identical": true
+   },
+   {
+    "qid": "direct-004",
+    "mode": "FULL",
+    "before": "j'pwf'pw",
+    "after": "j'pwf'pw",
+    "identical": true
+   },
+   {
+    "qid": "direct-004",
+    "mode": "PLASTIC",
+    "before": "j'pwf'pw",
+    "after": "j'pwf'pw",
+    "identical": true
+   },
+   {
+    "qid": "direct-005",
+    "mode": "FULL",
+    "before": "jwjwjwow",
+    "after": "jwjwjwow",
+    "identical": true
+   },
+   {
+    "qid": "direct-005",
+    "mode": "PLASTIC",
+    "before": "jwjwjwow",
+    "after": "jwjwjwow",
+    "identical": true
+   },
+   {
+    "qid": "direct-006",
+    "mode": "FULL",
+    "before": "j'pwf'pw",
+    "after": "j'pwf'pw",
+    "identical": true
+   },
+   {
+    "qid": "direct-006",
+    "mode": "PLASTIC",
+    "before": "j'pwf'pw",
+    "after": "j'pwf'pw",
+    "identical": true
+   },
+   {
+    "qid": "direct-007",
+    "mode": "FULL",
+    "before": "jwqf,f,q",
+    "after": "jwqf,f,q",
+    "identical": true
+   },
+   {
+    "qid": "direct-007",
+    "mode": "PLASTIC",
+    "before": "jwqf,f,q",
+    "after": "jwqf,f,q",
+    "identical": true
+   },
+   {
+    "qid": "direct-008",
+    "mode": "FULL",
+    "before": "jk'p",
+    "after": "jk'p",
+    "identical": true
+   },
+   {
+    "qid": "direct-008",
+    "mode": "PLASTIC",
+    "before": "jk'p",
+    "after": "jk'p",
+    "identical": true
+   },
+   {
+    "qid": "direct-009",
+    "mode": "FULL",
+    "before": "jwqwqwqw",
+    "after": "jwqwqwqw",
+    "identical": true
+   },
+   {
+    "qid": "direct-009",
+    "mode": "PLASTIC",
+    "before": "jwqwqwqw",
+    "after": "jwqwqwqw",
+    "identical": true
+   }
+  ],
+  "plastic_answers_identical": "20/20",
+  "plastic_unchanged": true,
+  "retrieved_sample_after_purge": "",
+  "note": "RETRIEVED is expected to degrade after a purge (the transcript WAS its substrate); PLASTIC must not move \u2014 that is the whole test"
+ },
+ "foundation_integrity": {
+  "bit_identical_after_full_run": true,
+  "differing_params": [],
+  "n_params_checked": 39
+ },
+ "fact_inventory": [
+  {
+   "subject": "Blun",
+   "relation": "produces",
+   "object": "light",
+   "key": "Blun|produces|light",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.01755097322165966,
+   "plastic": 0.025072820484638214,
+   "consolidated": 0.0,
+   "registered_at_seq": 8,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Blun produces light.",
+    "chain": 1
+   }
+  },
+  {
+   "subject": "Crat",
+   "relation": "produces",
+   "object": "pressure",
+   "key": "Crat|produces|pressure",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.018700966611504555,
+   "plastic": 0.02671566605567932,
+   "consolidated": 0.0,
+   "registered_at_seq": 12,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Crat produces pressure.",
+    "chain": 2
+   }
+  },
+  {
+   "subject": "Dravy",
+   "relation": "operates",
+   "object": "Skell",
+   "key": "Dravy|operates|Skell",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.021875370293855667,
+   "plastic": 0.03125052526593208,
+   "consolidated": 0.0,
+   "registered_at_seq": 9,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Dravy operates Skell.",
+    "chain": 2
+   }
+  },
+  {
+   "subject": "Drel",
+   "relation": "controls",
+   "object": "Blun",
+   "key": "Drel|controls|Blun",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.019406093284487724,
+   "plastic": 0.02772299014031887,
+   "consolidated": 0.0,
+   "registered_at_seq": 7,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Drel controls device Blun.",
+    "chain": 1
+   }
+  },
+  {
+   "subject": "Kimo",
+   "relation": "controls",
+   "object": "Zor",
+   "key": "Kimo|controls|Zor",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.01659206859767437,
+   "plastic": 0.0237029530107975,
+   "consolidated": 0.0,
+   "registered_at_seq": 3,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Kimo controls device Zor.",
+    "chain": 0
+   }
+  },
+  {
+   "subject": "Neral",
+   "relation": "operates",
+   "object": "Tav",
+   "key": "Neral|operates|Tav",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.01794251799583435,
+   "plastic": 0.025632169097661972,
+   "consolidated": 0.0,
+   "registered_at_seq": 1,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Neral operates Tav.",
+    "chain": 0
+   }
+  },
+  {
+   "subject": "Rinpo",
+   "relation": "routes-to",
+   "object": "Drel",
+   "key": "Rinpo|routes-to|Drel",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.01872226409614086,
+   "plastic": 0.02674609236419201,
+   "consolidated": 0.0,
+   "registered_at_seq": 6,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Rinpo routes to relay Drel.",
+    "chain": 1
+   }
+  },
+  {
+   "subject": "Skell",
+   "relation": "routes-to",
+   "object": "Vash",
+   "key": "Skell|routes-to|Vash",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.016419271007180214,
+   "plastic": 0.02345610223710537,
+   "consolidated": 0.0,
+   "registered_at_seq": 10,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Skell routes to relay Vash.",
+    "chain": 2
+   }
+  },
+  {
+   "subject": "Sula",
+   "relation": "operates",
+   "object": "Rinpo",
+   "key": "Sula|operates|Rinpo",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.018767205998301506,
+   "plastic": 0.026810292154550552,
+   "consolidated": 0.0,
+   "registered_at_seq": 5,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Sula operates Rinpo.",
+    "chain": 1
+   }
+  },
+  {
+   "subject": "Tav",
+   "relation": "routes-to",
+   "object": "Drel",
+   "key": "Tav|routes-to|Drel",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.020030999556183815,
+   "plastic": 0.028615716844797134,
+   "consolidated": 0.0,
+   "registered_at_seq": 13,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Tav is rerouted to relay Drel.",
+    "chain": 0,
+    "correction": true
+   }
+  },
+  {
+   "subject": "Tav",
+   "relation": "routes-to",
+   "object": "Kimo",
+   "key": "Tav|routes-to|Kimo",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.019953981041908264,
+   "plastic": 0.028505684807896614,
+   "consolidated": 0.0,
+   "registered_at_seq": 2,
+   "superseded_by": "Tav|routes-to|Drel",
+   "meta": {
+    "sentence": "Tav routes to relay Kimo.",
+    "chain": 0
+   }
+  },
+  {
+   "subject": "Vash",
+   "relation": "controls",
+   "object": "Crat",
+   "key": "Vash|controls|Crat",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.01668400503695011,
+   "plastic": 0.023834293708205223,
+   "consolidated": 0.0,
+   "registered_at_seq": 11,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Vash controls device Crat.",
+    "chain": 2
+   }
+  },
+  {
+   "subject": "Zor",
+   "relation": "produces",
+   "object": "heat",
+   "key": "Zor|produces|heat",
+   "pair_index": 0,
+   "u_fast_norm": 0.15566495060920715,
+   "theta_slow_norm": 0.0,
+   "full": 0.019377687945961952,
+   "plastic": 0.027682414278388023,
+   "consolidated": 0.0,
+   "registered_at_seq": 4,
+   "superseded_by": null,
+   "meta": {
+    "sentence": "Zor produces heat.",
+    "chain": 0
+   }
+  }
+ ],
+ "acceptance": {
+  "1_acquisition": {
+   "verdict": "FAIL",
+   "evidence": "direct exact accuracy PLASTIC=0.000 vs chance=0.333 (contains=0.000); teacher=ScriptedTeacher (offline stub); foundation=tiny-standin(Llama-4L-64D, CPU, FROZEN)"
+  },
+  "2_generalisation": {
+   "verdict": "FAIL",
+   "evidence": "combination exact accuracy PLASTIC=0.000 vs baseline (CONSOLIDATED = pathway transmission off, theta_slow empty) =0.000"
+  },
+  "3_retention": {
+   "verdict": "PASS",
+   "evidence": "restart exact=True; paraphrase exact pre={'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0, 'RETRIEVED': 0.6667} post={'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0, 'RETRIEVED': 0.6667}; answer-identity={'FULL': 1.0, 'PLASTIC': 1.0, 'CONSOLIDATED': 1.0, 'RETRIEVED': 1.0}"
+  },
+  "4_correction": {
+   "verdict": "PASS",
+   "evidence": "'Tav is rerouted to relay Drel.' new_fact_learned=True (strength 0.028616); old facts present 12/12; unaffected probe identical 16/16"
+  },
+  "5_transcript_removal": {
+   "verdict": "PASS",
+   "evidence": "purged 13 transcript events -> plastic probe answers identical 20/20"
+  }
+ },
+ "acceptance_score": "3/5"
+}

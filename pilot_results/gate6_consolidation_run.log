@@ -1,0 +1,59 @@
+[matrix] total=12 runs, already done=0 (incremental log: pilot_results\pilot_results_gate6_consolidation_incremental.jsonl)
+Running: changing_rotation | consolidating | d0_none | seed=42
+  MSE=0.7552
+  Phase A=0.7545, B=0.8214, C=0.7552
+  Adapt B=None, C=None, Ret=1.0009
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | consolidating | d0_none | seed=43
+  MSE=0.7401
+  Phase A=0.7385, B=0.8062, C=0.7401
+  Adapt B=None, C=None, Ret=1.0023
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | consolidating | d0_none | seed=44
+  MSE=0.7550
+  Phase A=0.7560, B=0.8190, C=0.7550
+  Adapt B=None, C=None, Ret=0.9987
+  Conn=34 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d0_none | seed=42
+  MSE=0.7581
+  Phase A=0.7558, B=0.8192, C=0.7581
+  Adapt B=None, C=None, Ret=1.0030
+  Conn=36 (+0/-0), DreamPrec=None
+[progress] 4/12 runs complete
+Running: changing_rotation | plastic | d0_none | seed=43
+  MSE=0.7432
+  Phase A=0.7393, B=0.8038, C=0.7432
+  Adapt B=None, C=None, Ret=1.0052
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d0_none | seed=44
+  MSE=0.7576
+  Phase A=0.7572, B=0.8168, C=0.7576
+  Adapt B=None, C=None, Ret=1.0005
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | consolidating | d0_none | seed=42
+  MSE=0.9818
+  Disc=0.9818, vsOracle=392.2545, vsRand=0.4907
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | consolidating | d0_none | seed=43
+  MSE=0.9868
+  Disc=0.9868, vsOracle=394.2557, vsRand=0.4932
+  Conn=37 (+0/-0), DreamPrec=None
+[progress] 8/12 runs complete
+Running: compositional_discovery | consolidating | d0_none | seed=44
+  MSE=0.9806
+  Disc=0.9806, vsOracle=391.9901, vsRand=0.4895
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=42
+  MSE=0.9694
+  Disc=0.9694, vsOracle=387.3031, vsRand=0.4845
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=43
+  MSE=0.9689
+  Disc=0.9689, vsOracle=387.1145, vsRand=0.4842
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=44
+  MSE=0.9706
+  Disc=0.9706, vsOracle=387.9788, vsRand=0.4845
+  Conn=34 (+0/-0), DreamPrec=None
+[progress] 12/12 runs complete
+RUN COMPLETE

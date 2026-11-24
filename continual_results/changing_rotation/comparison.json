@@ -1,0 +1,17 @@
+{
+  "static": {
+    "error": "The size of tensor a (16) must match the size of tensor b (65536) at non-singleton dimension 2"
+  },
+  "hebbian": {
+    "error": "The size of tensor a (16) must match the size of tensor b (65536) at non-singleton dimension 2"
+  },
+  "plastic": {
+    "error": "The size of tensor a (16) must match the size of tensor b (65536) at non-singleton dimension 2"
+  },
+  "consolidating": {
+    "error": "The size of tensor a (16) must match the size of tensor b (65536) at non-singleton dimension 2"
+  },
+  "contextual": {
+    "error": "The size of tensor a (16) must match the size of tensor b (65536) at non-singleton dimension 2"
+  }
+}

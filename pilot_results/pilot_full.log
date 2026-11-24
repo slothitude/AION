@@ -1,0 +1,232 @@
+Running AION Phase 5 - Pilot Experiments
+============================================================
+6 Configurations × 2 Benchmarks × 3 Seeds
+============================================================
+[matrix] total=36 runs, already done=0 (incremental log: pilot_results\pilot_results_incremental.jsonl)
+Running: changing_rotation | static | d0_none | seed=42
+  MSE=1.0044
+  Phase A=1.0017, B=1.0018, C=1.0044
+  Adapt B=None, C=None, Ret=1.0027
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | static | d0_none | seed=43
+  MSE=1.0044
+  Phase A=0.9992, B=0.9986, C=1.0044
+  Adapt B=None, C=None, Ret=1.0053
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | static | d0_none | seed=44
+  MSE=1.0041
+  Phase A=1.0015, B=0.9992, C=1.0041
+  Adapt B=None, C=None, Ret=1.0026
+  Conn=34 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d0_none | seed=42
+  MSE=0.7581
+  Phase A=0.7558, B=0.8192, C=0.7581
+  Adapt B=None, C=None, Ret=1.0030
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d0_none | seed=43
+  MSE=0.7432
+  Phase A=0.7393, B=0.8038, C=0.7432
+  Adapt B=None, C=None, Ret=1.0052
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d0_none | seed=44
+  MSE=0.7576
+  Phase A=0.7572, B=0.8168, C=0.7576
+  Adapt B=None, C=None, Ret=1.0005
+  Conn=34 (+0/-0), DreamPrec=None
+Running: changing_rotation | consolidating | d0_none | seed=42
+  MSE=0.7561
+  Phase A=0.7549, B=0.8203, C=0.7561
+  Adapt B=None, C=None, Ret=1.0016
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | consolidating | d0_none | seed=43
+  MSE=0.7411
+  Phase A=0.7388, B=0.8050, C=0.7411
+  Adapt B=None, C=None, Ret=1.0031
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | consolidating | d0_none | seed=44
+  MSE=0.7559
+  Phase A=0.7564, B=0.8179, C=0.7559
+  Adapt B=None, C=None, Ret=0.9993
+  Conn=34 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d1_replay | seed=42
+  MSE=0.7581
+  Phase A=0.7558, B=0.8192, C=0.7581
+  Adapt B=None, C=None, Ret=1.0030
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d1_replay | seed=43
+  MSE=0.7432
+  Phase A=0.7393, B=0.8038, C=0.7432
+  Adapt B=None, C=None, Ret=1.0052
+  Conn=37 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d1_replay | seed=44
+  MSE=0.7576
+  Phase A=0.7572, B=0.8168, C=0.7576
+  Adapt B=None, C=None, Ret=1.0005
+  Conn=34 (+0/-0), DreamPrec=None
+[progress] 12/36 runs complete
+Running: changing_rotation | plastic | d2_replay_imagination | seed=42
+  MSE=0.8981
+  Phase A=0.8449, B=0.9118, C=0.8981
+  Adapt B=None, C=None, Ret=1.0630
+  Conn=61 (+0/-0), DreamPrec=1.0000
+Running: changing_rotation | plastic | d2_replay_imagination | seed=43
+  MSE=0.8832
+  Phase A=0.8178, B=0.8907, C=0.8832
+  Adapt B=None, C=None, Ret=1.0799
+  Conn=60 (+0/-0), DreamPrec=1.0000
+Running: changing_rotation | plastic | d2_replay_imagination | seed=44
+  MSE=1.0165
+  Phase A=0.9241, B=0.9961, C=1.0165
+  Adapt B=None, C=None, Ret=1.1000
+  Conn=62 (+0/-0), DreamPrec=1.0000
+Running: changing_rotation | plastic | d3_full | seed=42
+  MSE=0.7215
+  Phase A=0.7225, B=0.7944, C=0.7215
+  Adapt B=None, C=None, Ret=0.9987
+  Conn=72 (+15/-0), DreamPrec=1.0000
+Running: changing_rotation | plastic | d3_full | seed=43
+  MSE=0.7205
+  Phase A=0.7176, B=0.7898, C=0.7205
+  Adapt B=None, C=None, Ret=1.0040
+  Conn=74 (+15/-0), DreamPrec=1.0000
+Running: changing_rotation | plastic | d3_full | seed=44
+  MSE=0.7211
+  Phase A=0.7239, B=0.7923, C=0.7211
+  Adapt B=None, C=None, Ret=0.9961
+  Conn=70 (+15/-0), DreamPrec=1.0000
+Running: compositional_discovery | static | d0_none | seed=42
+  MSE=1.0030
+  Disc=1.0030, vsOracle=400.7262, vsRand=0.5013
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | static | d0_none | seed=43
+  MSE=1.0031
+  Disc=1.0031, vsOracle=400.7816, vsRand=0.5013
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | static | d0_none | seed=44
+  MSE=1.0036
+  Disc=1.0036, vsOracle=401.1704, vsRand=0.5009
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=42
+  MSE=0.9694
+  Disc=0.9694, vsOracle=387.3031, vsRand=0.4845
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=43
+  MSE=0.9689
+  Disc=0.9689, vsOracle=387.1145, vsRand=0.4842
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d0_none | seed=44
+  MSE=0.9706
+  Disc=0.9706, vsOracle=387.9788, vsRand=0.4845
+  Conn=34 (+0/-0), DreamPrec=None
+[progress] 24/36 runs complete
+Running: compositional_discovery | consolidating | d0_none | seed=42
+  MSE=0.9782
+  Disc=0.9782, vsOracle=390.8239, vsRand=0.4889
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | consolidating | d0_none | seed=43
+  MSE=0.9815
+  Disc=0.9815, vsOracle=392.1241, vsRand=0.4905
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | consolidating | d0_none | seed=44
+  MSE=0.9777
+  Disc=0.9777, vsOracle=390.8464, vsRand=0.4880
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d1_replay | seed=42
+  MSE=0.9694
+  Disc=0.9694, vsOracle=387.3031, vsRand=0.4845
+  Conn=36 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d1_replay | seed=43
+  MSE=0.9689
+  Disc=0.9689, vsOracle=387.1145, vsRand=0.4842
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d1_replay | seed=44
+  MSE=0.9706
+  Disc=0.9706, vsOracle=387.9788, vsRand=0.4845
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d2_replay_imagination | seed=42
+  MSE=0.9697
+  Disc=0.9697, vsOracle=387.4518, vsRand=0.4854
+  Conn=61 (+0/-0), DreamPrec=1.0000
+Running: compositional_discovery | plastic | d2_replay_imagination | seed=43
+  MSE=0.9683
+  Disc=0.9683, vsOracle=386.8663, vsRand=0.4830
+  Conn=60 (+0/-0), DreamPrec=1.0000
+Running: compositional_discovery | plastic | d2_replay_imagination | seed=44
+  MSE=0.9701
+  Disc=0.9701, vsOracle=387.8028, vsRand=0.4844
+  Conn=62 (+0/-0), DreamPrec=1.0000
+Running: compositional_discovery | plastic | d3_full | seed=42
+  MSE=0.9759
+  Disc=0.9759, vsOracle=389.9304, vsRand=0.4880
+  Conn=72 (+15/-0), DreamPrec=1.0000
+Running: compositional_discovery | plastic | d3_full | seed=43
+  MSE=0.9783
+  Disc=0.9783, vsOracle=390.8774, vsRand=0.4875
+  Conn=74 (+15/-0), DreamPrec=1.0000
+Running: compositional_discovery | plastic | d3_full | seed=44
+  MSE=0.9759
+  Disc=0.9759, vsOracle=390.1250, vsRand=0.4871
+  Conn=70 (+15/-0), DreamPrec=1.0000
+[progress] 36/36 runs complete
+
+=== PILOT ANALYSIS ===
+
+changing_rotation:
+  static_d0_none:
+    MSE=1.0043
+    Phase A=1.0008, B=0.9998, C=1.0043
+    Adapt B=None, C=None, Ret=1.0035
+    Conn=35.7, DreamPrec=None
+  plastic_d0_none:
+    MSE=0.7529
+    Phase A=0.7508, B=0.8132, C=0.7529
+    Adapt B=None, C=None, Ret=1.0029
+    Conn=35.7, DreamPrec=None
+  consolidating_d0_none:
+    MSE=0.7510
+    Phase A=0.7501, B=0.8144, C=0.7510
+    Adapt B=None, C=None, Ret=1.0013
+    Conn=35.7, DreamPrec=None
+  plastic_d1_replay:
+    MSE=0.7529
+    Phase A=0.7508, B=0.8132, C=0.7529
+    Adapt B=None, C=None, Ret=1.0029
+    Conn=35.7, DreamPrec=None
+  plastic_d2_replay_imagination:
+    MSE=0.9326
+    Phase A=0.8622, B=0.9328, C=0.9326
+    Adapt B=None, C=None, Ret=1.0810
+    Conn=61.0, DreamPrec=1.0000
+  plastic_d3_full:
+    MSE=0.7210
+    Phase A=0.7213, B=0.7922, C=0.7210
+    Adapt B=None, C=None, Ret=0.9996
+    Conn=72.0, DreamPrec=1.0000
+
+compositional_discovery:
+  static_d0_none:
+    MSE=1.0032
+    Disc=1.0032, vsOracle=400.8927
+    Conn=35.7, DreamPrec=None
+  plastic_d0_none:
+    MSE=0.9696
+    Disc=0.9696, vsOracle=387.4655
+    Conn=35.7, DreamPrec=None
+  consolidating_d0_none:
+    MSE=0.9791
+    Disc=0.9791, vsOracle=391.2648
+    Conn=35.7, DreamPrec=None
+  plastic_d1_replay:
+    MSE=0.9696
+    Disc=0.9696, vsOracle=387.4655
+    Conn=35.7, DreamPrec=None
+  plastic_d2_replay_imagination:
+    MSE=0.9694
+    Disc=0.9694, vsOracle=387.3736
+    Conn=61.0, DreamPrec=1.0000
+  plastic_d3_full:
+    MSE=0.9767
+    Disc=0.9767, vsOracle=390.3109
+    Conn=72.0, DreamPrec=1.0000
+
+Results saved to pilot_results/pilot_results.json

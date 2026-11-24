@@ -1,0 +1,709 @@
+{
+  "actors": [
+    "Neral",
+    "Sula",
+    "Dravy"
+  ],
+  "chains": [
+    [
+      "Neral",
+      "Tav",
+      "Kimo",
+      "Zor",
+      "heat"
+    ],
+    [
+      "Sula",
+      "Rinpo",
+      "Drel",
+      "Blun",
+      "light"
+    ],
+    [
+      "Dravy",
+      "Skell",
+      "Vash",
+      "Crat",
+      "pressure"
+    ]
+  ],
+  "conduits": [
+    "Tav",
+    "Rinpo",
+    "Skell"
+  ],
+  "devices": [
+    "Zor",
+    "Blun",
+    "Crat"
+  ],
+  "graph": {
+    "Blun": [
+      [
+        "produces",
+        "light"
+      ]
+    ],
+    "Crat": [
+      [
+        "produces",
+        "pressure"
+      ]
+    ],
+    "Dravy": [
+      [
+        "operates",
+        "Skell"
+      ]
+    ],
+    "Drel": [
+      [
+        "controls",
+        "Blun"
+      ]
+    ],
+    "Kimo": [
+      [
+        "controls",
+        "Zor"
+      ]
+    ],
+    "Neral": [
+      [
+        "operates",
+        "Tav"
+      ]
+    ],
+    "Rinpo": [
+      [
+        "routes-to",
+        "Drel"
+      ]
+    ],
+    "Skell": [
+      [
+        "routes-to",
+        "Vash"
+      ]
+    ],
+    "Sula": [
+      [
+        "operates",
+        "Rinpo"
+      ]
+    ],
+    "Tav": [
+      [
+        "routes-to",
+        "Kimo"
+      ]
+    ],
+    "Vash": [
+      [
+        "controls",
+        "Crat"
+      ]
+    ],
+    "Zor": [
+      [
+        "produces",
+        "heat"
+      ]
+    ]
+  },
+  "n_chains": 3,
+  "outputs": [
+    "heat",
+    "light",
+    "pressure"
+  ],
+  "questions": [
+    {
+      "answer": "Tav",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-000",
+      "meta": {
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Who does Neral operate?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-001",
+      "meta": {
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Where does Tav route?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-002",
+      "meta": {
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Who does Kimo control?"
+    },
+    {
+      "answer": "heat",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-003",
+      "meta": {
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "What does Zor produce?"
+    },
+    {
+      "answer": "Rinpo",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-004",
+      "meta": {
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Who does Sula operate?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-005",
+      "meta": {
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Where does Rinpo route?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-006",
+      "meta": {
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Who does Drel control?"
+    },
+    {
+      "answer": "light",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-007",
+      "meta": {
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "What does Blun produce?"
+    },
+    {
+      "answer": "Skell",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-008",
+      "meta": {
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Who does Dravy operate?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-009",
+      "meta": {
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Where does Skell route?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-010",
+      "meta": {
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Who does Vash control?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-011",
+      "meta": {
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "What does Crat produce?"
+    },
+    {
+      "answer": "heat",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-reach-000",
+      "meta": {
+        "kind": "reach",
+        "start": "Neral"
+      },
+      "text": "What does Neral reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-yes-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Zor"
+      },
+      "text": "Does Neral reach Zor?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-no-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Crat"
+      },
+      "text": "Does Neral reach Crat?"
+    },
+    {
+      "answer": "light",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-reach-001",
+      "meta": {
+        "kind": "reach",
+        "start": "Sula"
+      },
+      "text": "What does Sula reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-yes-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Blun"
+      },
+      "text": "Does Sula reach Blun?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-no-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Zor"
+      },
+      "text": "Does Sula reach Zor?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-reach-002",
+      "meta": {
+        "kind": "reach",
+        "start": "Dravy"
+      },
+      "text": "What does Dravy reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-yes-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Crat"
+      },
+      "text": "Does Dravy reach Crat?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-no-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Zor"
+      },
+      "text": "Does Dravy reach Zor?"
+    },
+    {
+      "answer": "Neral",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-000",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Tav is operated by whom?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-001",
+      "meta": {
+        "asked_side": "object",
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Tav sends its flow through which relay?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-002",
+      "meta": {
+        "asked_side": "object",
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Kimo governs which device?"
+    },
+    {
+      "answer": "heat",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-003",
+      "meta": {
+        "asked_side": "object",
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "Zor emits what?"
+    },
+    {
+      "answer": "Sula",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-004",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Rinpo is operated by whom?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-005",
+      "meta": {
+        "asked_side": "object",
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Rinpo sends its flow through which relay?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-006",
+      "meta": {
+        "asked_side": "object",
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Which device is controlled by Drel?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-007",
+      "meta": {
+        "asked_side": "subject",
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "light is produced by which device?"
+    },
+    {
+      "answer": "Dravy",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-008",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Skell is operated by whom?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-009",
+      "meta": {
+        "asked_side": "object",
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Which relay does Skell route to?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-010",
+      "meta": {
+        "asked_side": "object",
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Which device is controlled by Vash?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-011",
+      "meta": {
+        "asked_side": "object",
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "Crat emits what?"
+    },
+    {
+      "answer": "light",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-reach-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "reach_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. What does Neral reach now?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-route-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "route_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. Which relay does Neral route through now?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-reach-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "reach_now",
+        "new_relay": "Vash",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Vash. What does Sula reach now?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-route-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "route_now",
+        "new_relay": "Vash",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Vash. Which relay does Sula route through now?"
+    },
+    {
+      "answer": "heat",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-reach-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "reach_now",
+        "new_relay": "Kimo",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Kimo. What does Dravy reach now?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-route-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "route_now",
+        "new_relay": "Kimo",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Kimo. Which relay does Dravy route through now?"
+    }
+  ],
+  "relationships": [
+    {
+      "chain_id": 0,
+      "index": 0,
+      "object": "Tav",
+      "relation": "operates",
+      "sentence": "Neral operates Tav.",
+      "subject": "Neral"
+    },
+    {
+      "chain_id": 0,
+      "index": 1,
+      "object": "Kimo",
+      "relation": "routes-to",
+      "sentence": "Tav routes to relay Kimo.",
+      "subject": "Tav"
+    },
+    {
+      "chain_id": 0,
+      "index": 2,
+      "object": "Zor",
+      "relation": "controls",
+      "sentence": "Kimo controls device Zor.",
+      "subject": "Kimo"
+    },
+    {
+      "chain_id": 0,
+      "index": 3,
+      "object": "heat",
+      "relation": "produces",
+      "sentence": "Zor produces heat.",
+      "subject": "Zor"
+    },
+    {
+      "chain_id": 1,
+      "index": 4,
+      "object": "Rinpo",
+      "relation": "operates",
+      "sentence": "Sula operates Rinpo.",
+      "subject": "Sula"
+    },
+    {
+      "chain_id": 1,
+      "index": 5,
+      "object": "Drel",
+      "relation": "routes-to",
+      "sentence": "Rinpo routes to relay Drel.",
+      "subject": "Rinpo"
+    },
+    {
+      "chain_id": 1,
+      "index": 6,
+      "object": "Blun",
+      "relation": "controls",
+      "sentence": "Drel controls device Blun.",
+      "subject": "Drel"
+    },
+    {
+      "chain_id": 1,
+      "index": 7,
+      "object": "light",
+      "relation": "produces",
+      "sentence": "Blun produces light.",
+      "subject": "Blun"
+    },
+    {
+      "chain_id": 2,
+      "index": 8,
+      "object": "Skell",
+      "relation": "operates",
+      "sentence": "Dravy operates Skell.",
+      "subject": "Dravy"
+    },
+    {
+      "chain_id": 2,
+      "index": 9,
+      "object": "Vash",
+      "relation": "routes-to",
+      "sentence": "Skell routes to relay Vash.",
+      "subject": "Skell"
+    },
+    {
+      "chain_id": 2,
+      "index": 10,
+      "object": "Crat",
+      "relation": "controls",
+      "sentence": "Vash controls device Crat.",
+      "subject": "Vash"
+    },
+    {
+      "chain_id": 2,
+      "index": 11,
+      "object": "pressure",
+      "relation": "produces",
+      "sentence": "Crat produces pressure.",
+      "subject": "Crat"
+    }
+  ],
+  "relays": [
+    "Kimo",
+    "Drel",
+    "Vash"
+  ],
+  "seed": 0
+}

@@ -1,0 +1,74 @@
+{
+  "battery_id": "tiny-fixture",
+  "description": "Local CPU fixture for the retention/provenance unit tests. Same JSON shape the aion/worlds lane will deliver (see aion/experiments/knowledge_discovery.py docstring for the contract).",
+  "seed_relations": [
+    {"subject": "spark", "relation": "melts", "object": "ice"},
+    {"subject": "ember", "relation": "warms", "object": "hands"},
+    {"subject": "ice", "relation": "chills", "object": "ember"}
+  ],
+  "questions": [
+    {
+      "qid": "q_recog_1",
+      "capability": "recognise",
+      "prompt": "What does spark do to ice?",
+      "paraphrases": ["Spark and ice - what happens between them?"],
+      "gold": "melts ice"
+    },
+    {
+      "qid": "q_recog_2",
+      "capability": "recognise",
+      "prompt": "What does ember do to hands?",
+      "paraphrases": ["Ember and hands - what happens?"],
+      "gold": "warms hands"
+    },
+    {
+      "qid": "q_pred_1",
+      "capability": "predict",
+      "prompt": "Ice is placed on an ember. What happens to the ember?",
+      "paraphrases": ["The ember meets ice - predict the ember."],
+      "gold": "chills ember"
+    },
+    {
+      "qid": "q_new_1",
+      "capability": "learn_new",
+      "prompt": "What does storm do to lodestone?",
+      "paraphrases": ["Storm and lodestone - what happens?"],
+      "gold": "charges lodestone"
+    },
+    {
+      "qid": "q_comb_1",
+      "capability": "combine",
+      "prompt": "Spark melts ice and ice chills ember. Combine them: what does spark reach?",
+      "paraphrases": ["Following spark through ice, what does it chill?"],
+      "gold": "chills ember"
+    },
+    {
+      "qid": "q_self_1",
+      "capability": "self_correct",
+      "prompt": "Reality check: what does spark actually do to iron?",
+      "paraphrases": ["Spark meets iron - what really happens?"],
+      "gold": "rusts iron"
+    }
+  ],
+  "new_relations": [
+    {"subject": "storm", "relation": "charges", "object": "lodestone"}
+  ],
+  "combinations": [
+    {
+      "chain": [
+        {"subject": "spark", "relation": "melts", "object": "ice"},
+        {"subject": "ice", "relation": "chills", "object": "ember"}
+      ],
+      "subject": "spark",
+      "relation": "melts+chills",
+      "gold": "ember"
+    }
+  ],
+  "corrections": [
+    {
+      "subject": "spark", "relation": "melts", "object": "iron",
+      "replaces": {"subject": "spark", "relation": "melts", "object": "ice"},
+      "correction_text": "Correction from reality: spark does not melt ice; spark rusts iron."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Running AION Phase 5 - Gate 5 equal-compute D1 (2x dream compute)
+============================================================
+[matrix] total=6 runs, already done=0 (incremental log: pilot_results\pilot_results_d1x2_incremental.jsonl)
+Running: changing_rotation | plastic | d1_replay | seed=42
+  MSE=0.7581
+  Phase A=0.7558, B=0.8192, C=0.7581
+  Adapt B=None, C=None, Ret=1.0030
+  Conn=36 (+0/-0), DreamPrec=None
+Running: changing_rotation | plastic | d1_replay | seed=43
+  MSE=0.7432
+  Phase A=0.7393, B=0.8038, C=0.7432
+  Adapt B=None, C=None, Ret=1.0052
+  Conn=37 (+0/-0), DreamPrec=None
+[progress] 2/6 runs complete
+Running: changing_rotation | plastic | d1_replay | seed=44
+  MSE=0.7576
+  Phase A=0.7572, B=0.8168, C=0.7576
+  Adapt B=None, C=None, Ret=1.0005
+  Conn=34 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d1_replay | seed=42
+  MSE=0.9694
+  Disc=0.9694, vsOracle=387.3031, vsRand=0.4845
+  Conn=36 (+0/-0), DreamPrec=None
+[progress] 4/6 runs complete
+Running: compositional_discovery | plastic | d1_replay | seed=43
+  MSE=0.9689
+  Disc=0.9689, vsOracle=387.1145, vsRand=0.4842
+  Conn=37 (+0/-0), DreamPrec=None
+Running: compositional_discovery | plastic | d1_replay | seed=44
+  MSE=0.9706
+  Disc=0.9706, vsOracle=387.9788, vsRand=0.4845
+  Conn=34 (+0/-0), DreamPrec=None
+[progress] 6/6 runs complete

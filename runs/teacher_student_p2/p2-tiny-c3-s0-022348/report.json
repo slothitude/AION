@@ -1,0 +1,3619 @@
+{
+ "phase": 2,
+ "tag": "p2-tiny-c3-s0-022348",
+ "date": "2026-11-25 02:24:00",
+ "foundation": "tiny-standin(Llama-4L-64D, CPU, FROZEN)",
+ "teacher": "n/a (Phase 2 teaching is experience-driven; no chat endpoint used)",
+ "seed": 0,
+ "chains": 3,
+ "experiences_per_run": 36,
+ "scaffold": "Question: Which colour does the banner use?\nAnswer: gold.\n\nQuestion: Which metal does the coin use?\nAnswer: silver.\n\n",
+ "train_q_templates": {
+  "operates": "{subject} operates what?",
+  "routes-to": "{subject} routes to which relay?",
+  "controls": "{subject} controls which device?",
+  "produces": "What is {subject}'s output?"
+ },
+ "measure_sets": {
+  "test": 12,
+  "retention_paraphrase": 3,
+  "freeform": 14
+ },
+ "gamma_sequencing_law": "plasticity first, gate learning second (E only)",
+ "timings_s": {
+  "foundation_load_s": 5.7,
+  "setup_s": 5.7,
+  "battery_A-test_s": 0.1,
+  "battery_A-post-restart_s": 0.0,
+  "battery_B-test_s": 0.0,
+  "battery_B-post-restart_s": 0.0,
+  "battery_C-test_s": 0.4,
+  "battery_C-post-restart_s": 0.1,
+  "battery_D-test_s": 0.4,
+  "battery_D-post-restart_s": 0.1,
+  "battery_E-test_s": 0.4,
+  "battery_E-post-restart_s": 0.1
+ },
+ "variants": {
+  "A": {
+   "variant": "A",
+   "description": "frozen base (original capability; nothing learned)",
+   "teach": {
+    "variant": "A",
+    "experiences": 36,
+    "nnfs_updates": 0,
+    "gate_steps": 0,
+    "gate_lr": null,
+    "u_fast_norms_before": [
+     0.0,
+     0.0
+    ],
+    "u_fast_norms_after": [
+     0.0,
+     0.0
+    ],
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     0.0,
+     0.0
+    ],
+    "mean_fact_plastic_strength": null,
+    "episodic_events": 0,
+    "teach_s": 0.0
+   },
+   "fact_plastic_strengths_min_mean": null,
+   "test": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "FULL_ONLY"
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "FULL_ONLY"
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "FULL_ONLY"
+     },
+     {
+      "qid": "para-008",
+      "battery": "paraphrase",
+      "question": "Skell is operated by whom?",
+      "gold": "Dravy",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "FULL_ONLY"
+     },
+     {
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       }
+      },
+      "retrieved_answer": "",
+      "retrieval_score": 0.0,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 6,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       }
+      },
+      "provenance_histogram": {
+       "FULL_ONLY": 2,
+       "NONE": 4
+      }
+     },
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "FULL_ONLY": 1
+      }
+     },
+     "combination": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       }
+      },
+      "provenance_histogram": {
+       "FULL_ONLY": 1,
+       "NONE": 2
+      }
+     }
+    }
+   },
+   "freeform": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     }
+    ],
+    "summary": {
+     "n": 14,
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_fraction": 0.0
+    }
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 0,
+    "fact_index_reloaded": 0
+   },
+   "retention": {
+    "paraphrase_acc_pre": {
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "FULL_ONLY": 1
+      }
+     }
+    },
+    "paraphrase_acc_post": {
+     "n": 3,
+     "mean_chance": 0.3333,
+     "retrieval_acc": 0.0,
+     "modes": {
+      "FULL": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      }
+     },
+     "provenance_histogram": {
+      "NONE": 2,
+      "FULL_ONLY": 1
+     }
+    },
+    "answers_identical_fraction": {
+     "FULL": 1.0,
+     "RETRIEVED": 1.0
+    },
+    "survival_ok": true
+   },
+   "variant_s": 0.7
+  },
+  "B": {
+   "variant": "B",
+   "description": "retrieval (episodic lookup only; transcript-independent control)",
+   "teach": {
+    "variant": "B",
+    "experiences": 36,
+    "nnfs_updates": 0,
+    "gate_steps": 0,
+    "gate_lr": null,
+    "u_fast_norms_before": [
+     0.0,
+     0.0
+    ],
+    "u_fast_norms_after": [
+     0.0,
+     0.0
+    ],
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     0.0,
+     0.0
+    ],
+    "mean_fact_plastic_strength": null,
+    "episodic_events": 36,
+    "teach_s": 0.0
+   },
+   "fact_plastic_strengths_min_mean": null,
+   "test": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Tav",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Zor",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Blun",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Skell",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Crat",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-008",
+      "battery": "paraphrase",
+      "question": "Skell is operated by whom?",
+      "gold": "Dravy",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {},
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 6,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {},
+      "provenance_histogram": {
+       "RETRIEVED": 6
+      }
+     },
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {},
+      "provenance_histogram": {
+       "NONE": 3
+      }
+     },
+     "combination": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {},
+      "provenance_histogram": {
+       "NONE": 3
+      }
+     }
+    }
+   },
+   "freeform": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     }
+    ],
+    "summary": {
+     "n": 14,
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_fraction": 0.0
+    }
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 0
+   },
+   "retention": {
+    "paraphrase_acc_pre": {
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {},
+      "provenance_histogram": {
+       "NONE": 3
+      }
+     }
+    },
+    "paraphrase_acc_post": {
+     "n": 3,
+     "mean_chance": 0.3333,
+     "retrieval_acc": 0.0,
+     "modes": {},
+     "provenance_histogram": {
+      "NONE": 3
+     }
+    },
+    "answers_identical_fraction": {
+     "RETRIEVED": 1.0
+    },
+    "survival_ok": true
+   },
+   "variant_s": 0.6
+  },
+  "C": {
+   "variant": "C",
+   "description": "plastic (declaratives -> u_fast; gamma=0: stored, not expressed)",
+   "teach": {
+    "variant": "C",
+    "experiences": 36,
+    "nnfs_updates": 12,
+    "gate_steps": 0,
+    "gate_lr": null,
+    "u_fast_norms_before": [
+     0.0,
+     0.0
+    ],
+    "u_fast_norms_after": [
+     0.128538,
+     0.123204
+    ],
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     0.0,
+     0.0
+    ],
+    "mean_fact_plastic_strength": 0.02334,
+    "episodic_events": 36,
+    "teach_s": 0.1
+   },
+   "fact_plastic_strengths_min_mean": [
+    0.021232,
+    0.02334
+   ],
+   "test": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "para-008",
+      "battery": "paraphrase",
+      "question": "Skell is operated by whom?",
+      "gold": "Dravy",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 6,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 2,
+       "RETRIEVED": 4
+      }
+     },
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     },
+     "combination": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 1,
+       "NONE": 2
+      }
+     }
+    }
+   },
+   "freeform": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     }
+    ],
+    "summary": {
+     "n": 14,
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_fraction": 0.0
+    }
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_acc_pre": {
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     }
+    },
+    "paraphrase_acc_post": {
+     "n": 3,
+     "mean_chance": 0.3333,
+     "retrieval_acc": 0.0,
+     "modes": {
+      "FULL": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "PLASTIC": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "CONSOLIDATED": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      }
+     },
+     "provenance_histogram": {
+      "NONE": 2,
+      "PLASTIC": 1
+     }
+    },
+    "answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0,
+     "RETRIEVED": 1.0
+    },
+    "survival_ok": true
+   },
+   "variant_s": 1.1
+  },
+  "D": {
+   "variant": "D",
+   "description": "plastic + question-format learning (declaratives + interrogative/expected pairs; gamma=0)",
+   "teach": {
+    "variant": "D",
+    "experiences": 36,
+    "nnfs_updates": 36,
+    "gate_steps": 0,
+    "gate_lr": null,
+    "u_fast_norms_before": [
+     0.0,
+     0.0
+    ],
+    "u_fast_norms_after": [
+     0.411958,
+     0.434941
+    ],
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     0.0,
+     0.0
+    ],
+    "mean_fact_plastic_strength": 0.070117,
+    "episodic_events": 36,
+    "teach_s": 0.2
+   },
+   "fact_plastic_strengths_min_mean": [
+    0.052247,
+    0.070117
+   ],
+   "test": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "para-008",
+      "battery": "paraphrase",
+      "question": "Skell is operated by whom?",
+      "gold": "Dravy",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 6,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 2,
+       "RETRIEVED": 4
+      }
+     },
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     },
+     "combination": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 1,
+       "NONE": 2
+      }
+     }
+    }
+   },
+   "freeform": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     }
+    ],
+    "summary": {
+     "n": 14,
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_fraction": 0.0
+    }
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_acc_pre": {
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     }
+    },
+    "paraphrase_acc_post": {
+     "n": 3,
+     "mean_chance": 0.3333,
+     "retrieval_acc": 0.0,
+     "modes": {
+      "FULL": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "PLASTIC": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "CONSOLIDATED": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      }
+     },
+     "provenance_histogram": {
+      "NONE": 2,
+      "PLASTIC": 1
+     }
+    },
+    "answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0,
+     "RETRIEVED": 1.0
+    },
+    "survival_ok": true
+   },
+   "variant_s": 1.3
+  },
+  "E": {
+   "variant": "E",
+   "description": "plastic + question learning + gamma (full expression pathway; plasticity FIRST, gate SECOND)",
+   "teach": {
+    "variant": "E",
+    "experiences": 36,
+    "nnfs_updates": 36,
+    "gate_steps": 48,
+    "gate_lr": 100.0,
+    "u_fast_norms_before": [
+     0.0,
+     0.0
+    ],
+    "u_fast_norms_after": [
+     0.409182,
+     0.441495
+    ],
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     -4.134133,
+     -2.885442
+    ],
+    "mean_fact_plastic_strength": 0.069537,
+    "episodic_events": 36,
+    "teach_s": 0.3
+   },
+   "fact_plastic_strengths_min_mean": [
+    0.051903,
+    0.069537
+   ],
+   "test": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998372,
+        "gold_score": -13.91092
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998396,
+        "gold_score": -13.890502
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.998315,
+        "gold_score": -13.958859
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963023,
+        "gold_score": -13.862227
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.962793,
+        "gold_score": -13.85642
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.963553,
+        "gold_score": -13.876074
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000677,
+        "gold_score": -21.211526
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000673,
+        "gold_score": -21.197622
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.000687,
+        "gold_score": -21.244416
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016541,
+        "gold_score": -17.925857
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016535,
+        "gold_score": -17.920144
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.016554,
+        "gold_score": -17.939554
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.000962,
+        "gold_score": -20.857152
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.000942,
+        "gold_score": -20.857475
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.00101,
+        "gold_score": -20.856844
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.020708,
+        "gold_score": -17.710704
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.020947,
+        "gold_score": -17.69308
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.02016,
+        "gold_score": -17.752197
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieval_score": 1.0,
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED"
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029624,
+        "gold_score": -21.104396
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029569,
+        "gold_score": -21.096572
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.029749,
+        "gold_score": -21.123096
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.951945,
+        "gold_score": -17.629156
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.951579,
+        "gold_score": -17.619966
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.952768,
+        "gold_score": -17.650967
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "para-008",
+      "battery": "paraphrase",
+      "question": "Skell is operated by whom?",
+      "gold": "Dravy",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.018413,
+        "gold_score": -21.57532
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.018828,
+        "gold_score": -21.543627
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 0.017478,
+        "gold_score": -21.649716
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.1429,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.961189,
+        "gold_score": -17.817555
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.961358,
+        "gold_score": -17.806494
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "gold_prob": 0.960795,
+        "gold_score": -17.843728
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "PLASTIC"
+     },
+     {
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039077,
+        "gold_score": -21.017367
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.038907,
+        "gold_score": -21.010767
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "gold_prob": 0.039473,
+        "gold_score": -21.033203
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.425189
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.408086
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "gold_prob": 1e-06,
+        "gold_score": -31.46576
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieval_score": 0.4,
+      "retrieved_correct": false,
+      "provenance": "NONE"
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 6,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33338
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 2,
+       "RETRIEVED": 4
+      }
+     },
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     },
+     "combination": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33342
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 1,
+       "NONE": 2
+      }
+     }
+    }
+   },
+   "freeform": {
+    "rows": [
+     {
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "generation": "j'p,m'p,",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "generation": "j'p,m'p,",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     },
+     {
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "generation": ",m'p,m'p",
+      "exact": false,
+      "lenient": false,
+      "contains": false,
+      "empty": false
+     }
+    ],
+    "summary": {
+     "n": 14,
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_fraction": 0.0
+    }
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_acc_pre": {
+     "paraphrase": {
+      "n": 3,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_gold_prob": 0.33333
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 1
+      }
+     }
+    },
+    "paraphrase_acc_post": {
+     "n": 3,
+     "mean_chance": 0.3333,
+     "retrieval_acc": 0.0,
+     "modes": {
+      "FULL": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "PLASTIC": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      },
+      "CONSOLIDATED": {
+       "acc@1": 0.3333,
+       "mean_gold_rank": 2.0,
+       "mean_gold_prob": 0.33333
+      }
+     },
+     "provenance_histogram": {
+      "NONE": 2,
+      "PLASTIC": 1
+     }
+    },
+    "answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0,
+     "RETRIEVED": 1.0
+    },
+    "survival_ok": true
+   },
+   "variant_s": 1.5
+  }
+ },
+ "headline_comparison": {
+  "B_retrieval_paraphrase": 0.0,
+  "B_retrieval_combination": 0.0,
+  "variants": {
+   "C": {
+    "paraphrase_with_plastic": 0.3333,
+    "paraphrase_without_plastic": 0.3333,
+    "combination_with_plastic": 0.3333,
+    "combination_without_plastic": 0.3333,
+    "beats_B_paraphrase": true,
+    "beats_B_combination": true,
+    "delta_vs_B_paraphrase": 0.3333,
+    "delta_vs_B_combination": 0.3333,
+    "plastic_ablation_delta_paraphrase": 0.0,
+    "plastic_ablation_delta_combination": 0.0
+   },
+   "D": {
+    "paraphrase_with_plastic": 0.3333,
+    "paraphrase_without_plastic": 0.3333,
+    "combination_with_plastic": 0.3333,
+    "combination_without_plastic": 0.3333,
+    "beats_B_paraphrase": true,
+    "beats_B_combination": true,
+    "delta_vs_B_paraphrase": 0.3333,
+    "delta_vs_B_combination": 0.3333,
+    "plastic_ablation_delta_paraphrase": 0.0,
+    "plastic_ablation_delta_combination": 0.0
+   },
+   "E": {
+    "paraphrase_with_plastic": 0.3333,
+    "paraphrase_without_plastic": 0.3333,
+    "combination_with_plastic": 0.3333,
+    "combination_without_plastic": 0.3333,
+    "beats_B_paraphrase": true,
+    "beats_B_combination": true,
+    "delta_vs_B_paraphrase": 0.3333,
+    "delta_vs_B_combination": 0.3333,
+    "plastic_ablation_delta_paraphrase": 0.0,
+    "plastic_ablation_delta_combination": 0.0
+   }
+  },
+  "variants_beating_B_on_transfer_or_combination": [
+   "C",
+   "D",
+   "E"
+  ],
+  "headline": "C/D/E beat B on knowledge transfer or unseen combinations: C, D, E"
+ },
+ "foundation_integrity": {
+  "bit_identical_after_full_run": true,
+  "differing_params": [],
+  "n_params_checked": 39
+ }
+}

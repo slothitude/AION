@@ -1,0 +1,2383 @@
+[
+ {
+  "tag": "teach-chain00",
+  "transcript_id": "teach-chain00",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "teacher_teach",
+    "provenance": "lesson",
+    "content": "Neral operates Tav. Tav routes to relay Kimo. Kimo controls device Zor. Zor produces heat.",
+    "transcript_id": "teach-chain00",
+    "meta": {}
+   }
+  ],
+  "events": []
+ },
+ {
+  "tag": "teach-check-chain00",
+  "transcript_id": "teach-check-chain00",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Neral operate?",
+    "transcript_id": "teach-check-chain00",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Tav",
+    "transcript_id": "teach-check-chain00",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jkwf,f,f",
+    "transcript_id": "teach-check-chain00",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jkwf,f,f' -> teacher='Tav'",
+    "transcript_id": "teach-check-chain00",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "teach-check-chain00",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Neral operate?",
+    "student_answer": "jkwf,f,f",
+    "teacher_answer": "Tav",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "teach-check-chain00",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "teach-chain01",
+  "transcript_id": "teach-chain01",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "teacher_teach",
+    "provenance": "lesson",
+    "content": "Sula operates Rinpo. Rinpo routes to relay Drel. Drel controls device Blun. Blun produces light.",
+    "transcript_id": "teach-chain01",
+    "meta": {}
+   }
+  ],
+  "events": []
+ },
+ {
+  "tag": "teach-check-chain01",
+  "transcript_id": "teach-check-chain01",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Sula operate?",
+    "transcript_id": "teach-check-chain01",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Rinpo",
+    "transcript_id": "teach-check-chain01",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "j'pwf'pw",
+    "transcript_id": "teach-check-chain01",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=\"j'pwf'pw\" -> teacher='Rinpo'",
+    "transcript_id": "teach-check-chain01",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "teach-check-chain01",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Sula operate?",
+    "student_answer": "j'pwf'pw",
+    "teacher_answer": "Rinpo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "teach-check-chain01",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "teach-chain02",
+  "transcript_id": "teach-chain02",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "teacher_teach",
+    "provenance": "lesson",
+    "content": "Dravy operates Skell. Skell routes to relay Vash. Vash controls device Crat. Crat produces pressure.",
+    "transcript_id": "teach-chain02",
+    "meta": {}
+   }
+  ],
+  "events": []
+ },
+ {
+  "tag": "teach-check-chain02",
+  "transcript_id": "teach-check-chain02",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Dravy operate?",
+    "transcript_id": "teach-check-chain02",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Skell",
+    "transcript_id": "teach-check-chain02",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jk'p",
+    "transcript_id": "teach-check-chain02",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=\"jk'p\" -> teacher='Skell'",
+    "transcript_id": "teach-check-chain02",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "teach-check-chain02",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Dravy operate?",
+    "student_answer": "jk'p",
+    "teacher_answer": "Skell",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "teach-check-chain02",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "test",
+  "transcript_id": "test",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Neral operate?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Tav",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jkwf,f,f",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jkwf,f,f' -> teacher='Tav'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 5,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Neral operate?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 6,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Tav",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 7,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jkwf,f,f",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 8,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jkwf,f,f' -> teacher='Tav'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 9,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 10,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Who does Neral operate?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 11,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Tav",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 12,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jkwf,f,f",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 13,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jkwf,f,f' -> teacher='Tav'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 14,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 15,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Where does Tav route?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 16,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 17,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jwo,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 18,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jwo,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 19,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 20,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Where does Tav route?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 21,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 22,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jwo,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 23,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jwo,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 24,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 25,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Where does Tav route?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 26,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 27,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jwo,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 28,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='jwo,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 29,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 30,
+    "kind": "question",
+    "provenance": "question",
+    "content": "What does Neral reach?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 31,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "heat",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 32,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "qwqwqwqw",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 33,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='qwqwqwqw' -> teacher='heat'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 34,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 35,
+    "kind": "question",
+    "provenance": "question",
+    "content": "What does Neral reach?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 36,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "heat",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 37,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "qwqwqwqw",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 38,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='qwqwqwqw' -> teacher='heat'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 39,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 40,
+    "kind": "question",
+    "provenance": "question",
+    "content": "What does Neral reach?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 41,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "heat",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 42,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "qwqwqwqw",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 43,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student='qwqwqwqw' -> teacher='heat'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 44,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 45,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Does Neral reach Zor?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 46,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "yes",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 47,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jk''''''",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 48,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=\"jk''''''\" -> teacher='yes'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 49,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 50,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Does Neral reach Zor?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 51,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "yes",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 52,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jk''''''",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 53,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=\"jk''''''\" -> teacher='yes'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 54,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 55,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Does Neral reach Zor?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 56,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "yes",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 57,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": "jk''''''",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 58,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=\"jk''''''\" -> teacher='yes'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 59,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 60,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 61,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 62,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 63,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 64,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 65,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 66,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 67,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 68,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 69,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 70,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 71,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 72,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 73,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 74,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 75,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 76,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 77,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 78,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 79,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 80,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 81,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 82,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 83,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 84,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 85,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 86,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 87,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 88,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 89,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 90,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 91,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "light",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 92,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 93,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='light'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 94,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 95,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 96,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "light",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 97,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 98,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='light'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 99,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 100,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 101,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "light",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 102,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 103,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='light'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 104,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 105,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 106,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Drel",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 107,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 108,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='Drel'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 109,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 110,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 111,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Drel",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 112,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 113,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='Drel'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 114,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 115,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 116,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Drel",
+    "transcript_id": "test",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 117,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,,,",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 118,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,,,' -> teacher='Drel'",
+    "transcript_id": "test",
+    "meta": {}
+   },
+   {
+    "index": 119,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "test",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Neral operate?",
+    "student_answer": "jkwf,f,f",
+    "teacher_answer": "Tav",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Neral operate?",
+    "student_answer": "jkwf,f,f",
+    "teacher_answer": "Tav",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 8,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Who does Neral operate?",
+    "student_answer": "jkwf,f,f",
+    "teacher_answer": "Tav",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 13,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Where does Tav route?",
+    "student_answer": "jwo,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 18,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Where does Tav route?",
+    "student_answer": "jwo,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 23,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Where does Tav route?",
+    "student_answer": "jwo,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 28,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "What does Neral reach?",
+    "student_answer": "qwqwqwqw",
+    "teacher_answer": "heat",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 33,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "What does Neral reach?",
+    "student_answer": "qwqwqwqw",
+    "teacher_answer": "heat",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 38,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "What does Neral reach?",
+    "student_answer": "qwqwqwqw",
+    "teacher_answer": "heat",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 43,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Does Neral reach Zor?",
+    "student_answer": "jk''''''",
+    "teacher_answer": "yes",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 48,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Does Neral reach Zor?",
+    "student_answer": "jk''''''",
+    "teacher_answer": "yes",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 53,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Does Neral reach Zor?",
+    "student_answer": "jk''''''",
+    "teacher_answer": "yes",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 58,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 63,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 68,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 73,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 78,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 83,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 88,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "light",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 93,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "light",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 98,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. What does Neral reach now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "light",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 103,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "Drel",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 108,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "Drel",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 113,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is rerouted to relay Drel. Which relay does Neral route through now?",
+    "student_answer": ",,,,,,,,",
+    "teacher_answer": "Drel",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "test",
+    "source_turn_index": 118,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "paraphrase-pre-restart",
+  "transcript_id": "paraphrase-pre-restart",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 5,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 6,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 7,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 8,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 9,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 10,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 11,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 12,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 13,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 14,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 15,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 16,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 17,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 18,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 19,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 20,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 21,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 22,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 23,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 24,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 25,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 26,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 27,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 28,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {}
+   },
+   {
+    "index": 29,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-pre-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 8,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 13,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 18,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 23,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-pre-restart",
+    "source_turn_index": 28,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "paraphrase-post-restart",
+  "transcript_id": "paraphrase-post-restart",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 2,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 3,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 4,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 5,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 6,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 7,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 8,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 9,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 10,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav is operated by whom?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 11,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Neral",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 12,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,,,r,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 13,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,,,r,' -> teacher='Neral'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 14,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 15,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 16,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 17,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 18,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 19,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 20,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 21,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 22,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 23,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 24,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   },
+   {
+    "index": 25,
+    "kind": "question",
+    "provenance": "question",
+    "content": "Tav sends its flow through which relay?",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 26,
+    "kind": "teacher_answer",
+    "provenance": "question",
+    "content": "Kimo",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "structured": true
+    }
+   },
+   {
+    "index": 27,
+    "kind": "student_answer",
+    "provenance": "question",
+    "content": ",,,,f,f,",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 28,
+    "kind": "correction",
+    "provenance": "correction",
+    "content": "student=',,,,f,f,' -> teacher='Kimo'",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {}
+   },
+   {
+    "index": 29,
+    "kind": "lesson_event",
+    "provenance": "system",
+    "content": "question_round",
+    "transcript_id": "paraphrase-post-restart",
+    "meta": {
+     "verdict": "corrected"
+    }
+   }
+  ],
+  "events": [
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 3,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 8,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav is operated by whom?",
+    "student_answer": ",,,,,,r,",
+    "teacher_answer": "Neral",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 13,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 18,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 23,
+    "meta": {
+     "opening_state": "idle"
+    }
+   },
+   {
+    "kind": "question_round",
+    "facts": [],
+    "question": "Tav sends its flow through which relay?",
+    "student_answer": ",,,,f,f,",
+    "teacher_answer": "Kimo",
+    "verdict": "corrected",
+    "corrections": [],
+    "transcript_id": "paraphrase-post-restart",
+    "source_turn_index": 28,
+    "meta": {
+     "opening_state": "idle"
+    }
+   }
+  ]
+ },
+ {
+  "tag": "retain-correction",
+  "transcript_id": "retain-correction",
+  "turns": [
+   {
+    "index": 0,
+    "kind": "teacher_teach",
+    "provenance": "lesson",
+    "content": "Tav is rerouted to relay Drel.",
+    "transcript_id": "retain-correction",
+    "meta": {}
+   },
+   {
+    "index": 1,
+    "kind": "intervention",
+    "provenance": "correction",
+    "content": "Tav is rerouted to relay Drel.",
+    "transcript_id": "retain-correction",
+    "meta": {
+     "subject": "Tav",
+     "new_object": "Drel"
+    }
+   }
+  ],
+  "events": []
+ }
+]

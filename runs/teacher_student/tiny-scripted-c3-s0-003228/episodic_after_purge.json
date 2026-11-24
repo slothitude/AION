@@ -1,0 +1,32 @@
+{
+ "events": [
+  {
+   "channel": "direct",
+   "event_id": "ev000014",
+   "kind": "purge_tombstone",
+   "plastic_update_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "seq": 14,
+   "tags": {
+    "purged": "13"
+   },
+   "teacher": "unknown",
+   "text": "purged 13 transcript events",
+   "transcript_id": null,
+   "ts": 0.0
+  }
+ ],
+ "seq": 14
+}

@@ -1,0 +1,385 @@
+{
+ "events": [
+  {
+   "channel": "transcript",
+   "event_id": "ev000001",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    1
+   ],
+   "seq": 1,
+   "tags": {
+    "answer": "Tav",
+    "chain": "0",
+    "fact_key": "Neral|operates|Tav",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Neral operates Tav.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000002",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    2
+   ],
+   "seq": 2,
+   "tags": {
+    "answer": "Kimo",
+    "chain": "0",
+    "fact_key": "Tav|routes-to|Kimo",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Tav routes to relay Kimo.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000003",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    3
+   ],
+   "seq": 3,
+   "tags": {
+    "answer": "Zor",
+    "chain": "0",
+    "fact_key": "Kimo|controls|Zor",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Kimo controls device Zor.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000004",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    4
+   ],
+   "seq": 4,
+   "tags": {
+    "answer": "heat",
+    "chain": "0",
+    "fact_key": "Zor|produces|heat",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Zor produces heat.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000005",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    5
+   ],
+   "seq": 5,
+   "tags": {
+    "answer": "Rinpo",
+    "chain": "1",
+    "fact_key": "Sula|operates|Rinpo",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Sula operates Rinpo.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000006",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    6
+   ],
+   "seq": 6,
+   "tags": {
+    "answer": "Drel",
+    "chain": "1",
+    "fact_key": "Rinpo|routes-to|Drel",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Rinpo routes to relay Drel.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000007",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    7
+   ],
+   "seq": 7,
+   "tags": {
+    "answer": "Blun",
+    "chain": "1",
+    "fact_key": "Drel|controls|Blun",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Drel controls device Blun.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000008",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    8
+   ],
+   "seq": 8,
+   "tags": {
+    "answer": "light",
+    "chain": "1",
+    "fact_key": "Blun|produces|light",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Blun produces light.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000009",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    9
+   ],
+   "seq": 9,
+   "tags": {
+    "answer": "Skell",
+    "chain": "2",
+    "fact_key": "Dravy|operates|Skell",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Dravy operates Skell.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000010",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    10
+   ],
+   "seq": 10,
+   "tags": {
+    "answer": "Vash",
+    "chain": "2",
+    "fact_key": "Skell|routes-to|Vash",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Skell routes to relay Vash.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000011",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    11
+   ],
+   "seq": 11,
+   "tags": {
+    "answer": "Crat",
+    "chain": "2",
+    "fact_key": "Vash|controls|Crat",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Vash controls device Crat.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000012",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    12
+   ],
+   "seq": 12,
+   "tags": {
+    "answer": "pressure",
+    "chain": "2",
+    "fact_key": "Crat|produces|pressure",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Crat produces pressure.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000013",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    13
+   ],
+   "seq": 13,
+   "tags": {
+    "answer": "Morva",
+    "chain": "3",
+    "fact_key": "Ombit|operates|Morva",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Ombit operates Morva.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000014",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    14
+   ],
+   "seq": 14,
+   "tags": {
+    "answer": "Osten",
+    "chain": "3",
+    "fact_key": "Morva|routes-to|Osten",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Morva routes to relay Osten.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000015",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    15
+   ],
+   "seq": 15,
+   "tags": {
+    "answer": "Dovel",
+    "chain": "3",
+    "fact_key": "Osten|controls|Dovel",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Osten controls device Dovel.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000016",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    16
+   ],
+   "seq": 16,
+   "tags": {
+    "answer": "torque",
+    "chain": "3",
+    "fact_key": "Dovel|produces|torque",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Dovel produces torque.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000017",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    17
+   ],
+   "seq": 17,
+   "tags": {
+    "answer": "Plin",
+    "chain": "4",
+    "fact_key": "Quelos|operates|Plin",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Quelos operates Plin.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000018",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    18
+   ],
+   "seq": 18,
+   "tags": {
+    "answer": "Belro",
+    "chain": "4",
+    "fact_key": "Plin|routes-to|Belro",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Plin routes to relay Belro.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000019",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    19
+   ],
+   "seq": 19,
+   "tags": {
+    "answer": "Errik",
+    "chain": "4",
+    "fact_key": "Belro|controls|Errik",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Belro controls device Errik.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000020",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    20
+   ],
+   "seq": 20,
+   "tags": {
+    "answer": "steam",
+    "chain": "4",
+    "fact_key": "Errik|produces|steam",
+    "kind": "fact"
+   },
+   "teacher": "TeacherClient endpoint=http://192.168.0.33:8180/v1 alias='qwen35-4b' (lessons via structured protocol; grading refs = world graph gold)",
+   "text": "Errik produces steam.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  }
+ ],
+ "seq": 20
+}

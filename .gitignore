@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+pytest-cache-files-*/
+
+# Local data artifacts (corpus staging from the deprecated from-scratch lane)
+aion/experiments/data/
+*.bin
+
+# Model checkpoints & state dumps (too large for git — live on Lappy storage)
+*.pt
+*.ckpt
+*.safetensors
+
+# Session/handover artifacts
+*.tar.gz
+output.txt
+
+# OS
+Thumbs.db
+.DS_Store
+data/

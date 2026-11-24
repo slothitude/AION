@@ -1,0 +1,13 @@
+[package]
+name = "pith_bridge"
+version = "0.1.0"
+edition = "2021"
+description = "AION gamma-residual bridge: line/binary protocol server over the LARQL-D1 Pith runner (read-only consumer of the validated R3b crate)"
+
+[dependencies]
+runner = { path = "/mnt/seagate/r3b/runner" }
+littlebit-engine = { path = "/mnt/seagate/r3b/littlebit-engine" }
+serde_json = "1"
+
+[profile.release]
+opt-level = 3
