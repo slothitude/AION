@@ -1,0 +1,98 @@
+{
+ "phase": "register",
+ "register": {
+  "capabilities": {
+   "combine": {
+    "owned_rows": 2,
+    "provenance_histogram": {
+     "PLASTIC": 2
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   },
+   "learn_new": {
+    "owned_rows": 4,
+    "provenance_histogram": {
+     "PLASTIC": 4
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   },
+   "predict": {
+    "owned_rows": 18,
+    "provenance_histogram": {
+     "PLASTIC": 18,
+     "RETRIEVED": 6
+    },
+    "retrieved_rows_NEVER_OWNED": 6,
+    "survival_ratio": 0.75,
+    "verdict": "degrades",
+    "with_host": 1.0,
+    "without_host_post_restart": 0.75,
+    "without_host_pre_restart": 1.0
+   },
+   "recognise": {
+    "owned_rows": 9,
+    "provenance_histogram": {
+     "PLASTIC": 9,
+     "RETRIEVED": 3
+    },
+    "retrieved_rows_NEVER_OWNED": 3,
+    "survival_ratio": 0.75,
+    "verdict": "degrades",
+    "with_host": 1.0,
+    "without_host_post_restart": 0.75,
+    "without_host_pre_restart": 1.0
+   },
+   "self_correct": {
+    "owned_rows": 3,
+    "provenance_histogram": {
+     "PLASTIC": 3
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   }
+  },
+  "confound_guard": {
+   "caveat": null,
+   "substrate_capability_with_host": {
+    "combine": 1.0,
+    "learn_new": 1.0,
+    "predict": 1.0,
+    "recognise": 1.0,
+    "self_correct": 1.0
+   },
+   "substrate_degraded": false,
+   "substrate_with_host_run": "Qwen/Qwen3.5-4B-Base"
+  },
+  "register": "capability-survival (owner-corrected): BOTH runs reported; ratio = without_host/with_host on the SAME battery; post-restart disconnected scores; RETRIEVED never owned",
+  "structural_disconnection": {
+   "host_touches_since_close": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "host_touches_total": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "iface_absent": true,
+   "monitor_closed": true,
+   "poison_loader_intact": true
+  }
+ },
+ "status": "RUN"
+}

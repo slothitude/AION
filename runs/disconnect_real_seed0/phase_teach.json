@@ -1,0 +1,68 @@
+{
+ "disconnected": {
+  "consolidation_invariant_ok": true,
+  "indexed_relations": 12,
+  "structural": {
+   "host_touches_since_close": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "host_touches_total": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "iface_absent": true,
+   "monitor_closed": true,
+   "poison_loader_intact": true
+  }
+ },
+ "disconnected_seed_keys": [
+  "Neral|operates|Tav",
+  "Tav|routes-to|Kimo",
+  "Kimo|controls|Zor",
+  "Zor|produces|heat",
+  "Sorni|controls|Vask",
+  "Vask|produces|frost",
+  "Dravy|operates|Plin",
+  "Plin|routes-to|Belro",
+  "Belro|controls|Ryvok",
+  "Ryvok|produces|chime",
+  "Rhoka|controls|Tolvo",
+  "Tolvo|produces|pulse"
+ ],
+ "host": {
+  "consolidation_invariant_ok": true,
+  "indexed_relations": 21,
+  "monitor": {
+   "close_reason": null,
+   "closed": false,
+   "counts_at_close": null,
+   "counts_since_close": {
+    "foundation_forward": 92,
+    "foundation_load": 1,
+    "teacher_call": 0
+   },
+   "counts_total": {
+    "foundation_forward": 92,
+    "foundation_load": 1,
+    "teacher_call": 0
+   },
+   "name": "host-control"
+  },
+  "scores": {
+   "combine": 1.0,
+   "learn_new": 1.0,
+   "predict": 1.0,
+   "recognise": 1.0,
+   "self_correct": 1.0
+  },
+  "substrate": "Qwen/Qwen3.5-4B-Base"
+ },
+ "note": "WITH-host control run measured here (register denominator). The disconnected lane has learned the same seeds through direct observation ONLY; steps 1-6 follow.",
+ "phase": "teach",
+ "seed_relations": 12,
+ "status": "RUN",
+ "step": 0
+}

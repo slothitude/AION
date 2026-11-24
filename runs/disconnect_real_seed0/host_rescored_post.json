@@ -1,0 +1,29 @@
+{
+ "epoch": "post-intervention (symmetric with the disconnected lane's post-restart scoring)",
+ "provenance": {
+  "combine": {
+   "PLASTIC": 2
+  },
+  "learn_new": {
+   "PLASTIC": 4
+  },
+  "predict": {
+   "PLASTIC": 18,
+   "RETRIEVED": 6
+  },
+  "recognise": {
+   "PLASTIC": 9,
+   "RETRIEVED": 3
+  },
+  "self_correct": {
+   "PLASTIC": 3
+  }
+ },
+ "scores": {
+  "combine": 1.0,
+  "learn_new": 1.0,
+  "predict": 0.75,
+  "recognise": 0.75,
+  "self_correct": 1.0
+ }
+}
