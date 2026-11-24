@@ -67,7 +67,8 @@ def compute_metrics(
         if p == t:
             class_correct[t] += 1
     
-    class_acc = class_correct / (class_total + 1e-8)
+    # Exact ratio for present classes; absent classes count as 0 accuracy (no epsilon artefact)
+    class_acc = np.divide(class_correct, class_total, out=np.zeros_like(class_correct), where=class_total > 0)
     metrics["per_class_accuracy"] = class_acc.tolist()
     metrics["macro_accuracy"] = class_acc.mean()
     
@@ -184,10 +185,10 @@ def analyze_model_complexity(model: torch.nn.Module) -> Dict:
     
     for name, module in model.named_modules():
         if len(list(module.children())) == 0:  # Leaf module
+            layer_type = type(module).__name__
+            layer_counts[layer_type] = layer_counts.get(layer_type, 0) + 1
             module_params = sum(p.numel() for p in module.parameters())
             if module_params > 0:
-                layer_type = type(module).__name__
-                layer_counts[layer_type] = layer_counts.get(layer_type, 0) + 1
                 param_by_layer[layer_type] = param_by_layer.get(layer_type, 0) + module_params
     
     return {

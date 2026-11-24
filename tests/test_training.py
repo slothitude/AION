@@ -3,12 +3,15 @@
 import torch
 import torch.nn as nn
 import pytest
+from pathlib import Path
 from nnfs.training import create_data_loaders, measure_inference_time, analyze_model_complexity
 from nnfs.training.metrics import compute_metrics, compute_parameter_efficiency, MetricsTracker
 
 
 class TestDataLoaders:
     def test_mnist_loaders(self):
+        if not Path("./data/MNIST/raw").exists():
+            pytest.skip("MNIST not cached locally (offline); cannot test loading")
         train_loader, val_loader, test_loader, input_dim, num_classes = create_data_loaders("mnist", batch_size=32)
         assert input_dim == 784
         assert num_classes == 10
