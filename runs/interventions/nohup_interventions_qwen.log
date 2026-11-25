@@ -1,0 +1,66 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 6339.67it/s]
+[interventions] setup: Qwen3.5-4B-Base @ /mnt/seagate/aion-models/Qwen3.5-4B-Base (CPU BF16, FROZEN) (load 56.9s); world seed=0 chains=5 relationships=20 verify=OK; reroutes=8 pairs=[(0, 1), (3, 4), (30, 31)] hidden=2560
+[interventions] TEACH done: 20 facts plastic (1765.1s); u_fast [0.0, 0.0, 0.0] -> [1.427921, 1.459183, 0.784876]; min strength 1.189219; weak=0
+[interventions] epoch 0 baseline: stability reach accuracy {'FULL': 0.2, 'PLASTIC': 0.2, 'CONSOLIDATED': 0.2} (heuristic 5/5)
+[interventions] intervene 0: Tav is rerouted to relay Drel. new_fact_learned=True (strength 1.307746, was 1.30409 for the old edge); u_fast [1.427921, 1.459183, 0.784876] -> [1.445497, 1.52917, 0.895128] (370.22s)
+[interventions] epoch 1: intervention acc {'FULL': 0.5, 'PLASTIC': 0.5, 'CONSOLIDATED': 0.5} | stability acc {'FULL': 0.4, 'PLASTIC': 0.4, 'CONSOLIDATED': 0.4} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 1: Rinpo is rerouted to relay Vash. new_fact_learned=True (strength 1.304238, was 1.291353 for the old edge); u_fast [1.445497, 1.52917, 0.895128] -> [1.458439, 1.581616, 0.991741] (467.82s)
+[interventions] epoch 2: intervention acc {'FULL': 0.5, 'PLASTIC': 0.5, 'CONSOLIDATED': 0.5} | stability acc {'FULL': 0.2, 'PLASTIC': 0.2, 'CONSOLIDATED': 0.2} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 2: Skell is rerouted to relay Osten. new_fact_learned=True (strength 1.295613, was 1.291044 for the old edge); u_fast [1.458439, 1.581616, 0.991741] -> [1.469744, 1.623376, 1.099904] (285.88s)
+[interventions] epoch 3: intervention acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | stability acc {'FULL': 0.2, 'PLASTIC': 0.2, 'CONSOLIDATED': 0.2} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 3: Morva is rerouted to relay Belro. new_fact_learned=True (strength 1.302999, was 1.278812 for the old edge); u_fast [1.469744, 1.623376, 1.099904] -> [1.479584, 1.661661, 1.202251] (288.83s)
+[interventions] epoch 4: intervention acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | stability acc {'FULL': 0.2, 'PLASTIC': 0.2, 'CONSOLIDATED': 0.2} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 4: Plin is rerouted to relay Kimo. new_fact_learned=True (strength 1.326554, was 1.298833 for the old edge); u_fast [1.479584, 1.661661, 1.202251] -> [1.489856, 1.697176, 1.297583] (287.99s)
+[interventions] epoch 5: intervention acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | stability acc {'FULL': 0.2, 'PLASTIC': 0.2, 'CONSOLIDATED': 0.2} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 5: Tav is rerouted to relay Osten. new_fact_learned=True (strength 1.307862, was 1.318912 for the old edge); u_fast [1.489856, 1.697176, 1.297583] -> [1.500338, 1.725846, 1.396755] (310.99s)
+[interventions] epoch 6: intervention acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | stability acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 6: Skell is rerouted to relay Kimo. new_fact_learned=True (strength 1.315514, was 1.299541 for the old edge); u_fast [1.500338, 1.725846, 1.396755] -> [1.510821, 1.753855, 1.489841] (176.05s)
+[interventions] epoch 7: intervention acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | stability acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] intervene 7: Plin is rerouted to relay Vash. new_fact_learned=True (strength 1.321684, was 1.328295 for the old edge); u_fast [1.510821, 1.753855, 1.489841] -> [1.520766, 1.780111, 1.574105] (187.15s)
+[interventions] epoch 8: intervention acc {'FULL': 0.5, 'PLASTIC': 0.5, 'CONSOLIDATED': 0.5} | stability acc {'FULL': 0.0, 'PLASTIC': 0.0, 'CONSOLIDATED': 0.0} | PLASTIC-vs-CONSOLIDATED delta (intervention) +0.000
+[interventions] INTERVENE done: 8 reroutes (21354.4s)
+
+========================================================================================
+AION-1 INTERVENTION EXPERIMENT (interventions-qwen-c5-r8-s0-131858)
+foundation: Qwen3.5-4B-Base @ /mnt/seagate/aion-models/Qwen3.5-4B-Base (CPU BF16, FROZEN)
+========================================================================================
+teach: 20 facts, u_fast [1.427921, 1.459183, 0.784876], min strength 1.189219
+----------------------------------------------------------------------------------------
+PER-REROUTE (reach_now / route_now):
+  #0 Tav is rerouted to relay Drel.
+      gold reach=   light route=    Drel | PLASTIC reach=   light* route=    Vash  | FULL reach=   light* route=    Vash  | CONSOL reach=   light* route=    Vash 
+  #1 Rinpo is rerouted to relay Vash.
+      gold reach=pressure route=    Vash | PLASTIC reach=   light  route=    Vash* | FULL reach=   light  route=    Vash* | CONSOL reach=   light  route=    Vash*
+  #2 Skell is rerouted to relay Osten.
+      gold reach=  torque route=   Osten | PLASTIC reach=   light  route=    Vash  | FULL reach=   light  route=    Vash  | CONSOL reach=   light  route=    Vash 
+  #3 Morva is rerouted to relay Belro.
+      gold reach=   steam route=   Belro | PLASTIC reach=   light  route=    Vash  | FULL reach=   light  route=    Vash  | CONSOL reach=   light  route=    Vash 
+  #4 Plin is rerouted to relay Kimo.
+      gold reach=    heat route=    Kimo | PLASTIC reach=   light  route=    Vash  | FULL reach=   light  route=    Vash  | CONSOL reach=   light  route=    Vash 
+  #5 Tav is rerouted to relay Osten.
+      gold reach=  torque route=   Osten | PLASTIC reach=   light  route=    Vash  | FULL reach=   light  route=    Vash  | CONSOL reach=   light  route=    Vash 
+  #6 Skell is rerouted to relay Kimo.
+      gold reach=    heat route=    Kimo | PLASTIC reach=   light  route=    Vash  | FULL reach=   light  route=    Vash  | CONSOL reach=   light  route=    Vash 
+  #7 Plin is rerouted to relay Vash.
+      gold reach=pressure route=    Vash | PLASTIC reach=   light  route=    Vash* | FULL reach=   light  route=    Vash* | CONSOL reach=   light  route=    Vash*
+----------------------------------------------------------------------------------------
+AGGREGATE (intervention questions, n=16, chance=0.20):
+  FULL          acc@1=0.188
+  PLASTIC       acc@1=0.188
+  CONSOLIDATED  acc@1=0.188
+  RETRIEVED     acc@1=0.000
+  heuristic ceiling = 1.000 | plastic ablation delta (PLASTIC - CONSOLIDATED) = +0.000 | FULL delta = +0.000
+  plastic-only correct 0 / plastic-only wrong 0
+STABILITY (old reach questions re-scored each epoch vs own-epoch gold):
+  affected actors flipped 1.00 (flipped-and-correct 0.00, n=24); unaffected stable 1.00 (moved 0.00, n=96)
+----------------------------------------------------------------------------------------
+VERDICT: {
+ "expression_above_chance": false,
+ "plastic_helps_direction": false,
+ "heuristic_ceiling_ok": true,
+ "old_reach_stability": 1.0,
+ "note": "honest expectation (pre-registered): expression may sit near chance; a ~0 ablation delta with strong u_fast evidence IS the finding"
+}
+report: /home/aaron/aion_phase1/runs/interventions/interventions-qwen-c5-r8-s0-131858/report.json
+TOTAL RUNTIME: 23192.9s (386.5 min)

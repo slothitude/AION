@@ -1,0 +1,60 @@
+{
+ "restart": {
+  "state_restored_exact": true,
+  "restore_diffs": [],
+  "probes_regenerate_identically": true,
+  "probe_diffs": [],
+  "loaded_from_disk_only": true,
+  "episodic_events_reloaded": 110,
+  "episodic_event_count_preserved": true,
+  "fact_index_reloaded": 110,
+  "restart_s": 884.5
+ },
+ "per_battery": {
+  "direct": {
+   "n": 100,
+   "answers_identical_fraction": {
+    "FULL": 1.0,
+    "PLASTIC": 1.0,
+    "CONSOLIDATED": 1.0,
+    "RETRIEVED": 1.0
+   },
+   "accuracy_exact_pre": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.75
+   },
+   "accuracy_exact_post": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.75
+   },
+   "survival_ok": true
+  },
+  "paraphrase": {
+   "n": 20,
+   "answers_identical_fraction": {
+    "FULL": 1.0,
+    "PLASTIC": 1.0,
+    "CONSOLIDATED": 1.0,
+    "RETRIEVED": 1.0
+   },
+   "accuracy_exact_pre": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.65
+   },
+   "accuracy_exact_post": {
+    "FULL": 0.0,
+    "PLASTIC": 0.0,
+    "CONSOLIDATED": 0.0,
+    "RETRIEVED": 0.65
+   },
+   "survival_ok": true
+  }
+ },
+ "survival_all_batteries_ok": true
+}

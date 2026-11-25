@@ -1,0 +1,73 @@
+{
+ "batteries": {
+  "direct": {
+   "n": 100,
+   "mean_chance": 0.04,
+   "accuracy": {
+    "FULL": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "PLASTIC": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "CONSOLIDATED": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "RETRIEVED": {
+     "exact": 0.75,
+     "lenient": 0.75,
+     "contains": 0.75,
+     "empty_answer_fraction": 0.0
+    }
+   },
+   "provenance_histogram": {
+    "RETRIEVED": 75,
+    "NONE": 25
+   }
+  },
+  "paraphrase": {
+   "n": 20,
+   "mean_chance": 0.04,
+   "accuracy": {
+    "FULL": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "PLASTIC": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "CONSOLIDATED": {
+     "exact": 0.0,
+     "lenient": 0.0,
+     "contains": 0.0,
+     "empty_answer_fraction": 1.0
+    },
+    "RETRIEVED": {
+     "exact": 0.65,
+     "lenient": 0.65,
+     "contains": 0.65,
+     "empty_answer_fraction": 0.0
+    }
+   },
+   "provenance_histogram": {
+    "NONE": 7,
+    "RETRIEVED": 13
+   }
+  }
+ },
+ "rows_jsonl": "/home/aaron/aion_phase1/runs/ownership_scale/ownership-qwen-c25-s0-115404/battery_test.jsonl"
+}

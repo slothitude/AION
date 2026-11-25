@@ -1,0 +1,547 @@
+{
+ "episodic_events_before": 110,
+ "purge": {
+  "removed": 110,
+  "kept": 1,
+  "orphaned_update_ids": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   97,
+   98,
+   99,
+   100,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111
+  ]
+ },
+ "episodic_events_after": 1,
+ "probe_rows": [
+  {
+   "qid": "direct-000",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-000",
+   "mode": "PLASTIC",
+   "before": "Neral operates the **Neral Police",
+   "after": "Neral operates the **Neral Police",
+   "identical": true
+  },
+  {
+   "qid": "direct-000",
+   "mode": "RETRIEVED",
+   "before": "Tav",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-004",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-004",
+   "mode": "PLASTIC",
+   "before": "Sula operates the **Sula Group",
+   "after": "Sula operates the **Sula Group",
+   "identical": true
+  },
+  {
+   "qid": "direct-004",
+   "mode": "RETRIEVED",
+   "before": "Rinpo",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-008",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-008",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-008",
+   "mode": "RETRIEVED",
+   "before": "Skell",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-012",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-012",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-012",
+   "mode": "RETRIEVED",
+   "before": "Morva",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-016",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-016",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-016",
+   "mode": "RETRIEVED",
+   "before": "Plin",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-020",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-020",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-020",
+   "mode": "RETRIEVED",
+   "before": "Drex",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-024",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-024",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-024",
+   "mode": "RETRIEVED",
+   "before": "Volim",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-028",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-028",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-028",
+   "mode": "RETRIEVED",
+   "before": "Harpa",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-032",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-032",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-032",
+   "mode": "RETRIEVED",
+   "before": "Nixo",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-036",
+   "mode": "FULL",
+   "before": "Mavok operates the **Mav",
+   "after": "Mavok operates the **Mav",
+   "identical": true
+  },
+  {
+   "qid": "direct-036",
+   "mode": "PLASTIC",
+   "before": "Mavok operates the **Mav",
+   "after": "Mavok operates the **Mav",
+   "identical": true
+  },
+  {
+   "qid": "direct-036",
+   "mode": "RETRIEVED",
+   "before": "Qarbe",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-040",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-040",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-040",
+   "mode": "RETRIEVED",
+   "before": "Lomo",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-044",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-044",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-044",
+   "mode": "RETRIEVED",
+   "before": "Yentz",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-048",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-048",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-048",
+   "mode": "RETRIEVED",
+   "before": "Ufka",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-052",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-052",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-052",
+   "mode": "RETRIEVED",
+   "before": "Grev",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-056",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-056",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-056",
+   "mode": "RETRIEVED",
+   "before": "Bokka",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-060",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-060",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-060",
+   "mode": "RETRIEVED",
+   "before": "Sifel",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-064",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-064",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-064",
+   "mode": "RETRIEVED",
+   "before": "Tormu",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-068",
+   "mode": "FULL",
+   "before": "Ashvi operates the **Ashvi Group",
+   "after": "Ashvi operates the **Ashvi Group",
+   "identical": true
+  },
+  {
+   "qid": "direct-068",
+   "mode": "PLASTIC",
+   "before": "Ashvi operates the **Ashvi Group",
+   "after": "Ashvi operates the **Ashvi Group",
+   "identical": true
+  },
+  {
+   "qid": "direct-068",
+   "mode": "RETRIEVED",
+   "before": "Vlask",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-072",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-072",
+   "mode": "PLASTIC",
+   "before": "Fendor operates the **Fendor Group",
+   "after": "Fendor operates the **Fendor Group",
+   "identical": true
+  },
+  {
+   "qid": "direct-072",
+   "mode": "RETRIEVED",
+   "before": "Zenna",
+   "after": "",
+   "identical": false
+  },
+  {
+   "qid": "direct-076",
+   "mode": "FULL",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-076",
+   "mode": "PLASTIC",
+   "before": "",
+   "after": "",
+   "identical": true
+  },
+  {
+   "qid": "direct-076",
+   "mode": "RETRIEVED",
+   "before": "Ektar",
+   "after": "",
+   "identical": false
+  }
+ ],
+ "plastic_answers_identical": "40/40",
+ "plastic_unchanged": true,
+ "retrieved_answers_changed_after_purge": 20,
+ "retrieved_expected_to_degrade": true,
+ "note": "RETRIEVED is expected to degrade after a purge (the transcript WAS its substrate); PLASTIC must not move \u2014 that is the whole test"
+}

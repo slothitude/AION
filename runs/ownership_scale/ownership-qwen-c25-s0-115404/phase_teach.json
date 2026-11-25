@@ -1,0 +1,26 @@
+{
+ "facts_learned": 100,
+ "lessons": 25,
+ "facts_registered_with_probes": 100,
+ "all_100_facts_stored": true,
+ "gate_steps_per_fact": 6,
+ "gate_lr": 300.0,
+ "nnfs_learning_rate": 0.5,
+ "u_fast_norms_before": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "u_fast_norms_after": [
+  1.762529,
+  2.135255,
+  2.781854
+ ],
+ "gamma_after_teach": [
+  -42.288174,
+  47.465099,
+  -13.12531
+ ],
+ "episodic_events": 100,
+ "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)"
+}

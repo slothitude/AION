@@ -1,0 +1,2105 @@
+{
+ "events": [
+  {
+   "channel": "transcript",
+   "event_id": "ev000001",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    1
+   ],
+   "seq": 1,
+   "tags": {
+    "answer": "Tav",
+    "chain": "0",
+    "fact_key": "Neral|operates|Tav",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Neral operates Tav.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000002",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    2
+   ],
+   "seq": 2,
+   "tags": {
+    "answer": "Kimo",
+    "chain": "0",
+    "fact_key": "Tav|routes-to|Kimo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Tav routes to relay Kimo.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000003",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    3
+   ],
+   "seq": 3,
+   "tags": {
+    "answer": "Zor",
+    "chain": "0",
+    "fact_key": "Kimo|controls|Zor",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Kimo controls device Zor.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000004",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    4
+   ],
+   "seq": 4,
+   "tags": {
+    "answer": "heat",
+    "chain": "0",
+    "fact_key": "Zor|produces|heat",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Zor produces heat.",
+   "transcript_id": "teach-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000005",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    5
+   ],
+   "seq": 5,
+   "tags": {
+    "answer": "Rinpo",
+    "chain": "1",
+    "fact_key": "Sula|operates|Rinpo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Sula operates Rinpo.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000006",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    6
+   ],
+   "seq": 6,
+   "tags": {
+    "answer": "Drel",
+    "chain": "1",
+    "fact_key": "Rinpo|routes-to|Drel",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Rinpo routes to relay Drel.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000007",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    7
+   ],
+   "seq": 7,
+   "tags": {
+    "answer": "Blun",
+    "chain": "1",
+    "fact_key": "Drel|controls|Blun",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Drel controls device Blun.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000008",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    8
+   ],
+   "seq": 8,
+   "tags": {
+    "answer": "light",
+    "chain": "1",
+    "fact_key": "Blun|produces|light",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Blun produces light.",
+   "transcript_id": "teach-chain01",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000009",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    9
+   ],
+   "seq": 9,
+   "tags": {
+    "answer": "Skell",
+    "chain": "2",
+    "fact_key": "Dravy|operates|Skell",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Dravy operates Skell.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000010",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    10
+   ],
+   "seq": 10,
+   "tags": {
+    "answer": "Vash",
+    "chain": "2",
+    "fact_key": "Skell|routes-to|Vash",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Skell routes to relay Vash.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000011",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    11
+   ],
+   "seq": 11,
+   "tags": {
+    "answer": "Crat",
+    "chain": "2",
+    "fact_key": "Vash|controls|Crat",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Vash controls device Crat.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000012",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    12
+   ],
+   "seq": 12,
+   "tags": {
+    "answer": "pressure",
+    "chain": "2",
+    "fact_key": "Crat|produces|pressure",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Crat produces pressure.",
+   "transcript_id": "teach-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000013",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    13
+   ],
+   "seq": 13,
+   "tags": {
+    "answer": "Morva",
+    "chain": "3",
+    "fact_key": "Ombit|operates|Morva",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ombit operates Morva.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000014",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    14
+   ],
+   "seq": 14,
+   "tags": {
+    "answer": "Osten",
+    "chain": "3",
+    "fact_key": "Morva|routes-to|Osten",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Morva routes to relay Osten.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000015",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    15
+   ],
+   "seq": 15,
+   "tags": {
+    "answer": "Dovel",
+    "chain": "3",
+    "fact_key": "Osten|controls|Dovel",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Osten controls device Dovel.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000016",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    16
+   ],
+   "seq": 16,
+   "tags": {
+    "answer": "torque",
+    "chain": "3",
+    "fact_key": "Dovel|produces|torque",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Dovel produces torque.",
+   "transcript_id": "teach-chain03",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000017",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    17
+   ],
+   "seq": 17,
+   "tags": {
+    "answer": "Plin",
+    "chain": "4",
+    "fact_key": "Quelos|operates|Plin",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Quelos operates Plin.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000018",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    18
+   ],
+   "seq": 18,
+   "tags": {
+    "answer": "Belro",
+    "chain": "4",
+    "fact_key": "Plin|routes-to|Belro",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Plin routes to relay Belro.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000019",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    19
+   ],
+   "seq": 19,
+   "tags": {
+    "answer": "Errik",
+    "chain": "4",
+    "fact_key": "Belro|controls|Errik",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Belro controls device Errik.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000020",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    20
+   ],
+   "seq": 20,
+   "tags": {
+    "answer": "steam",
+    "chain": "4",
+    "fact_key": "Errik|produces|steam",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Errik produces steam.",
+   "transcript_id": "teach-chain04",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000021",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    21
+   ],
+   "seq": 21,
+   "tags": {
+    "answer": "Drex",
+    "chain": "5",
+    "fact_key": "Vantro|operates|Drex",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Vantro operates Drex.",
+   "transcript_id": "teach-chain05",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000022",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    22
+   ],
+   "seq": 22,
+   "tags": {
+    "answer": "Thop",
+    "chain": "5",
+    "fact_key": "Drex|routes-to|Thop",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Drex routes to relay Thop.",
+   "transcript_id": "teach-chain05",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000023",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    23
+   ],
+   "seq": 23,
+   "tags": {
+    "answer": "Fendu",
+    "chain": "5",
+    "fact_key": "Thop|controls|Fendu",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Thop controls device Fendu.",
+   "transcript_id": "teach-chain05",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000024",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    24
+   ],
+   "seq": 24,
+   "tags": {
+    "answer": "glow",
+    "chain": "5",
+    "fact_key": "Fendu|produces|glow",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Fendu produces glow.",
+   "transcript_id": "teach-chain05",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000025",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    25
+   ],
+   "seq": 25,
+   "tags": {
+    "answer": "Volim",
+    "chain": "6",
+    "fact_key": "Bexil|operates|Volim",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Bexil operates Volim.",
+   "transcript_id": "teach-chain06",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000026",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    26
+   ],
+   "seq": 26,
+   "tags": {
+    "answer": "Mirda",
+    "chain": "6",
+    "fact_key": "Volim|routes-to|Mirda",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Volim routes to relay Mirda.",
+   "transcript_id": "teach-chain06",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000027",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    27
+   ],
+   "seq": 27,
+   "tags": {
+    "answer": "Grix",
+    "chain": "6",
+    "fact_key": "Mirda|controls|Grix",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Mirda controls device Grix.",
+   "transcript_id": "teach-chain06",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000028",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    28
+   ],
+   "seq": 28,
+   "tags": {
+    "answer": "sparks",
+    "chain": "6",
+    "fact_key": "Grix|produces|sparks",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Grix produces sparks.",
+   "transcript_id": "teach-chain06",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000029",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    29
+   ],
+   "seq": 29,
+   "tags": {
+    "answer": "Harpa",
+    "chain": "7",
+    "fact_key": "Corvan|operates|Harpa",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Corvan operates Harpa.",
+   "transcript_id": "teach-chain07",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000030",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    30
+   ],
+   "seq": 30,
+   "tags": {
+    "answer": "Cuvex",
+    "chain": "7",
+    "fact_key": "Harpa|routes-to|Cuvex",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Harpa routes to relay Cuvex.",
+   "transcript_id": "teach-chain07",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000031",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    31
+   ],
+   "seq": 31,
+   "tags": {
+    "answer": "Huvla",
+    "chain": "7",
+    "fact_key": "Cuvex|controls|Huvla",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Cuvex controls device Huvla.",
+   "transcript_id": "teach-chain07",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000032",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    32
+   ],
+   "seq": 32,
+   "tags": {
+    "answer": "hum",
+    "chain": "7",
+    "fact_key": "Huvla|produces|hum",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Huvla produces hum.",
+   "transcript_id": "teach-chain07",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000033",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    33
+   ],
+   "seq": 33,
+   "tags": {
+    "answer": "Nixo",
+    "chain": "8",
+    "fact_key": "Ithra|operates|Nixo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ithra operates Nixo.",
+   "transcript_id": "teach-chain08",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000034",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    34
+   ],
+   "seq": 34,
+   "tags": {
+    "answer": "Ralt",
+    "chain": "8",
+    "fact_key": "Nixo|routes-to|Ralt",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Nixo routes to relay Ralt.",
+   "transcript_id": "teach-chain08",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000035",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    35
+   ],
+   "seq": 35,
+   "tags": {
+    "answer": "Ixen",
+    "chain": "8",
+    "fact_key": "Ralt|controls|Ixen",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ralt controls device Ixen.",
+   "transcript_id": "teach-chain08",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000036",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    36
+   ],
+   "seq": 36,
+   "tags": {
+    "answer": "vapor",
+    "chain": "8",
+    "fact_key": "Ixen|produces|vapor",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ixen produces vapor.",
+   "transcript_id": "teach-chain08",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000037",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    37
+   ],
+   "seq": 37,
+   "tags": {
+    "answer": "Qarbe",
+    "chain": "9",
+    "fact_key": "Mavok|operates|Qarbe",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Mavok operates Qarbe.",
+   "transcript_id": "teach-chain09",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000038",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    38
+   ],
+   "seq": 38,
+   "tags": {
+    "answer": "Sorni",
+    "chain": "9",
+    "fact_key": "Qarbe|routes-to|Sorni",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Qarbe routes to relay Sorni.",
+   "transcript_id": "teach-chain09",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000039",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    39
+   ],
+   "seq": 39,
+   "tags": {
+    "answer": "Jarvo",
+    "chain": "9",
+    "fact_key": "Sorni|controls|Jarvo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Sorni controls device Jarvo.",
+   "transcript_id": "teach-chain09",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000040",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    40
+   ],
+   "seq": 40,
+   "tags": {
+    "answer": "motion",
+    "chain": "9",
+    "fact_key": "Jarvo|produces|motion",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Jarvo produces motion.",
+   "transcript_id": "teach-chain09",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000041",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    41
+   ],
+   "seq": 41,
+   "tags": {
+    "answer": "Lomo",
+    "chain": "10",
+    "fact_key": "Talen|operates|Lomo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Talen operates Lomo.",
+   "transcript_id": "teach-chain10",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000042",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    42
+   ],
+   "seq": 42,
+   "tags": {
+    "answer": "Fydd",
+    "chain": "10",
+    "fact_key": "Lomo|routes-to|Fydd",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Lomo routes to relay Fydd.",
+   "transcript_id": "teach-chain10",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000043",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    43
+   ],
+   "seq": 43,
+   "tags": {
+    "answer": "Krenn",
+    "chain": "10",
+    "fact_key": "Fydd|controls|Krenn",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Fydd controls device Krenn.",
+   "transcript_id": "teach-chain10",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000044",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    44
+   ],
+   "seq": 44,
+   "tags": {
+    "answer": "ripple",
+    "chain": "10",
+    "fact_key": "Krenn|produces|ripple",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Krenn produces ripple.",
+   "transcript_id": "teach-chain10",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000045",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    45
+   ],
+   "seq": 45,
+   "tags": {
+    "answer": "Yentz",
+    "chain": "11",
+    "fact_key": "Rhoka|operates|Yentz",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Rhoka operates Yentz.",
+   "transcript_id": "teach-chain11",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000046",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    46
+   ],
+   "seq": 46,
+   "tags": {
+    "answer": "Glova",
+    "chain": "11",
+    "fact_key": "Yentz|routes-to|Glova",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Yentz routes to relay Glova.",
+   "transcript_id": "teach-chain11",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000047",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    47
+   ],
+   "seq": 47,
+   "tags": {
+    "answer": "Lypox",
+    "chain": "11",
+    "fact_key": "Glova|controls|Lypox",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Glova controls device Lypox.",
+   "transcript_id": "teach-chain11",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000048",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    48
+   ],
+   "seq": 48,
+   "tags": {
+    "answer": "chime",
+    "chain": "11",
+    "fact_key": "Lypox|produces|chime",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Lypox produces chime.",
+   "transcript_id": "teach-chain11",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000049",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    49
+   ],
+   "seq": 49,
+   "tags": {
+    "answer": "Ufka",
+    "chain": "12",
+    "fact_key": "Juvex|operates|Ufka",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Juvex operates Ufka.",
+   "transcript_id": "teach-chain12",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000050",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    50
+   ],
+   "seq": 50,
+   "tags": {
+    "answer": "Ikto",
+    "chain": "12",
+    "fact_key": "Ufka|routes-to|Ikto",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ufka routes to relay Ikto.",
+   "transcript_id": "teach-chain12",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000051",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    51
+   ],
+   "seq": 51,
+   "tags": {
+    "answer": "Mirno",
+    "chain": "12",
+    "fact_key": "Ikto|controls|Mirno",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ikto controls device Mirno.",
+   "transcript_id": "teach-chain12",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000052",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    52
+   ],
+   "seq": 52,
+   "tags": {
+    "answer": "current",
+    "chain": "12",
+    "fact_key": "Mirno|produces|current",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Mirno produces current.",
+   "transcript_id": "teach-chain12",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000053",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    53
+   ],
+   "seq": 53,
+   "tags": {
+    "answer": "Grev",
+    "chain": "13",
+    "fact_key": "Kelthan|operates|Grev",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Kelthan operates Grev.",
+   "transcript_id": "teach-chain13",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000054",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    54
+   ],
+   "seq": 54,
+   "tags": {
+    "answer": "Norva",
+    "chain": "13",
+    "fact_key": "Grev|routes-to|Norva",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Grev routes to relay Norva.",
+   "transcript_id": "teach-chain13",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000055",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    55
+   ],
+   "seq": 55,
+   "tags": {
+    "answer": "Nyvox",
+    "chain": "13",
+    "fact_key": "Norva|controls|Nyvox",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Norva controls device Nyvox.",
+   "transcript_id": "teach-chain13",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000056",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    56
+   ],
+   "seq": 56,
+   "tags": {
+    "answer": "draft",
+    "chain": "13",
+    "fact_key": "Nyvox|produces|draft",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Nyvox produces draft.",
+   "transcript_id": "teach-chain13",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000057",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    57
+   ],
+   "seq": 57,
+   "tags": {
+    "answer": "Bokka",
+    "chain": "14",
+    "fact_key": "Orvyn|operates|Bokka",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Orvyn operates Bokka.",
+   "transcript_id": "teach-chain14",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000058",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    58
+   ],
+   "seq": 58,
+   "tags": {
+    "answer": "Pavok",
+    "chain": "14",
+    "fact_key": "Bokka|routes-to|Pavok",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Bokka routes to relay Pavok.",
+   "transcript_id": "teach-chain14",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000059",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    59
+   ],
+   "seq": 59,
+   "tags": {
+    "answer": "Oztek",
+    "chain": "14",
+    "fact_key": "Pavok|controls|Oztek",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Pavok controls device Oztek.",
+   "transcript_id": "teach-chain14",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000060",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    60
+   ],
+   "seq": 60,
+   "tags": {
+    "answer": "echo",
+    "chain": "14",
+    "fact_key": "Oztek|produces|echo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Oztek produces echo.",
+   "transcript_id": "teach-chain14",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000061",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    61
+   ],
+   "seq": 61,
+   "tags": {
+    "answer": "Sifel",
+    "chain": "15",
+    "fact_key": "Gholm|operates|Sifel",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Gholm operates Sifel.",
+   "transcript_id": "teach-chain15",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000062",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    62
+   ],
+   "seq": 62,
+   "tags": {
+    "answer": "Ruzel",
+    "chain": "15",
+    "fact_key": "Sifel|routes-to|Ruzel",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Sifel routes to relay Ruzel.",
+   "transcript_id": "teach-chain15",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000063",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    63
+   ],
+   "seq": 63,
+   "tags": {
+    "answer": "Prava",
+    "chain": "15",
+    "fact_key": "Ruzel|controls|Prava",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ruzel controls device Prava.",
+   "transcript_id": "teach-chain15",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000064",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    64
+   ],
+   "seq": 64,
+   "tags": {
+    "answer": "frost",
+    "chain": "15",
+    "fact_key": "Prava|produces|frost",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Prava produces frost.",
+   "transcript_id": "teach-chain15",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000065",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    65
+   ],
+   "seq": 65,
+   "tags": {
+    "answer": "Tormu",
+    "chain": "16",
+    "fact_key": "Nydra|operates|Tormu",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Nydra operates Tormu.",
+   "transcript_id": "teach-chain16",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000066",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    66
+   ],
+   "seq": 66,
+   "tags": {
+    "answer": "Trimm",
+    "chain": "16",
+    "fact_key": "Tormu|routes-to|Trimm",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Tormu routes to relay Trimm.",
+   "transcript_id": "teach-chain16",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000067",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    67
+   ],
+   "seq": 67,
+   "tags": {
+    "answer": "Quist",
+    "chain": "16",
+    "fact_key": "Trimm|controls|Quist",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Trimm controls device Quist.",
+   "transcript_id": "teach-chain16",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000068",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    68
+   ],
+   "seq": 68,
+   "tags": {
+    "answer": "grit",
+    "chain": "16",
+    "fact_key": "Quist|produces|grit",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Quist produces grit.",
+   "transcript_id": "teach-chain16",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000069",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    69
+   ],
+   "seq": 69,
+   "tags": {
+    "answer": "Vlask",
+    "chain": "17",
+    "fact_key": "Ashvi|operates|Vlask",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ashvi operates Vlask.",
+   "transcript_id": "teach-chain17",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000070",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    70
+   ],
+   "seq": 70,
+   "tags": {
+    "answer": "Wonda",
+    "chain": "17",
+    "fact_key": "Vlask|routes-to|Wonda",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Vlask routes to relay Wonda.",
+   "transcript_id": "teach-chain17",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000071",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    71
+   ],
+   "seq": 71,
+   "tags": {
+    "answer": "Ryvok",
+    "chain": "17",
+    "fact_key": "Wonda|controls|Ryvok",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Wonda controls device Ryvok.",
+   "transcript_id": "teach-chain17",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000072",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    72
+   ],
+   "seq": 72,
+   "tags": {
+    "answer": "haze",
+    "chain": "17",
+    "fact_key": "Ryvok|produces|haze",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ryvok produces haze.",
+   "transcript_id": "teach-chain17",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000073",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    73
+   ],
+   "seq": 73,
+   "tags": {
+    "answer": "Zenna",
+    "chain": "18",
+    "fact_key": "Fendor|operates|Zenna",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Fendor operates Zenna.",
+   "transcript_id": "teach-chain18",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000074",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    74
+   ],
+   "seq": 74,
+   "tags": {
+    "answer": "Xalor",
+    "chain": "18",
+    "fact_key": "Zenna|routes-to|Xalor",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Zenna routes to relay Xalor.",
+   "transcript_id": "teach-chain18",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000075",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    75
+   ],
+   "seq": 75,
+   "tags": {
+    "answer": "Skerv",
+    "chain": "18",
+    "fact_key": "Xalor|controls|Skerv",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Xalor controls device Skerv.",
+   "transcript_id": "teach-chain18",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000076",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    76
+   ],
+   "seq": 76,
+   "tags": {
+    "answer": "ion",
+    "chain": "18",
+    "fact_key": "Skerv|produces|ion",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Skerv produces ion.",
+   "transcript_id": "teach-chain18",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000077",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    77
+   ],
+   "seq": 77,
+   "tags": {
+    "answer": "Ektar",
+    "chain": "19",
+    "fact_key": "Wexla|operates|Ektar",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Wexla operates Ektar.",
+   "transcript_id": "teach-chain19",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000078",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    78
+   ],
+   "seq": 78,
+   "tags": {
+    "answer": "Yibbo",
+    "chain": "19",
+    "fact_key": "Ektar|routes-to|Yibbo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ektar routes to relay Yibbo.",
+   "transcript_id": "teach-chain19",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000079",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    79
+   ],
+   "seq": 79,
+   "tags": {
+    "answer": "Tolvo",
+    "chain": "19",
+    "fact_key": "Yibbo|controls|Tolvo",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Yibbo controls device Tolvo.",
+   "transcript_id": "teach-chain19",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000080",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    80
+   ],
+   "seq": 80,
+   "tags": {
+    "answer": "jolt",
+    "chain": "19",
+    "fact_key": "Tolvo|produces|jolt",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Tolvo produces jolt.",
+   "transcript_id": "teach-chain19",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000081",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    81
+   ],
+   "seq": 81,
+   "tags": {
+    "answer": "Pyx",
+    "chain": "20",
+    "fact_key": "Xyphor|operates|Pyx",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Xyphor operates Pyx.",
+   "transcript_id": "teach-chain20",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000082",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    82
+   ],
+   "seq": 82,
+   "tags": {
+    "answer": "Zaffi",
+    "chain": "20",
+    "fact_key": "Pyx|routes-to|Zaffi",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Pyx routes to relay Zaffi.",
+   "transcript_id": "teach-chain20",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000083",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    83
+   ],
+   "seq": 83,
+   "tags": {
+    "answer": "Urska",
+    "chain": "20",
+    "fact_key": "Zaffi|controls|Urska",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Zaffi controls device Urska.",
+   "transcript_id": "teach-chain20",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000084",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    84
+   ],
+   "seq": 84,
+   "tags": {
+    "answer": "mist",
+    "chain": "20",
+    "fact_key": "Urska|produces|mist",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Urska produces mist.",
+   "transcript_id": "teach-chain20",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000085",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    85
+   ],
+   "seq": 85,
+   "tags": {
+    "answer": "Wroll",
+    "chain": "21",
+    "fact_key": "Brunev|operates|Wroll",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Brunev operates Wroll.",
+   "transcript_id": "teach-chain21",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000086",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    86
+   ],
+   "seq": 86,
+   "tags": {
+    "answer": "Angth",
+    "chain": "21",
+    "fact_key": "Wroll|routes-to|Angth",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Wroll routes to relay Angth.",
+   "transcript_id": "teach-chain21",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000087",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    87
+   ],
+   "seq": 87,
+   "tags": {
+    "answer": "Vikra",
+    "chain": "21",
+    "fact_key": "Angth|controls|Vikra",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Angth controls device Vikra.",
+   "transcript_id": "teach-chain21",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000088",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    88
+   ],
+   "seq": 88,
+   "tags": {
+    "answer": "note",
+    "chain": "21",
+    "fact_key": "Vikra|produces|note",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Vikra produces note.",
+   "transcript_id": "teach-chain21",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000089",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    89
+   ],
+   "seq": 89,
+   "tags": {
+    "answer": "Aumsa",
+    "chain": "22",
+    "fact_key": "Thalex|operates|Aumsa",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Thalex operates Aumsa.",
+   "transcript_id": "teach-chain22",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000090",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    90
+   ],
+   "seq": 90,
+   "tags": {
+    "answer": "Blokt",
+    "chain": "22",
+    "fact_key": "Aumsa|routes-to|Blokt",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Aumsa routes to relay Blokt.",
+   "transcript_id": "teach-chain22",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000091",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    91
+   ],
+   "seq": 91,
+   "tags": {
+    "answer": "Wexu",
+    "chain": "22",
+    "fact_key": "Blokt|controls|Wexu",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Blokt controls device Wexu.",
+   "transcript_id": "teach-chain22",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000092",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    92
+   ],
+   "seq": 92,
+   "tags": {
+    "answer": "pulse",
+    "chain": "22",
+    "fact_key": "Wexu|produces|pulse",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Wexu produces pulse.",
+   "transcript_id": "teach-chain22",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000093",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    93
+   ],
+   "seq": 93,
+   "tags": {
+    "answer": "Chesk",
+    "chain": "23",
+    "fact_key": "Iovar|operates|Chesk",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Iovar operates Chesk.",
+   "transcript_id": "teach-chain23",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000094",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    94
+   ],
+   "seq": 94,
+   "tags": {
+    "answer": "Criva",
+    "chain": "23",
+    "fact_key": "Chesk|routes-to|Criva",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Chesk routes to relay Criva.",
+   "transcript_id": "teach-chain23",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000095",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    95
+   ],
+   "seq": 95,
+   "tags": {
+    "answer": "Xorn",
+    "chain": "23",
+    "fact_key": "Criva|controls|Xorn",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Criva controls device Xorn.",
+   "transcript_id": "teach-chain23",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000096",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    96
+   ],
+   "seq": 96,
+   "tags": {
+    "answer": "rime",
+    "chain": "23",
+    "fact_key": "Xorn|produces|rime",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Xorn produces rime.",
+   "transcript_id": "teach-chain23",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000097",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    97
+   ],
+   "seq": 97,
+   "tags": {
+    "answer": "Ondri",
+    "chain": "24",
+    "fact_key": "Zundi|operates|Ondri",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Zundi operates Ondri.",
+   "transcript_id": "teach-chain24",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000098",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    98
+   ],
+   "seq": 98,
+   "tags": {
+    "answer": "Duvra",
+    "chain": "24",
+    "fact_key": "Ondri|routes-to|Duvra",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ondri routes to relay Duvra.",
+   "transcript_id": "teach-chain24",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000099",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    99
+   ],
+   "seq": 99,
+   "tags": {
+    "answer": "Zaph",
+    "chain": "24",
+    "fact_key": "Duvra|controls|Zaph",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Duvra controls device Zaph.",
+   "transcript_id": "teach-chain24",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000100",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    100
+   ],
+   "seq": 100,
+   "tags": {
+    "answer": "shade",
+    "chain": "24",
+    "fact_key": "Zaph|produces|shade",
+    "kind": "fact"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Zaph produces shade.",
+   "transcript_id": "teach-chain24",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000101",
+   "kind": "correction",
+   "plastic_update_ids": [
+    102
+   ],
+   "seq": 101,
+   "tags": {
+    "answer": "Drel",
+    "chain": "0",
+    "fact_key": "Tav|routes-to|Drel",
+    "kind": "reroute",
+    "replaces": "Tav|routes-to|Kimo"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Tav is rerouted to relay Drel.",
+   "transcript_id": "correction-00-chain00",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000102",
+   "kind": "correction",
+   "plastic_update_ids": [
+    103
+   ],
+   "seq": 102,
+   "tags": {
+    "answer": "Osten",
+    "chain": "2",
+    "fact_key": "Skell|routes-to|Osten",
+    "kind": "reroute",
+    "replaces": "Skell|routes-to|Vash"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Skell is rerouted to relay Osten.",
+   "transcript_id": "correction-01-chain02",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000103",
+   "kind": "correction",
+   "plastic_update_ids": [
+    104
+   ],
+   "seq": 103,
+   "tags": {
+    "answer": "Mirda",
+    "chain": "5",
+    "fact_key": "Drex|routes-to|Mirda",
+    "kind": "reroute",
+    "replaces": "Drex|routes-to|Thop"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Drex is rerouted to relay Mirda.",
+   "transcript_id": "correction-02-chain05",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000104",
+   "kind": "correction",
+   "plastic_update_ids": [
+    105
+   ],
+   "seq": 104,
+   "tags": {
+    "answer": "Ralt",
+    "chain": "7",
+    "fact_key": "Harpa|routes-to|Ralt",
+    "kind": "reroute",
+    "replaces": "Harpa|routes-to|Cuvex"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Harpa is rerouted to relay Ralt.",
+   "transcript_id": "correction-03-chain07",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000105",
+   "kind": "correction",
+   "plastic_update_ids": [
+    106
+   ],
+   "seq": 105,
+   "tags": {
+    "answer": "Glova",
+    "chain": "10",
+    "fact_key": "Lomo|routes-to|Glova",
+    "kind": "reroute",
+    "replaces": "Lomo|routes-to|Fydd"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Lomo is rerouted to relay Glova.",
+   "transcript_id": "correction-04-chain10",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000106",
+   "kind": "correction",
+   "plastic_update_ids": [
+    107
+   ],
+   "seq": 106,
+   "tags": {
+    "answer": "Norva",
+    "chain": "12",
+    "fact_key": "Ufka|routes-to|Norva",
+    "kind": "reroute",
+    "replaces": "Ufka|routes-to|Ikto"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Ufka is rerouted to relay Norva.",
+   "transcript_id": "correction-05-chain12",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000107",
+   "kind": "correction",
+   "plastic_update_ids": [
+    108
+   ],
+   "seq": 107,
+   "tags": {
+    "answer": "Trimm",
+    "chain": "15",
+    "fact_key": "Sifel|routes-to|Trimm",
+    "kind": "reroute",
+    "replaces": "Sifel|routes-to|Ruzel"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Sifel is rerouted to relay Trimm.",
+   "transcript_id": "correction-06-chain15",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000108",
+   "kind": "correction",
+   "plastic_update_ids": [
+    109
+   ],
+   "seq": 108,
+   "tags": {
+    "answer": "Xalor",
+    "chain": "17",
+    "fact_key": "Vlask|routes-to|Xalor",
+    "kind": "reroute",
+    "replaces": "Vlask|routes-to|Wonda"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Vlask is rerouted to relay Xalor.",
+   "transcript_id": "correction-07-chain17",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000109",
+   "kind": "correction",
+   "plastic_update_ids": [
+    110
+   ],
+   "seq": 109,
+   "tags": {
+    "answer": "Angth",
+    "chain": "20",
+    "fact_key": "Pyx|routes-to|Angth",
+    "kind": "reroute",
+    "replaces": "Pyx|routes-to|Zaffi"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Pyx is rerouted to relay Angth.",
+   "transcript_id": "correction-08-chain20",
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000110",
+   "kind": "correction",
+   "plastic_update_ids": [
+    111
+   ],
+   "seq": 110,
+   "tags": {
+    "answer": "Criva",
+    "chain": "22",
+    "fact_key": "Aumsa|routes-to|Criva",
+    "kind": "reroute",
+    "replaces": "Aumsa|routes-to|Blokt"
+   },
+   "teacher": "ScriptedTeacher (offline stub; owner-permitted for v1 \u2014 lesson delivery scripted, plastic signal identical: the extractor consumes lesson_text either way)",
+   "text": "Aumsa is rerouted to relay Criva.",
+   "transcript_id": "correction-09-chain22",
+   "ts": 0.0
+  }
+ ],
+ "seq": 110
+}

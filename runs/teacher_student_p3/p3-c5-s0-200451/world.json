@@ -1,0 +1,1167 @@
+{
+  "actors": [
+    "Neral",
+    "Sula",
+    "Dravy",
+    "Ombit",
+    "Quelos"
+  ],
+  "chains": [
+    [
+      "Neral",
+      "Tav",
+      "Kimo",
+      "Zor",
+      "heat"
+    ],
+    [
+      "Sula",
+      "Rinpo",
+      "Drel",
+      "Blun",
+      "light"
+    ],
+    [
+      "Dravy",
+      "Skell",
+      "Vash",
+      "Crat",
+      "pressure"
+    ],
+    [
+      "Ombit",
+      "Morva",
+      "Osten",
+      "Dovel",
+      "torque"
+    ],
+    [
+      "Quelos",
+      "Plin",
+      "Belro",
+      "Errik",
+      "steam"
+    ]
+  ],
+  "conduits": [
+    "Tav",
+    "Rinpo",
+    "Skell",
+    "Morva",
+    "Plin"
+  ],
+  "devices": [
+    "Zor",
+    "Blun",
+    "Crat",
+    "Dovel",
+    "Errik"
+  ],
+  "graph": {
+    "Belro": [
+      [
+        "controls",
+        "Errik"
+      ]
+    ],
+    "Blun": [
+      [
+        "produces",
+        "light"
+      ]
+    ],
+    "Crat": [
+      [
+        "produces",
+        "pressure"
+      ]
+    ],
+    "Dovel": [
+      [
+        "produces",
+        "torque"
+      ]
+    ],
+    "Dravy": [
+      [
+        "operates",
+        "Skell"
+      ]
+    ],
+    "Drel": [
+      [
+        "controls",
+        "Blun"
+      ]
+    ],
+    "Errik": [
+      [
+        "produces",
+        "steam"
+      ]
+    ],
+    "Kimo": [
+      [
+        "controls",
+        "Zor"
+      ]
+    ],
+    "Morva": [
+      [
+        "routes-to",
+        "Osten"
+      ]
+    ],
+    "Neral": [
+      [
+        "operates",
+        "Tav"
+      ]
+    ],
+    "Ombit": [
+      [
+        "operates",
+        "Morva"
+      ]
+    ],
+    "Osten": [
+      [
+        "controls",
+        "Dovel"
+      ]
+    ],
+    "Plin": [
+      [
+        "routes-to",
+        "Belro"
+      ]
+    ],
+    "Quelos": [
+      [
+        "operates",
+        "Plin"
+      ]
+    ],
+    "Rinpo": [
+      [
+        "routes-to",
+        "Drel"
+      ]
+    ],
+    "Skell": [
+      [
+        "routes-to",
+        "Vash"
+      ]
+    ],
+    "Sula": [
+      [
+        "operates",
+        "Rinpo"
+      ]
+    ],
+    "Tav": [
+      [
+        "routes-to",
+        "Kimo"
+      ]
+    ],
+    "Vash": [
+      [
+        "controls",
+        "Crat"
+      ]
+    ],
+    "Zor": [
+      [
+        "produces",
+        "heat"
+      ]
+    ]
+  },
+  "n_chains": 5,
+  "outputs": [
+    "heat",
+    "light",
+    "pressure",
+    "torque",
+    "steam"
+  ],
+  "questions": [
+    {
+      "answer": "Tav",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-000",
+      "meta": {
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Who does Neral operate?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-001",
+      "meta": {
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Where does Tav route?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-002",
+      "meta": {
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Who does Kimo control?"
+    },
+    {
+      "answer": "heat",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-003",
+      "meta": {
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "What does Zor produce?"
+    },
+    {
+      "answer": "Rinpo",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-004",
+      "meta": {
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Who does Sula operate?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-005",
+      "meta": {
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Where does Rinpo route?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-006",
+      "meta": {
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Who does Drel control?"
+    },
+    {
+      "answer": "light",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-007",
+      "meta": {
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "What does Blun produce?"
+    },
+    {
+      "answer": "Skell",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-008",
+      "meta": {
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Who does Dravy operate?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-009",
+      "meta": {
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Where does Skell route?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-010",
+      "meta": {
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Who does Vash control?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-011",
+      "meta": {
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "What does Crat produce?"
+    },
+    {
+      "answer": "Morva",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-012",
+      "meta": {
+        "object": "Morva",
+        "relation": "operates",
+        "subject": "Ombit"
+      },
+      "text": "Who does Ombit operate?"
+    },
+    {
+      "answer": "Osten",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-013",
+      "meta": {
+        "object": "Osten",
+        "relation": "routes-to",
+        "subject": "Morva"
+      },
+      "text": "Where does Morva route?"
+    },
+    {
+      "answer": "Dovel",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-014",
+      "meta": {
+        "object": "Dovel",
+        "relation": "controls",
+        "subject": "Osten"
+      },
+      "text": "Who does Osten control?"
+    },
+    {
+      "answer": "torque",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-015",
+      "meta": {
+        "object": "torque",
+        "relation": "produces",
+        "subject": "Dovel"
+      },
+      "text": "What does Dovel produce?"
+    },
+    {
+      "answer": "Plin",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-016",
+      "meta": {
+        "object": "Plin",
+        "relation": "operates",
+        "subject": "Quelos"
+      },
+      "text": "Who does Quelos operate?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-017",
+      "meta": {
+        "object": "Belro",
+        "relation": "routes-to",
+        "subject": "Plin"
+      },
+      "text": "Where does Plin route?"
+    },
+    {
+      "answer": "Errik",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-018",
+      "meta": {
+        "object": "Errik",
+        "relation": "controls",
+        "subject": "Belro"
+      },
+      "text": "Who does Belro control?"
+    },
+    {
+      "answer": "steam",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-019",
+      "meta": {
+        "object": "steam",
+        "relation": "produces",
+        "subject": "Errik"
+      },
+      "text": "What does Errik produce?"
+    },
+    {
+      "answer": "heat",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-reach-000",
+      "meta": {
+        "kind": "reach",
+        "start": "Neral"
+      },
+      "text": "What does Neral reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-yes-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Zor"
+      },
+      "text": "Does Neral reach Zor?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-no-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Crat"
+      },
+      "text": "Does Neral reach Crat?"
+    },
+    {
+      "answer": "light",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-reach-001",
+      "meta": {
+        "kind": "reach",
+        "start": "Sula"
+      },
+      "text": "What does Sula reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-yes-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Blun"
+      },
+      "text": "Does Sula reach Blun?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-no-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Dovel"
+      },
+      "text": "Does Sula reach Dovel?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-reach-002",
+      "meta": {
+        "kind": "reach",
+        "start": "Dravy"
+      },
+      "text": "What does Dravy reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-yes-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Crat"
+      },
+      "text": "Does Dravy reach Crat?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-no-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Dovel"
+      },
+      "text": "Does Dravy reach Dovel?"
+    },
+    {
+      "answer": "torque",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-reach-003",
+      "meta": {
+        "kind": "reach",
+        "start": "Ombit"
+      },
+      "text": "What does Ombit reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-yes-003",
+      "meta": {
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Dovel"
+      },
+      "text": "Does Ombit reach Dovel?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-no-003",
+      "meta": {
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Zor"
+      },
+      "text": "Does Ombit reach Zor?"
+    },
+    {
+      "answer": "steam",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-reach-004",
+      "meta": {
+        "kind": "reach",
+        "start": "Quelos"
+      },
+      "text": "What does Quelos reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-yes-004",
+      "meta": {
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Errik"
+      },
+      "text": "Does Quelos reach Errik?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-no-004",
+      "meta": {
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Blun"
+      },
+      "text": "Does Quelos reach Blun?"
+    },
+    {
+      "answer": "Neral",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-000",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Tav is operated by whom?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-001",
+      "meta": {
+        "asked_side": "object",
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Tav sends its flow through which relay?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-002",
+      "meta": {
+        "asked_side": "object",
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Kimo governs which device?"
+    },
+    {
+      "answer": "heat",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-003",
+      "meta": {
+        "asked_side": "object",
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "Zor emits what?"
+    },
+    {
+      "answer": "Sula",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-004",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Which actor operates Rinpo?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-005",
+      "meta": {
+        "asked_side": "object",
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Which relay does Rinpo route to?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-006",
+      "meta": {
+        "asked_side": "object",
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Drel governs which device?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-007",
+      "meta": {
+        "asked_side": "subject",
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "light is produced by which device?"
+    },
+    {
+      "answer": "Dravy",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-008",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Which actor operates Skell?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-009",
+      "meta": {
+        "asked_side": "object",
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Skell sends its flow through which relay?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-010",
+      "meta": {
+        "asked_side": "object",
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Which device is controlled by Vash?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-011",
+      "meta": {
+        "asked_side": "object",
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "Crat emits what?"
+    },
+    {
+      "answer": "Ombit",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-012",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Morva",
+        "relation": "operates",
+        "subject": "Ombit"
+      },
+      "text": "Which actor operates Morva?"
+    },
+    {
+      "answer": "Osten",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-013",
+      "meta": {
+        "asked_side": "object",
+        "object": "Osten",
+        "relation": "routes-to",
+        "subject": "Morva"
+      },
+      "text": "Which relay does Morva route to?"
+    },
+    {
+      "answer": "Dovel",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-014",
+      "meta": {
+        "asked_side": "object",
+        "object": "Dovel",
+        "relation": "controls",
+        "subject": "Osten"
+      },
+      "text": "Osten governs which device?"
+    },
+    {
+      "answer": "torque",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-015",
+      "meta": {
+        "asked_side": "object",
+        "object": "torque",
+        "relation": "produces",
+        "subject": "Dovel"
+      },
+      "text": "Dovel emits what?"
+    },
+    {
+      "answer": "Quelos",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-016",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Plin",
+        "relation": "operates",
+        "subject": "Quelos"
+      },
+      "text": "Which actor operates Plin?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-017",
+      "meta": {
+        "asked_side": "object",
+        "object": "Belro",
+        "relation": "routes-to",
+        "subject": "Plin"
+      },
+      "text": "Plin sends its flow through which relay?"
+    },
+    {
+      "answer": "Errik",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-018",
+      "meta": {
+        "asked_side": "object",
+        "object": "Errik",
+        "relation": "controls",
+        "subject": "Belro"
+      },
+      "text": "Belro governs which device?"
+    },
+    {
+      "answer": "steam",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-019",
+      "meta": {
+        "asked_side": "object",
+        "object": "steam",
+        "relation": "produces",
+        "subject": "Errik"
+      },
+      "text": "Errik emits what?"
+    },
+    {
+      "answer": "light",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-reach-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "reach_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. What does Neral reach now?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-route-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "route_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. Which relay does Neral route through now?"
+    },
+    {
+      "answer": "steam",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-reach-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "reach_now",
+        "new_relay": "Belro",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Belro. What does Sula reach now?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-route-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "route_now",
+        "new_relay": "Belro",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Belro. Which relay does Sula route through now?"
+    },
+    {
+      "answer": "heat",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-reach-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "reach_now",
+        "new_relay": "Kimo",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Kimo. What does Dravy reach now?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-route-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "route_now",
+        "new_relay": "Kimo",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Kimo. Which relay does Dravy route through now?"
+    },
+    {
+      "answer": "light",
+      "battery": "intervention",
+      "chain_id": 3,
+      "id": "int-reach-003",
+      "meta": {
+        "conduit": "Morva",
+        "kind": "reach_now",
+        "new_relay": "Drel",
+        "start": "Ombit"
+      },
+      "text": "Morva is rerouted to relay Drel. What does Ombit reach now?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "intervention",
+      "chain_id": 3,
+      "id": "int-route-003",
+      "meta": {
+        "conduit": "Morva",
+        "kind": "route_now",
+        "new_relay": "Drel",
+        "start": "Ombit"
+      },
+      "text": "Morva is rerouted to relay Drel. Which relay does Ombit route through now?"
+    },
+    {
+      "answer": "heat",
+      "battery": "intervention",
+      "chain_id": 4,
+      "id": "int-reach-004",
+      "meta": {
+        "conduit": "Plin",
+        "kind": "reach_now",
+        "new_relay": "Kimo",
+        "start": "Quelos"
+      },
+      "text": "Plin is rerouted to relay Kimo. What does Quelos reach now?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "intervention",
+      "chain_id": 4,
+      "id": "int-route-004",
+      "meta": {
+        "conduit": "Plin",
+        "kind": "route_now",
+        "new_relay": "Kimo",
+        "start": "Quelos"
+      },
+      "text": "Plin is rerouted to relay Kimo. Which relay does Quelos route through now?"
+    }
+  ],
+  "relationships": [
+    {
+      "chain_id": 0,
+      "index": 0,
+      "object": "Tav",
+      "relation": "operates",
+      "sentence": "Neral operates Tav.",
+      "subject": "Neral"
+    },
+    {
+      "chain_id": 0,
+      "index": 1,
+      "object": "Kimo",
+      "relation": "routes-to",
+      "sentence": "Tav routes to relay Kimo.",
+      "subject": "Tav"
+    },
+    {
+      "chain_id": 0,
+      "index": 2,
+      "object": "Zor",
+      "relation": "controls",
+      "sentence": "Kimo controls device Zor.",
+      "subject": "Kimo"
+    },
+    {
+      "chain_id": 0,
+      "index": 3,
+      "object": "heat",
+      "relation": "produces",
+      "sentence": "Zor produces heat.",
+      "subject": "Zor"
+    },
+    {
+      "chain_id": 1,
+      "index": 4,
+      "object": "Rinpo",
+      "relation": "operates",
+      "sentence": "Sula operates Rinpo.",
+      "subject": "Sula"
+    },
+    {
+      "chain_id": 1,
+      "index": 5,
+      "object": "Drel",
+      "relation": "routes-to",
+      "sentence": "Rinpo routes to relay Drel.",
+      "subject": "Rinpo"
+    },
+    {
+      "chain_id": 1,
+      "index": 6,
+      "object": "Blun",
+      "relation": "controls",
+      "sentence": "Drel controls device Blun.",
+      "subject": "Drel"
+    },
+    {
+      "chain_id": 1,
+      "index": 7,
+      "object": "light",
+      "relation": "produces",
+      "sentence": "Blun produces light.",
+      "subject": "Blun"
+    },
+    {
+      "chain_id": 2,
+      "index": 8,
+      "object": "Skell",
+      "relation": "operates",
+      "sentence": "Dravy operates Skell.",
+      "subject": "Dravy"
+    },
+    {
+      "chain_id": 2,
+      "index": 9,
+      "object": "Vash",
+      "relation": "routes-to",
+      "sentence": "Skell routes to relay Vash.",
+      "subject": "Skell"
+    },
+    {
+      "chain_id": 2,
+      "index": 10,
+      "object": "Crat",
+      "relation": "controls",
+      "sentence": "Vash controls device Crat.",
+      "subject": "Vash"
+    },
+    {
+      "chain_id": 2,
+      "index": 11,
+      "object": "pressure",
+      "relation": "produces",
+      "sentence": "Crat produces pressure.",
+      "subject": "Crat"
+    },
+    {
+      "chain_id": 3,
+      "index": 12,
+      "object": "Morva",
+      "relation": "operates",
+      "sentence": "Ombit operates Morva.",
+      "subject": "Ombit"
+    },
+    {
+      "chain_id": 3,
+      "index": 13,
+      "object": "Osten",
+      "relation": "routes-to",
+      "sentence": "Morva routes to relay Osten.",
+      "subject": "Morva"
+    },
+    {
+      "chain_id": 3,
+      "index": 14,
+      "object": "Dovel",
+      "relation": "controls",
+      "sentence": "Osten controls device Dovel.",
+      "subject": "Osten"
+    },
+    {
+      "chain_id": 3,
+      "index": 15,
+      "object": "torque",
+      "relation": "produces",
+      "sentence": "Dovel produces torque.",
+      "subject": "Dovel"
+    },
+    {
+      "chain_id": 4,
+      "index": 16,
+      "object": "Plin",
+      "relation": "operates",
+      "sentence": "Quelos operates Plin.",
+      "subject": "Quelos"
+    },
+    {
+      "chain_id": 4,
+      "index": 17,
+      "object": "Belro",
+      "relation": "routes-to",
+      "sentence": "Plin routes to relay Belro.",
+      "subject": "Plin"
+    },
+    {
+      "chain_id": 4,
+      "index": 18,
+      "object": "Errik",
+      "relation": "controls",
+      "sentence": "Belro controls device Errik.",
+      "subject": "Belro"
+    },
+    {
+      "chain_id": 4,
+      "index": 19,
+      "object": "steam",
+      "relation": "produces",
+      "sentence": "Errik produces steam.",
+      "subject": "Errik"
+    }
+  ],
+  "relays": [
+    "Kimo",
+    "Drel",
+    "Vash",
+    "Osten",
+    "Belro"
+  ],
+  "seed": 0
+}

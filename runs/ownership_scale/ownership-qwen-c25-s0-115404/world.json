@@ -1,0 +1,5747 @@
+{
+  "actors": [
+    "Neral",
+    "Sula",
+    "Dravy",
+    "Ombit",
+    "Quelos",
+    "Vantro",
+    "Bexil",
+    "Corvan",
+    "Ithra",
+    "Mavok",
+    "Talen",
+    "Rhoka",
+    "Juvex",
+    "Kelthan",
+    "Orvyn",
+    "Gholm",
+    "Nydra",
+    "Ashvi",
+    "Fendor",
+    "Wexla",
+    "Xyphor",
+    "Brunev",
+    "Thalex",
+    "Iovar",
+    "Zundi"
+  ],
+  "chains": [
+    [
+      "Neral",
+      "Tav",
+      "Kimo",
+      "Zor",
+      "heat"
+    ],
+    [
+      "Sula",
+      "Rinpo",
+      "Drel",
+      "Blun",
+      "light"
+    ],
+    [
+      "Dravy",
+      "Skell",
+      "Vash",
+      "Crat",
+      "pressure"
+    ],
+    [
+      "Ombit",
+      "Morva",
+      "Osten",
+      "Dovel",
+      "torque"
+    ],
+    [
+      "Quelos",
+      "Plin",
+      "Belro",
+      "Errik",
+      "steam"
+    ],
+    [
+      "Vantro",
+      "Drex",
+      "Thop",
+      "Fendu",
+      "glow"
+    ],
+    [
+      "Bexil",
+      "Volim",
+      "Mirda",
+      "Grix",
+      "sparks"
+    ],
+    [
+      "Corvan",
+      "Harpa",
+      "Cuvex",
+      "Huvla",
+      "hum"
+    ],
+    [
+      "Ithra",
+      "Nixo",
+      "Ralt",
+      "Ixen",
+      "vapor"
+    ],
+    [
+      "Mavok",
+      "Qarbe",
+      "Sorni",
+      "Jarvo",
+      "motion"
+    ],
+    [
+      "Talen",
+      "Lomo",
+      "Fydd",
+      "Krenn",
+      "ripple"
+    ],
+    [
+      "Rhoka",
+      "Yentz",
+      "Glova",
+      "Lypox",
+      "chime"
+    ],
+    [
+      "Juvex",
+      "Ufka",
+      "Ikto",
+      "Mirno",
+      "current"
+    ],
+    [
+      "Kelthan",
+      "Grev",
+      "Norva",
+      "Nyvox",
+      "draft"
+    ],
+    [
+      "Orvyn",
+      "Bokka",
+      "Pavok",
+      "Oztek",
+      "echo"
+    ],
+    [
+      "Gholm",
+      "Sifel",
+      "Ruzel",
+      "Prava",
+      "frost"
+    ],
+    [
+      "Nydra",
+      "Tormu",
+      "Trimm",
+      "Quist",
+      "grit"
+    ],
+    [
+      "Ashvi",
+      "Vlask",
+      "Wonda",
+      "Ryvok",
+      "haze"
+    ],
+    [
+      "Fendor",
+      "Zenna",
+      "Xalor",
+      "Skerv",
+      "ion"
+    ],
+    [
+      "Wexla",
+      "Ektar",
+      "Yibbo",
+      "Tolvo",
+      "jolt"
+    ],
+    [
+      "Xyphor",
+      "Pyx",
+      "Zaffi",
+      "Urska",
+      "mist"
+    ],
+    [
+      "Brunev",
+      "Wroll",
+      "Angth",
+      "Vikra",
+      "note"
+    ],
+    [
+      "Thalex",
+      "Aumsa",
+      "Blokt",
+      "Wexu",
+      "pulse"
+    ],
+    [
+      "Iovar",
+      "Chesk",
+      "Criva",
+      "Xorn",
+      "rime"
+    ],
+    [
+      "Zundi",
+      "Ondri",
+      "Duvra",
+      "Zaph",
+      "shade"
+    ]
+  ],
+  "conduits": [
+    "Tav",
+    "Rinpo",
+    "Skell",
+    "Morva",
+    "Plin",
+    "Drex",
+    "Volim",
+    "Harpa",
+    "Nixo",
+    "Qarbe",
+    "Lomo",
+    "Yentz",
+    "Ufka",
+    "Grev",
+    "Bokka",
+    "Sifel",
+    "Tormu",
+    "Vlask",
+    "Zenna",
+    "Ektar",
+    "Pyx",
+    "Wroll",
+    "Aumsa",
+    "Chesk",
+    "Ondri"
+  ],
+  "devices": [
+    "Zor",
+    "Blun",
+    "Crat",
+    "Dovel",
+    "Errik",
+    "Fendu",
+    "Grix",
+    "Huvla",
+    "Ixen",
+    "Jarvo",
+    "Krenn",
+    "Lypox",
+    "Mirno",
+    "Nyvox",
+    "Oztek",
+    "Prava",
+    "Quist",
+    "Ryvok",
+    "Skerv",
+    "Tolvo",
+    "Urska",
+    "Vikra",
+    "Wexu",
+    "Xorn",
+    "Zaph"
+  ],
+  "graph": {
+    "Angth": [
+      [
+        "controls",
+        "Vikra"
+      ]
+    ],
+    "Ashvi": [
+      [
+        "operates",
+        "Vlask"
+      ]
+    ],
+    "Aumsa": [
+      [
+        "routes-to",
+        "Blokt"
+      ]
+    ],
+    "Belro": [
+      [
+        "controls",
+        "Errik"
+      ]
+    ],
+    "Bexil": [
+      [
+        "operates",
+        "Volim"
+      ]
+    ],
+    "Blokt": [
+      [
+        "controls",
+        "Wexu"
+      ]
+    ],
+    "Blun": [
+      [
+        "produces",
+        "light"
+      ]
+    ],
+    "Bokka": [
+      [
+        "routes-to",
+        "Pavok"
+      ]
+    ],
+    "Brunev": [
+      [
+        "operates",
+        "Wroll"
+      ]
+    ],
+    "Chesk": [
+      [
+        "routes-to",
+        "Criva"
+      ]
+    ],
+    "Corvan": [
+      [
+        "operates",
+        "Harpa"
+      ]
+    ],
+    "Crat": [
+      [
+        "produces",
+        "pressure"
+      ]
+    ],
+    "Criva": [
+      [
+        "controls",
+        "Xorn"
+      ]
+    ],
+    "Cuvex": [
+      [
+        "controls",
+        "Huvla"
+      ]
+    ],
+    "Dovel": [
+      [
+        "produces",
+        "torque"
+      ]
+    ],
+    "Dravy": [
+      [
+        "operates",
+        "Skell"
+      ]
+    ],
+    "Drel": [
+      [
+        "controls",
+        "Blun"
+      ]
+    ],
+    "Drex": [
+      [
+        "routes-to",
+        "Thop"
+      ]
+    ],
+    "Duvra": [
+      [
+        "controls",
+        "Zaph"
+      ]
+    ],
+    "Ektar": [
+      [
+        "routes-to",
+        "Yibbo"
+      ]
+    ],
+    "Errik": [
+      [
+        "produces",
+        "steam"
+      ]
+    ],
+    "Fendor": [
+      [
+        "operates",
+        "Zenna"
+      ]
+    ],
+    "Fendu": [
+      [
+        "produces",
+        "glow"
+      ]
+    ],
+    "Fydd": [
+      [
+        "controls",
+        "Krenn"
+      ]
+    ],
+    "Gholm": [
+      [
+        "operates",
+        "Sifel"
+      ]
+    ],
+    "Glova": [
+      [
+        "controls",
+        "Lypox"
+      ]
+    ],
+    "Grev": [
+      [
+        "routes-to",
+        "Norva"
+      ]
+    ],
+    "Grix": [
+      [
+        "produces",
+        "sparks"
+      ]
+    ],
+    "Harpa": [
+      [
+        "routes-to",
+        "Cuvex"
+      ]
+    ],
+    "Huvla": [
+      [
+        "produces",
+        "hum"
+      ]
+    ],
+    "Ikto": [
+      [
+        "controls",
+        "Mirno"
+      ]
+    ],
+    "Iovar": [
+      [
+        "operates",
+        "Chesk"
+      ]
+    ],
+    "Ithra": [
+      [
+        "operates",
+        "Nixo"
+      ]
+    ],
+    "Ixen": [
+      [
+        "produces",
+        "vapor"
+      ]
+    ],
+    "Jarvo": [
+      [
+        "produces",
+        "motion"
+      ]
+    ],
+    "Juvex": [
+      [
+        "operates",
+        "Ufka"
+      ]
+    ],
+    "Kelthan": [
+      [
+        "operates",
+        "Grev"
+      ]
+    ],
+    "Kimo": [
+      [
+        "controls",
+        "Zor"
+      ]
+    ],
+    "Krenn": [
+      [
+        "produces",
+        "ripple"
+      ]
+    ],
+    "Lomo": [
+      [
+        "routes-to",
+        "Fydd"
+      ]
+    ],
+    "Lypox": [
+      [
+        "produces",
+        "chime"
+      ]
+    ],
+    "Mavok": [
+      [
+        "operates",
+        "Qarbe"
+      ]
+    ],
+    "Mirda": [
+      [
+        "controls",
+        "Grix"
+      ]
+    ],
+    "Mirno": [
+      [
+        "produces",
+        "current"
+      ]
+    ],
+    "Morva": [
+      [
+        "routes-to",
+        "Osten"
+      ]
+    ],
+    "Neral": [
+      [
+        "operates",
+        "Tav"
+      ]
+    ],
+    "Nixo": [
+      [
+        "routes-to",
+        "Ralt"
+      ]
+    ],
+    "Norva": [
+      [
+        "controls",
+        "Nyvox"
+      ]
+    ],
+    "Nydra": [
+      [
+        "operates",
+        "Tormu"
+      ]
+    ],
+    "Nyvox": [
+      [
+        "produces",
+        "draft"
+      ]
+    ],
+    "Ombit": [
+      [
+        "operates",
+        "Morva"
+      ]
+    ],
+    "Ondri": [
+      [
+        "routes-to",
+        "Duvra"
+      ]
+    ],
+    "Orvyn": [
+      [
+        "operates",
+        "Bokka"
+      ]
+    ],
+    "Osten": [
+      [
+        "controls",
+        "Dovel"
+      ]
+    ],
+    "Oztek": [
+      [
+        "produces",
+        "echo"
+      ]
+    ],
+    "Pavok": [
+      [
+        "controls",
+        "Oztek"
+      ]
+    ],
+    "Plin": [
+      [
+        "routes-to",
+        "Belro"
+      ]
+    ],
+    "Prava": [
+      [
+        "produces",
+        "frost"
+      ]
+    ],
+    "Pyx": [
+      [
+        "routes-to",
+        "Zaffi"
+      ]
+    ],
+    "Qarbe": [
+      [
+        "routes-to",
+        "Sorni"
+      ]
+    ],
+    "Quelos": [
+      [
+        "operates",
+        "Plin"
+      ]
+    ],
+    "Quist": [
+      [
+        "produces",
+        "grit"
+      ]
+    ],
+    "Ralt": [
+      [
+        "controls",
+        "Ixen"
+      ]
+    ],
+    "Rhoka": [
+      [
+        "operates",
+        "Yentz"
+      ]
+    ],
+    "Rinpo": [
+      [
+        "routes-to",
+        "Drel"
+      ]
+    ],
+    "Ruzel": [
+      [
+        "controls",
+        "Prava"
+      ]
+    ],
+    "Ryvok": [
+      [
+        "produces",
+        "haze"
+      ]
+    ],
+    "Sifel": [
+      [
+        "routes-to",
+        "Ruzel"
+      ]
+    ],
+    "Skell": [
+      [
+        "routes-to",
+        "Vash"
+      ]
+    ],
+    "Skerv": [
+      [
+        "produces",
+        "ion"
+      ]
+    ],
+    "Sorni": [
+      [
+        "controls",
+        "Jarvo"
+      ]
+    ],
+    "Sula": [
+      [
+        "operates",
+        "Rinpo"
+      ]
+    ],
+    "Talen": [
+      [
+        "operates",
+        "Lomo"
+      ]
+    ],
+    "Tav": [
+      [
+        "routes-to",
+        "Kimo"
+      ]
+    ],
+    "Thalex": [
+      [
+        "operates",
+        "Aumsa"
+      ]
+    ],
+    "Thop": [
+      [
+        "controls",
+        "Fendu"
+      ]
+    ],
+    "Tolvo": [
+      [
+        "produces",
+        "jolt"
+      ]
+    ],
+    "Tormu": [
+      [
+        "routes-to",
+        "Trimm"
+      ]
+    ],
+    "Trimm": [
+      [
+        "controls",
+        "Quist"
+      ]
+    ],
+    "Ufka": [
+      [
+        "routes-to",
+        "Ikto"
+      ]
+    ],
+    "Urska": [
+      [
+        "produces",
+        "mist"
+      ]
+    ],
+    "Vantro": [
+      [
+        "operates",
+        "Drex"
+      ]
+    ],
+    "Vash": [
+      [
+        "controls",
+        "Crat"
+      ]
+    ],
+    "Vikra": [
+      [
+        "produces",
+        "note"
+      ]
+    ],
+    "Vlask": [
+      [
+        "routes-to",
+        "Wonda"
+      ]
+    ],
+    "Volim": [
+      [
+        "routes-to",
+        "Mirda"
+      ]
+    ],
+    "Wexla": [
+      [
+        "operates",
+        "Ektar"
+      ]
+    ],
+    "Wexu": [
+      [
+        "produces",
+        "pulse"
+      ]
+    ],
+    "Wonda": [
+      [
+        "controls",
+        "Ryvok"
+      ]
+    ],
+    "Wroll": [
+      [
+        "routes-to",
+        "Angth"
+      ]
+    ],
+    "Xalor": [
+      [
+        "controls",
+        "Skerv"
+      ]
+    ],
+    "Xorn": [
+      [
+        "produces",
+        "rime"
+      ]
+    ],
+    "Xyphor": [
+      [
+        "operates",
+        "Pyx"
+      ]
+    ],
+    "Yentz": [
+      [
+        "routes-to",
+        "Glova"
+      ]
+    ],
+    "Yibbo": [
+      [
+        "controls",
+        "Tolvo"
+      ]
+    ],
+    "Zaffi": [
+      [
+        "controls",
+        "Urska"
+      ]
+    ],
+    "Zaph": [
+      [
+        "produces",
+        "shade"
+      ]
+    ],
+    "Zenna": [
+      [
+        "routes-to",
+        "Xalor"
+      ]
+    ],
+    "Zor": [
+      [
+        "produces",
+        "heat"
+      ]
+    ],
+    "Zundi": [
+      [
+        "operates",
+        "Ondri"
+      ]
+    ]
+  },
+  "n_chains": 25,
+  "outputs": [
+    "heat",
+    "light",
+    "pressure",
+    "torque",
+    "steam",
+    "glow",
+    "sparks",
+    "hum",
+    "vapor",
+    "motion",
+    "ripple",
+    "chime",
+    "current",
+    "draft",
+    "echo",
+    "frost",
+    "grit",
+    "haze",
+    "ion",
+    "jolt",
+    "mist",
+    "note",
+    "pulse",
+    "rime",
+    "shade"
+  ],
+  "questions": [
+    {
+      "answer": "Tav",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-000",
+      "meta": {
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Who does Neral operate?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-001",
+      "meta": {
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Where does Tav route?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-002",
+      "meta": {
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Who does Kimo control?"
+    },
+    {
+      "answer": "heat",
+      "battery": "direct",
+      "chain_id": 0,
+      "id": "direct-003",
+      "meta": {
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "What does Zor produce?"
+    },
+    {
+      "answer": "Rinpo",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-004",
+      "meta": {
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Who does Sula operate?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-005",
+      "meta": {
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Where does Rinpo route?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-006",
+      "meta": {
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Who does Drel control?"
+    },
+    {
+      "answer": "light",
+      "battery": "direct",
+      "chain_id": 1,
+      "id": "direct-007",
+      "meta": {
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "What does Blun produce?"
+    },
+    {
+      "answer": "Skell",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-008",
+      "meta": {
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Who does Dravy operate?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-009",
+      "meta": {
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Where does Skell route?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-010",
+      "meta": {
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Who does Vash control?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "direct",
+      "chain_id": 2,
+      "id": "direct-011",
+      "meta": {
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "What does Crat produce?"
+    },
+    {
+      "answer": "Morva",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-012",
+      "meta": {
+        "object": "Morva",
+        "relation": "operates",
+        "subject": "Ombit"
+      },
+      "text": "Who does Ombit operate?"
+    },
+    {
+      "answer": "Osten",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-013",
+      "meta": {
+        "object": "Osten",
+        "relation": "routes-to",
+        "subject": "Morva"
+      },
+      "text": "Where does Morva route?"
+    },
+    {
+      "answer": "Dovel",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-014",
+      "meta": {
+        "object": "Dovel",
+        "relation": "controls",
+        "subject": "Osten"
+      },
+      "text": "Who does Osten control?"
+    },
+    {
+      "answer": "torque",
+      "battery": "direct",
+      "chain_id": 3,
+      "id": "direct-015",
+      "meta": {
+        "object": "torque",
+        "relation": "produces",
+        "subject": "Dovel"
+      },
+      "text": "What does Dovel produce?"
+    },
+    {
+      "answer": "Plin",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-016",
+      "meta": {
+        "object": "Plin",
+        "relation": "operates",
+        "subject": "Quelos"
+      },
+      "text": "Who does Quelos operate?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-017",
+      "meta": {
+        "object": "Belro",
+        "relation": "routes-to",
+        "subject": "Plin"
+      },
+      "text": "Where does Plin route?"
+    },
+    {
+      "answer": "Errik",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-018",
+      "meta": {
+        "object": "Errik",
+        "relation": "controls",
+        "subject": "Belro"
+      },
+      "text": "Who does Belro control?"
+    },
+    {
+      "answer": "steam",
+      "battery": "direct",
+      "chain_id": 4,
+      "id": "direct-019",
+      "meta": {
+        "object": "steam",
+        "relation": "produces",
+        "subject": "Errik"
+      },
+      "text": "What does Errik produce?"
+    },
+    {
+      "answer": "Drex",
+      "battery": "direct",
+      "chain_id": 5,
+      "id": "direct-020",
+      "meta": {
+        "object": "Drex",
+        "relation": "operates",
+        "subject": "Vantro"
+      },
+      "text": "Who does Vantro operate?"
+    },
+    {
+      "answer": "Thop",
+      "battery": "direct",
+      "chain_id": 5,
+      "id": "direct-021",
+      "meta": {
+        "object": "Thop",
+        "relation": "routes-to",
+        "subject": "Drex"
+      },
+      "text": "Where does Drex route?"
+    },
+    {
+      "answer": "Fendu",
+      "battery": "direct",
+      "chain_id": 5,
+      "id": "direct-022",
+      "meta": {
+        "object": "Fendu",
+        "relation": "controls",
+        "subject": "Thop"
+      },
+      "text": "Who does Thop control?"
+    },
+    {
+      "answer": "glow",
+      "battery": "direct",
+      "chain_id": 5,
+      "id": "direct-023",
+      "meta": {
+        "object": "glow",
+        "relation": "produces",
+        "subject": "Fendu"
+      },
+      "text": "What does Fendu produce?"
+    },
+    {
+      "answer": "Volim",
+      "battery": "direct",
+      "chain_id": 6,
+      "id": "direct-024",
+      "meta": {
+        "object": "Volim",
+        "relation": "operates",
+        "subject": "Bexil"
+      },
+      "text": "Who does Bexil operate?"
+    },
+    {
+      "answer": "Mirda",
+      "battery": "direct",
+      "chain_id": 6,
+      "id": "direct-025",
+      "meta": {
+        "object": "Mirda",
+        "relation": "routes-to",
+        "subject": "Volim"
+      },
+      "text": "Where does Volim route?"
+    },
+    {
+      "answer": "Grix",
+      "battery": "direct",
+      "chain_id": 6,
+      "id": "direct-026",
+      "meta": {
+        "object": "Grix",
+        "relation": "controls",
+        "subject": "Mirda"
+      },
+      "text": "Who does Mirda control?"
+    },
+    {
+      "answer": "sparks",
+      "battery": "direct",
+      "chain_id": 6,
+      "id": "direct-027",
+      "meta": {
+        "object": "sparks",
+        "relation": "produces",
+        "subject": "Grix"
+      },
+      "text": "What does Grix produce?"
+    },
+    {
+      "answer": "Harpa",
+      "battery": "direct",
+      "chain_id": 7,
+      "id": "direct-028",
+      "meta": {
+        "object": "Harpa",
+        "relation": "operates",
+        "subject": "Corvan"
+      },
+      "text": "Who does Corvan operate?"
+    },
+    {
+      "answer": "Cuvex",
+      "battery": "direct",
+      "chain_id": 7,
+      "id": "direct-029",
+      "meta": {
+        "object": "Cuvex",
+        "relation": "routes-to",
+        "subject": "Harpa"
+      },
+      "text": "Where does Harpa route?"
+    },
+    {
+      "answer": "Huvla",
+      "battery": "direct",
+      "chain_id": 7,
+      "id": "direct-030",
+      "meta": {
+        "object": "Huvla",
+        "relation": "controls",
+        "subject": "Cuvex"
+      },
+      "text": "Who does Cuvex control?"
+    },
+    {
+      "answer": "hum",
+      "battery": "direct",
+      "chain_id": 7,
+      "id": "direct-031",
+      "meta": {
+        "object": "hum",
+        "relation": "produces",
+        "subject": "Huvla"
+      },
+      "text": "What does Huvla produce?"
+    },
+    {
+      "answer": "Nixo",
+      "battery": "direct",
+      "chain_id": 8,
+      "id": "direct-032",
+      "meta": {
+        "object": "Nixo",
+        "relation": "operates",
+        "subject": "Ithra"
+      },
+      "text": "Who does Ithra operate?"
+    },
+    {
+      "answer": "Ralt",
+      "battery": "direct",
+      "chain_id": 8,
+      "id": "direct-033",
+      "meta": {
+        "object": "Ralt",
+        "relation": "routes-to",
+        "subject": "Nixo"
+      },
+      "text": "Where does Nixo route?"
+    },
+    {
+      "answer": "Ixen",
+      "battery": "direct",
+      "chain_id": 8,
+      "id": "direct-034",
+      "meta": {
+        "object": "Ixen",
+        "relation": "controls",
+        "subject": "Ralt"
+      },
+      "text": "Who does Ralt control?"
+    },
+    {
+      "answer": "vapor",
+      "battery": "direct",
+      "chain_id": 8,
+      "id": "direct-035",
+      "meta": {
+        "object": "vapor",
+        "relation": "produces",
+        "subject": "Ixen"
+      },
+      "text": "What does Ixen produce?"
+    },
+    {
+      "answer": "Qarbe",
+      "battery": "direct",
+      "chain_id": 9,
+      "id": "direct-036",
+      "meta": {
+        "object": "Qarbe",
+        "relation": "operates",
+        "subject": "Mavok"
+      },
+      "text": "Who does Mavok operate?"
+    },
+    {
+      "answer": "Sorni",
+      "battery": "direct",
+      "chain_id": 9,
+      "id": "direct-037",
+      "meta": {
+        "object": "Sorni",
+        "relation": "routes-to",
+        "subject": "Qarbe"
+      },
+      "text": "Where does Qarbe route?"
+    },
+    {
+      "answer": "Jarvo",
+      "battery": "direct",
+      "chain_id": 9,
+      "id": "direct-038",
+      "meta": {
+        "object": "Jarvo",
+        "relation": "controls",
+        "subject": "Sorni"
+      },
+      "text": "Who does Sorni control?"
+    },
+    {
+      "answer": "motion",
+      "battery": "direct",
+      "chain_id": 9,
+      "id": "direct-039",
+      "meta": {
+        "object": "motion",
+        "relation": "produces",
+        "subject": "Jarvo"
+      },
+      "text": "What does Jarvo produce?"
+    },
+    {
+      "answer": "Lomo",
+      "battery": "direct",
+      "chain_id": 10,
+      "id": "direct-040",
+      "meta": {
+        "object": "Lomo",
+        "relation": "operates",
+        "subject": "Talen"
+      },
+      "text": "Who does Talen operate?"
+    },
+    {
+      "answer": "Fydd",
+      "battery": "direct",
+      "chain_id": 10,
+      "id": "direct-041",
+      "meta": {
+        "object": "Fydd",
+        "relation": "routes-to",
+        "subject": "Lomo"
+      },
+      "text": "Where does Lomo route?"
+    },
+    {
+      "answer": "Krenn",
+      "battery": "direct",
+      "chain_id": 10,
+      "id": "direct-042",
+      "meta": {
+        "object": "Krenn",
+        "relation": "controls",
+        "subject": "Fydd"
+      },
+      "text": "Who does Fydd control?"
+    },
+    {
+      "answer": "ripple",
+      "battery": "direct",
+      "chain_id": 10,
+      "id": "direct-043",
+      "meta": {
+        "object": "ripple",
+        "relation": "produces",
+        "subject": "Krenn"
+      },
+      "text": "What does Krenn produce?"
+    },
+    {
+      "answer": "Yentz",
+      "battery": "direct",
+      "chain_id": 11,
+      "id": "direct-044",
+      "meta": {
+        "object": "Yentz",
+        "relation": "operates",
+        "subject": "Rhoka"
+      },
+      "text": "Who does Rhoka operate?"
+    },
+    {
+      "answer": "Glova",
+      "battery": "direct",
+      "chain_id": 11,
+      "id": "direct-045",
+      "meta": {
+        "object": "Glova",
+        "relation": "routes-to",
+        "subject": "Yentz"
+      },
+      "text": "Where does Yentz route?"
+    },
+    {
+      "answer": "Lypox",
+      "battery": "direct",
+      "chain_id": 11,
+      "id": "direct-046",
+      "meta": {
+        "object": "Lypox",
+        "relation": "controls",
+        "subject": "Glova"
+      },
+      "text": "Who does Glova control?"
+    },
+    {
+      "answer": "chime",
+      "battery": "direct",
+      "chain_id": 11,
+      "id": "direct-047",
+      "meta": {
+        "object": "chime",
+        "relation": "produces",
+        "subject": "Lypox"
+      },
+      "text": "What does Lypox produce?"
+    },
+    {
+      "answer": "Ufka",
+      "battery": "direct",
+      "chain_id": 12,
+      "id": "direct-048",
+      "meta": {
+        "object": "Ufka",
+        "relation": "operates",
+        "subject": "Juvex"
+      },
+      "text": "Who does Juvex operate?"
+    },
+    {
+      "answer": "Ikto",
+      "battery": "direct",
+      "chain_id": 12,
+      "id": "direct-049",
+      "meta": {
+        "object": "Ikto",
+        "relation": "routes-to",
+        "subject": "Ufka"
+      },
+      "text": "Where does Ufka route?"
+    },
+    {
+      "answer": "Mirno",
+      "battery": "direct",
+      "chain_id": 12,
+      "id": "direct-050",
+      "meta": {
+        "object": "Mirno",
+        "relation": "controls",
+        "subject": "Ikto"
+      },
+      "text": "Who does Ikto control?"
+    },
+    {
+      "answer": "current",
+      "battery": "direct",
+      "chain_id": 12,
+      "id": "direct-051",
+      "meta": {
+        "object": "current",
+        "relation": "produces",
+        "subject": "Mirno"
+      },
+      "text": "What does Mirno produce?"
+    },
+    {
+      "answer": "Grev",
+      "battery": "direct",
+      "chain_id": 13,
+      "id": "direct-052",
+      "meta": {
+        "object": "Grev",
+        "relation": "operates",
+        "subject": "Kelthan"
+      },
+      "text": "Who does Kelthan operate?"
+    },
+    {
+      "answer": "Norva",
+      "battery": "direct",
+      "chain_id": 13,
+      "id": "direct-053",
+      "meta": {
+        "object": "Norva",
+        "relation": "routes-to",
+        "subject": "Grev"
+      },
+      "text": "Where does Grev route?"
+    },
+    {
+      "answer": "Nyvox",
+      "battery": "direct",
+      "chain_id": 13,
+      "id": "direct-054",
+      "meta": {
+        "object": "Nyvox",
+        "relation": "controls",
+        "subject": "Norva"
+      },
+      "text": "Who does Norva control?"
+    },
+    {
+      "answer": "draft",
+      "battery": "direct",
+      "chain_id": 13,
+      "id": "direct-055",
+      "meta": {
+        "object": "draft",
+        "relation": "produces",
+        "subject": "Nyvox"
+      },
+      "text": "What does Nyvox produce?"
+    },
+    {
+      "answer": "Bokka",
+      "battery": "direct",
+      "chain_id": 14,
+      "id": "direct-056",
+      "meta": {
+        "object": "Bokka",
+        "relation": "operates",
+        "subject": "Orvyn"
+      },
+      "text": "Who does Orvyn operate?"
+    },
+    {
+      "answer": "Pavok",
+      "battery": "direct",
+      "chain_id": 14,
+      "id": "direct-057",
+      "meta": {
+        "object": "Pavok",
+        "relation": "routes-to",
+        "subject": "Bokka"
+      },
+      "text": "Where does Bokka route?"
+    },
+    {
+      "answer": "Oztek",
+      "battery": "direct",
+      "chain_id": 14,
+      "id": "direct-058",
+      "meta": {
+        "object": "Oztek",
+        "relation": "controls",
+        "subject": "Pavok"
+      },
+      "text": "Who does Pavok control?"
+    },
+    {
+      "answer": "echo",
+      "battery": "direct",
+      "chain_id": 14,
+      "id": "direct-059",
+      "meta": {
+        "object": "echo",
+        "relation": "produces",
+        "subject": "Oztek"
+      },
+      "text": "What does Oztek produce?"
+    },
+    {
+      "answer": "Sifel",
+      "battery": "direct",
+      "chain_id": 15,
+      "id": "direct-060",
+      "meta": {
+        "object": "Sifel",
+        "relation": "operates",
+        "subject": "Gholm"
+      },
+      "text": "Who does Gholm operate?"
+    },
+    {
+      "answer": "Ruzel",
+      "battery": "direct",
+      "chain_id": 15,
+      "id": "direct-061",
+      "meta": {
+        "object": "Ruzel",
+        "relation": "routes-to",
+        "subject": "Sifel"
+      },
+      "text": "Where does Sifel route?"
+    },
+    {
+      "answer": "Prava",
+      "battery": "direct",
+      "chain_id": 15,
+      "id": "direct-062",
+      "meta": {
+        "object": "Prava",
+        "relation": "controls",
+        "subject": "Ruzel"
+      },
+      "text": "Who does Ruzel control?"
+    },
+    {
+      "answer": "frost",
+      "battery": "direct",
+      "chain_id": 15,
+      "id": "direct-063",
+      "meta": {
+        "object": "frost",
+        "relation": "produces",
+        "subject": "Prava"
+      },
+      "text": "What does Prava produce?"
+    },
+    {
+      "answer": "Tormu",
+      "battery": "direct",
+      "chain_id": 16,
+      "id": "direct-064",
+      "meta": {
+        "object": "Tormu",
+        "relation": "operates",
+        "subject": "Nydra"
+      },
+      "text": "Who does Nydra operate?"
+    },
+    {
+      "answer": "Trimm",
+      "battery": "direct",
+      "chain_id": 16,
+      "id": "direct-065",
+      "meta": {
+        "object": "Trimm",
+        "relation": "routes-to",
+        "subject": "Tormu"
+      },
+      "text": "Where does Tormu route?"
+    },
+    {
+      "answer": "Quist",
+      "battery": "direct",
+      "chain_id": 16,
+      "id": "direct-066",
+      "meta": {
+        "object": "Quist",
+        "relation": "controls",
+        "subject": "Trimm"
+      },
+      "text": "Who does Trimm control?"
+    },
+    {
+      "answer": "grit",
+      "battery": "direct",
+      "chain_id": 16,
+      "id": "direct-067",
+      "meta": {
+        "object": "grit",
+        "relation": "produces",
+        "subject": "Quist"
+      },
+      "text": "What does Quist produce?"
+    },
+    {
+      "answer": "Vlask",
+      "battery": "direct",
+      "chain_id": 17,
+      "id": "direct-068",
+      "meta": {
+        "object": "Vlask",
+        "relation": "operates",
+        "subject": "Ashvi"
+      },
+      "text": "Who does Ashvi operate?"
+    },
+    {
+      "answer": "Wonda",
+      "battery": "direct",
+      "chain_id": 17,
+      "id": "direct-069",
+      "meta": {
+        "object": "Wonda",
+        "relation": "routes-to",
+        "subject": "Vlask"
+      },
+      "text": "Where does Vlask route?"
+    },
+    {
+      "answer": "Ryvok",
+      "battery": "direct",
+      "chain_id": 17,
+      "id": "direct-070",
+      "meta": {
+        "object": "Ryvok",
+        "relation": "controls",
+        "subject": "Wonda"
+      },
+      "text": "Who does Wonda control?"
+    },
+    {
+      "answer": "haze",
+      "battery": "direct",
+      "chain_id": 17,
+      "id": "direct-071",
+      "meta": {
+        "object": "haze",
+        "relation": "produces",
+        "subject": "Ryvok"
+      },
+      "text": "What does Ryvok produce?"
+    },
+    {
+      "answer": "Zenna",
+      "battery": "direct",
+      "chain_id": 18,
+      "id": "direct-072",
+      "meta": {
+        "object": "Zenna",
+        "relation": "operates",
+        "subject": "Fendor"
+      },
+      "text": "Who does Fendor operate?"
+    },
+    {
+      "answer": "Xalor",
+      "battery": "direct",
+      "chain_id": 18,
+      "id": "direct-073",
+      "meta": {
+        "object": "Xalor",
+        "relation": "routes-to",
+        "subject": "Zenna"
+      },
+      "text": "Where does Zenna route?"
+    },
+    {
+      "answer": "Skerv",
+      "battery": "direct",
+      "chain_id": 18,
+      "id": "direct-074",
+      "meta": {
+        "object": "Skerv",
+        "relation": "controls",
+        "subject": "Xalor"
+      },
+      "text": "Who does Xalor control?"
+    },
+    {
+      "answer": "ion",
+      "battery": "direct",
+      "chain_id": 18,
+      "id": "direct-075",
+      "meta": {
+        "object": "ion",
+        "relation": "produces",
+        "subject": "Skerv"
+      },
+      "text": "What does Skerv produce?"
+    },
+    {
+      "answer": "Ektar",
+      "battery": "direct",
+      "chain_id": 19,
+      "id": "direct-076",
+      "meta": {
+        "object": "Ektar",
+        "relation": "operates",
+        "subject": "Wexla"
+      },
+      "text": "Who does Wexla operate?"
+    },
+    {
+      "answer": "Yibbo",
+      "battery": "direct",
+      "chain_id": 19,
+      "id": "direct-077",
+      "meta": {
+        "object": "Yibbo",
+        "relation": "routes-to",
+        "subject": "Ektar"
+      },
+      "text": "Where does Ektar route?"
+    },
+    {
+      "answer": "Tolvo",
+      "battery": "direct",
+      "chain_id": 19,
+      "id": "direct-078",
+      "meta": {
+        "object": "Tolvo",
+        "relation": "controls",
+        "subject": "Yibbo"
+      },
+      "text": "Who does Yibbo control?"
+    },
+    {
+      "answer": "jolt",
+      "battery": "direct",
+      "chain_id": 19,
+      "id": "direct-079",
+      "meta": {
+        "object": "jolt",
+        "relation": "produces",
+        "subject": "Tolvo"
+      },
+      "text": "What does Tolvo produce?"
+    },
+    {
+      "answer": "Pyx",
+      "battery": "direct",
+      "chain_id": 20,
+      "id": "direct-080",
+      "meta": {
+        "object": "Pyx",
+        "relation": "operates",
+        "subject": "Xyphor"
+      },
+      "text": "Who does Xyphor operate?"
+    },
+    {
+      "answer": "Zaffi",
+      "battery": "direct",
+      "chain_id": 20,
+      "id": "direct-081",
+      "meta": {
+        "object": "Zaffi",
+        "relation": "routes-to",
+        "subject": "Pyx"
+      },
+      "text": "Where does Pyx route?"
+    },
+    {
+      "answer": "Urska",
+      "battery": "direct",
+      "chain_id": 20,
+      "id": "direct-082",
+      "meta": {
+        "object": "Urska",
+        "relation": "controls",
+        "subject": "Zaffi"
+      },
+      "text": "Who does Zaffi control?"
+    },
+    {
+      "answer": "mist",
+      "battery": "direct",
+      "chain_id": 20,
+      "id": "direct-083",
+      "meta": {
+        "object": "mist",
+        "relation": "produces",
+        "subject": "Urska"
+      },
+      "text": "What does Urska produce?"
+    },
+    {
+      "answer": "Wroll",
+      "battery": "direct",
+      "chain_id": 21,
+      "id": "direct-084",
+      "meta": {
+        "object": "Wroll",
+        "relation": "operates",
+        "subject": "Brunev"
+      },
+      "text": "Who does Brunev operate?"
+    },
+    {
+      "answer": "Angth",
+      "battery": "direct",
+      "chain_id": 21,
+      "id": "direct-085",
+      "meta": {
+        "object": "Angth",
+        "relation": "routes-to",
+        "subject": "Wroll"
+      },
+      "text": "Where does Wroll route?"
+    },
+    {
+      "answer": "Vikra",
+      "battery": "direct",
+      "chain_id": 21,
+      "id": "direct-086",
+      "meta": {
+        "object": "Vikra",
+        "relation": "controls",
+        "subject": "Angth"
+      },
+      "text": "Who does Angth control?"
+    },
+    {
+      "answer": "note",
+      "battery": "direct",
+      "chain_id": 21,
+      "id": "direct-087",
+      "meta": {
+        "object": "note",
+        "relation": "produces",
+        "subject": "Vikra"
+      },
+      "text": "What does Vikra produce?"
+    },
+    {
+      "answer": "Aumsa",
+      "battery": "direct",
+      "chain_id": 22,
+      "id": "direct-088",
+      "meta": {
+        "object": "Aumsa",
+        "relation": "operates",
+        "subject": "Thalex"
+      },
+      "text": "Who does Thalex operate?"
+    },
+    {
+      "answer": "Blokt",
+      "battery": "direct",
+      "chain_id": 22,
+      "id": "direct-089",
+      "meta": {
+        "object": "Blokt",
+        "relation": "routes-to",
+        "subject": "Aumsa"
+      },
+      "text": "Where does Aumsa route?"
+    },
+    {
+      "answer": "Wexu",
+      "battery": "direct",
+      "chain_id": 22,
+      "id": "direct-090",
+      "meta": {
+        "object": "Wexu",
+        "relation": "controls",
+        "subject": "Blokt"
+      },
+      "text": "Who does Blokt control?"
+    },
+    {
+      "answer": "pulse",
+      "battery": "direct",
+      "chain_id": 22,
+      "id": "direct-091",
+      "meta": {
+        "object": "pulse",
+        "relation": "produces",
+        "subject": "Wexu"
+      },
+      "text": "What does Wexu produce?"
+    },
+    {
+      "answer": "Chesk",
+      "battery": "direct",
+      "chain_id": 23,
+      "id": "direct-092",
+      "meta": {
+        "object": "Chesk",
+        "relation": "operates",
+        "subject": "Iovar"
+      },
+      "text": "Who does Iovar operate?"
+    },
+    {
+      "answer": "Criva",
+      "battery": "direct",
+      "chain_id": 23,
+      "id": "direct-093",
+      "meta": {
+        "object": "Criva",
+        "relation": "routes-to",
+        "subject": "Chesk"
+      },
+      "text": "Where does Chesk route?"
+    },
+    {
+      "answer": "Xorn",
+      "battery": "direct",
+      "chain_id": 23,
+      "id": "direct-094",
+      "meta": {
+        "object": "Xorn",
+        "relation": "controls",
+        "subject": "Criva"
+      },
+      "text": "Who does Criva control?"
+    },
+    {
+      "answer": "rime",
+      "battery": "direct",
+      "chain_id": 23,
+      "id": "direct-095",
+      "meta": {
+        "object": "rime",
+        "relation": "produces",
+        "subject": "Xorn"
+      },
+      "text": "What does Xorn produce?"
+    },
+    {
+      "answer": "Ondri",
+      "battery": "direct",
+      "chain_id": 24,
+      "id": "direct-096",
+      "meta": {
+        "object": "Ondri",
+        "relation": "operates",
+        "subject": "Zundi"
+      },
+      "text": "Who does Zundi operate?"
+    },
+    {
+      "answer": "Duvra",
+      "battery": "direct",
+      "chain_id": 24,
+      "id": "direct-097",
+      "meta": {
+        "object": "Duvra",
+        "relation": "routes-to",
+        "subject": "Ondri"
+      },
+      "text": "Where does Ondri route?"
+    },
+    {
+      "answer": "Zaph",
+      "battery": "direct",
+      "chain_id": 24,
+      "id": "direct-098",
+      "meta": {
+        "object": "Zaph",
+        "relation": "controls",
+        "subject": "Duvra"
+      },
+      "text": "Who does Duvra control?"
+    },
+    {
+      "answer": "shade",
+      "battery": "direct",
+      "chain_id": 24,
+      "id": "direct-099",
+      "meta": {
+        "object": "shade",
+        "relation": "produces",
+        "subject": "Zaph"
+      },
+      "text": "What does Zaph produce?"
+    },
+    {
+      "answer": "heat",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-reach-000",
+      "meta": {
+        "kind": "reach",
+        "start": "Neral"
+      },
+      "text": "What does Neral reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-yes-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Zor"
+      },
+      "text": "Does Neral reach Zor?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 0,
+      "id": "combo-no-000",
+      "meta": {
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Crat"
+      },
+      "text": "Does Neral reach Crat?"
+    },
+    {
+      "answer": "light",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-reach-001",
+      "meta": {
+        "kind": "reach",
+        "start": "Sula"
+      },
+      "text": "What does Sula reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-yes-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Blun"
+      },
+      "text": "Does Sula reach Blun?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 1,
+      "id": "combo-no-001",
+      "meta": {
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Dovel"
+      },
+      "text": "Does Sula reach Dovel?"
+    },
+    {
+      "answer": "pressure",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-reach-002",
+      "meta": {
+        "kind": "reach",
+        "start": "Dravy"
+      },
+      "text": "What does Dravy reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-yes-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Crat"
+      },
+      "text": "Does Dravy reach Crat?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 2,
+      "id": "combo-no-002",
+      "meta": {
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Dovel"
+      },
+      "text": "Does Dravy reach Dovel?"
+    },
+    {
+      "answer": "torque",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-reach-003",
+      "meta": {
+        "kind": "reach",
+        "start": "Ombit"
+      },
+      "text": "What does Ombit reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-yes-003",
+      "meta": {
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Dovel"
+      },
+      "text": "Does Ombit reach Dovel?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 3,
+      "id": "combo-no-003",
+      "meta": {
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Fendu"
+      },
+      "text": "Does Ombit reach Fendu?"
+    },
+    {
+      "answer": "steam",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-reach-004",
+      "meta": {
+        "kind": "reach",
+        "start": "Quelos"
+      },
+      "text": "What does Quelos reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-yes-004",
+      "meta": {
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Errik"
+      },
+      "text": "Does Quelos reach Errik?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 4,
+      "id": "combo-no-004",
+      "meta": {
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Grix"
+      },
+      "text": "Does Quelos reach Grix?"
+    },
+    {
+      "answer": "glow",
+      "battery": "combination",
+      "chain_id": 5,
+      "id": "combo-reach-005",
+      "meta": {
+        "kind": "reach",
+        "start": "Vantro"
+      },
+      "text": "What does Vantro reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 5,
+      "id": "combo-yes-005",
+      "meta": {
+        "kind": "membership",
+        "start": "Vantro",
+        "target": "Fendu"
+      },
+      "text": "Does Vantro reach Fendu?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 5,
+      "id": "combo-no-005",
+      "meta": {
+        "kind": "membership",
+        "start": "Vantro",
+        "target": "Huvla"
+      },
+      "text": "Does Vantro reach Huvla?"
+    },
+    {
+      "answer": "sparks",
+      "battery": "combination",
+      "chain_id": 6,
+      "id": "combo-reach-006",
+      "meta": {
+        "kind": "reach",
+        "start": "Bexil"
+      },
+      "text": "What does Bexil reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 6,
+      "id": "combo-yes-006",
+      "meta": {
+        "kind": "membership",
+        "start": "Bexil",
+        "target": "Grix"
+      },
+      "text": "Does Bexil reach Grix?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 6,
+      "id": "combo-no-006",
+      "meta": {
+        "kind": "membership",
+        "start": "Bexil",
+        "target": "Ixen"
+      },
+      "text": "Does Bexil reach Ixen?"
+    },
+    {
+      "answer": "hum",
+      "battery": "combination",
+      "chain_id": 7,
+      "id": "combo-reach-007",
+      "meta": {
+        "kind": "reach",
+        "start": "Corvan"
+      },
+      "text": "What does Corvan reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 7,
+      "id": "combo-yes-007",
+      "meta": {
+        "kind": "membership",
+        "start": "Corvan",
+        "target": "Huvla"
+      },
+      "text": "Does Corvan reach Huvla?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 7,
+      "id": "combo-no-007",
+      "meta": {
+        "kind": "membership",
+        "start": "Corvan",
+        "target": "Jarvo"
+      },
+      "text": "Does Corvan reach Jarvo?"
+    },
+    {
+      "answer": "vapor",
+      "battery": "combination",
+      "chain_id": 8,
+      "id": "combo-reach-008",
+      "meta": {
+        "kind": "reach",
+        "start": "Ithra"
+      },
+      "text": "What does Ithra reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 8,
+      "id": "combo-yes-008",
+      "meta": {
+        "kind": "membership",
+        "start": "Ithra",
+        "target": "Ixen"
+      },
+      "text": "Does Ithra reach Ixen?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 8,
+      "id": "combo-no-008",
+      "meta": {
+        "kind": "membership",
+        "start": "Ithra",
+        "target": "Krenn"
+      },
+      "text": "Does Ithra reach Krenn?"
+    },
+    {
+      "answer": "motion",
+      "battery": "combination",
+      "chain_id": 9,
+      "id": "combo-reach-009",
+      "meta": {
+        "kind": "reach",
+        "start": "Mavok"
+      },
+      "text": "What does Mavok reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 9,
+      "id": "combo-yes-009",
+      "meta": {
+        "kind": "membership",
+        "start": "Mavok",
+        "target": "Jarvo"
+      },
+      "text": "Does Mavok reach Jarvo?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 9,
+      "id": "combo-no-009",
+      "meta": {
+        "kind": "membership",
+        "start": "Mavok",
+        "target": "Krenn"
+      },
+      "text": "Does Mavok reach Krenn?"
+    },
+    {
+      "answer": "ripple",
+      "battery": "combination",
+      "chain_id": 10,
+      "id": "combo-reach-010",
+      "meta": {
+        "kind": "reach",
+        "start": "Talen"
+      },
+      "text": "What does Talen reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 10,
+      "id": "combo-yes-010",
+      "meta": {
+        "kind": "membership",
+        "start": "Talen",
+        "target": "Krenn"
+      },
+      "text": "Does Talen reach Krenn?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 10,
+      "id": "combo-no-010",
+      "meta": {
+        "kind": "membership",
+        "start": "Talen",
+        "target": "Lypox"
+      },
+      "text": "Does Talen reach Lypox?"
+    },
+    {
+      "answer": "chime",
+      "battery": "combination",
+      "chain_id": 11,
+      "id": "combo-reach-011",
+      "meta": {
+        "kind": "reach",
+        "start": "Rhoka"
+      },
+      "text": "What does Rhoka reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 11,
+      "id": "combo-yes-011",
+      "meta": {
+        "kind": "membership",
+        "start": "Rhoka",
+        "target": "Lypox"
+      },
+      "text": "Does Rhoka reach Lypox?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 11,
+      "id": "combo-no-011",
+      "meta": {
+        "kind": "membership",
+        "start": "Rhoka",
+        "target": "Nyvox"
+      },
+      "text": "Does Rhoka reach Nyvox?"
+    },
+    {
+      "answer": "current",
+      "battery": "combination",
+      "chain_id": 12,
+      "id": "combo-reach-012",
+      "meta": {
+        "kind": "reach",
+        "start": "Juvex"
+      },
+      "text": "What does Juvex reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 12,
+      "id": "combo-yes-012",
+      "meta": {
+        "kind": "membership",
+        "start": "Juvex",
+        "target": "Mirno"
+      },
+      "text": "Does Juvex reach Mirno?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 12,
+      "id": "combo-no-012",
+      "meta": {
+        "kind": "membership",
+        "start": "Juvex",
+        "target": "Nyvox"
+      },
+      "text": "Does Juvex reach Nyvox?"
+    },
+    {
+      "answer": "draft",
+      "battery": "combination",
+      "chain_id": 13,
+      "id": "combo-reach-013",
+      "meta": {
+        "kind": "reach",
+        "start": "Kelthan"
+      },
+      "text": "What does Kelthan reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 13,
+      "id": "combo-yes-013",
+      "meta": {
+        "kind": "membership",
+        "start": "Kelthan",
+        "target": "Nyvox"
+      },
+      "text": "Does Kelthan reach Nyvox?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 13,
+      "id": "combo-no-013",
+      "meta": {
+        "kind": "membership",
+        "start": "Kelthan",
+        "target": "Oztek"
+      },
+      "text": "Does Kelthan reach Oztek?"
+    },
+    {
+      "answer": "echo",
+      "battery": "combination",
+      "chain_id": 14,
+      "id": "combo-reach-014",
+      "meta": {
+        "kind": "reach",
+        "start": "Orvyn"
+      },
+      "text": "What does Orvyn reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 14,
+      "id": "combo-yes-014",
+      "meta": {
+        "kind": "membership",
+        "start": "Orvyn",
+        "target": "Oztek"
+      },
+      "text": "Does Orvyn reach Oztek?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 14,
+      "id": "combo-no-014",
+      "meta": {
+        "kind": "membership",
+        "start": "Orvyn",
+        "target": "Quist"
+      },
+      "text": "Does Orvyn reach Quist?"
+    },
+    {
+      "answer": "frost",
+      "battery": "combination",
+      "chain_id": 15,
+      "id": "combo-reach-015",
+      "meta": {
+        "kind": "reach",
+        "start": "Gholm"
+      },
+      "text": "What does Gholm reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 15,
+      "id": "combo-yes-015",
+      "meta": {
+        "kind": "membership",
+        "start": "Gholm",
+        "target": "Prava"
+      },
+      "text": "Does Gholm reach Prava?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 15,
+      "id": "combo-no-015",
+      "meta": {
+        "kind": "membership",
+        "start": "Gholm",
+        "target": "Quist"
+      },
+      "text": "Does Gholm reach Quist?"
+    },
+    {
+      "answer": "grit",
+      "battery": "combination",
+      "chain_id": 16,
+      "id": "combo-reach-016",
+      "meta": {
+        "kind": "reach",
+        "start": "Nydra"
+      },
+      "text": "What does Nydra reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 16,
+      "id": "combo-yes-016",
+      "meta": {
+        "kind": "membership",
+        "start": "Nydra",
+        "target": "Quist"
+      },
+      "text": "Does Nydra reach Quist?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 16,
+      "id": "combo-no-016",
+      "meta": {
+        "kind": "membership",
+        "start": "Nydra",
+        "target": "Skerv"
+      },
+      "text": "Does Nydra reach Skerv?"
+    },
+    {
+      "answer": "haze",
+      "battery": "combination",
+      "chain_id": 17,
+      "id": "combo-reach-017",
+      "meta": {
+        "kind": "reach",
+        "start": "Ashvi"
+      },
+      "text": "What does Ashvi reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 17,
+      "id": "combo-yes-017",
+      "meta": {
+        "kind": "membership",
+        "start": "Ashvi",
+        "target": "Ryvok"
+      },
+      "text": "Does Ashvi reach Ryvok?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 17,
+      "id": "combo-no-017",
+      "meta": {
+        "kind": "membership",
+        "start": "Ashvi",
+        "target": "Skerv"
+      },
+      "text": "Does Ashvi reach Skerv?"
+    },
+    {
+      "answer": "ion",
+      "battery": "combination",
+      "chain_id": 18,
+      "id": "combo-reach-018",
+      "meta": {
+        "kind": "reach",
+        "start": "Fendor"
+      },
+      "text": "What does Fendor reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 18,
+      "id": "combo-yes-018",
+      "meta": {
+        "kind": "membership",
+        "start": "Fendor",
+        "target": "Skerv"
+      },
+      "text": "Does Fendor reach Skerv?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 18,
+      "id": "combo-no-018",
+      "meta": {
+        "kind": "membership",
+        "start": "Fendor",
+        "target": "Tolvo"
+      },
+      "text": "Does Fendor reach Tolvo?"
+    },
+    {
+      "answer": "jolt",
+      "battery": "combination",
+      "chain_id": 19,
+      "id": "combo-reach-019",
+      "meta": {
+        "kind": "reach",
+        "start": "Wexla"
+      },
+      "text": "What does Wexla reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 19,
+      "id": "combo-yes-019",
+      "meta": {
+        "kind": "membership",
+        "start": "Wexla",
+        "target": "Tolvo"
+      },
+      "text": "Does Wexla reach Tolvo?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 19,
+      "id": "combo-no-019",
+      "meta": {
+        "kind": "membership",
+        "start": "Wexla",
+        "target": "Vikra"
+      },
+      "text": "Does Wexla reach Vikra?"
+    },
+    {
+      "answer": "mist",
+      "battery": "combination",
+      "chain_id": 20,
+      "id": "combo-reach-020",
+      "meta": {
+        "kind": "reach",
+        "start": "Xyphor"
+      },
+      "text": "What does Xyphor reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 20,
+      "id": "combo-yes-020",
+      "meta": {
+        "kind": "membership",
+        "start": "Xyphor",
+        "target": "Urska"
+      },
+      "text": "Does Xyphor reach Urska?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 20,
+      "id": "combo-no-020",
+      "meta": {
+        "kind": "membership",
+        "start": "Xyphor",
+        "target": "Wexu"
+      },
+      "text": "Does Xyphor reach Wexu?"
+    },
+    {
+      "answer": "note",
+      "battery": "combination",
+      "chain_id": 21,
+      "id": "combo-reach-021",
+      "meta": {
+        "kind": "reach",
+        "start": "Brunev"
+      },
+      "text": "What does Brunev reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 21,
+      "id": "combo-yes-021",
+      "meta": {
+        "kind": "membership",
+        "start": "Brunev",
+        "target": "Vikra"
+      },
+      "text": "Does Brunev reach Vikra?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 21,
+      "id": "combo-no-021",
+      "meta": {
+        "kind": "membership",
+        "start": "Brunev",
+        "target": "Wexu"
+      },
+      "text": "Does Brunev reach Wexu?"
+    },
+    {
+      "answer": "pulse",
+      "battery": "combination",
+      "chain_id": 22,
+      "id": "combo-reach-022",
+      "meta": {
+        "kind": "reach",
+        "start": "Thalex"
+      },
+      "text": "What does Thalex reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 22,
+      "id": "combo-yes-022",
+      "meta": {
+        "kind": "membership",
+        "start": "Thalex",
+        "target": "Wexu"
+      },
+      "text": "Does Thalex reach Wexu?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 22,
+      "id": "combo-no-022",
+      "meta": {
+        "kind": "membership",
+        "start": "Thalex",
+        "target": "Zaph"
+      },
+      "text": "Does Thalex reach Zaph?"
+    },
+    {
+      "answer": "rime",
+      "battery": "combination",
+      "chain_id": 23,
+      "id": "combo-reach-023",
+      "meta": {
+        "kind": "reach",
+        "start": "Iovar"
+      },
+      "text": "What does Iovar reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 23,
+      "id": "combo-yes-023",
+      "meta": {
+        "kind": "membership",
+        "start": "Iovar",
+        "target": "Xorn"
+      },
+      "text": "Does Iovar reach Xorn?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 23,
+      "id": "combo-no-023",
+      "meta": {
+        "kind": "membership",
+        "start": "Iovar",
+        "target": "Zor"
+      },
+      "text": "Does Iovar reach Zor?"
+    },
+    {
+      "answer": "shade",
+      "battery": "combination",
+      "chain_id": 24,
+      "id": "combo-reach-024",
+      "meta": {
+        "kind": "reach",
+        "start": "Zundi"
+      },
+      "text": "What does Zundi reach?"
+    },
+    {
+      "answer": "yes",
+      "battery": "combination",
+      "chain_id": 24,
+      "id": "combo-yes-024",
+      "meta": {
+        "kind": "membership",
+        "start": "Zundi",
+        "target": "Zaph"
+      },
+      "text": "Does Zundi reach Zaph?"
+    },
+    {
+      "answer": "no",
+      "battery": "combination",
+      "chain_id": 24,
+      "id": "combo-no-024",
+      "meta": {
+        "kind": "membership",
+        "start": "Zundi",
+        "target": "Blun"
+      },
+      "text": "Does Zundi reach Blun?"
+    },
+    {
+      "answer": "Neral",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-000",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Tav",
+        "relation": "operates",
+        "subject": "Neral"
+      },
+      "text": "Which actor operates Tav?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-001",
+      "meta": {
+        "asked_side": "object",
+        "object": "Kimo",
+        "relation": "routes-to",
+        "subject": "Tav"
+      },
+      "text": "Tav sends its flow through which relay?"
+    },
+    {
+      "answer": "Zor",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-002",
+      "meta": {
+        "asked_side": "object",
+        "object": "Zor",
+        "relation": "controls",
+        "subject": "Kimo"
+      },
+      "text": "Kimo governs which device?"
+    },
+    {
+      "answer": "heat",
+      "battery": "paraphrase",
+      "chain_id": 0,
+      "id": "para-003",
+      "meta": {
+        "asked_side": "object",
+        "object": "heat",
+        "relation": "produces",
+        "subject": "Zor"
+      },
+      "text": "Zor emits what?"
+    },
+    {
+      "answer": "Sula",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-004",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Rinpo",
+        "relation": "operates",
+        "subject": "Sula"
+      },
+      "text": "Which actor operates Rinpo?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-005",
+      "meta": {
+        "asked_side": "object",
+        "object": "Drel",
+        "relation": "routes-to",
+        "subject": "Rinpo"
+      },
+      "text": "Which relay does Rinpo route to?"
+    },
+    {
+      "answer": "Blun",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-006",
+      "meta": {
+        "asked_side": "object",
+        "object": "Blun",
+        "relation": "controls",
+        "subject": "Drel"
+      },
+      "text": "Which device is controlled by Drel?"
+    },
+    {
+      "answer": "light",
+      "battery": "paraphrase",
+      "chain_id": 1,
+      "id": "para-007",
+      "meta": {
+        "asked_side": "object",
+        "object": "light",
+        "relation": "produces",
+        "subject": "Blun"
+      },
+      "text": "Blun emits what?"
+    },
+    {
+      "answer": "Dravy",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-008",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Skell",
+        "relation": "operates",
+        "subject": "Dravy"
+      },
+      "text": "Which actor operates Skell?"
+    },
+    {
+      "answer": "Vash",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-009",
+      "meta": {
+        "asked_side": "object",
+        "object": "Vash",
+        "relation": "routes-to",
+        "subject": "Skell"
+      },
+      "text": "Skell sends its flow through which relay?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-010",
+      "meta": {
+        "asked_side": "object",
+        "object": "Crat",
+        "relation": "controls",
+        "subject": "Vash"
+      },
+      "text": "Vash governs which device?"
+    },
+    {
+      "answer": "Crat",
+      "battery": "paraphrase",
+      "chain_id": 2,
+      "id": "para-011",
+      "meta": {
+        "asked_side": "subject",
+        "object": "pressure",
+        "relation": "produces",
+        "subject": "Crat"
+      },
+      "text": "pressure is produced by which device?"
+    },
+    {
+      "answer": "Ombit",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-012",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Morva",
+        "relation": "operates",
+        "subject": "Ombit"
+      },
+      "text": "Morva is operated by whom?"
+    },
+    {
+      "answer": "Osten",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-013",
+      "meta": {
+        "asked_side": "object",
+        "object": "Osten",
+        "relation": "routes-to",
+        "subject": "Morva"
+      },
+      "text": "Which relay does Morva route to?"
+    },
+    {
+      "answer": "Dovel",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-014",
+      "meta": {
+        "asked_side": "object",
+        "object": "Dovel",
+        "relation": "controls",
+        "subject": "Osten"
+      },
+      "text": "Which device is controlled by Osten?"
+    },
+    {
+      "answer": "Dovel",
+      "battery": "paraphrase",
+      "chain_id": 3,
+      "id": "para-015",
+      "meta": {
+        "asked_side": "subject",
+        "object": "torque",
+        "relation": "produces",
+        "subject": "Dovel"
+      },
+      "text": "torque is produced by which device?"
+    },
+    {
+      "answer": "Quelos",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-016",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Plin",
+        "relation": "operates",
+        "subject": "Quelos"
+      },
+      "text": "Which actor operates Plin?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-017",
+      "meta": {
+        "asked_side": "object",
+        "object": "Belro",
+        "relation": "routes-to",
+        "subject": "Plin"
+      },
+      "text": "Which relay does Plin route to?"
+    },
+    {
+      "answer": "Errik",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-018",
+      "meta": {
+        "asked_side": "object",
+        "object": "Errik",
+        "relation": "controls",
+        "subject": "Belro"
+      },
+      "text": "Belro governs which device?"
+    },
+    {
+      "answer": "Errik",
+      "battery": "paraphrase",
+      "chain_id": 4,
+      "id": "para-019",
+      "meta": {
+        "asked_side": "subject",
+        "object": "steam",
+        "relation": "produces",
+        "subject": "Errik"
+      },
+      "text": "steam is produced by which device?"
+    },
+    {
+      "answer": "Vantro",
+      "battery": "paraphrase",
+      "chain_id": 5,
+      "id": "para-020",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Drex",
+        "relation": "operates",
+        "subject": "Vantro"
+      },
+      "text": "Which actor operates Drex?"
+    },
+    {
+      "answer": "Thop",
+      "battery": "paraphrase",
+      "chain_id": 5,
+      "id": "para-021",
+      "meta": {
+        "asked_side": "object",
+        "object": "Thop",
+        "relation": "routes-to",
+        "subject": "Drex"
+      },
+      "text": "Drex sends its flow through which relay?"
+    },
+    {
+      "answer": "Fendu",
+      "battery": "paraphrase",
+      "chain_id": 5,
+      "id": "para-022",
+      "meta": {
+        "asked_side": "object",
+        "object": "Fendu",
+        "relation": "controls",
+        "subject": "Thop"
+      },
+      "text": "Thop governs which device?"
+    },
+    {
+      "answer": "Fendu",
+      "battery": "paraphrase",
+      "chain_id": 5,
+      "id": "para-023",
+      "meta": {
+        "asked_side": "subject",
+        "object": "glow",
+        "relation": "produces",
+        "subject": "Fendu"
+      },
+      "text": "glow is produced by which device?"
+    },
+    {
+      "answer": "Bexil",
+      "battery": "paraphrase",
+      "chain_id": 6,
+      "id": "para-024",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Volim",
+        "relation": "operates",
+        "subject": "Bexil"
+      },
+      "text": "Volim is operated by whom?"
+    },
+    {
+      "answer": "Mirda",
+      "battery": "paraphrase",
+      "chain_id": 6,
+      "id": "para-025",
+      "meta": {
+        "asked_side": "object",
+        "object": "Mirda",
+        "relation": "routes-to",
+        "subject": "Volim"
+      },
+      "text": "Volim sends its flow through which relay?"
+    },
+    {
+      "answer": "Grix",
+      "battery": "paraphrase",
+      "chain_id": 6,
+      "id": "para-026",
+      "meta": {
+        "asked_side": "object",
+        "object": "Grix",
+        "relation": "controls",
+        "subject": "Mirda"
+      },
+      "text": "Which device is controlled by Mirda?"
+    },
+    {
+      "answer": "sparks",
+      "battery": "paraphrase",
+      "chain_id": 6,
+      "id": "para-027",
+      "meta": {
+        "asked_side": "object",
+        "object": "sparks",
+        "relation": "produces",
+        "subject": "Grix"
+      },
+      "text": "Grix emits what?"
+    },
+    {
+      "answer": "Corvan",
+      "battery": "paraphrase",
+      "chain_id": 7,
+      "id": "para-028",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Harpa",
+        "relation": "operates",
+        "subject": "Corvan"
+      },
+      "text": "Which actor operates Harpa?"
+    },
+    {
+      "answer": "Cuvex",
+      "battery": "paraphrase",
+      "chain_id": 7,
+      "id": "para-029",
+      "meta": {
+        "asked_side": "object",
+        "object": "Cuvex",
+        "relation": "routes-to",
+        "subject": "Harpa"
+      },
+      "text": "Harpa sends its flow through which relay?"
+    },
+    {
+      "answer": "Huvla",
+      "battery": "paraphrase",
+      "chain_id": 7,
+      "id": "para-030",
+      "meta": {
+        "asked_side": "object",
+        "object": "Huvla",
+        "relation": "controls",
+        "subject": "Cuvex"
+      },
+      "text": "Cuvex governs which device?"
+    },
+    {
+      "answer": "Huvla",
+      "battery": "paraphrase",
+      "chain_id": 7,
+      "id": "para-031",
+      "meta": {
+        "asked_side": "subject",
+        "object": "hum",
+        "relation": "produces",
+        "subject": "Huvla"
+      },
+      "text": "hum is produced by which device?"
+    },
+    {
+      "answer": "Ithra",
+      "battery": "paraphrase",
+      "chain_id": 8,
+      "id": "para-032",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Nixo",
+        "relation": "operates",
+        "subject": "Ithra"
+      },
+      "text": "Nixo is operated by whom?"
+    },
+    {
+      "answer": "Ralt",
+      "battery": "paraphrase",
+      "chain_id": 8,
+      "id": "para-033",
+      "meta": {
+        "asked_side": "object",
+        "object": "Ralt",
+        "relation": "routes-to",
+        "subject": "Nixo"
+      },
+      "text": "Nixo sends its flow through which relay?"
+    },
+    {
+      "answer": "Ixen",
+      "battery": "paraphrase",
+      "chain_id": 8,
+      "id": "para-034",
+      "meta": {
+        "asked_side": "object",
+        "object": "Ixen",
+        "relation": "controls",
+        "subject": "Ralt"
+      },
+      "text": "Which device is controlled by Ralt?"
+    },
+    {
+      "answer": "vapor",
+      "battery": "paraphrase",
+      "chain_id": 8,
+      "id": "para-035",
+      "meta": {
+        "asked_side": "object",
+        "object": "vapor",
+        "relation": "produces",
+        "subject": "Ixen"
+      },
+      "text": "Ixen emits what?"
+    },
+    {
+      "answer": "Mavok",
+      "battery": "paraphrase",
+      "chain_id": 9,
+      "id": "para-036",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Qarbe",
+        "relation": "operates",
+        "subject": "Mavok"
+      },
+      "text": "Which actor operates Qarbe?"
+    },
+    {
+      "answer": "Sorni",
+      "battery": "paraphrase",
+      "chain_id": 9,
+      "id": "para-037",
+      "meta": {
+        "asked_side": "object",
+        "object": "Sorni",
+        "relation": "routes-to",
+        "subject": "Qarbe"
+      },
+      "text": "Which relay does Qarbe route to?"
+    },
+    {
+      "answer": "Jarvo",
+      "battery": "paraphrase",
+      "chain_id": 9,
+      "id": "para-038",
+      "meta": {
+        "asked_side": "object",
+        "object": "Jarvo",
+        "relation": "controls",
+        "subject": "Sorni"
+      },
+      "text": "Which device is controlled by Sorni?"
+    },
+    {
+      "answer": "Jarvo",
+      "battery": "paraphrase",
+      "chain_id": 9,
+      "id": "para-039",
+      "meta": {
+        "asked_side": "subject",
+        "object": "motion",
+        "relation": "produces",
+        "subject": "Jarvo"
+      },
+      "text": "motion is produced by which device?"
+    },
+    {
+      "answer": "Talen",
+      "battery": "paraphrase",
+      "chain_id": 10,
+      "id": "para-040",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Lomo",
+        "relation": "operates",
+        "subject": "Talen"
+      },
+      "text": "Lomo is operated by whom?"
+    },
+    {
+      "answer": "Fydd",
+      "battery": "paraphrase",
+      "chain_id": 10,
+      "id": "para-041",
+      "meta": {
+        "asked_side": "object",
+        "object": "Fydd",
+        "relation": "routes-to",
+        "subject": "Lomo"
+      },
+      "text": "Lomo sends its flow through which relay?"
+    },
+    {
+      "answer": "Krenn",
+      "battery": "paraphrase",
+      "chain_id": 10,
+      "id": "para-042",
+      "meta": {
+        "asked_side": "object",
+        "object": "Krenn",
+        "relation": "controls",
+        "subject": "Fydd"
+      },
+      "text": "Which device is controlled by Fydd?"
+    },
+    {
+      "answer": "Krenn",
+      "battery": "paraphrase",
+      "chain_id": 10,
+      "id": "para-043",
+      "meta": {
+        "asked_side": "subject",
+        "object": "ripple",
+        "relation": "produces",
+        "subject": "Krenn"
+      },
+      "text": "ripple is produced by which device?"
+    },
+    {
+      "answer": "Rhoka",
+      "battery": "paraphrase",
+      "chain_id": 11,
+      "id": "para-044",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Yentz",
+        "relation": "operates",
+        "subject": "Rhoka"
+      },
+      "text": "Which actor operates Yentz?"
+    },
+    {
+      "answer": "Glova",
+      "battery": "paraphrase",
+      "chain_id": 11,
+      "id": "para-045",
+      "meta": {
+        "asked_side": "object",
+        "object": "Glova",
+        "relation": "routes-to",
+        "subject": "Yentz"
+      },
+      "text": "Which relay does Yentz route to?"
+    },
+    {
+      "answer": "Lypox",
+      "battery": "paraphrase",
+      "chain_id": 11,
+      "id": "para-046",
+      "meta": {
+        "asked_side": "object",
+        "object": "Lypox",
+        "relation": "controls",
+        "subject": "Glova"
+      },
+      "text": "Which device is controlled by Glova?"
+    },
+    {
+      "answer": "Lypox",
+      "battery": "paraphrase",
+      "chain_id": 11,
+      "id": "para-047",
+      "meta": {
+        "asked_side": "subject",
+        "object": "chime",
+        "relation": "produces",
+        "subject": "Lypox"
+      },
+      "text": "chime is produced by which device?"
+    },
+    {
+      "answer": "Juvex",
+      "battery": "paraphrase",
+      "chain_id": 12,
+      "id": "para-048",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Ufka",
+        "relation": "operates",
+        "subject": "Juvex"
+      },
+      "text": "Ufka is operated by whom?"
+    },
+    {
+      "answer": "Ikto",
+      "battery": "paraphrase",
+      "chain_id": 12,
+      "id": "para-049",
+      "meta": {
+        "asked_side": "object",
+        "object": "Ikto",
+        "relation": "routes-to",
+        "subject": "Ufka"
+      },
+      "text": "Ufka sends its flow through which relay?"
+    },
+    {
+      "answer": "Mirno",
+      "battery": "paraphrase",
+      "chain_id": 12,
+      "id": "para-050",
+      "meta": {
+        "asked_side": "object",
+        "object": "Mirno",
+        "relation": "controls",
+        "subject": "Ikto"
+      },
+      "text": "Which device is controlled by Ikto?"
+    },
+    {
+      "answer": "Mirno",
+      "battery": "paraphrase",
+      "chain_id": 12,
+      "id": "para-051",
+      "meta": {
+        "asked_side": "subject",
+        "object": "current",
+        "relation": "produces",
+        "subject": "Mirno"
+      },
+      "text": "current is produced by which device?"
+    },
+    {
+      "answer": "Kelthan",
+      "battery": "paraphrase",
+      "chain_id": 13,
+      "id": "para-052",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Grev",
+        "relation": "operates",
+        "subject": "Kelthan"
+      },
+      "text": "Grev is operated by whom?"
+    },
+    {
+      "answer": "Norva",
+      "battery": "paraphrase",
+      "chain_id": 13,
+      "id": "para-053",
+      "meta": {
+        "asked_side": "object",
+        "object": "Norva",
+        "relation": "routes-to",
+        "subject": "Grev"
+      },
+      "text": "Grev sends its flow through which relay?"
+    },
+    {
+      "answer": "Nyvox",
+      "battery": "paraphrase",
+      "chain_id": 13,
+      "id": "para-054",
+      "meta": {
+        "asked_side": "object",
+        "object": "Nyvox",
+        "relation": "controls",
+        "subject": "Norva"
+      },
+      "text": "Norva governs which device?"
+    },
+    {
+      "answer": "draft",
+      "battery": "paraphrase",
+      "chain_id": 13,
+      "id": "para-055",
+      "meta": {
+        "asked_side": "object",
+        "object": "draft",
+        "relation": "produces",
+        "subject": "Nyvox"
+      },
+      "text": "Nyvox emits what?"
+    },
+    {
+      "answer": "Orvyn",
+      "battery": "paraphrase",
+      "chain_id": 14,
+      "id": "para-056",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Bokka",
+        "relation": "operates",
+        "subject": "Orvyn"
+      },
+      "text": "Bokka is operated by whom?"
+    },
+    {
+      "answer": "Pavok",
+      "battery": "paraphrase",
+      "chain_id": 14,
+      "id": "para-057",
+      "meta": {
+        "asked_side": "object",
+        "object": "Pavok",
+        "relation": "routes-to",
+        "subject": "Bokka"
+      },
+      "text": "Which relay does Bokka route to?"
+    },
+    {
+      "answer": "Oztek",
+      "battery": "paraphrase",
+      "chain_id": 14,
+      "id": "para-058",
+      "meta": {
+        "asked_side": "object",
+        "object": "Oztek",
+        "relation": "controls",
+        "subject": "Pavok"
+      },
+      "text": "Pavok governs which device?"
+    },
+    {
+      "answer": "Oztek",
+      "battery": "paraphrase",
+      "chain_id": 14,
+      "id": "para-059",
+      "meta": {
+        "asked_side": "subject",
+        "object": "echo",
+        "relation": "produces",
+        "subject": "Oztek"
+      },
+      "text": "echo is produced by which device?"
+    },
+    {
+      "answer": "Gholm",
+      "battery": "paraphrase",
+      "chain_id": 15,
+      "id": "para-060",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Sifel",
+        "relation": "operates",
+        "subject": "Gholm"
+      },
+      "text": "Sifel is operated by whom?"
+    },
+    {
+      "answer": "Ruzel",
+      "battery": "paraphrase",
+      "chain_id": 15,
+      "id": "para-061",
+      "meta": {
+        "asked_side": "object",
+        "object": "Ruzel",
+        "relation": "routes-to",
+        "subject": "Sifel"
+      },
+      "text": "Sifel sends its flow through which relay?"
+    },
+    {
+      "answer": "Prava",
+      "battery": "paraphrase",
+      "chain_id": 15,
+      "id": "para-062",
+      "meta": {
+        "asked_side": "object",
+        "object": "Prava",
+        "relation": "controls",
+        "subject": "Ruzel"
+      },
+      "text": "Which device is controlled by Ruzel?"
+    },
+    {
+      "answer": "Prava",
+      "battery": "paraphrase",
+      "chain_id": 15,
+      "id": "para-063",
+      "meta": {
+        "asked_side": "subject",
+        "object": "frost",
+        "relation": "produces",
+        "subject": "Prava"
+      },
+      "text": "frost is produced by which device?"
+    },
+    {
+      "answer": "Nydra",
+      "battery": "paraphrase",
+      "chain_id": 16,
+      "id": "para-064",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Tormu",
+        "relation": "operates",
+        "subject": "Nydra"
+      },
+      "text": "Which actor operates Tormu?"
+    },
+    {
+      "answer": "Trimm",
+      "battery": "paraphrase",
+      "chain_id": 16,
+      "id": "para-065",
+      "meta": {
+        "asked_side": "object",
+        "object": "Trimm",
+        "relation": "routes-to",
+        "subject": "Tormu"
+      },
+      "text": "Tormu sends its flow through which relay?"
+    },
+    {
+      "answer": "Quist",
+      "battery": "paraphrase",
+      "chain_id": 16,
+      "id": "para-066",
+      "meta": {
+        "asked_side": "object",
+        "object": "Quist",
+        "relation": "controls",
+        "subject": "Trimm"
+      },
+      "text": "Which device is controlled by Trimm?"
+    },
+    {
+      "answer": "Quist",
+      "battery": "paraphrase",
+      "chain_id": 16,
+      "id": "para-067",
+      "meta": {
+        "asked_side": "subject",
+        "object": "grit",
+        "relation": "produces",
+        "subject": "Quist"
+      },
+      "text": "grit is produced by which device?"
+    },
+    {
+      "answer": "Ashvi",
+      "battery": "paraphrase",
+      "chain_id": 17,
+      "id": "para-068",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Vlask",
+        "relation": "operates",
+        "subject": "Ashvi"
+      },
+      "text": "Vlask is operated by whom?"
+    },
+    {
+      "answer": "Wonda",
+      "battery": "paraphrase",
+      "chain_id": 17,
+      "id": "para-069",
+      "meta": {
+        "asked_side": "object",
+        "object": "Wonda",
+        "relation": "routes-to",
+        "subject": "Vlask"
+      },
+      "text": "Which relay does Vlask route to?"
+    },
+    {
+      "answer": "Ryvok",
+      "battery": "paraphrase",
+      "chain_id": 17,
+      "id": "para-070",
+      "meta": {
+        "asked_side": "object",
+        "object": "Ryvok",
+        "relation": "controls",
+        "subject": "Wonda"
+      },
+      "text": "Wonda governs which device?"
+    },
+    {
+      "answer": "haze",
+      "battery": "paraphrase",
+      "chain_id": 17,
+      "id": "para-071",
+      "meta": {
+        "asked_side": "object",
+        "object": "haze",
+        "relation": "produces",
+        "subject": "Ryvok"
+      },
+      "text": "Ryvok emits what?"
+    },
+    {
+      "answer": "Fendor",
+      "battery": "paraphrase",
+      "chain_id": 18,
+      "id": "para-072",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Zenna",
+        "relation": "operates",
+        "subject": "Fendor"
+      },
+      "text": "Which actor operates Zenna?"
+    },
+    {
+      "answer": "Xalor",
+      "battery": "paraphrase",
+      "chain_id": 18,
+      "id": "para-073",
+      "meta": {
+        "asked_side": "object",
+        "object": "Xalor",
+        "relation": "routes-to",
+        "subject": "Zenna"
+      },
+      "text": "Which relay does Zenna route to?"
+    },
+    {
+      "answer": "Skerv",
+      "battery": "paraphrase",
+      "chain_id": 18,
+      "id": "para-074",
+      "meta": {
+        "asked_side": "object",
+        "object": "Skerv",
+        "relation": "controls",
+        "subject": "Xalor"
+      },
+      "text": "Which device is controlled by Xalor?"
+    },
+    {
+      "answer": "Skerv",
+      "battery": "paraphrase",
+      "chain_id": 18,
+      "id": "para-075",
+      "meta": {
+        "asked_side": "subject",
+        "object": "ion",
+        "relation": "produces",
+        "subject": "Skerv"
+      },
+      "text": "ion is produced by which device?"
+    },
+    {
+      "answer": "Wexla",
+      "battery": "paraphrase",
+      "chain_id": 19,
+      "id": "para-076",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Ektar",
+        "relation": "operates",
+        "subject": "Wexla"
+      },
+      "text": "Which actor operates Ektar?"
+    },
+    {
+      "answer": "Yibbo",
+      "battery": "paraphrase",
+      "chain_id": 19,
+      "id": "para-077",
+      "meta": {
+        "asked_side": "object",
+        "object": "Yibbo",
+        "relation": "routes-to",
+        "subject": "Ektar"
+      },
+      "text": "Which relay does Ektar route to?"
+    },
+    {
+      "answer": "Tolvo",
+      "battery": "paraphrase",
+      "chain_id": 19,
+      "id": "para-078",
+      "meta": {
+        "asked_side": "object",
+        "object": "Tolvo",
+        "relation": "controls",
+        "subject": "Yibbo"
+      },
+      "text": "Which device is controlled by Yibbo?"
+    },
+    {
+      "answer": "Tolvo",
+      "battery": "paraphrase",
+      "chain_id": 19,
+      "id": "para-079",
+      "meta": {
+        "asked_side": "subject",
+        "object": "jolt",
+        "relation": "produces",
+        "subject": "Tolvo"
+      },
+      "text": "jolt is produced by which device?"
+    },
+    {
+      "answer": "Xyphor",
+      "battery": "paraphrase",
+      "chain_id": 20,
+      "id": "para-080",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Pyx",
+        "relation": "operates",
+        "subject": "Xyphor"
+      },
+      "text": "Which actor operates Pyx?"
+    },
+    {
+      "answer": "Zaffi",
+      "battery": "paraphrase",
+      "chain_id": 20,
+      "id": "para-081",
+      "meta": {
+        "asked_side": "object",
+        "object": "Zaffi",
+        "relation": "routes-to",
+        "subject": "Pyx"
+      },
+      "text": "Which relay does Pyx route to?"
+    },
+    {
+      "answer": "Urska",
+      "battery": "paraphrase",
+      "chain_id": 20,
+      "id": "para-082",
+      "meta": {
+        "asked_side": "object",
+        "object": "Urska",
+        "relation": "controls",
+        "subject": "Zaffi"
+      },
+      "text": "Zaffi governs which device?"
+    },
+    {
+      "answer": "Urska",
+      "battery": "paraphrase",
+      "chain_id": 20,
+      "id": "para-083",
+      "meta": {
+        "asked_side": "subject",
+        "object": "mist",
+        "relation": "produces",
+        "subject": "Urska"
+      },
+      "text": "mist is produced by which device?"
+    },
+    {
+      "answer": "Brunev",
+      "battery": "paraphrase",
+      "chain_id": 21,
+      "id": "para-084",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Wroll",
+        "relation": "operates",
+        "subject": "Brunev"
+      },
+      "text": "Wroll is operated by whom?"
+    },
+    {
+      "answer": "Angth",
+      "battery": "paraphrase",
+      "chain_id": 21,
+      "id": "para-085",
+      "meta": {
+        "asked_side": "object",
+        "object": "Angth",
+        "relation": "routes-to",
+        "subject": "Wroll"
+      },
+      "text": "Which relay does Wroll route to?"
+    },
+    {
+      "answer": "Vikra",
+      "battery": "paraphrase",
+      "chain_id": 21,
+      "id": "para-086",
+      "meta": {
+        "asked_side": "object",
+        "object": "Vikra",
+        "relation": "controls",
+        "subject": "Angth"
+      },
+      "text": "Which device is controlled by Angth?"
+    },
+    {
+      "answer": "Vikra",
+      "battery": "paraphrase",
+      "chain_id": 21,
+      "id": "para-087",
+      "meta": {
+        "asked_side": "subject",
+        "object": "note",
+        "relation": "produces",
+        "subject": "Vikra"
+      },
+      "text": "note is produced by which device?"
+    },
+    {
+      "answer": "Thalex",
+      "battery": "paraphrase",
+      "chain_id": 22,
+      "id": "para-088",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Aumsa",
+        "relation": "operates",
+        "subject": "Thalex"
+      },
+      "text": "Which actor operates Aumsa?"
+    },
+    {
+      "answer": "Blokt",
+      "battery": "paraphrase",
+      "chain_id": 22,
+      "id": "para-089",
+      "meta": {
+        "asked_side": "object",
+        "object": "Blokt",
+        "relation": "routes-to",
+        "subject": "Aumsa"
+      },
+      "text": "Which relay does Aumsa route to?"
+    },
+    {
+      "answer": "Wexu",
+      "battery": "paraphrase",
+      "chain_id": 22,
+      "id": "para-090",
+      "meta": {
+        "asked_side": "object",
+        "object": "Wexu",
+        "relation": "controls",
+        "subject": "Blokt"
+      },
+      "text": "Which device is controlled by Blokt?"
+    },
+    {
+      "answer": "pulse",
+      "battery": "paraphrase",
+      "chain_id": 22,
+      "id": "para-091",
+      "meta": {
+        "asked_side": "object",
+        "object": "pulse",
+        "relation": "produces",
+        "subject": "Wexu"
+      },
+      "text": "Wexu emits what?"
+    },
+    {
+      "answer": "Iovar",
+      "battery": "paraphrase",
+      "chain_id": 23,
+      "id": "para-092",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Chesk",
+        "relation": "operates",
+        "subject": "Iovar"
+      },
+      "text": "Which actor operates Chesk?"
+    },
+    {
+      "answer": "Criva",
+      "battery": "paraphrase",
+      "chain_id": 23,
+      "id": "para-093",
+      "meta": {
+        "asked_side": "object",
+        "object": "Criva",
+        "relation": "routes-to",
+        "subject": "Chesk"
+      },
+      "text": "Which relay does Chesk route to?"
+    },
+    {
+      "answer": "Xorn",
+      "battery": "paraphrase",
+      "chain_id": 23,
+      "id": "para-094",
+      "meta": {
+        "asked_side": "object",
+        "object": "Xorn",
+        "relation": "controls",
+        "subject": "Criva"
+      },
+      "text": "Which device is controlled by Criva?"
+    },
+    {
+      "answer": "rime",
+      "battery": "paraphrase",
+      "chain_id": 23,
+      "id": "para-095",
+      "meta": {
+        "asked_side": "object",
+        "object": "rime",
+        "relation": "produces",
+        "subject": "Xorn"
+      },
+      "text": "Xorn emits what?"
+    },
+    {
+      "answer": "Zundi",
+      "battery": "paraphrase",
+      "chain_id": 24,
+      "id": "para-096",
+      "meta": {
+        "asked_side": "subject",
+        "object": "Ondri",
+        "relation": "operates",
+        "subject": "Zundi"
+      },
+      "text": "Which actor operates Ondri?"
+    },
+    {
+      "answer": "Duvra",
+      "battery": "paraphrase",
+      "chain_id": 24,
+      "id": "para-097",
+      "meta": {
+        "asked_side": "object",
+        "object": "Duvra",
+        "relation": "routes-to",
+        "subject": "Ondri"
+      },
+      "text": "Ondri sends its flow through which relay?"
+    },
+    {
+      "answer": "Zaph",
+      "battery": "paraphrase",
+      "chain_id": 24,
+      "id": "para-098",
+      "meta": {
+        "asked_side": "object",
+        "object": "Zaph",
+        "relation": "controls",
+        "subject": "Duvra"
+      },
+      "text": "Which device is controlled by Duvra?"
+    },
+    {
+      "answer": "Zaph",
+      "battery": "paraphrase",
+      "chain_id": 24,
+      "id": "para-099",
+      "meta": {
+        "asked_side": "subject",
+        "object": "shade",
+        "relation": "produces",
+        "subject": "Zaph"
+      },
+      "text": "shade is produced by which device?"
+    },
+    {
+      "answer": "light",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-reach-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "reach_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. What does Neral reach now?"
+    },
+    {
+      "answer": "Drel",
+      "battery": "intervention",
+      "chain_id": 0,
+      "id": "int-route-000",
+      "meta": {
+        "conduit": "Tav",
+        "kind": "route_now",
+        "new_relay": "Drel",
+        "start": "Neral"
+      },
+      "text": "Tav is rerouted to relay Drel. Which relay does Neral route through now?"
+    },
+    {
+      "answer": "steam",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-reach-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "reach_now",
+        "new_relay": "Belro",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Belro. What does Sula reach now?"
+    },
+    {
+      "answer": "Belro",
+      "battery": "intervention",
+      "chain_id": 1,
+      "id": "int-route-001",
+      "meta": {
+        "conduit": "Rinpo",
+        "kind": "route_now",
+        "new_relay": "Belro",
+        "start": "Sula"
+      },
+      "text": "Rinpo is rerouted to relay Belro. Which relay does Sula route through now?"
+    },
+    {
+      "answer": "glow",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-reach-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "reach_now",
+        "new_relay": "Thop",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Thop. What does Dravy reach now?"
+    },
+    {
+      "answer": "Thop",
+      "battery": "intervention",
+      "chain_id": 2,
+      "id": "int-route-002",
+      "meta": {
+        "conduit": "Skell",
+        "kind": "route_now",
+        "new_relay": "Thop",
+        "start": "Dravy"
+      },
+      "text": "Skell is rerouted to relay Thop. Which relay does Dravy route through now?"
+    },
+    {
+      "answer": "sparks",
+      "battery": "intervention",
+      "chain_id": 3,
+      "id": "int-reach-003",
+      "meta": {
+        "conduit": "Morva",
+        "kind": "reach_now",
+        "new_relay": "Mirda",
+        "start": "Ombit"
+      },
+      "text": "Morva is rerouted to relay Mirda. What does Ombit reach now?"
+    },
+    {
+      "answer": "Mirda",
+      "battery": "intervention",
+      "chain_id": 3,
+      "id": "int-route-003",
+      "meta": {
+        "conduit": "Morva",
+        "kind": "route_now",
+        "new_relay": "Mirda",
+        "start": "Ombit"
+      },
+      "text": "Morva is rerouted to relay Mirda. Which relay does Ombit route through now?"
+    },
+    {
+      "answer": "glow",
+      "battery": "intervention",
+      "chain_id": 4,
+      "id": "int-reach-004",
+      "meta": {
+        "conduit": "Plin",
+        "kind": "reach_now",
+        "new_relay": "Thop",
+        "start": "Quelos"
+      },
+      "text": "Plin is rerouted to relay Thop. What does Quelos reach now?"
+    },
+    {
+      "answer": "Thop",
+      "battery": "intervention",
+      "chain_id": 4,
+      "id": "int-route-004",
+      "meta": {
+        "conduit": "Plin",
+        "kind": "route_now",
+        "new_relay": "Thop",
+        "start": "Quelos"
+      },
+      "text": "Plin is rerouted to relay Thop. Which relay does Quelos route through now?"
+    },
+    {
+      "answer": "sparks",
+      "battery": "intervention",
+      "chain_id": 5,
+      "id": "int-reach-005",
+      "meta": {
+        "conduit": "Drex",
+        "kind": "reach_now",
+        "new_relay": "Mirda",
+        "start": "Vantro"
+      },
+      "text": "Drex is rerouted to relay Mirda. What does Vantro reach now?"
+    },
+    {
+      "answer": "Mirda",
+      "battery": "intervention",
+      "chain_id": 5,
+      "id": "int-route-005",
+      "meta": {
+        "conduit": "Drex",
+        "kind": "route_now",
+        "new_relay": "Mirda",
+        "start": "Vantro"
+      },
+      "text": "Drex is rerouted to relay Mirda. Which relay does Vantro route through now?"
+    },
+    {
+      "answer": "motion",
+      "battery": "intervention",
+      "chain_id": 6,
+      "id": "int-reach-006",
+      "meta": {
+        "conduit": "Volim",
+        "kind": "reach_now",
+        "new_relay": "Sorni",
+        "start": "Bexil"
+      },
+      "text": "Volim is rerouted to relay Sorni. What does Bexil reach now?"
+    },
+    {
+      "answer": "Sorni",
+      "battery": "intervention",
+      "chain_id": 6,
+      "id": "int-route-006",
+      "meta": {
+        "conduit": "Volim",
+        "kind": "route_now",
+        "new_relay": "Sorni",
+        "start": "Bexil"
+      },
+      "text": "Volim is rerouted to relay Sorni. Which relay does Bexil route through now?"
+    },
+    {
+      "answer": "vapor",
+      "battery": "intervention",
+      "chain_id": 7,
+      "id": "int-reach-007",
+      "meta": {
+        "conduit": "Harpa",
+        "kind": "reach_now",
+        "new_relay": "Ralt",
+        "start": "Corvan"
+      },
+      "text": "Harpa is rerouted to relay Ralt. What does Corvan reach now?"
+    },
+    {
+      "answer": "Ralt",
+      "battery": "intervention",
+      "chain_id": 7,
+      "id": "int-route-007",
+      "meta": {
+        "conduit": "Harpa",
+        "kind": "route_now",
+        "new_relay": "Ralt",
+        "start": "Corvan"
+      },
+      "text": "Harpa is rerouted to relay Ralt. Which relay does Corvan route through now?"
+    },
+    {
+      "answer": "motion",
+      "battery": "intervention",
+      "chain_id": 8,
+      "id": "int-reach-008",
+      "meta": {
+        "conduit": "Nixo",
+        "kind": "reach_now",
+        "new_relay": "Sorni",
+        "start": "Ithra"
+      },
+      "text": "Nixo is rerouted to relay Sorni. What does Ithra reach now?"
+    },
+    {
+      "answer": "Sorni",
+      "battery": "intervention",
+      "chain_id": 8,
+      "id": "int-route-008",
+      "meta": {
+        "conduit": "Nixo",
+        "kind": "route_now",
+        "new_relay": "Sorni",
+        "start": "Ithra"
+      },
+      "text": "Nixo is rerouted to relay Sorni. Which relay does Ithra route through now?"
+    },
+    {
+      "answer": "current",
+      "battery": "intervention",
+      "chain_id": 9,
+      "id": "int-reach-009",
+      "meta": {
+        "conduit": "Qarbe",
+        "kind": "reach_now",
+        "new_relay": "Ikto",
+        "start": "Mavok"
+      },
+      "text": "Qarbe is rerouted to relay Ikto. What does Mavok reach now?"
+    },
+    {
+      "answer": "Ikto",
+      "battery": "intervention",
+      "chain_id": 9,
+      "id": "int-route-009",
+      "meta": {
+        "conduit": "Qarbe",
+        "kind": "route_now",
+        "new_relay": "Ikto",
+        "start": "Mavok"
+      },
+      "text": "Qarbe is rerouted to relay Ikto. Which relay does Mavok route through now?"
+    },
+    {
+      "answer": "chime",
+      "battery": "intervention",
+      "chain_id": 10,
+      "id": "int-reach-010",
+      "meta": {
+        "conduit": "Lomo",
+        "kind": "reach_now",
+        "new_relay": "Glova",
+        "start": "Talen"
+      },
+      "text": "Lomo is rerouted to relay Glova. What does Talen reach now?"
+    },
+    {
+      "answer": "Glova",
+      "battery": "intervention",
+      "chain_id": 10,
+      "id": "int-route-010",
+      "meta": {
+        "conduit": "Lomo",
+        "kind": "route_now",
+        "new_relay": "Glova",
+        "start": "Talen"
+      },
+      "text": "Lomo is rerouted to relay Glova. Which relay does Talen route through now?"
+    },
+    {
+      "answer": "echo",
+      "battery": "intervention",
+      "chain_id": 11,
+      "id": "int-reach-011",
+      "meta": {
+        "conduit": "Yentz",
+        "kind": "reach_now",
+        "new_relay": "Pavok",
+        "start": "Rhoka"
+      },
+      "text": "Yentz is rerouted to relay Pavok. What does Rhoka reach now?"
+    },
+    {
+      "answer": "Pavok",
+      "battery": "intervention",
+      "chain_id": 11,
+      "id": "int-route-011",
+      "meta": {
+        "conduit": "Yentz",
+        "kind": "route_now",
+        "new_relay": "Pavok",
+        "start": "Rhoka"
+      },
+      "text": "Yentz is rerouted to relay Pavok. Which relay does Rhoka route through now?"
+    },
+    {
+      "answer": "frost",
+      "battery": "intervention",
+      "chain_id": 12,
+      "id": "int-reach-012",
+      "meta": {
+        "conduit": "Ufka",
+        "kind": "reach_now",
+        "new_relay": "Ruzel",
+        "start": "Juvex"
+      },
+      "text": "Ufka is rerouted to relay Ruzel. What does Juvex reach now?"
+    },
+    {
+      "answer": "Ruzel",
+      "battery": "intervention",
+      "chain_id": 12,
+      "id": "int-route-012",
+      "meta": {
+        "conduit": "Ufka",
+        "kind": "route_now",
+        "new_relay": "Ruzel",
+        "start": "Juvex"
+      },
+      "text": "Ufka is rerouted to relay Ruzel. Which relay does Juvex route through now?"
+    },
+    {
+      "answer": "grit",
+      "battery": "intervention",
+      "chain_id": 13,
+      "id": "int-reach-013",
+      "meta": {
+        "conduit": "Grev",
+        "kind": "reach_now",
+        "new_relay": "Trimm",
+        "start": "Kelthan"
+      },
+      "text": "Grev is rerouted to relay Trimm. What does Kelthan reach now?"
+    },
+    {
+      "answer": "Trimm",
+      "battery": "intervention",
+      "chain_id": 13,
+      "id": "int-route-013",
+      "meta": {
+        "conduit": "Grev",
+        "kind": "route_now",
+        "new_relay": "Trimm",
+        "start": "Kelthan"
+      },
+      "text": "Grev is rerouted to relay Trimm. Which relay does Kelthan route through now?"
+    },
+    {
+      "answer": "frost",
+      "battery": "intervention",
+      "chain_id": 14,
+      "id": "int-reach-014",
+      "meta": {
+        "conduit": "Bokka",
+        "kind": "reach_now",
+        "new_relay": "Ruzel",
+        "start": "Orvyn"
+      },
+      "text": "Bokka is rerouted to relay Ruzel. What does Orvyn reach now?"
+    },
+    {
+      "answer": "Ruzel",
+      "battery": "intervention",
+      "chain_id": 14,
+      "id": "int-route-014",
+      "meta": {
+        "conduit": "Bokka",
+        "kind": "route_now",
+        "new_relay": "Ruzel",
+        "start": "Orvyn"
+      },
+      "text": "Bokka is rerouted to relay Ruzel. Which relay does Orvyn route through now?"
+    },
+    {
+      "answer": "grit",
+      "battery": "intervention",
+      "chain_id": 15,
+      "id": "int-reach-015",
+      "meta": {
+        "conduit": "Sifel",
+        "kind": "reach_now",
+        "new_relay": "Trimm",
+        "start": "Gholm"
+      },
+      "text": "Sifel is rerouted to relay Trimm. What does Gholm reach now?"
+    },
+    {
+      "answer": "Trimm",
+      "battery": "intervention",
+      "chain_id": 15,
+      "id": "int-route-015",
+      "meta": {
+        "conduit": "Sifel",
+        "kind": "route_now",
+        "new_relay": "Trimm",
+        "start": "Gholm"
+      },
+      "text": "Sifel is rerouted to relay Trimm. Which relay does Gholm route through now?"
+    },
+    {
+      "answer": "haze",
+      "battery": "intervention",
+      "chain_id": 16,
+      "id": "int-reach-016",
+      "meta": {
+        "conduit": "Tormu",
+        "kind": "reach_now",
+        "new_relay": "Wonda",
+        "start": "Nydra"
+      },
+      "text": "Tormu is rerouted to relay Wonda. What does Nydra reach now?"
+    },
+    {
+      "answer": "Wonda",
+      "battery": "intervention",
+      "chain_id": 16,
+      "id": "int-route-016",
+      "meta": {
+        "conduit": "Tormu",
+        "kind": "route_now",
+        "new_relay": "Wonda",
+        "start": "Nydra"
+      },
+      "text": "Tormu is rerouted to relay Wonda. Which relay does Nydra route through now?"
+    },
+    {
+      "answer": "ion",
+      "battery": "intervention",
+      "chain_id": 17,
+      "id": "int-reach-017",
+      "meta": {
+        "conduit": "Vlask",
+        "kind": "reach_now",
+        "new_relay": "Xalor",
+        "start": "Ashvi"
+      },
+      "text": "Vlask is rerouted to relay Xalor. What does Ashvi reach now?"
+    },
+    {
+      "answer": "Xalor",
+      "battery": "intervention",
+      "chain_id": 17,
+      "id": "int-route-017",
+      "meta": {
+        "conduit": "Vlask",
+        "kind": "route_now",
+        "new_relay": "Xalor",
+        "start": "Ashvi"
+      },
+      "text": "Vlask is rerouted to relay Xalor. Which relay does Ashvi route through now?"
+    },
+    {
+      "answer": "jolt",
+      "battery": "intervention",
+      "chain_id": 18,
+      "id": "int-reach-018",
+      "meta": {
+        "conduit": "Zenna",
+        "kind": "reach_now",
+        "new_relay": "Yibbo",
+        "start": "Fendor"
+      },
+      "text": "Zenna is rerouted to relay Yibbo. What does Fendor reach now?"
+    },
+    {
+      "answer": "Yibbo",
+      "battery": "intervention",
+      "chain_id": 18,
+      "id": "int-route-018",
+      "meta": {
+        "conduit": "Zenna",
+        "kind": "route_now",
+        "new_relay": "Yibbo",
+        "start": "Fendor"
+      },
+      "text": "Zenna is rerouted to relay Yibbo. Which relay does Fendor route through now?"
+    },
+    {
+      "answer": "pulse",
+      "battery": "intervention",
+      "chain_id": 19,
+      "id": "int-reach-019",
+      "meta": {
+        "conduit": "Ektar",
+        "kind": "reach_now",
+        "new_relay": "Blokt",
+        "start": "Wexla"
+      },
+      "text": "Ektar is rerouted to relay Blokt. What does Wexla reach now?"
+    },
+    {
+      "answer": "Blokt",
+      "battery": "intervention",
+      "chain_id": 19,
+      "id": "int-route-019",
+      "meta": {
+        "conduit": "Ektar",
+        "kind": "route_now",
+        "new_relay": "Blokt",
+        "start": "Wexla"
+      },
+      "text": "Ektar is rerouted to relay Blokt. Which relay does Wexla route through now?"
+    },
+    {
+      "answer": "rime",
+      "battery": "intervention",
+      "chain_id": 20,
+      "id": "int-reach-020",
+      "meta": {
+        "conduit": "Pyx",
+        "kind": "reach_now",
+        "new_relay": "Criva",
+        "start": "Xyphor"
+      },
+      "text": "Pyx is rerouted to relay Criva. What does Xyphor reach now?"
+    },
+    {
+      "answer": "Criva",
+      "battery": "intervention",
+      "chain_id": 20,
+      "id": "int-route-020",
+      "meta": {
+        "conduit": "Pyx",
+        "kind": "route_now",
+        "new_relay": "Criva",
+        "start": "Xyphor"
+      },
+      "text": "Pyx is rerouted to relay Criva. Which relay does Xyphor route through now?"
+    },
+    {
+      "answer": "pulse",
+      "battery": "intervention",
+      "chain_id": 21,
+      "id": "int-reach-021",
+      "meta": {
+        "conduit": "Wroll",
+        "kind": "reach_now",
+        "new_relay": "Blokt",
+        "start": "Brunev"
+      },
+      "text": "Wroll is rerouted to relay Blokt. What does Brunev reach now?"
+    },
+    {
+      "answer": "Blokt",
+      "battery": "intervention",
+      "chain_id": 21,
+      "id": "int-route-021",
+      "meta": {
+        "conduit": "Wroll",
+        "kind": "route_now",
+        "new_relay": "Blokt",
+        "start": "Brunev"
+      },
+      "text": "Wroll is rerouted to relay Blokt. Which relay does Brunev route through now?"
+    },
+    {
+      "answer": "heat",
+      "battery": "intervention",
+      "chain_id": 22,
+      "id": "int-reach-022",
+      "meta": {
+        "conduit": "Aumsa",
+        "kind": "reach_now",
+        "new_relay": "Kimo",
+        "start": "Thalex"
+      },
+      "text": "Aumsa is rerouted to relay Kimo. What does Thalex reach now?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "intervention",
+      "chain_id": 22,
+      "id": "int-route-022",
+      "meta": {
+        "conduit": "Aumsa",
+        "kind": "route_now",
+        "new_relay": "Kimo",
+        "start": "Thalex"
+      },
+      "text": "Aumsa is rerouted to relay Kimo. Which relay does Thalex route through now?"
+    },
+    {
+      "answer": "shade",
+      "battery": "intervention",
+      "chain_id": 23,
+      "id": "int-reach-023",
+      "meta": {
+        "conduit": "Chesk",
+        "kind": "reach_now",
+        "new_relay": "Duvra",
+        "start": "Iovar"
+      },
+      "text": "Chesk is rerouted to relay Duvra. What does Iovar reach now?"
+    },
+    {
+      "answer": "Duvra",
+      "battery": "intervention",
+      "chain_id": 23,
+      "id": "int-route-023",
+      "meta": {
+        "conduit": "Chesk",
+        "kind": "route_now",
+        "new_relay": "Duvra",
+        "start": "Iovar"
+      },
+      "text": "Chesk is rerouted to relay Duvra. Which relay does Iovar route through now?"
+    },
+    {
+      "answer": "heat",
+      "battery": "intervention",
+      "chain_id": 24,
+      "id": "int-reach-024",
+      "meta": {
+        "conduit": "Ondri",
+        "kind": "reach_now",
+        "new_relay": "Kimo",
+        "start": "Zundi"
+      },
+      "text": "Ondri is rerouted to relay Kimo. What does Zundi reach now?"
+    },
+    {
+      "answer": "Kimo",
+      "battery": "intervention",
+      "chain_id": 24,
+      "id": "int-route-024",
+      "meta": {
+        "conduit": "Ondri",
+        "kind": "route_now",
+        "new_relay": "Kimo",
+        "start": "Zundi"
+      },
+      "text": "Ondri is rerouted to relay Kimo. Which relay does Zundi route through now?"
+    }
+  ],
+  "relationships": [
+    {
+      "chain_id": 0,
+      "index": 0,
+      "object": "Tav",
+      "relation": "operates",
+      "sentence": "Neral operates Tav.",
+      "subject": "Neral"
+    },
+    {
+      "chain_id": 0,
+      "index": 1,
+      "object": "Kimo",
+      "relation": "routes-to",
+      "sentence": "Tav routes to relay Kimo.",
+      "subject": "Tav"
+    },
+    {
+      "chain_id": 0,
+      "index": 2,
+      "object": "Zor",
+      "relation": "controls",
+      "sentence": "Kimo controls device Zor.",
+      "subject": "Kimo"
+    },
+    {
+      "chain_id": 0,
+      "index": 3,
+      "object": "heat",
+      "relation": "produces",
+      "sentence": "Zor produces heat.",
+      "subject": "Zor"
+    },
+    {
+      "chain_id": 1,
+      "index": 4,
+      "object": "Rinpo",
+      "relation": "operates",
+      "sentence": "Sula operates Rinpo.",
+      "subject": "Sula"
+    },
+    {
+      "chain_id": 1,
+      "index": 5,
+      "object": "Drel",
+      "relation": "routes-to",
+      "sentence": "Rinpo routes to relay Drel.",
+      "subject": "Rinpo"
+    },
+    {
+      "chain_id": 1,
+      "index": 6,
+      "object": "Blun",
+      "relation": "controls",
+      "sentence": "Drel controls device Blun.",
+      "subject": "Drel"
+    },
+    {
+      "chain_id": 1,
+      "index": 7,
+      "object": "light",
+      "relation": "produces",
+      "sentence": "Blun produces light.",
+      "subject": "Blun"
+    },
+    {
+      "chain_id": 2,
+      "index": 8,
+      "object": "Skell",
+      "relation": "operates",
+      "sentence": "Dravy operates Skell.",
+      "subject": "Dravy"
+    },
+    {
+      "chain_id": 2,
+      "index": 9,
+      "object": "Vash",
+      "relation": "routes-to",
+      "sentence": "Skell routes to relay Vash.",
+      "subject": "Skell"
+    },
+    {
+      "chain_id": 2,
+      "index": 10,
+      "object": "Crat",
+      "relation": "controls",
+      "sentence": "Vash controls device Crat.",
+      "subject": "Vash"
+    },
+    {
+      "chain_id": 2,
+      "index": 11,
+      "object": "pressure",
+      "relation": "produces",
+      "sentence": "Crat produces pressure.",
+      "subject": "Crat"
+    },
+    {
+      "chain_id": 3,
+      "index": 12,
+      "object": "Morva",
+      "relation": "operates",
+      "sentence": "Ombit operates Morva.",
+      "subject": "Ombit"
+    },
+    {
+      "chain_id": 3,
+      "index": 13,
+      "object": "Osten",
+      "relation": "routes-to",
+      "sentence": "Morva routes to relay Osten.",
+      "subject": "Morva"
+    },
+    {
+      "chain_id": 3,
+      "index": 14,
+      "object": "Dovel",
+      "relation": "controls",
+      "sentence": "Osten controls device Dovel.",
+      "subject": "Osten"
+    },
+    {
+      "chain_id": 3,
+      "index": 15,
+      "object": "torque",
+      "relation": "produces",
+      "sentence": "Dovel produces torque.",
+      "subject": "Dovel"
+    },
+    {
+      "chain_id": 4,
+      "index": 16,
+      "object": "Plin",
+      "relation": "operates",
+      "sentence": "Quelos operates Plin.",
+      "subject": "Quelos"
+    },
+    {
+      "chain_id": 4,
+      "index": 17,
+      "object": "Belro",
+      "relation": "routes-to",
+      "sentence": "Plin routes to relay Belro.",
+      "subject": "Plin"
+    },
+    {
+      "chain_id": 4,
+      "index": 18,
+      "object": "Errik",
+      "relation": "controls",
+      "sentence": "Belro controls device Errik.",
+      "subject": "Belro"
+    },
+    {
+      "chain_id": 4,
+      "index": 19,
+      "object": "steam",
+      "relation": "produces",
+      "sentence": "Errik produces steam.",
+      "subject": "Errik"
+    },
+    {
+      "chain_id": 5,
+      "index": 20,
+      "object": "Drex",
+      "relation": "operates",
+      "sentence": "Vantro operates Drex.",
+      "subject": "Vantro"
+    },
+    {
+      "chain_id": 5,
+      "index": 21,
+      "object": "Thop",
+      "relation": "routes-to",
+      "sentence": "Drex routes to relay Thop.",
+      "subject": "Drex"
+    },
+    {
+      "chain_id": 5,
+      "index": 22,
+      "object": "Fendu",
+      "relation": "controls",
+      "sentence": "Thop controls device Fendu.",
+      "subject": "Thop"
+    },
+    {
+      "chain_id": 5,
+      "index": 23,
+      "object": "glow",
+      "relation": "produces",
+      "sentence": "Fendu produces glow.",
+      "subject": "Fendu"
+    },
+    {
+      "chain_id": 6,
+      "index": 24,
+      "object": "Volim",
+      "relation": "operates",
+      "sentence": "Bexil operates Volim.",
+      "subject": "Bexil"
+    },
+    {
+      "chain_id": 6,
+      "index": 25,
+      "object": "Mirda",
+      "relation": "routes-to",
+      "sentence": "Volim routes to relay Mirda.",
+      "subject": "Volim"
+    },
+    {
+      "chain_id": 6,
+      "index": 26,
+      "object": "Grix",
+      "relation": "controls",
+      "sentence": "Mirda controls device Grix.",
+      "subject": "Mirda"
+    },
+    {
+      "chain_id": 6,
+      "index": 27,
+      "object": "sparks",
+      "relation": "produces",
+      "sentence": "Grix produces sparks.",
+      "subject": "Grix"
+    },
+    {
+      "chain_id": 7,
+      "index": 28,
+      "object": "Harpa",
+      "relation": "operates",
+      "sentence": "Corvan operates Harpa.",
+      "subject": "Corvan"
+    },
+    {
+      "chain_id": 7,
+      "index": 29,
+      "object": "Cuvex",
+      "relation": "routes-to",
+      "sentence": "Harpa routes to relay Cuvex.",
+      "subject": "Harpa"
+    },
+    {
+      "chain_id": 7,
+      "index": 30,
+      "object": "Huvla",
+      "relation": "controls",
+      "sentence": "Cuvex controls device Huvla.",
+      "subject": "Cuvex"
+    },
+    {
+      "chain_id": 7,
+      "index": 31,
+      "object": "hum",
+      "relation": "produces",
+      "sentence": "Huvla produces hum.",
+      "subject": "Huvla"
+    },
+    {
+      "chain_id": 8,
+      "index": 32,
+      "object": "Nixo",
+      "relation": "operates",
+      "sentence": "Ithra operates Nixo.",
+      "subject": "Ithra"
+    },
+    {
+      "chain_id": 8,
+      "index": 33,
+      "object": "Ralt",
+      "relation": "routes-to",
+      "sentence": "Nixo routes to relay Ralt.",
+      "subject": "Nixo"
+    },
+    {
+      "chain_id": 8,
+      "index": 34,
+      "object": "Ixen",
+      "relation": "controls",
+      "sentence": "Ralt controls device Ixen.",
+      "subject": "Ralt"
+    },
+    {
+      "chain_id": 8,
+      "index": 35,
+      "object": "vapor",
+      "relation": "produces",
+      "sentence": "Ixen produces vapor.",
+      "subject": "Ixen"
+    },
+    {
+      "chain_id": 9,
+      "index": 36,
+      "object": "Qarbe",
+      "relation": "operates",
+      "sentence": "Mavok operates Qarbe.",
+      "subject": "Mavok"
+    },
+    {
+      "chain_id": 9,
+      "index": 37,
+      "object": "Sorni",
+      "relation": "routes-to",
+      "sentence": "Qarbe routes to relay Sorni.",
+      "subject": "Qarbe"
+    },
+    {
+      "chain_id": 9,
+      "index": 38,
+      "object": "Jarvo",
+      "relation": "controls",
+      "sentence": "Sorni controls device Jarvo.",
+      "subject": "Sorni"
+    },
+    {
+      "chain_id": 9,
+      "index": 39,
+      "object": "motion",
+      "relation": "produces",
+      "sentence": "Jarvo produces motion.",
+      "subject": "Jarvo"
+    },
+    {
+      "chain_id": 10,
+      "index": 40,
+      "object": "Lomo",
+      "relation": "operates",
+      "sentence": "Talen operates Lomo.",
+      "subject": "Talen"
+    },
+    {
+      "chain_id": 10,
+      "index": 41,
+      "object": "Fydd",
+      "relation": "routes-to",
+      "sentence": "Lomo routes to relay Fydd.",
+      "subject": "Lomo"
+    },
+    {
+      "chain_id": 10,
+      "index": 42,
+      "object": "Krenn",
+      "relation": "controls",
+      "sentence": "Fydd controls device Krenn.",
+      "subject": "Fydd"
+    },
+    {
+      "chain_id": 10,
+      "index": 43,
+      "object": "ripple",
+      "relation": "produces",
+      "sentence": "Krenn produces ripple.",
+      "subject": "Krenn"
+    },
+    {
+      "chain_id": 11,
+      "index": 44,
+      "object": "Yentz",
+      "relation": "operates",
+      "sentence": "Rhoka operates Yentz.",
+      "subject": "Rhoka"
+    },
+    {
+      "chain_id": 11,
+      "index": 45,
+      "object": "Glova",
+      "relation": "routes-to",
+      "sentence": "Yentz routes to relay Glova.",
+      "subject": "Yentz"
+    },
+    {
+      "chain_id": 11,
+      "index": 46,
+      "object": "Lypox",
+      "relation": "controls",
+      "sentence": "Glova controls device Lypox.",
+      "subject": "Glova"
+    },
+    {
+      "chain_id": 11,
+      "index": 47,
+      "object": "chime",
+      "relation": "produces",
+      "sentence": "Lypox produces chime.",
+      "subject": "Lypox"
+    },
+    {
+      "chain_id": 12,
+      "index": 48,
+      "object": "Ufka",
+      "relation": "operates",
+      "sentence": "Juvex operates Ufka.",
+      "subject": "Juvex"
+    },
+    {
+      "chain_id": 12,
+      "index": 49,
+      "object": "Ikto",
+      "relation": "routes-to",
+      "sentence": "Ufka routes to relay Ikto.",
+      "subject": "Ufka"
+    },
+    {
+      "chain_id": 12,
+      "index": 50,
+      "object": "Mirno",
+      "relation": "controls",
+      "sentence": "Ikto controls device Mirno.",
+      "subject": "Ikto"
+    },
+    {
+      "chain_id": 12,
+      "index": 51,
+      "object": "current",
+      "relation": "produces",
+      "sentence": "Mirno produces current.",
+      "subject": "Mirno"
+    },
+    {
+      "chain_id": 13,
+      "index": 52,
+      "object": "Grev",
+      "relation": "operates",
+      "sentence": "Kelthan operates Grev.",
+      "subject": "Kelthan"
+    },
+    {
+      "chain_id": 13,
+      "index": 53,
+      "object": "Norva",
+      "relation": "routes-to",
+      "sentence": "Grev routes to relay Norva.",
+      "subject": "Grev"
+    },
+    {
+      "chain_id": 13,
+      "index": 54,
+      "object": "Nyvox",
+      "relation": "controls",
+      "sentence": "Norva controls device Nyvox.",
+      "subject": "Norva"
+    },
+    {
+      "chain_id": 13,
+      "index": 55,
+      "object": "draft",
+      "relation": "produces",
+      "sentence": "Nyvox produces draft.",
+      "subject": "Nyvox"
+    },
+    {
+      "chain_id": 14,
+      "index": 56,
+      "object": "Bokka",
+      "relation": "operates",
+      "sentence": "Orvyn operates Bokka.",
+      "subject": "Orvyn"
+    },
+    {
+      "chain_id": 14,
+      "index": 57,
+      "object": "Pavok",
+      "relation": "routes-to",
+      "sentence": "Bokka routes to relay Pavok.",
+      "subject": "Bokka"
+    },
+    {
+      "chain_id": 14,
+      "index": 58,
+      "object": "Oztek",
+      "relation": "controls",
+      "sentence": "Pavok controls device Oztek.",
+      "subject": "Pavok"
+    },
+    {
+      "chain_id": 14,
+      "index": 59,
+      "object": "echo",
+      "relation": "produces",
+      "sentence": "Oztek produces echo.",
+      "subject": "Oztek"
+    },
+    {
+      "chain_id": 15,
+      "index": 60,
+      "object": "Sifel",
+      "relation": "operates",
+      "sentence": "Gholm operates Sifel.",
+      "subject": "Gholm"
+    },
+    {
+      "chain_id": 15,
+      "index": 61,
+      "object": "Ruzel",
+      "relation": "routes-to",
+      "sentence": "Sifel routes to relay Ruzel.",
+      "subject": "Sifel"
+    },
+    {
+      "chain_id": 15,
+      "index": 62,
+      "object": "Prava",
+      "relation": "controls",
+      "sentence": "Ruzel controls device Prava.",
+      "subject": "Ruzel"
+    },
+    {
+      "chain_id": 15,
+      "index": 63,
+      "object": "frost",
+      "relation": "produces",
+      "sentence": "Prava produces frost.",
+      "subject": "Prava"
+    },
+    {
+      "chain_id": 16,
+      "index": 64,
+      "object": "Tormu",
+      "relation": "operates",
+      "sentence": "Nydra operates Tormu.",
+      "subject": "Nydra"
+    },
+    {
+      "chain_id": 16,
+      "index": 65,
+      "object": "Trimm",
+      "relation": "routes-to",
+      "sentence": "Tormu routes to relay Trimm.",
+      "subject": "Tormu"
+    },
+    {
+      "chain_id": 16,
+      "index": 66,
+      "object": "Quist",
+      "relation": "controls",
+      "sentence": "Trimm controls device Quist.",
+      "subject": "Trimm"
+    },
+    {
+      "chain_id": 16,
+      "index": 67,
+      "object": "grit",
+      "relation": "produces",
+      "sentence": "Quist produces grit.",
+      "subject": "Quist"
+    },
+    {
+      "chain_id": 17,
+      "index": 68,
+      "object": "Vlask",
+      "relation": "operates",
+      "sentence": "Ashvi operates Vlask.",
+      "subject": "Ashvi"
+    },
+    {
+      "chain_id": 17,
+      "index": 69,
+      "object": "Wonda",
+      "relation": "routes-to",
+      "sentence": "Vlask routes to relay Wonda.",
+      "subject": "Vlask"
+    },
+    {
+      "chain_id": 17,
+      "index": 70,
+      "object": "Ryvok",
+      "relation": "controls",
+      "sentence": "Wonda controls device Ryvok.",
+      "subject": "Wonda"
+    },
+    {
+      "chain_id": 17,
+      "index": 71,
+      "object": "haze",
+      "relation": "produces",
+      "sentence": "Ryvok produces haze.",
+      "subject": "Ryvok"
+    },
+    {
+      "chain_id": 18,
+      "index": 72,
+      "object": "Zenna",
+      "relation": "operates",
+      "sentence": "Fendor operates Zenna.",
+      "subject": "Fendor"
+    },
+    {
+      "chain_id": 18,
+      "index": 73,
+      "object": "Xalor",
+      "relation": "routes-to",
+      "sentence": "Zenna routes to relay Xalor.",
+      "subject": "Zenna"
+    },
+    {
+      "chain_id": 18,
+      "index": 74,
+      "object": "Skerv",
+      "relation": "controls",
+      "sentence": "Xalor controls device Skerv.",
+      "subject": "Xalor"
+    },
+    {
+      "chain_id": 18,
+      "index": 75,
+      "object": "ion",
+      "relation": "produces",
+      "sentence": "Skerv produces ion.",
+      "subject": "Skerv"
+    },
+    {
+      "chain_id": 19,
+      "index": 76,
+      "object": "Ektar",
+      "relation": "operates",
+      "sentence": "Wexla operates Ektar.",
+      "subject": "Wexla"
+    },
+    {
+      "chain_id": 19,
+      "index": 77,
+      "object": "Yibbo",
+      "relation": "routes-to",
+      "sentence": "Ektar routes to relay Yibbo.",
+      "subject": "Ektar"
+    },
+    {
+      "chain_id": 19,
+      "index": 78,
+      "object": "Tolvo",
+      "relation": "controls",
+      "sentence": "Yibbo controls device Tolvo.",
+      "subject": "Yibbo"
+    },
+    {
+      "chain_id": 19,
+      "index": 79,
+      "object": "jolt",
+      "relation": "produces",
+      "sentence": "Tolvo produces jolt.",
+      "subject": "Tolvo"
+    },
+    {
+      "chain_id": 20,
+      "index": 80,
+      "object": "Pyx",
+      "relation": "operates",
+      "sentence": "Xyphor operates Pyx.",
+      "subject": "Xyphor"
+    },
+    {
+      "chain_id": 20,
+      "index": 81,
+      "object": "Zaffi",
+      "relation": "routes-to",
+      "sentence": "Pyx routes to relay Zaffi.",
+      "subject": "Pyx"
+    },
+    {
+      "chain_id": 20,
+      "index": 82,
+      "object": "Urska",
+      "relation": "controls",
+      "sentence": "Zaffi controls device Urska.",
+      "subject": "Zaffi"
+    },
+    {
+      "chain_id": 20,
+      "index": 83,
+      "object": "mist",
+      "relation": "produces",
+      "sentence": "Urska produces mist.",
+      "subject": "Urska"
+    },
+    {
+      "chain_id": 21,
+      "index": 84,
+      "object": "Wroll",
+      "relation": "operates",
+      "sentence": "Brunev operates Wroll.",
+      "subject": "Brunev"
+    },
+    {
+      "chain_id": 21,
+      "index": 85,
+      "object": "Angth",
+      "relation": "routes-to",
+      "sentence": "Wroll routes to relay Angth.",
+      "subject": "Wroll"
+    },
+    {
+      "chain_id": 21,
+      "index": 86,
+      "object": "Vikra",
+      "relation": "controls",
+      "sentence": "Angth controls device Vikra.",
+      "subject": "Angth"
+    },
+    {
+      "chain_id": 21,
+      "index": 87,
+      "object": "note",
+      "relation": "produces",
+      "sentence": "Vikra produces note.",
+      "subject": "Vikra"
+    },
+    {
+      "chain_id": 22,
+      "index": 88,
+      "object": "Aumsa",
+      "relation": "operates",
+      "sentence": "Thalex operates Aumsa.",
+      "subject": "Thalex"
+    },
+    {
+      "chain_id": 22,
+      "index": 89,
+      "object": "Blokt",
+      "relation": "routes-to",
+      "sentence": "Aumsa routes to relay Blokt.",
+      "subject": "Aumsa"
+    },
+    {
+      "chain_id": 22,
+      "index": 90,
+      "object": "Wexu",
+      "relation": "controls",
+      "sentence": "Blokt controls device Wexu.",
+      "subject": "Blokt"
+    },
+    {
+      "chain_id": 22,
+      "index": 91,
+      "object": "pulse",
+      "relation": "produces",
+      "sentence": "Wexu produces pulse.",
+      "subject": "Wexu"
+    },
+    {
+      "chain_id": 23,
+      "index": 92,
+      "object": "Chesk",
+      "relation": "operates",
+      "sentence": "Iovar operates Chesk.",
+      "subject": "Iovar"
+    },
+    {
+      "chain_id": 23,
+      "index": 93,
+      "object": "Criva",
+      "relation": "routes-to",
+      "sentence": "Chesk routes to relay Criva.",
+      "subject": "Chesk"
+    },
+    {
+      "chain_id": 23,
+      "index": 94,
+      "object": "Xorn",
+      "relation": "controls",
+      "sentence": "Criva controls device Xorn.",
+      "subject": "Criva"
+    },
+    {
+      "chain_id": 23,
+      "index": 95,
+      "object": "rime",
+      "relation": "produces",
+      "sentence": "Xorn produces rime.",
+      "subject": "Xorn"
+    },
+    {
+      "chain_id": 24,
+      "index": 96,
+      "object": "Ondri",
+      "relation": "operates",
+      "sentence": "Zundi operates Ondri.",
+      "subject": "Zundi"
+    },
+    {
+      "chain_id": 24,
+      "index": 97,
+      "object": "Duvra",
+      "relation": "routes-to",
+      "sentence": "Ondri routes to relay Duvra.",
+      "subject": "Ondri"
+    },
+    {
+      "chain_id": 24,
+      "index": 98,
+      "object": "Zaph",
+      "relation": "controls",
+      "sentence": "Duvra controls device Zaph.",
+      "subject": "Duvra"
+    },
+    {
+      "chain_id": 24,
+      "index": 99,
+      "object": "shade",
+      "relation": "produces",
+      "sentence": "Zaph produces shade.",
+      "subject": "Zaph"
+    }
+  ],
+  "relays": [
+    "Kimo",
+    "Drel",
+    "Vash",
+    "Osten",
+    "Belro",
+    "Thop",
+    "Mirda",
+    "Cuvex",
+    "Ralt",
+    "Sorni",
+    "Fydd",
+    "Glova",
+    "Ikto",
+    "Norva",
+    "Pavok",
+    "Ruzel",
+    "Trimm",
+    "Wonda",
+    "Xalor",
+    "Yibbo",
+    "Zaffi",
+    "Angth",
+    "Blokt",
+    "Criva",
+    "Duvra"
+  ],
+  "seed": 0
+}

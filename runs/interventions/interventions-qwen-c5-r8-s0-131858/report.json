@@ -1,0 +1,1433 @@
+{
+ "run": {
+  "tag": "interventions-qwen-c5-r8-s0-131858",
+  "date": "2026-11-25 19:45:31",
+  "experiment": "intervention \u2014 predict the consequence of a world change",
+  "foundation": "Qwen3.5-4B-Base @ /mnt/seagate/aion-models/Qwen3.5-4B-Base (CPU BF16, FROZEN)",
+  "teacher": "ScriptedTeacher (offline stub; grading refs = world gold)",
+  "seed": 0,
+  "chains": 5,
+  "relationships": 20,
+  "n_reroutes": 8,
+  "preregistration": "see module docstring \u2014 frozen before the run",
+  "knobs": {
+   "learning_rate": 0.5,
+   "gate_steps": 6,
+   "gate_lr": 300.0,
+   "answer_tokens": 6,
+   "correction_repeats": 3
+  },
+  "scaffold": "Question: Which colour does the banner use?\nAnswer: gold.\n\nQuestion: Which metal does the coin use?\nAnswer: silver.\n\n",
+  "frozen": {
+   "frozen_tensors": 426,
+   "frozen_params": 4205751296
+  },
+  "concurrent_load_note": "real run shares Lappy CPU with the concurrent ownership_scale lane (reported, not tuned around)"
+ },
+ "timings_s": {
+  "foundation_load_s": 56.9,
+  "setup_s": 57.1,
+  "teach_s": 1765.1,
+  "intervene_s": 21354.4
+ },
+ "teach": {
+  "facts_learned": 20,
+  "u_fast_norms_before": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "u_fast_norms_after": [
+   1.427921,
+   1.459183,
+   0.784876
+  ],
+  "gamma_after_teach": [
+   -2.875352,
+   18.577305,
+   2.819846
+  ],
+  "theta_slow_empty": true,
+  "n_registered": 20,
+  "min_fact_plastic_strength": 1.189219,
+  "mean_fact_plastic_strength": 1.244696,
+  "weak_facts": []
+ },
+ "reroutes": [
+  {
+   "row": "reroute",
+   "index": 0,
+   "statement": "Tav is rerouted to relay Drel.",
+   "new_key": "Tav|routes-to|Drel",
+   "old_key": "Tav|routes-to|Kimo",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.307746,
+   "old_fact_plastic_strength_after": 1.30409,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.427921,
+    1.459183,
+    0.784876
+   ],
+   "u_fast_norms_after": [
+    1.445497,
+    1.52917,
+    0.895128
+   ],
+   "old_facts_present_after": "20/20",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.007708,
+   "max_relative_strength_change_old_facts": 0.007802,
+   "elapsed_s": 370.22,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 1,
+   "statement": "Rinpo is rerouted to relay Vash.",
+   "new_key": "Rinpo|routes-to|Vash",
+   "old_key": "Rinpo|routes-to|Drel",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.304238,
+   "old_fact_plastic_strength_after": 1.291353,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.445497,
+    1.52917,
+    0.895128
+   ],
+   "u_fast_norms_after": [
+    1.458439,
+    1.581616,
+    0.991741
+   ],
+   "old_facts_present_after": "21/21",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.003925,
+   "max_relative_strength_change_old_facts": 0.004031,
+   "elapsed_s": 467.82,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 2,
+   "statement": "Skell is rerouted to relay Osten.",
+   "new_key": "Skell|routes-to|Osten",
+   "old_key": "Skell|routes-to|Vash",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.295613,
+   "old_fact_plastic_strength_after": 1.291044,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.458439,
+    1.581616,
+    0.991741
+   ],
+   "u_fast_norms_after": [
+    1.469744,
+    1.623376,
+    1.099904
+   ],
+   "old_facts_present_after": "22/22",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.002182,
+   "max_relative_strength_change_old_facts": 0.002304,
+   "elapsed_s": 285.88,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 3,
+   "statement": "Morva is rerouted to relay Belro.",
+   "new_key": "Morva|routes-to|Belro",
+   "old_key": "Morva|routes-to|Osten",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.302999,
+   "old_fact_plastic_strength_after": 1.278812,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.469744,
+    1.623376,
+    1.099904
+   ],
+   "u_fast_norms_after": [
+    1.479584,
+    1.661661,
+    1.202251
+   ],
+   "old_facts_present_after": "23/23",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.001295,
+   "max_relative_strength_change_old_facts": 0.001414,
+   "elapsed_s": 288.83,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 4,
+   "statement": "Plin is rerouted to relay Kimo.",
+   "new_key": "Plin|routes-to|Kimo",
+   "old_key": "Plin|routes-to|Belro",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.326554,
+   "old_fact_plastic_strength_after": 1.298833,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.479584,
+    1.661661,
+    1.202251
+   ],
+   "u_fast_norms_after": [
+    1.489856,
+    1.697176,
+    1.297583
+   ],
+   "old_facts_present_after": "24/24",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.000882,
+   "max_relative_strength_change_old_facts": 0.001026,
+   "elapsed_s": 287.99,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 5,
+   "statement": "Tav is rerouted to relay Osten.",
+   "new_key": "Tav|routes-to|Osten",
+   "old_key": "Tav|routes-to|Drel",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.307862,
+   "old_fact_plastic_strength_after": 1.318912,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.489856,
+    1.697176,
+    1.297583
+   ],
+   "u_fast_norms_after": [
+    1.500338,
+    1.725846,
+    1.396755
+   ],
+   "old_facts_present_after": "25/25",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.00062,
+   "max_relative_strength_change_old_facts": 0.000776,
+   "elapsed_s": 310.99,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 6,
+   "statement": "Skell is rerouted to relay Kimo.",
+   "new_key": "Skell|routes-to|Kimo",
+   "old_key": "Skell|routes-to|Osten",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.315514,
+   "old_fact_plastic_strength_after": 1.299541,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.500338,
+    1.725846,
+    1.396755
+   ],
+   "u_fast_norms_after": [
+    1.510821,
+    1.753855,
+    1.489841
+   ],
+   "old_facts_present_after": "26/26",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.000503,
+   "max_relative_strength_change_old_facts": 0.000665,
+   "elapsed_s": 176.05,
+   "new_fact_learned": true
+  },
+  {
+   "row": "reroute",
+   "index": 7,
+   "statement": "Plin is rerouted to relay Vash.",
+   "new_key": "Plin|routes-to|Vash",
+   "old_key": "Plin|routes-to|Kimo",
+   "intervention_applied_as_plastic_override": true,
+   "new_fact_plastic_strength": 1.321684,
+   "old_fact_plastic_strength_after": 1.328295,
+   "old_key_superseded": true,
+   "u_fast_norms_before": [
+    1.510821,
+    1.753855,
+    1.489841
+   ],
+   "u_fast_norms_after": [
+    1.520766,
+    1.780111,
+    1.574105
+   ],
+   "old_facts_present_after": "27/27",
+   "old_facts_all_present": true,
+   "mean_relative_strength_change_old_facts": 0.000421,
+   "max_relative_strength_change_old_facts": 0.000581,
+   "elapsed_s": 187.15,
+   "new_fact_learned": true
+  }
+ ],
+ "aggregates": {
+  "intervention_questions": {
+   "n": 16,
+   "chance": 0.2,
+   "heuristic_ceiling": 1.0,
+   "modes": {
+    "FULL": {
+     "acc@1": 0.1875,
+     "mean_gold_prob": 0.17317,
+     "mean_gold_rank": 3.0,
+     "lenient": 0.1875
+    },
+    "PLASTIC": {
+     "acc@1": 0.1875,
+     "mean_gold_prob": 0.17136,
+     "mean_gold_rank": 3.0,
+     "lenient": 0.1875
+    },
+    "CONSOLIDATED": {
+     "acc@1": 0.1875,
+     "mean_gold_prob": 0.17238,
+     "mean_gold_rank": 3.062,
+     "lenient": 0.1875
+    },
+    "RETRIEVED": {
+     "acc@1": 0.0
+    }
+   },
+   "plastic_ablation_delta": 0.0,
+   "full_ablation_delta": 0.0,
+   "plastic_only_correct": 0,
+   "plastic_only_wrong": 0
+  },
+  "stability": {
+   "affected_answer_flipped": 1.0,
+   "affected_flipped_and_correct": 0.0,
+   "unaffected_answer_stable": 1.0,
+   "unaffected_answer_moved": 0.0,
+   "n_affected_comparisons": 24,
+   "n_unaffected_comparisons": 96
+  },
+  "stability_rows": [
+   {
+    "epoch": 1,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 1,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 1,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 2,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 2,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 2,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 2,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 3,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 3,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 3,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 3,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 4,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 4,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 4,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 4,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 5,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 5,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": true
+   },
+   {
+    "epoch": 5,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 5,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 6,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 7,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Neral",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Neral",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Neral",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Sula",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Sula",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Sula",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Dravy",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Dravy",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Dravy",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Ombit",
+    "mode": "FULL",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Ombit",
+    "mode": "PLASTIC",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Ombit",
+    "mode": "CONSOLIDATED",
+    "gold_changed": false,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Quelos",
+    "mode": "FULL",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Quelos",
+    "mode": "PLASTIC",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   },
+   {
+    "epoch": 8,
+    "actor": "Quelos",
+    "mode": "CONSOLIDATED",
+    "gold_changed": true,
+    "flipped": false,
+    "post_correct": false
+   }
+  ]
+ },
+ "fact_strengths_after_all_reroutes": {
+  "Belro|controls|Errik": {
+   "full": 0.8908206224441528,
+   "plastic": 1.2726010084152222,
+   "consolidated": 0.0
+  },
+  "Blun|produces|light": {
+   "full": 0.8906903266906738,
+   "plastic": 1.2724148035049438,
+   "consolidated": 0.0
+  },
+  "Crat|produces|pressure": {
+   "full": 0.8787307739257812,
+   "plastic": 1.2553296089172363,
+   "consolidated": 0.0
+  },
+  "Dovel|produces|torque": {
+   "full": 0.8661386966705322,
+   "plastic": 1.2373408079147339,
+   "consolidated": 0.0
+  },
+  "Dravy|operates|Skell": {
+   "full": 0.8611788749694824,
+   "plastic": 1.2302554845809937,
+   "consolidated": 0.0
+  },
+  "Drel|controls|Blun": {
+   "full": 0.9003739356994629,
+   "plastic": 1.2862484455108643,
+   "consolidated": 0.0
+  },
+  "Errik|produces|steam": {
+   "full": 0.8750247955322266,
+   "plastic": 1.2500355243682861,
+   "consolidated": 0.0
+  },
+  "Kimo|controls|Zor": {
+   "full": 0.9079927802085876,
+   "plastic": 1.2971327304840088,
+   "consolidated": 0.0
+  },
+  "Morva|routes-to|Belro": {
+   "full": 0.9139590263366699,
+   "plastic": 1.3056557178497314,
+   "consolidated": 0.0
+  },
+  "Morva|routes-to|Osten": {
+   "full": 0.8971958160400391,
+   "plastic": 1.2817083597183228,
+   "consolidated": 0.0
+  },
+  "Neral|operates|Tav": {
+   "full": 0.8480451107025146,
+   "plastic": 1.2114930152893066,
+   "consolidated": 0.0
+  },
+  "Ombit|operates|Morva": {
+   "full": 0.8703109622001648,
+   "plastic": 1.2433013916015625,
+   "consolidated": 0.0
+  },
+  "Osten|controls|Dovel": {
+   "full": 0.8902117013931274,
+   "plastic": 1.271730899810791,
+   "consolidated": 0.0
+  },
+  "Plin|routes-to|Belro": {
+   "full": 0.9105039834976196,
+   "plastic": 1.30072021484375,
+   "consolidated": 0.0
+  },
+  "Plin|routes-to|Kimo": {
+   "full": 0.9298065900802612,
+   "plastic": 1.328295111656189,
+   "consolidated": 0.0
+  },
+  "Plin|routes-to|Vash": {
+   "full": 0.9251787066459656,
+   "plastic": 1.3216838836669922,
+   "consolidated": 0.0
+  },
+  "Quelos|operates|Plin": {
+   "full": 0.8728220462799072,
+   "plastic": 1.246888518333435,
+   "consolidated": 0.0
+  },
+  "Rinpo|routes-to|Drel": {
+   "full": 0.9091078639030457,
+   "plastic": 1.2987256050109863,
+   "consolidated": 0.0
+  },
+  "Rinpo|routes-to|Vash": {
+   "full": 0.9179465174674988,
+   "plastic": 1.3113521337509155,
+   "consolidated": 0.0
+  },
+  "Skell|routes-to|Kimo": {
+   "full": 0.9211820960044861,
+   "plastic": 1.3159743547439575,
+   "consolidated": 0.0
+  },
+  "Skell|routes-to|Osten": {
+   "full": 0.9100032448768616,
+   "plastic": 1.3000046014785767,
+   "consolidated": 0.0
+  },
+  "Skell|routes-to|Vash": {
+   "full": 0.9069245457649231,
+   "plastic": 1.2956066131591797,
+   "consolidated": 0.0
+  },
+  "Sula|operates|Rinpo": {
+   "full": 0.8612926006317139,
+   "plastic": 1.2304182052612305,
+   "consolidated": 0.0
+  },
+  "Tav|routes-to|Drel": {
+   "full": 0.9239455461502075,
+   "plastic": 1.3199220895767212,
+   "consolidated": 0.0
+  },
+  "Tav|routes-to|Kimo": {
+   "full": 0.921627938747406,
+   "plastic": 1.316611409187317,
+   "consolidated": 0.0
+  },
+  "Tav|routes-to|Osten": {
+   "full": 0.9162290096282959,
+   "plastic": 1.3088985681533813,
+   "consolidated": 0.0
+  },
+  "Vash|controls|Crat": {
+   "full": 0.8896408081054688,
+   "plastic": 1.2709153890609741,
+   "consolidated": 0.0
+  },
+  "Zor|produces|heat": {
+   "full": 0.8864565491676331,
+   "plastic": 1.2663666009902954,
+   "consolidated": 0.0
+  }
+ },
+ "theta_slow_empty": true,
+ "foundation_integrity": {
+  "bit_identical_after_full_run": true,
+  "differing_params": [],
+  "n_params_checked": 426
+ },
+ "verdict": {
+  "expression_above_chance": false,
+  "plastic_helps_direction": false,
+  "heuristic_ceiling_ok": true,
+  "old_reach_stability": 1.0,
+  "note": "honest expectation (pre-registered): expression may sit near chance; a ~0 ablation delta with strong u_fast evidence IS the finding"
+ }
+}

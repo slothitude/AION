@@ -1,0 +1,11 @@
+{
+ "state_restored_exact": true,
+ "restore_diffs": [],
+ "probes_regenerate_identically": true,
+ "probe_diffs": [],
+ "loaded_from_disk_only": true,
+ "episodic_events_reloaded": 110,
+ "episodic_event_count_preserved": true,
+ "fact_index_reloaded": 110,
+ "restart_s": 884.5
+}

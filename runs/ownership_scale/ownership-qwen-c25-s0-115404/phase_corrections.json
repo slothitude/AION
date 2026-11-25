@@ -1,0 +1,1106 @@
+{
+ "n_corrections": 10,
+ "plan": [
+  {
+   "chain": 0,
+   "conduit": "Tav",
+   "old_relay": "Kimo",
+   "new_relay": "Drel",
+   "sentence": "Tav is rerouted to relay Drel.",
+   "new_key": "Tav|routes-to|Drel",
+   "old_key": "Tav|routes-to|Kimo"
+  },
+  {
+   "chain": 2,
+   "conduit": "Skell",
+   "old_relay": "Vash",
+   "new_relay": "Osten",
+   "sentence": "Skell is rerouted to relay Osten.",
+   "new_key": "Skell|routes-to|Osten",
+   "old_key": "Skell|routes-to|Vash"
+  },
+  {
+   "chain": 5,
+   "conduit": "Drex",
+   "old_relay": "Thop",
+   "new_relay": "Mirda",
+   "sentence": "Drex is rerouted to relay Mirda.",
+   "new_key": "Drex|routes-to|Mirda",
+   "old_key": "Drex|routes-to|Thop"
+  },
+  {
+   "chain": 7,
+   "conduit": "Harpa",
+   "old_relay": "Cuvex",
+   "new_relay": "Ralt",
+   "sentence": "Harpa is rerouted to relay Ralt.",
+   "new_key": "Harpa|routes-to|Ralt",
+   "old_key": "Harpa|routes-to|Cuvex"
+  },
+  {
+   "chain": 10,
+   "conduit": "Lomo",
+   "old_relay": "Fydd",
+   "new_relay": "Glova",
+   "sentence": "Lomo is rerouted to relay Glova.",
+   "new_key": "Lomo|routes-to|Glova",
+   "old_key": "Lomo|routes-to|Fydd"
+  },
+  {
+   "chain": 12,
+   "conduit": "Ufka",
+   "old_relay": "Ikto",
+   "new_relay": "Norva",
+   "sentence": "Ufka is rerouted to relay Norva.",
+   "new_key": "Ufka|routes-to|Norva",
+   "old_key": "Ufka|routes-to|Ikto"
+  },
+  {
+   "chain": 15,
+   "conduit": "Sifel",
+   "old_relay": "Ruzel",
+   "new_relay": "Trimm",
+   "sentence": "Sifel is rerouted to relay Trimm.",
+   "new_key": "Sifel|routes-to|Trimm",
+   "old_key": "Sifel|routes-to|Ruzel"
+  },
+  {
+   "chain": 17,
+   "conduit": "Vlask",
+   "old_relay": "Wonda",
+   "new_relay": "Xalor",
+   "sentence": "Vlask is rerouted to relay Xalor.",
+   "new_key": "Vlask|routes-to|Xalor",
+   "old_key": "Vlask|routes-to|Wonda"
+  },
+  {
+   "chain": 20,
+   "conduit": "Pyx",
+   "old_relay": "Zaffi",
+   "new_relay": "Angth",
+   "sentence": "Pyx is rerouted to relay Angth.",
+   "new_key": "Pyx|routes-to|Angth",
+   "old_key": "Pyx|routes-to|Zaffi"
+  },
+  {
+   "chain": 22,
+   "conduit": "Aumsa",
+   "old_relay": "Blokt",
+   "new_relay": "Criva",
+   "sentence": "Aumsa is rerouted to relay Criva.",
+   "new_key": "Aumsa|routes-to|Criva",
+   "old_key": "Aumsa|routes-to|Blokt"
+  }
+ ],
+ "per_correction": [
+  {
+   "index": 0,
+   "chain": 0,
+   "sentence": "Tav is rerouted to relay Drel.",
+   "new_key": "Tav|routes-to|Drel",
+   "old_key": "Tav|routes-to|Kimo",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Tav",
+      "relation": "routes-to",
+      "object": "Kimo",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Tav routes to relay Kimo."
+     },
+     "after": {
+      "subject": "Tav",
+      "relation": "routes-to",
+      "object": "Drel",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Tav is rerouted to relay Drel."
+     },
+     "transcript_id": "correction-00-chain00",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Tav routes to Drel.",
+       "n_tokens": 7,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 7.940487384796143,
+         "gate_norms": [
+          -29.549789428710938,
+          62.842430114746094,
+          1.3243986368179321
+         ]
+        },
+        {
+         "loss": 7.934610843658447,
+         "gate_norms": [
+          -29.61762237548828,
+          62.93140411376953,
+          2.0643558502197266
+         ]
+        },
+        {
+         "loss": 7.922083377838135,
+         "gate_norms": [
+          -29.700340270996094,
+          63.0041389465332,
+          2.79480242729187
+         ]
+        },
+        {
+         "loss": 7.924893856048584,
+         "gate_norms": [
+          -29.791284561157227,
+          63.06757354736328,
+          3.5118327140808105
+         ]
+        },
+        {
+         "loss": 7.918624401092529,
+         "gate_norms": [
+          -29.924291610717773,
+          63.08747100830078,
+          4.217168807983398
+         ]
+        },
+        {
+         "loss": 7.926201343536377,
+         "gate_norms": [
+          -30.041786193847656,
+          63.1248664855957,
+          4.920970916748047
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.328012,
+   "new_fact_learned": true
+  },
+  {
+   "index": 1,
+   "chain": 2,
+   "sentence": "Skell is rerouted to relay Osten.",
+   "new_key": "Skell|routes-to|Osten",
+   "old_key": "Skell|routes-to|Vash",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Skell",
+      "relation": "routes-to",
+      "object": "Vash",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Skell routes to relay Vash."
+     },
+     "after": {
+      "subject": "Skell",
+      "relation": "routes-to",
+      "object": "Osten",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Skell is rerouted to relay Osten."
+     },
+     "transcript_id": "correction-01-chain02",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Skell routes to Osten.",
+       "n_tokens": 6,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 8.506539344787598,
+         "gate_norms": [
+          -41.45848846435547,
+          56.078250885009766,
+          -9.960367202758789
+         ]
+        },
+        {
+         "loss": 8.498023986816406,
+         "gate_norms": [
+          -41.539302825927734,
+          56.339054107666016,
+          -10.66925048828125
+         ]
+        },
+        {
+         "loss": 8.491164207458496,
+         "gate_norms": [
+          -41.61486053466797,
+          56.605743408203125,
+          -11.365757942199707
+         ]
+        },
+        {
+         "loss": 8.493866920471191,
+         "gate_norms": [
+          -41.66904830932617,
+          56.89107894897461,
+          -12.040366172790527
+         ]
+        },
+        {
+         "loss": 8.496493339538574,
+         "gate_norms": [
+          -41.70717239379883,
+          57.19478988647461,
+          -12.698326110839844
+         ]
+        },
+        {
+         "loss": 8.502575874328613,
+         "gate_norms": [
+          -41.743289947509766,
+          57.499969482421875,
+          -13.347540855407715
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.30871,
+   "new_fact_learned": true
+  },
+  {
+   "index": 2,
+   "chain": 5,
+   "sentence": "Drex is rerouted to relay Mirda.",
+   "new_key": "Drex|routes-to|Mirda",
+   "old_key": "Drex|routes-to|Thop",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Drex",
+      "relation": "routes-to",
+      "object": "Thop",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Drex routes to relay Thop."
+     },
+     "after": {
+      "subject": "Drex",
+      "relation": "routes-to",
+      "object": "Mirda",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Drex is rerouted to relay Mirda."
+     },
+     "transcript_id": "correction-02-chain05",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Drex routes to Mirda.",
+       "n_tokens": 8,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 7.1869120597839355,
+         "gate_norms": [
+          -47.23218536376953,
+          57.23940658569336,
+          -5.144676208496094
+         ]
+        },
+        {
+         "loss": 7.19500207901001,
+         "gate_norms": [
+          -47.560909271240234,
+          57.30735778808594,
+          -4.525059700012207
+         ]
+        },
+        {
+         "loss": 7.188561916351318,
+         "gate_norms": [
+          -47.885562896728516,
+          57.378089904785156,
+          -3.9089231491088867
+         ]
+        },
+        {
+         "loss": 7.185630798339844,
+         "gate_norms": [
+          -48.195247650146484,
+          57.464900970458984,
+          -3.2954862117767334
+         ]
+        },
+        {
+         "loss": 7.185140132904053,
+         "gate_norms": [
+          -48.4954719543457,
+          57.56130599975586,
+          -2.682629108428955
+         ]
+        },
+        {
+         "loss": 7.1789069175720215,
+         "gate_norms": [
+          -48.78288269042969,
+          57.66545486450195,
+          -2.081667900085449
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.322537,
+   "new_fact_learned": true
+  },
+  {
+   "index": 3,
+   "chain": 7,
+   "sentence": "Harpa is rerouted to relay Ralt.",
+   "new_key": "Harpa|routes-to|Ralt",
+   "old_key": "Harpa|routes-to|Cuvex",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Harpa",
+      "relation": "routes-to",
+      "object": "Cuvex",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Harpa routes to relay Cuvex."
+     },
+     "after": {
+      "subject": "Harpa",
+      "relation": "routes-to",
+      "object": "Ralt",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Harpa is rerouted to relay Ralt."
+     },
+     "transcript_id": "correction-03-chain07",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Harpa routes to Ralt.",
+       "n_tokens": 7,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 7.7151336669921875,
+         "gate_norms": [
+          -47.09563064575195,
+          62.051998138427734,
+          9.137635231018066
+         ]
+        },
+        {
+         "loss": 7.71621561050415,
+         "gate_norms": [
+          -47.29328155517578,
+          62.062461853027344,
+          9.819822311401367
+         ]
+        },
+        {
+         "loss": 7.722841262817383,
+         "gate_norms": [
+          -47.483497619628906,
+          62.08043670654297,
+          10.494937896728516
+         ]
+        },
+        {
+         "loss": 7.715919494628906,
+         "gate_norms": [
+          -47.6738166809082,
+          62.09812545776367,
+          11.16796875
+         ]
+        },
+        {
+         "loss": 7.710520267486572,
+         "gate_norms": [
+          -47.88922119140625,
+          62.091636657714844,
+          11.81964111328125
+         ]
+        },
+        {
+         "loss": 7.710829257965088,
+         "gate_norms": [
+          -48.10065460205078,
+          62.08803939819336,
+          12.4671049118042
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.317403,
+   "new_fact_learned": true
+  },
+  {
+   "index": 4,
+   "chain": 10,
+   "sentence": "Lomo is rerouted to relay Glova.",
+   "new_key": "Lomo|routes-to|Glova",
+   "old_key": "Lomo|routes-to|Fydd",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Lomo",
+      "relation": "routes-to",
+      "object": "Fydd",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Lomo routes to relay Fydd."
+     },
+     "after": {
+      "subject": "Lomo",
+      "relation": "routes-to",
+      "object": "Glova",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Lomo is rerouted to relay Glova."
+     },
+     "transcript_id": "correction-04-chain10",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Lomo routes to Glova.",
+       "n_tokens": 7,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 8.130579948425293,
+         "gate_norms": [
+          -62.974544525146484,
+          50.96540069580078,
+          12.864243507385254
+         ]
+        },
+        {
+         "loss": 8.121283531188965,
+         "gate_norms": [
+          -63.173702239990234,
+          51.024818420410156,
+          13.215299606323242
+         ]
+        },
+        {
+         "loss": 8.11645793914795,
+         "gate_norms": [
+          -63.36522674560547,
+          51.092288970947266,
+          13.562047004699707
+         ]
+        },
+        {
+         "loss": 8.118316650390625,
+         "gate_norms": [
+          -63.5472526550293,
+          51.169166564941406,
+          13.90990924835205
+         ]
+        },
+        {
+         "loss": 8.111882209777832,
+         "gate_norms": [
+          -63.737518310546875,
+          51.23610305786133,
+          14.244348526000977
+         ]
+        },
+        {
+         "loss": 8.113483428955078,
+         "gate_norms": [
+          -63.929901123046875,
+          51.30153274536133,
+          14.566290855407715
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.319299,
+   "new_fact_learned": true
+  },
+  {
+   "index": 5,
+   "chain": 12,
+   "sentence": "Ufka is rerouted to relay Norva.",
+   "new_key": "Ufka|routes-to|Norva",
+   "old_key": "Ufka|routes-to|Ikto",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Ufka",
+      "relation": "routes-to",
+      "object": "Ikto",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Ufka routes to relay Ikto."
+     },
+     "after": {
+      "subject": "Ufka",
+      "relation": "routes-to",
+      "object": "Norva",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Ufka is rerouted to relay Norva."
+     },
+     "transcript_id": "correction-05-chain12",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Ufka routes to Norva.",
+       "n_tokens": 8,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 7.079413890838623,
+         "gate_norms": [
+          -56.866878509521484,
+          57.760433197021484,
+          17.19041633605957
+         ]
+        },
+        {
+         "loss": 7.070694446563721,
+         "gate_norms": [
+          -56.83076095581055,
+          57.754676818847656,
+          17.20670509338379
+         ]
+        },
+        {
+         "loss": 7.0707221031188965,
+         "gate_norms": [
+          -56.79515075683594,
+          57.74843215942383,
+          17.22284698486328
+         ]
+        },
+        {
+         "loss": 7.071047306060791,
+         "gate_norms": [
+          -56.760719299316406,
+          57.74101638793945,
+          17.238548278808594
+         ]
+        },
+        {
+         "loss": 7.075210094451904,
+         "gate_norms": [
+          -56.729679107666016,
+          57.73031997680664,
+          17.253341674804688
+         ]
+        },
+        {
+         "loss": 7.075333595275879,
+         "gate_norms": [
+          -56.69865036010742,
+          57.719547271728516,
+          17.268217086791992
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.312359,
+   "new_fact_learned": true
+  },
+  {
+   "index": 6,
+   "chain": 15,
+   "sentence": "Sifel is rerouted to relay Trimm.",
+   "new_key": "Sifel|routes-to|Trimm",
+   "old_key": "Sifel|routes-to|Ruzel",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Sifel",
+      "relation": "routes-to",
+      "object": "Ruzel",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Sifel routes to relay Ruzel."
+     },
+     "after": {
+      "subject": "Sifel",
+      "relation": "routes-to",
+      "object": "Trimm",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Sifel is rerouted to relay Trimm."
+     },
+     "transcript_id": "correction-06-chain15",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Sifel routes to Trimm.",
+       "n_tokens": 7,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 9.828351020812988,
+         "gate_norms": [
+          -71.0165023803711,
+          47.09762191772461,
+          30.196964263916016
+         ]
+        },
+        {
+         "loss": 9.83414077758789,
+         "gate_norms": [
+          -71.3841781616211,
+          46.98112487792969,
+          31.347759246826172
+         ]
+        },
+        {
+         "loss": 9.817609786987305,
+         "gate_norms": [
+          -71.74517822265625,
+          46.868282318115234,
+          32.48087692260742
+         ]
+        },
+        {
+         "loss": 9.811441421508789,
+         "gate_norms": [
+          -72.09552764892578,
+          46.76198959350586,
+          33.59682846069336
+         ]
+        },
+        {
+         "loss": 9.807585716247559,
+         "gate_norms": [
+          -72.44593811035156,
+          46.655452728271484,
+          34.696102142333984
+         ]
+        },
+        {
+         "loss": 9.804033279418945,
+         "gate_norms": [
+          -72.77210998535156,
+          46.56916809082031,
+          35.786468505859375
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.317803,
+   "new_fact_learned": true
+  },
+  {
+   "index": 7,
+   "chain": 17,
+   "sentence": "Vlask is rerouted to relay Xalor.",
+   "new_key": "Vlask|routes-to|Xalor",
+   "old_key": "Vlask|routes-to|Wonda",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Vlask",
+      "relation": "routes-to",
+      "object": "Wonda",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Vlask routes to relay Wonda."
+     },
+     "after": {
+      "subject": "Vlask",
+      "relation": "routes-to",
+      "object": "Xalor",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Vlask is rerouted to relay Xalor."
+     },
+     "transcript_id": "correction-07-chain17",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Vlask routes to Xalor.",
+       "n_tokens": 9,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 5.843419075012207,
+         "gate_norms": [
+          -49.751792907714844,
+          71.91454315185547,
+          46.541507720947266
+         ]
+        },
+        {
+         "loss": 5.846248626708984,
+         "gate_norms": [
+          -49.64946746826172,
+          72.15281677246094,
+          46.7897834777832
+         ]
+        },
+        {
+         "loss": 5.847245216369629,
+         "gate_norms": [
+          -49.59046173095703,
+          72.34620666503906,
+          47.02556228637695
+         ]
+        },
+        {
+         "loss": 5.846330642700195,
+         "gate_norms": [
+          -49.562496185302734,
+          72.50743103027344,
+          47.24286651611328
+         ]
+        },
+        {
+         "loss": 5.847696304321289,
+         "gate_norms": [
+          -49.55599594116211,
+          72.64635467529297,
+          47.455318450927734
+         ]
+        },
+        {
+         "loss": 5.855307579040527,
+         "gate_norms": [
+          -49.57685089111328,
+          72.75504302978516,
+          47.656681060791016
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.320101,
+   "new_fact_learned": true
+  },
+  {
+   "index": 8,
+   "chain": 20,
+   "sentence": "Pyx is rerouted to relay Angth.",
+   "new_key": "Pyx|routes-to|Angth",
+   "old_key": "Pyx|routes-to|Zaffi",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Pyx",
+      "relation": "routes-to",
+      "object": "Zaffi",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Pyx routes to relay Zaffi."
+     },
+     "after": {
+      "subject": "Pyx",
+      "relation": "routes-to",
+      "object": "Angth",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Pyx is rerouted to relay Angth."
+     },
+     "transcript_id": "correction-08-chain20",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Pyx routes to Angth.",
+       "n_tokens": 7,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 9.324857711791992,
+         "gate_norms": [
+          -65.49747467041016,
+          60.751644134521484,
+          45.8661003112793
+         ]
+        },
+        {
+         "loss": 9.315400123596191,
+         "gate_norms": [
+          -65.811279296875,
+          60.7541618347168,
+          46.040218353271484
+         ]
+        },
+        {
+         "loss": 9.315947532653809,
+         "gate_norms": [
+          -66.11956024169922,
+          60.76310348510742,
+          46.211761474609375
+         ]
+        },
+        {
+         "loss": 9.309183120727539,
+         "gate_norms": [
+          -66.38076782226562,
+          60.818450927734375,
+          46.39902877807617
+         ]
+        },
+        {
+         "loss": 9.309880256652832,
+         "gate_norms": [
+          -66.63790893554688,
+          60.877037048339844,
+          46.58143997192383
+         ]
+        },
+        {
+         "loss": 9.309370994567871,
+         "gate_norms": [
+          -66.87562561035156,
+          60.95587921142578,
+          46.77286148071289
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.334283,
+   "new_fact_learned": true
+  },
+  {
+   "index": 9,
+   "chain": 22,
+   "sentence": "Aumsa is rerouted to relay Criva.",
+   "new_key": "Aumsa|routes-to|Criva",
+   "old_key": "Aumsa|routes-to|Blokt",
+   "correction_events": [
+    {
+     "kind": "update",
+     "before": {
+      "subject": "Aumsa",
+      "relation": "routes-to",
+      "object": "Blokt",
+      "provenance": "lesson",
+      "agent": null,
+      "raw": "Aumsa routes to relay Blokt."
+     },
+     "after": {
+      "subject": "Aumsa",
+      "relation": "routes-to",
+      "object": "Criva",
+      "provenance": "intervention",
+      "agent": null,
+      "raw": "Aumsa is rerouted to relay Criva."
+     },
+     "transcript_id": "correction-09-chain22",
+     "turn_index": 1,
+     "repeats": 3,
+     "meta": {
+      "learn": {
+       "text": "Aumsa routes to Criva.",
+       "n_tokens": 8,
+       "repeats": 3,
+       "gate": [
+        {
+         "loss": 8.409685134887695,
+         "gate_norms": [
+          -66.63491821289062,
+          60.421939849853516,
+          37.03130340576172
+         ]
+        },
+        {
+         "loss": 8.407896041870117,
+         "gate_norms": [
+          -66.50257110595703,
+          60.49857711791992,
+          36.38322448730469
+         ]
+        },
+        {
+         "loss": 8.402718544006348,
+         "gate_norms": [
+          -66.34649658203125,
+          60.59929275512695,
+          35.75197219848633
+         ]
+        },
+        {
+         "loss": 8.405508041381836,
+         "gate_norms": [
+          -66.20066833496094,
+          60.69062423706055,
+          35.127952575683594
+         ]
+        },
+        {
+         "loss": 8.397332191467285,
+         "gate_norms": [
+          -66.05458068847656,
+          60.78127670288086,
+          34.51095962524414
+         ]
+        },
+        {
+         "loss": 8.405095100402832,
+         "gate_norms": [
+          -65.91838836669922,
+          60.86280059814453,
+          33.89527130126953
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "new_fact_plastic_strength": 1.319535,
+   "new_fact_learned": true
+  }
+ ],
+ "new_facts_learned": "10/10",
+ "new_facts_all_learned": true,
+ "untouched_old_facts": 90,
+ "untouched_old_facts_intact": "90/90",
+ "untouched_old_facts_all_intact": true,
+ "intact_keys": [
+  "Neral|operates|Tav",
+  "Kimo|controls|Zor",
+  "Zor|produces|heat",
+  "Sula|operates|Rinpo",
+  "Rinpo|routes-to|Drel",
+  "Drel|controls|Blun",
+  "Blun|produces|light",
+  "Dravy|operates|Skell",
+  "Vash|controls|Crat",
+  "Crat|produces|pressure",
+  "Ombit|operates|Morva",
+  "Morva|routes-to|Osten",
+  "Osten|controls|Dovel",
+  "Dovel|produces|torque",
+  "Quelos|operates|Plin",
+  "Plin|routes-to|Belro",
+  "Belro|controls|Errik",
+  "Errik|produces|steam",
+  "Vantro|operates|Drex",
+  "Thop|controls|Fendu",
+  "Fendu|produces|glow",
+  "Bexil|operates|Volim",
+  "Volim|routes-to|Mirda",
+  "Mirda|controls|Grix",
+  "Grix|produces|sparks",
+  "Corvan|operates|Harpa",
+  "Cuvex|controls|Huvla",
+  "Huvla|produces|hum",
+  "Ithra|operates|Nixo",
+  "Nixo|routes-to|Ralt",
+  "Ralt|controls|Ixen",
+  "Ixen|produces|vapor",
+  "Mavok|operates|Qarbe",
+  "Qarbe|routes-to|Sorni",
+  "Sorni|controls|Jarvo",
+  "Jarvo|produces|motion",
+  "Talen|operates|Lomo",
+  "Fydd|controls|Krenn",
+  "Krenn|produces|ripple",
+  "Rhoka|operates|Yentz",
+  "Yentz|routes-to|Glova",
+  "Glova|controls|Lypox",
+  "Lypox|produces|chime",
+  "Juvex|operates|Ufka",
+  "Ikto|controls|Mirno",
+  "Mirno|produces|current",
+  "Kelthan|operates|Grev",
+  "Grev|routes-to|Norva",
+  "Norva|controls|Nyvox",
+  "Nyvox|produces|draft",
+  "Orvyn|operates|Bokka",
+  "Bokka|routes-to|Pavok",
+  "Pavok|controls|Oztek",
+  "Oztek|produces|echo",
+  "Gholm|operates|Sifel",
+  "Ruzel|controls|Prava",
+  "Prava|produces|frost",
+  "Nydra|operates|Tormu",
+  "Tormu|routes-to|Trimm",
+  "Trimm|controls|Quist",
+  "Quist|produces|grit",
+  "Ashvi|operates|Vlask",
+  "Wonda|controls|Ryvok",
+  "Ryvok|produces|haze",
+  "Fendor|operates|Zenna",
+  "Zenna|routes-to|Xalor",
+  "Xalor|controls|Skerv",
+  "Skerv|produces|ion",
+  "Wexla|operates|Ektar",
+  "Ektar|routes-to|Yibbo",
+  "Yibbo|controls|Tolvo",
+  "Tolvo|produces|jolt",
+  "Xyphor|operates|Pyx",
+  "Zaffi|controls|Urska",
+  "Urska|produces|mist",
+  "Brunev|operates|Wroll",
+  "Wroll|routes-to|Angth",
+  "Angth|controls|Vikra",
+  "Vikra|produces|note",
+  "Thalex|operates|Aumsa",
+  "Blokt|controls|Wexu",
+  "Wexu|produces|pulse",
+  "Iovar|operates|Chesk",
+  "Chesk|routes-to|Criva",
+  "Criva|controls|Xorn",
+  "Xorn|produces|rime",
+  "Zundi|operates|Ondri",
+  "Ondri|routes-to|Duvra",
+  "Duvra|controls|Zaph",
+  "Zaph|produces|shade"
+ ],
+ "broken_keys": [],
+ "superseded_old_keys_still_transmitting": "10/10",
+ "superseded_note": "the override is ADDITIVE in u_fast (the old edge is superseded in the ledger, not deleted), so old keys are expected to keep transmitting; the without-destroying criterion is counted on the UNTOUCHED facts",
+ "mean_relative_strength_change_untouched": 0.0037,
+ "max_relative_strength_change_untouched": 0.0048,
+ "unaffected_probe_identical": "20/24",
+ "unaffected_probe_all_identical": false,
+ "ledger_supersessions": 10,
+ "episodic_events": 110,
+ "adaptation_ok": true,
+ "probe_identity_ok": false,
+ "probe_identity_note": "diagnostic only, not gated: the NNFS update is additive in u_fast, so an unrelated answer string can shift without any fact being destroyed; the without-destroying gate counts STRENGTHS (untouched facts intact)"
+}

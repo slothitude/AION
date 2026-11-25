@@ -1,0 +1,7650 @@
+{
+ "phase": 3,
+ "tag": "p3-c3-s0-200328",
+ "date": "2026-11-25 20:03:50",
+ "protocol": "docs/PHASE3_PROTOCOL.md (owner D1-D9 LOCKED 2026-11-25)",
+ "foundation": "tiny-standin(Llama-4L-64D, CPU, FROZEN)",
+ "seed": 0,
+ "chains": 3,
+ "experiences": 36,
+ "held_out_splits_fixed": [
+  [
+   "combo-no-000",
+   "combo-reach-000",
+   "combo-yes-000"
+  ],
+  [
+   "combo-no-001",
+   "combo-reach-001",
+   "combo-yes-001"
+  ],
+  [
+   "combo-no-002",
+   "combo-reach-002",
+   "combo-yes-002"
+  ]
+ ],
+ "D6_thresholds": {
+  "combination": 0.5,
+  "ablation_delta": 0.1,
+  "splits": ">=2/3"
+ },
+ "controls_in_session": {
+  "A": {
+   "control": "A",
+   "safeguard_acc": 0.3541,
+   "combination_acc_frozen": 0.4444,
+   "note": "frozen floor for [D6] (>frozen-chance) and the consistency measure",
+   "control_s": 0.7
+  },
+  "B": {
+   "control": "B",
+   "combination_retrieval_acc": 0.0,
+   "combination_split_accs": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "control_s": 0.2
+  }
+ },
+ "arms": {
+  "ARM-1a": {
+   "arm": "ARM-1a",
+   "k": 4,
+   "align": false,
+   "teach": {
+    "k": 4,
+    "nnfs_updates": 144,
+    "gate_steps": 48,
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     -12.57251,
+     -7.801343
+    ],
+    "u_fast_norms_after": [
+     1.468823,
+     1.515948
+    ],
+    "u_fast_clamp_margin": 0.9871,
+    "fact_strengths_min_mean": [
+     0.190908,
+     0.24008
+    ],
+    "chain0_strength_after_teach": {
+     "Neral|operates|Tav": 0.0,
+     "Tav|routes-to|Kimo": 0.0,
+     "Kimo|controls|Zor": 0.0,
+     "Zor|produces|heat": 0.0
+    },
+    "chain0_retention_ratio_mean": 1.0,
+    "episodic_events": 36,
+    "teach_s": 1.1
+   },
+   "test": {
+    "rows": [
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.447039,
+        "margin_plastic": 7.373283,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.447039,
+         "Rinpo": 0.284215,
+         "Skell": -0.021699
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.627312,
+        "margin_plastic": 7.524486,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.627312,
+         "Rinpo": 0.38896,
+         "Skell": -0.047966
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 6.904545,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.911153,
+       2.510601
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-001",
+      "battery": "direct",
+      "question": "Where does Tav route?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.18562,
+        "margin_plastic": -0.009715,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.18562,
+         "Drel": 0.093589,
+         "Vash": 0.410925
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.250966,
+        "margin_plastic": -0.106444,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.250966,
+         "Drel": 0.119491,
+         "Vash": 0.573
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.21559,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "CONSOLIDATED",
+      "residual_pair_norms_mean": [
+       3.899913,
+       2.509469
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.089625,
+        "margin_plastic": 3.597568,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.089625,
+         "Blun": 0.117997,
+         "Crat": 0.374819
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.116707,
+        "margin_plastic": 3.478222,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.116707,
+         "Blun": 0.154409,
+         "Crat": 0.521247
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.882762,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.911968,
+       2.522627
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-003",
+      "battery": "direct",
+      "question": "What does Zor produce?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.243235,
+        "margin_plastic": 3.320707,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.243235,
+         "light": 0.135493,
+         "pressure": 0.365543
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.333229,
+        "margin_plastic": 3.369752,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.333229,
+         "light": 0.176443,
+         "pressure": 0.49651
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.212966,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.920765,
+       2.508174
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.285112,
+        "margin_plastic": -7.445109,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.449467,
+         "Rinpo": 0.285112,
+         "Skell": -0.022223
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.390219,
+        "margin_plastic": -7.52131,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.630775,
+         "Rinpo": 0.390219,
+         "Skell": -0.048728
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -7.280754,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.916364,
+       2.517416
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-005",
+      "battery": "direct",
+      "question": "Where does Rinpo route?",
+      "gold": "Drel",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.092609,
+        "margin_plastic": -0.572456,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.187332,
+         "Drel": 0.092609,
+         "Vash": 0.41363
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.118043,
+        "margin_plastic": -0.710199,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.253359,
+         "Drel": 0.118043,
+         "Vash": 0.576807
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.470239,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Drel",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.905193,
+       2.50362
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.119044,
+        "margin_plastic": -4.035312,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.090345,
+         "Blun": 0.119044,
+         "Crat": 0.372519
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.155954,
+        "margin_plastic": -4.025835,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.117779,
+         "Blun": 0.155954,
+         "Crat": 0.518013
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.06401,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.90428,
+       2.517781
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-007",
+      "battery": "direct",
+      "question": "What does Blun produce?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.135439,
+        "margin_plastic": -3.304147,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.244489,
+         "light": 0.135439,
+         "pressure": 0.362321
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.176514,
+        "margin_plastic": -3.353726,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.335142,
+         "light": 0.176514,
+         "pressure": 0.492118
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.195097,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "light",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.904804,
+       2.505003
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": -0.020365,
+        "margin_plastic": -7.366793,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.450005,
+         "Rinpo": 0.285319,
+         "Skell": -0.020365
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": -0.04616,
+        "margin_plastic": -7.574069,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.631487,
+         "Rinpo": 0.390434,
+         "Skell": -0.04616
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -6.896423,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.924214,
+       2.512728
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-009",
+      "battery": "direct",
+      "question": "Where does Skell route?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.407076,
+        "margin_plastic": 0.01823,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.186812,
+         "Drel": 0.088543,
+         "Vash": 0.407076
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.567591,
+        "margin_plastic": 0.112795,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.252763,
+         "Drel": 0.112381,
+         "Vash": 0.567591
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.202034,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.897851,
+       2.501773
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 1,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.375624,
+        "margin_plastic": -3.582855,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.092001,
+         "Blun": 0.119513,
+         "Crat": 0.375624
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.522431,
+        "margin_plastic": -3.464172,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.120125,
+         "Blun": 0.156605,
+         "Crat": 0.522431
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.866477,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.911128,
+       2.520886
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "direct-011",
+      "battery": "direct",
+      "question": "What does Crat produce?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.36375,
+        "margin_plastic": -13.520072,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.244449,
+         "light": 0.134224,
+         "pressure": 0.36375
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.494343,
+        "margin_plastic": -13.480217,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.335186,
+         "light": 0.174896,
+         "pressure": 0.494343
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.639373,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "pressure",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.902395,
+       2.500182
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.162854,
+        "margin_plastic": -3.502969,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.162854,
+         "Sula": 0.199315,
+         "Dravy": 0.691635
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.215584,
+        "margin_plastic": -3.521582,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.215584,
+         "Sula": 0.270658,
+         "Dravy": 0.970833
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.466508,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.924568,
+       2.516212
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-001",
+      "battery": "paraphrase",
+      "question": "Tav sends its flow through which relay?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.188491,
+        "margin_plastic": -0.044905,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.188491,
+         "Drel": 0.093286,
+         "Vash": 0.406721
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.255331,
+        "margin_plastic": -0.138604,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.255331,
+         "Drel": 0.11931,
+         "Vash": 0.567259
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.173325,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "CONSOLIDATED",
+      "residual_pair_norms_mean": [
+       3.904402,
+       2.483747
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.245257,
+        "margin_plastic": 3.320387,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.245257,
+         "light": 0.136102,
+         "pressure": 0.364145
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.336124,
+        "margin_plastic": 3.370037,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.336124,
+         "light": 0.177319,
+         "pressure": 0.494502
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.211232,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.922068,
+       2.52462
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.196716,
+        "margin_plastic": 3.500058,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.162361,
+         "Sula": 0.196716,
+         "Dravy": 0.690008
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.266869,
+        "margin_plastic": 3.291798,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.214797,
+         "Sula": 0.266869,
+         "Dravy": 0.968421
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.469386,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.931769,
+       2.511992
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.115958,
+        "margin_plastic": -3.985405,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.084166,
+         "Blun": 0.115958,
+         "Crat": 0.362415
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.152164,
+        "margin_plastic": -3.974482,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.109448,
+         "Blun": 0.152164,
+         "Crat": 0.504194
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.017198,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.880245,
+       2.462061
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-007",
+      "battery": "paraphrase",
+      "question": "light is produced by which device?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.114404,
+        "margin_plastic": -3.980478,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.087331,
+         "Blun": 0.114404,
+         "Crat": 0.368933
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.149884,
+        "margin_plastic": -3.971588,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.113921,
+         "Blun": 0.149884,
+         "Crat": 0.513448
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.007551,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.895234,
+       2.462601
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.406569,
+        "margin_plastic": 0.027332,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.187931,
+         "Drel": 0.089191,
+         "Vash": 0.406569
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.56703,
+        "margin_plastic": 0.121203,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.254522,
+         "Drel": 0.113458,
+         "Vash": 0.56703
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.191306,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.902186,
+       2.487789
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 1,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "para-010",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Vash?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.365317,
+        "margin_plastic": -3.547743,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.08542,
+         "Blun": 0.116214,
+         "Crat": 0.365317
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.508333,
+        "margin_plastic": -3.430537,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.111229,
+         "Blun": 0.152523,
+         "Crat": 0.508333
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.827641,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       3.886171,
+       2.464899
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.109771,
+        "margin_plastic": 3.623942,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.257111,
+         "no": 0.109771
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.148576,
+        "margin_plastic": 3.563574,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.356283,
+         "no": 0.148576
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.771281,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.895002,
+       2.50344
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-no-001",
+      "battery": "combination",
+      "question": "Does Sula reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.109492,
+        "margin_plastic": 3.615858,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.258462,
+         "no": 0.109492
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.148044,
+        "margin_plastic": 3.554837,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.358035,
+         "no": 0.148044
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.764828,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.917889,
+       2.51749
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-no-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.111487,
+        "margin_plastic": 3.611243,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.25908,
+         "no": 0.111487
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.150852,
+        "margin_plastic": 3.550825,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.358863,
+         "no": 0.150852
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.758836,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.925834,
+       2.512726
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.240788,
+        "margin_plastic": 3.311568,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.240788,
+         "light": 0.128217,
+         "pressure": 0.356625
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.33002,
+        "margin_plastic": 3.362627,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.33002,
+         "light": 0.16639,
+         "pressure": 0.484266
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.198997,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       3.898231,
+       2.498667
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.129918,
+        "margin_plastic": -3.304581,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.242641,
+         "light": 0.129918,
+         "pressure": 0.35992
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.16881,
+        "margin_plastic": -3.355707,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.332659,
+         "light": 0.16881,
+         "pressure": 0.488953
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.191858,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.902632,
+       2.505374
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.358401,
+        "margin_plastic": -13.50451,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.244006,
+         "light": 0.133094,
+         "pressure": 0.358401
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.486658,
+        "margin_plastic": -13.466781,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.334535,
+         "light": 0.173261,
+         "pressure": 0.486658
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.618905,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.910979,
+       2.500665
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-yes-000",
+      "battery": "combination",
+      "question": "Does Neral reach Zor?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.258589,
+        "margin_plastic": -3.614,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.258589,
+         "no": 0.111378
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.358225,
+        "margin_plastic": -3.55373,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.358225,
+         "no": 0.150745
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76121,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.912791,
+       2.510604
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.257726,
+        "margin_plastic": -3.635067,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.257726,
+         "no": 0.109898
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.357084,
+        "margin_plastic": -3.574511,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.357084,
+         "no": 0.1487
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.782895,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.900425,
+       2.514614
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1a",
+      "qid": "combo-yes-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Crat?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.257576,
+        "margin_plastic": -3.621258,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.257576,
+         "no": 0.109873
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.356886,
+        "margin_plastic": -3.560748,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.356886,
+         "no": 0.148674
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76896,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       3.90773,
+       2.505392
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 12,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1272,
+        "mean_margin_base": -2.1165
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1459,
+        "mean_margin_base": -2.1165
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1165,
+        "mean_margin_base": -2.1165
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "CONSOLIDATED": 1,
+       "RETRIEVED": 7
+      }
+     },
+     "paraphrase": {
+      "n": 8,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.625,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.0267,
+        "mean_margin_base": -1.082
+       },
+       "PLASTIC": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -1.0317,
+        "mean_margin_base": -1.082
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.082,
+        "mean_margin_base": -1.082
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "CONSOLIDATED": 1,
+       "PLASTIC": 3,
+       "RETRIEVED": 2
+      }
+     },
+     "combination": {
+      "n": 9,
+      "mean_chance": 0.4444,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5019,
+        "mean_margin_base": -1.5144
+       },
+       "PLASTIC": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.4977,
+        "mean_margin_base": -1.5144
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5144,
+        "mean_margin_base": -1.5144
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "NONE": 5
+      }
+     }
+    }
+   },
+   "verdict": {
+    "modes": {
+     "PLASTIC": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     },
+     "FULL": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     }
+    },
+    "safeguards": {
+     "direct_plastic_acc": 0.3333,
+     "direct_safeguard_ok": true,
+     "paraphrase_plastic_acc": 0.375,
+     "paraphrase_safeguard_ok": true
+    }
+   },
+   "five_scores": {
+    "note": "adapted dream-registry semantics, formulas documented here: consistency = 1 - max(0, A_safeguard - arm_safeguard)/A_safeguard (FULL-mode direct+paraphrase vs the in-session A control); novelty = mean pairwise cosine distance between per-fact transmitted r vectors; utility = mean(FULL - CONSOLIDATED acc@1) across batteries (plastic contribution); efficiency = utility normalised per 60 nnfs updates; non_forgetting = chain-0 fact strength at end-of-teach / strength right after chain-0 taught. DIAGNOSTIC only \u2014 the [D6] behavioural gate decides success",
+    "safeguard_acc_full": 0.3541,
+    "consistency": 1.0,
+    "novelty": 0.356,
+    "utility": 0.0,
+    "utility_combination": 0.0,
+    "efficiency": 0.0,
+    "non_forgetting": 1.0,
+    "D4_weighted_aggregate": 0.5534
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0
+    },
+    "survival_ok": true
+   },
+   "behavioural_success": false,
+   "wall_cap_exceeded": false,
+   "arm_s": 3.2
+  },
+  "ARM-1b": {
+   "arm": "ARM-1b",
+   "k": 16,
+   "align": false,
+   "teach": {
+    "k": 16,
+    "nnfs_updates": 576,
+    "gate_steps": 48,
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     -22.517683,
+     -8.890047
+    ],
+    "u_fast_norms_after": [
+     4.231709,
+     4.19143
+    ],
+    "u_fast_clamp_margin": 0.9721,
+    "fact_strengths_min_mean": [
+     0.572142,
+     0.669229
+    ],
+    "chain0_strength_after_teach": {
+     "Neral|operates|Tav": 0.0,
+     "Tav|routes-to|Kimo": 0.0,
+     "Kimo|controls|Zor": 0.0,
+     "Zor|produces|heat": 0.0
+    },
+    "chain0_retention_ratio_mean": 1.0,
+    "episodic_events": 36,
+    "teach_s": 3.6
+   },
+   "test": {
+    "rows": [
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 1.531845,
+        "margin_plastic": 8.052344,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 1.531845,
+         "Rinpo": 0.765635,
+         "Skell": -0.385012
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 2.014418,
+        "margin_plastic": 8.470446,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 2.014418,
+         "Rinpo": 0.830105,
+         "Skell": -0.812875
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 6.904545,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.236845,
+       7.412051
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-001",
+      "battery": "direct",
+      "question": "Where does Tav route?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.495045,
+        "margin_plastic": -0.692102,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.495045,
+         "Drel": 0.038782,
+         "Vash": 1.402737
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.488294,
+        "margin_plastic": -1.083609,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.488294,
+         "Drel": -0.163105,
+         "Vash": 1.787493
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.21559,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "CONSOLIDATED",
+      "residual_pair_norms_mean": [
+       18.203737,
+       7.408202
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.136175,
+        "margin_plastic": 2.887513,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.136175,
+         "Blun": 0.302714,
+         "Crat": 1.131423
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.020124,
+        "margin_plastic": 2.504855,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.020124,
+         "Blun": 0.214473,
+         "Crat": 1.398031
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.882762,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.244287,
+       7.441315
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-003",
+      "battery": "direct",
+      "question": "What does Zor produce?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.757261,
+        "margin_plastic": 3.812047,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.757261,
+         "light": 0.15818,
+         "pressure": 1.201272
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.862818,
+        "margin_plastic": 4.113748,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.862818,
+         "light": -0.037964,
+         "pressure": 1.319862
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.212966,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.277145,
+       7.407643
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.767991,
+        "margin_plastic": -8.056479,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 1.543716,
+         "Rinpo": 0.767991,
+         "Skell": -0.386335
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.833105,
+        "margin_plastic": -8.478897,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 2.031248,
+         "Rinpo": 0.833105,
+         "Skell": -0.815006
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -7.280754,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.262302,
+       7.428099
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 1,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-005",
+      "battery": "direct",
+      "question": "Where does Rinpo route?",
+      "gold": "Drel",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.035838,
+        "margin_plastic": -1.6299,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.500114,
+         "Drel": 0.035838,
+         "Vash": 1.414302
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": -0.167985,
+        "margin_plastic": -2.222678,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.494872,
+         "Drel": -0.167985,
+         "Vash": 1.803257
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.470239,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Drel",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.215039,
+       7.391838
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.306647,
+        "margin_plastic": -3.900377,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.143014,
+         "Blun": 0.306647,
+         "Crat": 1.121637
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.220843,
+        "margin_plastic": -3.873707,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.03054,
+         "Blun": 0.220843,
+         "Crat": 1.384837
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.06401,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.206913,
+       7.429896
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-007",
+      "battery": "direct",
+      "question": "What does Blun produce?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.160242,
+        "margin_plastic": -3.798804,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.763948,
+         "light": 0.160242,
+         "pressure": 1.188766
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": -0.03281,
+        "margin_plastic": -4.102105,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.874198,
+         "light": -0.03281,
+         "pressure": 1.305199
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.195097,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "light",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.204732,
+       7.395
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": -0.379235,
+        "margin_plastic": -8.820349,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 1.544691,
+         "Rinpo": 0.767509,
+         "Skell": -0.379235
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": -0.806095,
+        "margin_plastic": -9.734362,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 2.031844,
+         "Rinpo": 0.83127,
+         "Skell": -0.806095
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -6.896423,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.282424,
+       7.417305
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-009",
+      "battery": "direct",
+      "question": "Where does Skell route?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 1.38678,
+        "margin_plastic": 0.682547,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.502199,
+         "Drel": 0.018325,
+         "Vash": 1.38678
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 1.766034,
+        "margin_plastic": 1.064087,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.499913,
+         "Drel": -0.190897,
+         "Vash": 1.766034
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.202034,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.191069,
+       7.382354
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 1,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 1.135884,
+        "margin_plastic": -2.881104,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.150511,
+         "Blun": 0.307913,
+         "Crat": 1.135884
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 1.404613,
+        "margin_plastic": -2.502597,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.040732,
+         "Blun": 0.222093,
+         "Crat": 1.404613
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.866477,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.237327,
+       7.438358
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "direct-011",
+      "battery": "direct",
+      "question": "What does Crat produce?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 1.200858,
+        "margin_plastic": -13.205744,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.767229,
+         "light": 0.158352,
+         "pressure": 1.200858
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 1.324736,
+        "margin_plastic": -13.19481,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.880173,
+         "light": -0.034036,
+         "pressure": 1.324736
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.639373,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "pressure",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.216427,
+       7.387849
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.268766,
+        "margin_plastic": -3.875856,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.268766,
+         "Sula": 0.678114,
+         "Dravy": 2.351288
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.120314,
+        "margin_plastic": -4.097554,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.120314,
+         "Sula": 0.75136,
+         "Dravy": 3.093196
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.466508,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.284336,
+       7.4228
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-001",
+      "battery": "paraphrase",
+      "question": "Tav sends its flow through which relay?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.51757,
+        "margin_plastic": -0.693765,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.51757,
+         "Drel": 0.038562,
+         "Vash": 1.38466
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.523671,
+        "margin_plastic": -1.067959,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.523671,
+         "Drel": -0.160404,
+         "Vash": 1.764955
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.173325,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "CONSOLIDATED",
+      "residual_pair_norms_mean": [
+       18.214962,
+       7.325407
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": -1,
+       "CONSOLIDATED_to_PLASTIC": -1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.767999,
+        "margin_plastic": 3.817349,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.767999,
+         "light": 0.161882,
+         "pressure": 1.194818
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.878934,
+        "margin_plastic": 4.121945,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.878934,
+         "light": -0.031779,
+         "pressure": 1.311758
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.211232,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.301018,
+       7.448406
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.666478,
+        "margin_plastic": 2.315564,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.269042,
+         "Sula": 0.666478,
+         "Dravy": 2.344264
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.733818,
+        "margin_plastic": 1.645101,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.119648,
+         "Sula": 0.733818,
+         "Dravy": 3.082067
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.469386,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.303567,
+       7.410736
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.296797,
+        "margin_plastic": -3.846587,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.126186,
+         "Blun": 0.296797,
+         "Crat": 1.088311
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.214922,
+        "margin_plastic": -3.815356,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.013081,
+         "Blun": 0.214922,
+         "Crat": 1.345277
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.017198,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.106749,
+       7.27785
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-007",
+      "battery": "paraphrase",
+      "question": "light is produced by which device?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.290794,
+        "margin_plastic": -3.854525,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.137767,
+         "Blun": 0.290794,
+         "Crat": 1.119138
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.205777,
+        "margin_plastic": -3.830918,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.029144,
+         "Blun": 0.205777,
+         "Crat": 1.38877
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.007551,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.167018,
+       7.283996
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 1.385631,
+        "margin_plastic": 0.680646,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.513678,
+         "Drel": 0.020144,
+         "Vash": 1.385631
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Vash",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 1.766116,
+        "margin_plastic": 1.056841,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.517969,
+         "Drel": -0.186751,
+         "Vash": 1.766116
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.191306,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.203847,
+       7.33995
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 1,
+       "CONSOLIDATED_to_PLASTIC": 1
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "para-010",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Vash?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 1.101999,
+        "margin_plastic": -2.857564,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.131922,
+         "Blun": 0.297657,
+         "Crat": 1.101999
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 1.364447,
+        "margin_plastic": -2.484106,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.020912,
+         "Blun": 0.215776,
+         "Crat": 1.364447
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.827641,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       18.134652,
+       7.285826
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.326685,
+        "margin_plastic": 3.106455,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.991512,
+         "no": 0.326685
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.339323,
+        "margin_plastic": 2.864537,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 1.246067,
+         "no": 0.339323
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.771281,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.171847,
+       7.402104
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-no-001",
+      "battery": "combination",
+      "question": "Does Sula reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.32138,
+        "margin_plastic": 3.093683,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.992525,
+         "no": 0.32138
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.32982,
+        "margin_plastic": 2.849729,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 1.244919,
+         "no": 0.32982
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.764828,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.257278,
+       7.435388
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-no-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.329676,
+        "margin_plastic": 3.095459,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.993053,
+         "no": 0.329676
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.341069,
+        "margin_plastic": 2.855021,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 1.244885,
+         "no": 0.341069
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.758836,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.277517,
+       7.424488
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.749451,
+        "margin_plastic": 3.814624,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.749451,
+         "light": 0.133823,
+         "pressure": 1.168513
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.855609,
+        "margin_plastic": 4.122637,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.855609,
+         "light": -0.068031,
+         "pressure": 1.279962
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.198997,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       18.18677,
+       7.383673
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.142258,
+        "margin_plastic": -3.809782,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.760181,
+         "light": 0.142258,
+         "pressure": 1.184861
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": -0.05619,
+        "margin_plastic": -4.118839,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.87079,
+         "light": -0.05619,
+         "pressure": 1.302978
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.191858,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.209354,
+       7.399453
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 1.173202,
+        "margin_plastic": -13.21054,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.764837,
+         "light": 0.156436,
+         "pressure": 1.173202
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 1.28447,
+        "margin_plastic": -13.21083,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.876395,
+         "light": -0.037168,
+         "pressure": 1.28447
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.618905,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.231289,
+       7.388522
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-yes-000",
+      "battery": "combination",
+      "question": "Does Neral reach Zor?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.99264,
+        "margin_plastic": -3.099648,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.99264,
+         "no": 0.331078
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 1.245258,
+        "margin_plastic": -2.859757,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 1.245258,
+         "no": 0.343805
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76121,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.232333,
+       7.419122
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.991514,
+        "margin_plastic": -3.11779,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.991514,
+         "no": 0.326409
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 1.244971,
+        "margin_plastic": -2.876074,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 1.244971,
+         "no": 0.338149
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.782895,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.179403,
+       7.424959
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-1b",
+      "qid": "combo-yes-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Crat?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.99188,
+        "margin_plastic": -3.102371,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.99188,
+         "no": 0.325291
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 1.245652,
+        "margin_plastic": -2.859922,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 1.245652,
+         "no": 0.336614
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76896,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       18.215881,
+       7.407124
+      ],
+      "prompt_residual_norms": null,
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": false,
+      "split": 2
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 12,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.2959,
+        "mean_margin_base": -2.1165
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.42,
+        "mean_margin_base": -2.1165
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1165,
+        "mean_margin_base": -2.1165
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "CONSOLIDATED": 1,
+       "RETRIEVED": 7
+      }
+     },
+     "paraphrase": {
+      "n": 8,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.625,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -1.0393,
+        "mean_margin_base": -1.082
+       },
+       "PLASTIC": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -1.059,
+        "mean_margin_base": -1.082
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.082,
+        "mean_margin_base": -1.082
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "CONSOLIDATED": 1,
+       "PLASTIC": 3,
+       "RETRIEVED": 2
+      }
+     },
+     "combination": {
+      "n": 9,
+      "mean_chance": 0.4444,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.47,
+        "mean_margin_base": -1.5144
+       },
+       "PLASTIC": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.4704,
+        "mean_margin_base": -1.5144
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5144,
+        "mean_margin_base": -1.5144
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "NONE": 5
+      }
+     }
+    }
+   },
+   "verdict": {
+    "modes": {
+     "PLASTIC": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     },
+     "FULL": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     }
+    },
+    "safeguards": {
+     "direct_plastic_acc": 0.3333,
+     "direct_safeguard_ok": true,
+     "paraphrase_plastic_acc": 0.375,
+     "paraphrase_safeguard_ok": true
+    }
+   },
+   "five_scores": {
+    "note": "adapted dream-registry semantics, formulas documented here: consistency = 1 - max(0, A_safeguard - arm_safeguard)/A_safeguard (FULL-mode direct+paraphrase vs the in-session A control); novelty = mean pairwise cosine distance between per-fact transmitted r vectors; utility = mean(FULL - CONSOLIDATED acc@1) across batteries (plastic contribution); efficiency = utility normalised per 60 nnfs updates; non_forgetting = chain-0 fact strength at end-of-teach / strength right after chain-0 taught. DIAGNOSTIC only \u2014 the [D6] behavioural gate decides success",
+    "safeguard_acc_full": 0.3541,
+    "consistency": 1.0,
+    "novelty": 0.384,
+    "utility": 0.0,
+    "utility_combination": 0.0,
+    "efficiency": 0.0,
+    "non_forgetting": 1.0,
+    "D4_weighted_aggregate": 0.5576
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0
+    },
+    "survival_ok": true
+   },
+   "behavioural_success": false,
+   "wall_cap_exceeded": false,
+   "arm_s": 5.9
+  },
+  "ARM-2a": {
+   "arm": "ARM-2a",
+   "k": 1,
+   "align": true,
+   "teach": {
+    "k": 1,
+    "nnfs_updates": 36,
+    "gate_steps": 48,
+    "gamma_before_gate_training": [
+     0.0,
+     0.0
+    ],
+    "gamma_after": [
+     -3.783877,
+     -2.701157
+    ],
+    "u_fast_norms_after": [
+     0.411958,
+     0.434941
+    ],
+    "u_fast_clamp_margin": 0.9962,
+    "fact_strengths_min_mean": [
+     0.052247,
+     0.070117
+    ],
+    "chain0_strength_after_teach": {
+     "Neral|operates|Tav": 0.0,
+     "Tav|routes-to|Kimo": 0.0,
+     "Kimo|controls|Zor": 0.0,
+     "Zor|produces|heat": 0.0
+    },
+    "chain0_retention_ratio_mean": 1.0,
+    "episodic_events": 36,
+    "teach_s": 0.5
+   },
+   "test": {
+    "rows": [
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-000",
+      "battery": "direct",
+      "question": "Who does Neral operate?",
+      "gold": "Tav",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.043583,
+        "margin_plastic": 6.947208,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.043583,
+         "Rinpo": 0.028008,
+         "Skell": 0.000921
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.062153,
+        "margin_plastic": 6.965546,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.062153,
+         "Rinpo": 0.039849,
+         "Skell": 0.001152
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Tav",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.958859,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 6.904545,
+        "margin_base": 6.904545,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.367601,
+       0.271086
+      ],
+      "prompt_residual_norms": [
+       0.367657,
+       0.271966
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-001",
+      "battery": "direct",
+      "question": "Where does Tav route?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.019835,
+        "margin_plastic": 0.193982,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.019835,
+         "Drel": 0.012896,
+         "Vash": 0.041443
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.028201,
+        "margin_plastic": 0.184721,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.028201,
+         "Drel": 0.018288,
+         "Vash": 0.05907
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.355606,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.21559,
+        "margin_base": 0.21559,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.365826,
+       0.270914
+      ],
+      "prompt_residual_norms": [
+       0.365691,
+       0.271923
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-002",
+      "battery": "direct",
+      "question": "Who does Kimo control?",
+      "gold": "Zor",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.009613,
+        "margin_plastic": 3.854156,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.009613,
+         "Blun": 0.014178,
+         "Crat": 0.038219
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.013626,
+        "margin_plastic": 3.841926,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.013626,
+         "Blun": 0.02012,
+         "Crat": 0.054463
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Zor",
+        "base_gold_rank": 1,
+        "gold_base_score": -13.876074,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.882762,
+        "margin_base": 3.882762,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.367446,
+       0.272285
+      ],
+      "prompt_residual_norms": [
+       0.367225,
+       0.272988
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-003",
+      "battery": "direct",
+      "question": "What does Zor produce?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.022296,
+        "margin_plastic": 3.225206,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.022296,
+         "light": 0.010056,
+         "pressure": 0.035276
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.031715,
+        "margin_plastic": 3.230479,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.031715,
+         "light": 0.014202,
+         "pressure": 0.050149
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.841753,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.212966,
+        "margin_base": 3.212966,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.368455,
+       0.270698
+      ],
+      "prompt_residual_norms": [
+       0.368671,
+       0.272383
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-004",
+      "battery": "direct",
+      "question": "Who does Sula operate?",
+      "gold": "Rinpo",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.028101,
+        "margin_plastic": -7.296453,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.0438,
+         "Rinpo": 0.028101,
+         "Skell": 0.000877
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.039983,
+        "margin_plastic": -7.303235,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.062464,
+         "Rinpo": 0.039983,
+         "Skell": 0.00109
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Tav",
+        "base_gold_rank": 3,
+        "gold_base_score": -21.244416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -7.280754,
+        "margin_base": -7.280754,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.367935,
+       0.271721
+      ],
+      "prompt_residual_norms": [
+       0.367922,
+       0.272659
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-005",
+      "battery": "direct",
+      "question": "Where does Rinpo route?",
+      "gold": "Drel",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.012815,
+        "margin_plastic": -0.477373,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.019948,
+         "Drel": 0.012815,
+         "Vash": 0.04165
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.018172,
+        "margin_plastic": -0.480429,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.028362,
+         "Drel": 0.018172,
+         "Vash": 0.059364
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.824269,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.470239,
+        "margin_base": -0.470239,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Drel",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.365446,
+       0.27045
+      ],
+      "prompt_residual_norms": [
+       0.365236,
+       0.271395
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-006",
+      "battery": "direct",
+      "question": "Who does Drel control?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.014295,
+        "margin_plastic": -4.059396,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.009681,
+         "Blun": 0.014295,
+         "Crat": 0.03801
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.020287,
+        "margin_plastic": -4.057446,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.013723,
+         "Blun": 0.020287,
+         "Crat": 0.054165
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.939554,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.06401,
+        "margin_base": -4.06401,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.366882,
+       0.271654
+      ],
+      "prompt_residual_norms": [
+       0.36663,
+       0.272387
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-007",
+      "battery": "direct",
+      "question": "What does Blun produce?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.010057,
+        "margin_plastic": -3.207402,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.022362,
+         "light": 0.010057,
+         "pressure": 0.034908
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.014205,
+        "margin_plastic": -3.212703,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.031811,
+         "light": 0.014205,
+         "pressure": 0.049627
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.048368,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.195097,
+        "margin_base": -3.195097,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "light",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.366041,
+       0.270325
+      ],
+      "prompt_residual_norms": [
+       0.366154,
+       0.272018
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-008",
+      "battery": "direct",
+      "question": "Who does Dravy operate?",
+      "gold": "Skell",
+      "candidates": [
+       "Tav",
+       "Rinpo",
+       "Skell"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": 0.001046,
+        "margin_plastic": -6.939233,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.043856,
+         "Rinpo": 0.028126,
+         "Skell": 0.001046
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": 0.001331,
+        "margin_plastic": -6.957635,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.062543,
+         "Rinpo": 0.040017,
+         "Skell": 0.001331
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Tav",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Tav",
+        "base_gold_rank": 2,
+        "gold_base_score": -20.856844,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -6.896423,
+        "margin_base": -6.896423,
+        "candidate_delta_scores": {
+         "Tav": 0.0,
+         "Rinpo": 0.0,
+         "Skell": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.368831,
+       0.27133
+      ],
+      "prompt_residual_norms": [
+       0.368917,
+       0.272249
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-009",
+      "battery": "direct",
+      "question": "Where does Skell route?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.041088,
+        "margin_plastic": -0.180837,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.019891,
+         "Drel": 0.012462,
+         "Vash": 0.041088
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.058564,
+        "margin_plastic": -0.171751,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.028281,
+         "Drel": 0.017669,
+         "Vash": 0.058564
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.563133,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.202034,
+        "margin_base": -0.202034,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.365665,
+       0.270064
+      ],
+      "prompt_residual_norms": [
+       0.365561,
+       0.271083
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-010",
+      "battery": "direct",
+      "question": "Who does Vash control?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.038323,
+        "margin_plastic": -3.837984,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.00983,
+         "Blun": 0.014316,
+         "Crat": 0.038323
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.054612,
+        "margin_plastic": -3.8258,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.013935,
+         "Blun": 0.020317,
+         "Crat": 0.054612
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.752197,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.866477,
+        "margin_base": -3.866477,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.367833,
+       0.271988
+      ],
+      "prompt_residual_norms": [
+       0.367588,
+       0.272754
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "direct-011",
+      "battery": "direct",
+      "question": "What does Crat produce?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.035043,
+        "margin_plastic": -13.626677,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.022347,
+         "light": 0.009918,
+         "pressure": 0.035043
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.04982,
+        "margin_plastic": -13.621341,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.031788,
+         "light": 0.014007,
+         "pressure": 0.04982
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.48422,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.639373,
+        "margin_base": -13.639373,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "pressure",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.366691,
+       0.269672
+      ],
+      "prompt_residual_norms": [
+       0.366901,
+       0.271381
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-000",
+      "battery": "paraphrase",
+      "question": "Tav is operated by whom?",
+      "gold": "Neral",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.019717,
+        "margin_plastic": -3.468071,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.019717,
+         "Sula": 0.021279,
+         "Dravy": 0.072079
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.028003,
+        "margin_plastic": -3.46877,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.028003,
+         "Sula": 0.030264,
+         "Dravy": 0.102806
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Sula",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.123096,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.466508,
+        "margin_base": -3.466508,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.368877,
+       0.271808
+      ],
+      "prompt_residual_norms": [
+       0.368932,
+       0.272685
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-001",
+      "battery": "paraphrase",
+      "question": "Tav sends its flow through which relay?",
+      "gold": "Kimo",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.020045,
+        "margin_plastic": 0.152393,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.020045,
+         "Drel": 0.012862,
+         "Vash": 0.040977
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.028503,
+        "margin_plastic": 0.143421,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.028503,
+         "Drel": 0.018242,
+         "Vash": 0.058406
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.367083,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 0.173325,
+        "margin_base": 0.173325,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Kimo",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.366446,
+       0.268102
+      ],
+      "prompt_residual_norms": [
+       0.36632,
+       0.269078
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-003",
+      "battery": "paraphrase",
+      "question": "Zor emits what?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.022487,
+        "margin_plastic": 3.223622,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.022487,
+         "light": 0.010097,
+         "pressure": 0.035149
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.031987,
+        "margin_plastic": 3.228959,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.031987,
+         "light": 0.01426,
+         "pressure": 0.049968
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.842216,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.211232,
+        "margin_base": 3.211232,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": true,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.368277,
+       0.272633
+      ],
+      "prompt_residual_norms": [
+       0.368627,
+       0.274339
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-004",
+      "battery": "paraphrase",
+      "question": "Rinpo is operated by whom?",
+      "gold": "Sula",
+      "candidates": [
+       "Neral",
+       "Sula",
+       "Dravy"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.021021,
+        "margin_plastic": 3.470745,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.019662,
+         "Sula": 0.021021,
+         "Dravy": 0.071916
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.029895,
+        "margin_plastic": 3.471355,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.027926,
+         "Sula": 0.029895,
+         "Dravy": 0.102573
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Sula",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "Sula",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.650967,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.469386,
+        "margin_base": 3.469386,
+        "candidate_delta_scores": {
+         "Neral": 0.0,
+         "Sula": 0.0,
+         "Dravy": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.368686,
+       0.271545
+      ],
+      "prompt_residual_norms": [
+       0.368657,
+       0.272352
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-006",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Drel?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.014015,
+        "margin_plastic": -4.012187,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.009005,
+         "Blun": 0.014015,
+         "Crat": 0.036946
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.019894,
+        "margin_plastic": -4.010066,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.012762,
+         "Blun": 0.019894,
+         "Crat": 0.05265
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.903045,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.017198,
+        "margin_base": -4.017198,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Blun",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.36427,
+       0.265626
+      ],
+      "prompt_residual_norms": [
+       0.364156,
+       0.266278
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-007",
+      "battery": "paraphrase",
+      "question": "light is produced by which device?",
+      "gold": "Blun",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.013901,
+        "margin_plastic": -4.002968,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.009318,
+         "Blun": 0.013901,
+         "Crat": 0.037554
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.01973,
+        "margin_plastic": -4.00103,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.013209,
+         "Blun": 0.01973,
+         "Crat": 0.053519
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "Zor",
+        "base_gold_rank": 3,
+        "gold_base_score": -17.888784,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -4.007551,
+        "margin_base": -4.007551,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Zor",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.365073,
+       0.265707
+      ],
+      "prompt_residual_norms": [
+       0.364893,
+       0.266357
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-009",
+      "battery": "paraphrase",
+      "question": "Which relay does Skell route to?",
+      "gold": "Vash",
+      "candidates": [
+       "Kimo",
+       "Drel",
+       "Vash"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.040992,
+        "margin_plastic": -0.170263,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.019949,
+         "Drel": 0.012531,
+         "Vash": 0.040992
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.058428,
+        "margin_plastic": -0.161244,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.028365,
+         "Drel": 0.017769,
+         "Vash": 0.058428
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Kimo",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Kimo",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.559755,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -0.191306,
+        "margin_base": -0.191306,
+        "candidate_delta_scores": {
+         "Kimo": 0.0,
+         "Drel": 0.0,
+         "Vash": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Vash",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.366803,
+       0.268516
+      ],
+      "prompt_residual_norms": [
+       0.366722,
+       0.269492
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "para-010",
+      "battery": "paraphrase",
+      "question": "Which device is controlled by Vash?",
+      "gold": "Crat",
+      "candidates": [
+       "Zor",
+       "Blun",
+       "Crat"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.037233,
+        "margin_plastic": -3.799527,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.00912,
+         "Blun": 0.014012,
+         "Crat": 0.037233
+        }
+       },
+       "PLASTIC": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.053061,
+        "margin_plastic": -3.787505,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.012926,
+         "Blun": 0.019888,
+         "Crat": 0.053061
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "Zor",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "Zor",
+        "base_gold_rank": 2,
+        "gold_base_score": -17.723082,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.827641,
+        "margin_base": -3.827641,
+        "candidate_delta_scores": {
+         "Zor": 0.0,
+         "Blun": 0.0,
+         "Crat": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Crat",
+      "retrieved_correct": true,
+      "provenance": "RETRIEVED",
+      "residual_pair_norms_mean": [
+       0.365091,
+       0.265923
+      ],
+      "prompt_residual_norms": [
+       0.364983,
+       0.266601
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": null
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-no-000",
+      "battery": "combination",
+      "question": "Does Neral reach Crat?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.011009,
+        "margin_plastic": 3.758308,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.023982,
+         "no": 0.011009
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.015648,
+        "margin_plastic": 3.752775,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.034155,
+         "no": 0.015648
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.480458,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.771281,
+        "margin_base": 3.771281,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.36754,
+       0.270037
+      ],
+      "prompt_residual_norms": [
+       0.367028,
+       0.270653
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-no-001",
+      "battery": "combination",
+      "question": "Does Sula reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.011004,
+        "margin_plastic": 3.751706,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.024125,
+         "no": 0.011004
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.01564,
+        "margin_plastic": 3.74611,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.034357,
+         "no": 0.01564
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.475821,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.764828,
+        "margin_base": 3.764828,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.369576,
+       0.271603
+      ],
+      "prompt_residual_norms": [
+       0.36903,
+       0.272248
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-no-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Zor?",
+      "gold": "no",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.011192,
+        "margin_plastic": 3.745831,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.024198,
+         "no": 0.011192
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.015908,
+        "margin_plastic": 3.740284,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.034461,
+         "no": 0.015908
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "no",
+        "base_gold_rank": 1,
+        "gold_base_score": -10.477416,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.758836,
+        "margin_base": 3.758836,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "heat",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.370478,
+       0.271207
+      ],
+      "prompt_residual_norms": [
+       0.369994,
+       0.271838
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-reach-000",
+      "battery": "combination",
+      "question": "What does Neral reach?",
+      "gold": "heat",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.022096,
+        "margin_plastic": 3.211716,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.022096,
+         "light": 0.009376,
+         "pressure": 0.034505
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.031429,
+        "margin_plastic": 3.217193,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.031429,
+         "light": 0.013232,
+         "pressure": 0.049051
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": true,
+        "gold_rank": 1,
+        "base_argmax": "heat",
+        "base_gold_rank": 1,
+        "gold_base_score": -17.843728,
+        "gold_delta_score": 0.0,
+        "margin_plastic": 3.198997,
+        "margin_base": 3.198997,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "PLASTIC",
+      "residual_pair_norms_mean": [
+       0.36714,
+       0.269594
+      ],
+      "prompt_residual_norms": [
+       0.367365,
+       0.271296
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-reach-001",
+      "battery": "combination",
+      "question": "What does Sula reach?",
+      "gold": "light",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.009527,
+        "margin_plastic": -3.204574,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.022243,
+         "light": 0.009527,
+         "pressure": 0.034782
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.01345,
+        "margin_plastic": -3.210049,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.031641,
+         "light": 0.01345,
+         "pressure": 0.049448
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "heat",
+        "base_gold_rank": 2,
+        "gold_base_score": -21.033203,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.191858,
+        "margin_base": -3.191858,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.3674,
+       0.270216
+      ],
+      "prompt_residual_norms": [
+       0.367541,
+       0.271997
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-reach-002",
+      "battery": "combination",
+      "question": "What does Dravy reach?",
+      "gold": "pressure",
+      "candidates": [
+       "heat",
+       "light",
+       "pressure"
+      ],
+      "chance": 0.3333,
+      "modes": {
+       "FULL": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.034656,
+        "margin_plastic": -13.606606,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.022357,
+         "light": 0.009804,
+         "pressure": 0.034656
+        }
+       },
+       "PLASTIC": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.049266,
+        "margin_plastic": -13.601442,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.031802,
+         "light": 0.013843,
+         "pressure": 0.049266
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "heat",
+        "correct": false,
+        "gold_rank": 3,
+        "base_argmax": "heat",
+        "base_gold_rank": 3,
+        "gold_base_score": -31.46576,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -13.618905,
+        "margin_base": -13.618905,
+        "candidate_delta_scores": {
+         "heat": 0.0,
+         "light": 0.0,
+         "pressure": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.368347,
+       0.269825
+      ],
+      "prompt_residual_norms": [
+       0.36859,
+       0.271574
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 2
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-yes-000",
+      "battery": "combination",
+      "question": "Does Neral reach Zor?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.024156,
+        "margin_plastic": -3.748231,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.024156,
+         "no": 0.011177
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.034401,
+        "margin_plastic": -3.742696,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.034401,
+         "no": 0.015887
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.241889,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76121,
+        "margin_base": -3.76121,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Tav",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.369234,
+       0.270966
+      ],
+      "prompt_residual_norms": [
+       0.368741,
+       0.271577
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 0
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-yes-001",
+      "battery": "combination",
+      "question": "Does Sula reach Blun?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.023987,
+        "margin_plastic": -3.769895,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.023987,
+         "no": 0.010986
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.03416,
+        "margin_plastic": -3.764351,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.03416,
+         "no": 0.015616
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.251675,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.782895,
+        "margin_base": -3.782895,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Rinpo",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.367012,
+       0.27124
+      ],
+      "prompt_residual_norms": [
+       0.366412,
+       0.271886
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 1
+     },
+     {
+      "type": "question",
+      "arm": "ARM-2a",
+      "qid": "combo-yes-002",
+      "battery": "combination",
+      "question": "Does Dravy reach Crat?",
+      "gold": "yes",
+      "candidates": [
+       "yes",
+       "no"
+      ],
+      "chance": 0.5,
+      "modes": {
+       "FULL": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.024021,
+        "margin_plastic": -3.755962,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.024021,
+         "no": 0.011023
+        }
+       },
+       "PLASTIC": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.034209,
+        "margin_plastic": -3.750419,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.034209,
+         "no": 0.015668
+        }
+       },
+       "CONSOLIDATED": {
+        "argmax": "no",
+        "correct": false,
+        "gold_rank": 2,
+        "base_argmax": "no",
+        "base_gold_rank": 2,
+        "gold_base_score": -14.246226,
+        "gold_delta_score": 0.0,
+        "margin_plastic": -3.76896,
+        "margin_base": -3.76896,
+        "candidate_delta_scores": {
+         "yes": 0.0,
+         "no": 0.0
+        }
+       }
+      },
+      "retrieved_answer": "Skell",
+      "retrieved_correct": false,
+      "provenance": "NONE",
+      "residual_pair_norms_mean": [
+       0.368762,
+       0.270255
+      ],
+      "prompt_residual_norms": [
+       0.368258,
+       0.270891
+      ],
+      "rank_movement": {
+       "CONSOLIDATED_to_FULL": 0,
+       "CONSOLIDATED_to_PLASTIC": 0
+      },
+      "align": true,
+      "split": 2
+     }
+    ],
+    "batteries": {
+     "direct": {
+      "n": 12,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 1.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1171,
+        "mean_margin_base": -2.1165
+       },
+       "PLASTIC": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1173,
+        "mean_margin_base": -2.1165
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.3333,
+        "mean_gold_rank": 2.0,
+        "mean_margin_plastic": -2.1165,
+        "mean_margin_base": -2.1165
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "RETRIEVED": 8
+      }
+     },
+     "paraphrase": {
+      "n": 8,
+      "mean_chance": 0.3333,
+      "retrieval_acc": 0.625,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.0758,
+        "mean_margin_base": -1.082
+       },
+       "PLASTIC": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.0731,
+        "mean_margin_base": -1.082
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.375,
+        "mean_gold_rank": 1.875,
+        "mean_margin_plastic": -1.082,
+        "mean_margin_base": -1.082
+       }
+      },
+      "provenance_histogram": {
+       "NONE": 2,
+       "PLASTIC": 3,
+       "RETRIEVED": 3
+      }
+     },
+     "combination": {
+      "n": 9,
+      "mean_chance": 0.4444,
+      "retrieval_acc": 0.0,
+      "modes": {
+       "FULL": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5131,
+        "mean_margin_base": -1.5144
+       },
+       "PLASTIC": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5125,
+        "mean_margin_base": -1.5144
+       },
+       "CONSOLIDATED": {
+        "acc@1": 0.4444,
+        "mean_gold_rank": 1.667,
+        "mean_margin_plastic": -1.5144,
+        "mean_margin_base": -1.5144
+       }
+      },
+      "provenance_histogram": {
+       "PLASTIC": 4,
+       "NONE": 5
+      }
+     }
+    }
+   },
+   "verdict": {
+    "modes": {
+     "PLASTIC": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     },
+     "FULL": {
+      "combination_acc": 0.4444,
+      "consolidated_acc": 0.4444,
+      "ablation_delta": 0.0,
+      "combination_ge_050": false,
+      "delta_ge_010": false,
+      "splits": [
+       {
+        "split": 0,
+        "n": 3,
+        "acc": 0.6667,
+        "consolidated_acc": 0.6667,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 1,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       },
+       {
+        "split": 2,
+        "n": 3,
+        "acc": 0.3333,
+        "consolidated_acc": 0.3333,
+        "delta": 0.0,
+        "pass": false
+       }
+      ],
+      "splits_passed": "0/3",
+      "splits_ok": false,
+      "D6_success": false
+     }
+    },
+    "safeguards": {
+     "direct_plastic_acc": 0.3333,
+     "direct_safeguard_ok": true,
+     "paraphrase_plastic_acc": 0.375,
+     "paraphrase_safeguard_ok": true
+    }
+   },
+   "five_scores": {
+    "note": "adapted dream-registry semantics, formulas documented here: consistency = 1 - max(0, A_safeguard - arm_safeguard)/A_safeguard (FULL-mode direct+paraphrase vs the in-session A control); novelty = mean pairwise cosine distance between per-fact transmitted r vectors; utility = mean(FULL - CONSOLIDATED acc@1) across batteries (plastic contribution); efficiency = utility normalised per 60 nnfs updates; non_forgetting = chain-0 fact strength at end-of-teach / strength right after chain-0 taught. DIAGNOSTIC only \u2014 the [D6] behavioural gate decides success",
+    "safeguard_acc_full": 0.3541,
+    "consistency": 1.0,
+    "novelty": 0.3376,
+    "utility": 0.0,
+    "utility_combination": 0.0,
+    "efficiency": 0.0,
+    "non_forgetting": 1.0,
+    "D4_weighted_aggregate": 0.5506
+   },
+   "restart": {
+    "state_restored_exact": true,
+    "restore_diffs": [],
+    "episodic_events_reloaded": 36,
+    "fact_index_reloaded": 12
+   },
+   "retention": {
+    "paraphrase_answers_identical_fraction": {
+     "FULL": 1.0,
+     "PLASTIC": 1.0,
+     "CONSOLIDATED": 1.0
+    },
+    "survival_ok": true
+   },
+   "behavioural_success": false,
+   "wall_cap_exceeded": false,
+   "arm_s": 3.2
+  }
+ },
+ "arm3_decision": "not run: no independently successful mechanism (locked rule)",
+ "headline_rows": {
+  "ARM-1a": {
+   "direct@1": 0.3333,
+   "paraphrase@1": 0.375,
+   "combination@1_PLASTIC": 0.4444,
+   "ablation_delta_PLASTIC": 0.0,
+   "splits_passed": "0/3",
+   "D6_success": false,
+   "gamma_after": [
+    -12.57251,
+    -7.801343
+   ],
+   "u_fast_norms": [
+    1.468823,
+    1.515948
+   ],
+   "restart_exact": true
+  },
+  "ARM-1b": {
+   "direct@1": 0.3333,
+   "paraphrase@1": 0.375,
+   "combination@1_PLASTIC": 0.4444,
+   "ablation_delta_PLASTIC": 0.0,
+   "splits_passed": "0/3",
+   "D6_success": false,
+   "gamma_after": [
+    -22.517683,
+    -8.890047
+   ],
+   "u_fast_norms": [
+    4.231709,
+    4.19143
+   ],
+   "restart_exact": true
+  },
+  "ARM-2a": {
+   "direct@1": 0.3333,
+   "paraphrase@1": 0.375,
+   "combination@1_PLASTIC": 0.4444,
+   "ablation_delta_PLASTIC": 0.0,
+   "splits_passed": "0/3",
+   "D6_success": false,
+   "gamma_after": [
+    -3.783877,
+    -2.701157
+   ],
+   "u_fast_norms": [
+    0.411958,
+    0.434941
+   ],
+   "restart_exact": true
+  }
+ },
+ "headline": "NEGATIVE RESULT (owner law): no arm produced correct answers from its own plastic state on unseen combinations \u2014 mechanistic growth without behavioural movement is recorded as measured-negative [D9]",
+ "matrix_errors": [],
+ "timings_s": {
+  "setup_s": 8.4,
+  "battery_A-control_s": 0.5,
+  "battery_B-control_s": 0.0,
+  "battery_ARM-1a-test_s": 1.4,
+  "battery_ARM-1a-post-restart_s": 0.4,
+  "battery_ARM-1b-test_s": 1.5,
+  "battery_ARM-1b-post-restart_s": 0.4,
+  "battery_ARM-2a-test_s": 2.0,
+  "battery_ARM-2a-post-restart_s": 0.5
+ },
+ "foundation_integrity": {
+  "bit_identical_after_full_run": true,
+  "differing_params": [],
+  "n_params_checked": 39
+ }
+}

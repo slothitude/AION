@@ -1,0 +1,490 @@
+{
+  "verdict": "PASS",
+  "conditions": {
+    "C1_live_connection": {
+      "pass": true,
+      "checks": {
+        "godot driver reports ws CONNECTED": true,
+        "bridge /health saw >=1 ws client": true,
+        "no bridge poll errors": true,
+        "authenticated stream (token on)": true
+      }
+    },
+    "C2_event_matrix": {
+      "pass": true,
+      "matrix": [
+        {
+          "event": "state.snapshot",
+          "emitted": 3,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "experience.created",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "connection.updated",
+          "emitted": 4,
+          "received": 4,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "memory.consolidated",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "dream.started",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "dream.hypothesis",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "dream.evaluated",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "nomen.changed",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "nav.action",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "hostmode.request",
+          "emitted": 2,
+          "received": 2,
+          "dashboard_ok": true,
+          "pass": true
+        },
+        {
+          "event": "development.stage",
+          "emitted": 1,
+          "received": 1,
+          "dashboard_ok": true,
+          "pass": true
+        }
+      ]
+    },
+    "C3_teach_and_denial": {
+      "pass": true,
+      "teach_round_trip": true,
+      "client_denials": {
+        "teach_while_paused (expected denial)": {
+          "ok": false,
+          "reason": "paused",
+          "state_unchanged": true,
+          "status": "denied",
+          "step": "teach_while_paused (expected denial)",
+          "transport_ok": true
+        },
+        "ws set_goal (bad token)": {
+          "ok": false,
+          "reason": "unauthenticated",
+          "state_unchanged": true,
+          "status": "denied",
+          "step": "ws set_goal (bad token)",
+          "transport_ok": false
+        }
+      },
+      "python_denial_probes": {
+        "no_token": {
+          "http_code": 403,
+          "reason": "unauthenticated",
+          "fingerprint_unchanged": true
+        },
+        "wrong_token": {
+          "http_code": 403,
+          "reason": "unauthenticated",
+          "fingerprint_unchanged": true
+        }
+      }
+    },
+    "C4_display_integrity": {
+      "pass": true,
+      "rows": [
+        {
+          "field": "dashboard.mode == snapshot.mode",
+          "pass": true,
+          "detail": "dashboard='live' expected='live'"
+        },
+        {
+          "field": "dashboard.memory == snapshot.memory",
+          "pass": true,
+          "detail": "dashboard='4' expected='4'"
+        },
+        {
+          "field": "dashboard.experience == snapshot.experience",
+          "pass": true,
+          "detail": "dashboard='1' expected='1'"
+        },
+        {
+          "field": "dashboard.plasticity == snapshot.plasticity (float tol 1e-09)",
+          "pass": true,
+          "detail": "dashboard='0.1' snapshot=0.1"
+        },
+        {
+          "field": "dashboard.uptime == snapshot.uptime_s (float tol 1e-06)",
+          "pass": true,
+          "detail": "dashboard='0.0' snapshot=0.0"
+        },
+        {
+          "field": "dashboard.online == '● Online'",
+          "pass": true,
+          "detail": "'● Online'"
+        },
+        {
+          "field": "snapshot.mode == live Python pause flag",
+          "pass": true,
+          "detail": "'live' vs paused=False"
+        },
+        {
+          "field": "snapshot.experience_steps == episodic count",
+          "pass": true,
+          "detail": "1.0 vs 1"
+        },
+        {
+          "field": "snapshot.memory facts == live relation count",
+          "pass": true,
+          "detail": "4.0 vs 4"
+        },
+        {
+          "field": "snapshot.plasticity == mean plastic strength",
+          "pass": true,
+          "detail": "0.1 vs 0.1"
+        },
+        {
+          "field": "snapshot.name == nomen current name",
+          "pass": true,
+          "detail": "'Parasite' vs 'Parasite'"
+        },
+        {
+          "field": "snapshot.goal == bridge goal state",
+          "pass": true,
+          "detail": "'answer reach questions' vs 'answer reach questions'"
+        }
+      ]
+    },
+    "event_order": {
+      "pass": true,
+      "checks": {
+        "state.snapshot arrives first": true,
+        "experience.created before connection.updated (teach arc)": true,
+        "dream.started < dream.hypothesis < dream.evaluated": true
+      }
+    }
+  },
+  "client_report": {
+    "actions": [
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "teach",
+        "transport_ok": true
+      },
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "ask",
+        "transport_ok": true
+      },
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "pause",
+        "transport_ok": true
+      },
+      {
+        "ok": false,
+        "reason": "paused",
+        "state_unchanged": true,
+        "status": "denied",
+        "step": "teach_while_paused (expected denial)",
+        "transport_ok": true
+      },
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "resume",
+        "transport_ok": true
+      },
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "approve_request WRITE_FILE",
+        "transport_ok": true
+      },
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "deny_request RUN_SCRIPT",
+        "transport_ok": true
+      }
+    ],
+    "all_11_types": true,
+    "conn_state": 2,
+    "connect_ok": true,
+    "curve_points": 4,
+    "dashboard": {
+      "experience": "1",
+      "memory": "4",
+      "mode": "live",
+      "online": "● Online",
+      "plasticity": "0.1",
+      "uptime": "0.0"
+    },
+    "edge_rows": [
+      {
+        "connection_id": "Kav|operates|Tav",
+        "from": "Kav",
+        "to": "Tav",
+        "u": 0.1
+      },
+      {
+        "connection_id": "Kimo|controls|Zor",
+        "from": "Kimo",
+        "to": "Zor",
+        "u": 0.1
+      },
+      {
+        "connection_id": "Tav|routes-to|Kimo",
+        "from": "Tav",
+        "to": "Kimo",
+        "u": 0.1
+      },
+      {
+        "connection_id": "Zor|produces|heat",
+        "from": "Zor",
+        "to": "heat",
+        "u": 0.1
+      }
+    ],
+    "final_snapshot": {
+      "consolidation": {
+        "invariant_ok": true,
+        "n_events": 1.0
+      },
+      "devhistory": {
+        "current_name": "Parasite",
+        "n_entries": 5.0,
+        "n_stages": 2.0,
+        "stages": [
+          "AION-kav-gym",
+          "Parasite"
+        ]
+      },
+      "devhistory_stage": "Parasite",
+      "episodic": {
+        "kinds": {
+          "lesson": 1.0
+        },
+        "last_seq": 1.0,
+        "n_events": 1.0
+      },
+      "experience_steps": 1.0,
+      "goal": {
+        "goal": "answer reach questions",
+        "set_by": "godot",
+        "set_request_id": "ws-gate-1",
+        "set_ts": 1000.0
+      },
+      "hostmode": {
+        "caps": {
+          "alloc_budget_bytes": 65536.0,
+          "per_write_bytes": 1024.0,
+          "script_timeout_s": 10.0
+        },
+        "n_grants": 0.0,
+        "n_records": 1.0,
+        "n_violations": 0.0
+      },
+      "instance_id": "kav-gym",
+      "memory_inventory": {
+        "facts": 4.0
+      },
+      "mode": "live",
+      "name": "Parasite",
+      "paused": false,
+      "plasticity": 0.1,
+      "relational": {
+        "n_relations": 4.0,
+        "n_transmitting": 4.0,
+        "rows": [
+          {
+            "consolidated": 0.0,
+            "full": 0.1,
+            "key": "Kav|operates|Tav",
+            "pair_index": 0.0,
+            "plastic": 0.1,
+            "superseded_by": null
+          },
+          {
+            "consolidated": 0.0,
+            "full": 0.1,
+            "key": "Kimo|controls|Zor",
+            "pair_index": 2.0,
+            "plastic": 0.1,
+            "superseded_by": null
+          },
+          {
+            "consolidated": 0.0,
+            "full": 0.1,
+            "key": "Tav|routes-to|Kimo",
+            "pair_index": 1.0,
+            "plastic": 0.1,
+            "superseded_by": null
+          },
+          {
+            "consolidated": 0.0,
+            "full": 0.1,
+            "key": "Zor|produces|heat",
+            "pair_index": 3.0,
+            "plastic": 0.1,
+            "superseded_by": null
+          }
+        ],
+        "rows_capped": false
+      },
+      "relationships": {
+        "Kav|operates|Tav": {
+          "consolidated": 0.0,
+          "full": 0.1,
+          "plastic": 0.1
+        },
+        "Kimo|controls|Zor": {
+          "consolidated": 0.0,
+          "full": 0.1,
+          "plastic": 0.1
+        },
+        "Tav|routes-to|Kimo": {
+          "consolidated": 0.0,
+          "full": 0.1,
+          "plastic": 0.1
+        },
+        "Zor|produces|heat": {
+          "consolidated": 0.0,
+          "full": 0.1,
+          "plastic": 0.1
+        }
+      },
+      "runtime_uptime_s": 0.0,
+      "uptime_s": 0.0
+    },
+    "footer": "[0-5] pages · view: dashboard  ·  online",
+    "graph_edges": 4,
+    "graph_nodes": 9,
+    "gym_conn_text": "online",
+    "journal_count": 17,
+    "journey": "18:39:39  experience.created: ev000001\n18:39:39  connection.updated: Kav|operates|Tav  Δu_fast —\n18:39:39  connection.updated: Kimo|controls|Zor  Δu_fast —\n18:39:39  connection.updated: Tav|routes-to|Kimo  Δu_fast —\n18:39:39  connection.updated: Zor|produces|heat  Δu_fast —\n18:39:40  hostmode.request: WRITE_FILE — executed\n18:39:40  hostmode.request: RUN_SCRIPT — denied_by_gym\n18:39:40  memory.consolidated: preservation verified = true\n18:39:41  dream.started: d-gate-1\n18:39:41  dream.hypothesis: h-gate-1 — Kav operates Tav\n18:39:41  dream.evaluated: h-gate-1 → accepted (preservation held)\n18:39:41  development.stage: Parasite (was AION-kav-gym)\n18:39:41  nomen.changed: AION-kav-gym → Parasite\n18:39:41  nav.action: answer the teacher's question → ASK_TEACHER",
+    "order": [
+      "state.snapshot",
+      "experience.created",
+      "connection.updated",
+      "connection.updated",
+      "connection.updated",
+      "connection.updated",
+      "hostmode.request",
+      "hostmode.request",
+      "memory.consolidated",
+      "dream.started",
+      "dream.hypothesis",
+      "dream.evaluated",
+      "development.stage",
+      "nomen.changed",
+      "nav.action"
+    ],
+    "pre_dashboard": {
+      "experience": "0",
+      "memory": "0",
+      "mode": "live",
+      "online": "● Online",
+      "plasticity": "—",
+      "uptime": "0.0"
+    },
+    "received_total": 15,
+    "snapshot_ok": true,
+    "stage_highlight": 0,
+    "steps": [],
+    "types": {
+      "connection.updated": 4,
+      "development.stage": 1,
+      "dream.evaluated": 1,
+      "dream.hypothesis": 1,
+      "dream.started": 1,
+      "experience.created": 1,
+      "hostmode.request": 2,
+      "memory.consolidated": 1,
+      "nav.action": 1,
+      "nomen.changed": 1,
+      "state.snapshot": 1
+    },
+    "ws_actions": [
+      {
+        "ok": true,
+        "reason": "<null>",
+        "state_unchanged": false,
+        "status": "ok",
+        "step": "ws set_goal (authorized)",
+        "transport_ok": true
+      },
+      {
+        "ok": false,
+        "reason": "unauthenticated",
+        "state_unchanged": true,
+        "status": "denied",
+        "step": "ws set_goal (bad token)",
+        "transport_ok": false
+      }
+    ],
+    "ws_url": "ws://127.0.0.1:7480"
+  },
+  "health": {
+    "max_ws_clients": 1,
+    "poll_errors": []
+  },
+  "ask_answer": {
+    "question": "who operates Tav?",
+    "expected_student_answer": "Tav"
+  },
+  "display_tolerance": {
+    "float_fields": 1e-09
+  }
+}

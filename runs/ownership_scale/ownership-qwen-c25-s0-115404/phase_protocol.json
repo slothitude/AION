@@ -1,0 +1,137 @@
+{
+ "preregistered": true,
+ "date": "2026-11-25 11:54:04",
+ "seed": 0,
+ "chains": 25,
+ "relationships": 100,
+ "questions_total": 325,
+ "batteries_measured": [
+  "direct",
+  "paraphrase"
+ ],
+ "batteries_not_measured_note": "combination+intervention: Phase-2 verdict restated",
+ "direct_battery_n": 100,
+ "paraphrase_subset_n": 20,
+ "corrections": [
+  {
+   "chain": 0,
+   "conduit": "Tav",
+   "old_relay": "Kimo",
+   "new_relay": "Drel",
+   "sentence": "Tav is rerouted to relay Drel.",
+   "new_key": "Tav|routes-to|Drel",
+   "old_key": "Tav|routes-to|Kimo"
+  },
+  {
+   "chain": 2,
+   "conduit": "Skell",
+   "old_relay": "Vash",
+   "new_relay": "Osten",
+   "sentence": "Skell is rerouted to relay Osten.",
+   "new_key": "Skell|routes-to|Osten",
+   "old_key": "Skell|routes-to|Vash"
+  },
+  {
+   "chain": 5,
+   "conduit": "Drex",
+   "old_relay": "Thop",
+   "new_relay": "Mirda",
+   "sentence": "Drex is rerouted to relay Mirda.",
+   "new_key": "Drex|routes-to|Mirda",
+   "old_key": "Drex|routes-to|Thop"
+  },
+  {
+   "chain": 7,
+   "conduit": "Harpa",
+   "old_relay": "Cuvex",
+   "new_relay": "Ralt",
+   "sentence": "Harpa is rerouted to relay Ralt.",
+   "new_key": "Harpa|routes-to|Ralt",
+   "old_key": "Harpa|routes-to|Cuvex"
+  },
+  {
+   "chain": 10,
+   "conduit": "Lomo",
+   "old_relay": "Fydd",
+   "new_relay": "Glova",
+   "sentence": "Lomo is rerouted to relay Glova.",
+   "new_key": "Lomo|routes-to|Glova",
+   "old_key": "Lomo|routes-to|Fydd"
+  },
+  {
+   "chain": 12,
+   "conduit": "Ufka",
+   "old_relay": "Ikto",
+   "new_relay": "Norva",
+   "sentence": "Ufka is rerouted to relay Norva.",
+   "new_key": "Ufka|routes-to|Norva",
+   "old_key": "Ufka|routes-to|Ikto"
+  },
+  {
+   "chain": 15,
+   "conduit": "Sifel",
+   "old_relay": "Ruzel",
+   "new_relay": "Trimm",
+   "sentence": "Sifel is rerouted to relay Trimm.",
+   "new_key": "Sifel|routes-to|Trimm",
+   "old_key": "Sifel|routes-to|Ruzel"
+  },
+  {
+   "chain": 17,
+   "conduit": "Vlask",
+   "old_relay": "Wonda",
+   "new_relay": "Xalor",
+   "sentence": "Vlask is rerouted to relay Xalor.",
+   "new_key": "Vlask|routes-to|Xalor",
+   "old_key": "Vlask|routes-to|Wonda"
+  },
+  {
+   "chain": 20,
+   "conduit": "Pyx",
+   "old_relay": "Zaffi",
+   "new_relay": "Angth",
+   "sentence": "Pyx is rerouted to relay Angth.",
+   "new_key": "Pyx|routes-to|Angth",
+   "old_key": "Pyx|routes-to|Zaffi"
+  },
+  {
+   "chain": 22,
+   "conduit": "Aumsa",
+   "old_relay": "Blokt",
+   "new_relay": "Criva",
+   "sentence": "Aumsa is rerouted to relay Criva.",
+   "new_key": "Aumsa|routes-to|Criva",
+   "old_key": "Aumsa|routes-to|Blokt"
+  }
+ ],
+ "probe_qids": [
+  "direct-000",
+  "direct-004",
+  "direct-008",
+  "direct-012",
+  "direct-016",
+  "direct-020",
+  "direct-024",
+  "direct-028",
+  "direct-032",
+  "direct-036",
+  "direct-040",
+  "direct-044",
+  "direct-048",
+  "direct-052",
+  "direct-056",
+  "direct-060",
+  "direct-064",
+  "direct-068",
+  "direct-072",
+  "direct-076"
+ ],
+ "knobs": {
+  "learning_rate": 0.5,
+  "gate_steps": 6,
+  "gate_lr": 300.0,
+  "answer_tokens": 8,
+  "correction_repeats": 3
+ },
+ "teacher": "ScriptedTeacher (v1; owner-permitted, noted)"
+}

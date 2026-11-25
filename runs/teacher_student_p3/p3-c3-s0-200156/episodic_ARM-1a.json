@@ -1,0 +1,653 @@
+{
+ "events": [
+  {
+   "channel": "transcript",
+   "event_id": "ev000001",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    1
+   ],
+   "seq": 1,
+   "tags": {
+    "answer": "Tav",
+    "fact_key": "Neral|operates|Tav",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Neral operates Tav.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000002",
+   "kind": "observation",
+   "plastic_update_ids": [
+    2
+   ],
+   "seq": 2,
+   "tags": {
+    "answer": "Tav",
+    "fact_key": "Neral|operates|Tav",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Neral operate?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000003",
+   "kind": "observation",
+   "plastic_update_ids": [
+    3
+   ],
+   "seq": 3,
+   "tags": {
+    "answer": "Tav",
+    "fact_key": "Neral|operates|Tav",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Neral operates what?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000004",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    4
+   ],
+   "seq": 4,
+   "tags": {
+    "answer": "Kimo",
+    "fact_key": "Tav|routes-to|Kimo",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Tav routes to relay Kimo.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000005",
+   "kind": "observation",
+   "plastic_update_ids": [
+    5
+   ],
+   "seq": 5,
+   "tags": {
+    "answer": "Kimo",
+    "fact_key": "Tav|routes-to|Kimo",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Where does Tav route?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000006",
+   "kind": "observation",
+   "plastic_update_ids": [
+    6
+   ],
+   "seq": 6,
+   "tags": {
+    "answer": "Kimo",
+    "fact_key": "Tav|routes-to|Kimo",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Tav routes to which relay?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000007",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    7
+   ],
+   "seq": 7,
+   "tags": {
+    "answer": "Zor",
+    "fact_key": "Kimo|controls|Zor",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Kimo controls device Zor.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000008",
+   "kind": "observation",
+   "plastic_update_ids": [
+    8
+   ],
+   "seq": 8,
+   "tags": {
+    "answer": "Zor",
+    "fact_key": "Kimo|controls|Zor",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Kimo control?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000009",
+   "kind": "observation",
+   "plastic_update_ids": [
+    9
+   ],
+   "seq": 9,
+   "tags": {
+    "answer": "Zor",
+    "fact_key": "Kimo|controls|Zor",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Kimo controls which device?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000010",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    10
+   ],
+   "seq": 10,
+   "tags": {
+    "answer": "heat",
+    "fact_key": "Zor|produces|heat",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Zor produces heat.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000011",
+   "kind": "observation",
+   "plastic_update_ids": [
+    11
+   ],
+   "seq": 11,
+   "tags": {
+    "answer": "heat",
+    "fact_key": "Zor|produces|heat",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What does Zor produce?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000012",
+   "kind": "observation",
+   "plastic_update_ids": [
+    12
+   ],
+   "seq": 12,
+   "tags": {
+    "answer": "heat",
+    "fact_key": "Zor|produces|heat",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What is Zor's output?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000013",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    13
+   ],
+   "seq": 13,
+   "tags": {
+    "answer": "Rinpo",
+    "fact_key": "Sula|operates|Rinpo",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Sula operates Rinpo.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000014",
+   "kind": "observation",
+   "plastic_update_ids": [
+    14
+   ],
+   "seq": 14,
+   "tags": {
+    "answer": "Rinpo",
+    "fact_key": "Sula|operates|Rinpo",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Sula operate?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000015",
+   "kind": "observation",
+   "plastic_update_ids": [
+    15
+   ],
+   "seq": 15,
+   "tags": {
+    "answer": "Rinpo",
+    "fact_key": "Sula|operates|Rinpo",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Sula operates what?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000016",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    16
+   ],
+   "seq": 16,
+   "tags": {
+    "answer": "Drel",
+    "fact_key": "Rinpo|routes-to|Drel",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Rinpo routes to relay Drel.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000017",
+   "kind": "observation",
+   "plastic_update_ids": [
+    17
+   ],
+   "seq": 17,
+   "tags": {
+    "answer": "Drel",
+    "fact_key": "Rinpo|routes-to|Drel",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Where does Rinpo route?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000018",
+   "kind": "observation",
+   "plastic_update_ids": [
+    18
+   ],
+   "seq": 18,
+   "tags": {
+    "answer": "Drel",
+    "fact_key": "Rinpo|routes-to|Drel",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Rinpo routes to which relay?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000019",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    19
+   ],
+   "seq": 19,
+   "tags": {
+    "answer": "Blun",
+    "fact_key": "Drel|controls|Blun",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Drel controls device Blun.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000020",
+   "kind": "observation",
+   "plastic_update_ids": [
+    20
+   ],
+   "seq": 20,
+   "tags": {
+    "answer": "Blun",
+    "fact_key": "Drel|controls|Blun",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Drel control?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000021",
+   "kind": "observation",
+   "plastic_update_ids": [
+    21
+   ],
+   "seq": 21,
+   "tags": {
+    "answer": "Blun",
+    "fact_key": "Drel|controls|Blun",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Drel controls which device?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000022",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    22
+   ],
+   "seq": 22,
+   "tags": {
+    "answer": "light",
+    "fact_key": "Blun|produces|light",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Blun produces light.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000023",
+   "kind": "observation",
+   "plastic_update_ids": [
+    23
+   ],
+   "seq": 23,
+   "tags": {
+    "answer": "light",
+    "fact_key": "Blun|produces|light",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What does Blun produce?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000024",
+   "kind": "observation",
+   "plastic_update_ids": [
+    24
+   ],
+   "seq": 24,
+   "tags": {
+    "answer": "light",
+    "fact_key": "Blun|produces|light",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What is Blun's output?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000025",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    25
+   ],
+   "seq": 25,
+   "tags": {
+    "answer": "Skell",
+    "fact_key": "Dravy|operates|Skell",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Dravy operates Skell.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000026",
+   "kind": "observation",
+   "plastic_update_ids": [
+    26
+   ],
+   "seq": 26,
+   "tags": {
+    "answer": "Skell",
+    "fact_key": "Dravy|operates|Skell",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Dravy operate?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000027",
+   "kind": "observation",
+   "plastic_update_ids": [
+    27
+   ],
+   "seq": 27,
+   "tags": {
+    "answer": "Skell",
+    "fact_key": "Dravy|operates|Skell",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Dravy operates what?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000028",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    28
+   ],
+   "seq": 28,
+   "tags": {
+    "answer": "Vash",
+    "fact_key": "Skell|routes-to|Vash",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Skell routes to relay Vash.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000029",
+   "kind": "observation",
+   "plastic_update_ids": [
+    29
+   ],
+   "seq": 29,
+   "tags": {
+    "answer": "Vash",
+    "fact_key": "Skell|routes-to|Vash",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Where does Skell route?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000030",
+   "kind": "observation",
+   "plastic_update_ids": [
+    30
+   ],
+   "seq": 30,
+   "tags": {
+    "answer": "Vash",
+    "fact_key": "Skell|routes-to|Vash",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Skell routes to which relay?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000031",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    31
+   ],
+   "seq": 31,
+   "tags": {
+    "answer": "Crat",
+    "fact_key": "Vash|controls|Crat",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Vash controls device Crat.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000032",
+   "kind": "observation",
+   "plastic_update_ids": [
+    32
+   ],
+   "seq": 32,
+   "tags": {
+    "answer": "Crat",
+    "fact_key": "Vash|controls|Crat",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Who does Vash control?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000033",
+   "kind": "observation",
+   "plastic_update_ids": [
+    33
+   ],
+   "seq": 33,
+   "tags": {
+    "answer": "Crat",
+    "fact_key": "Vash|controls|Crat",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "Vash controls which device?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000034",
+   "kind": "lesson",
+   "plastic_update_ids": [
+    34
+   ],
+   "seq": 34,
+   "tags": {
+    "answer": "pressure",
+    "fact_key": "Crat|produces|pressure",
+    "kind": "declarative"
+   },
+   "teacher": "phase3-k4",
+   "text": "Crat produces pressure.",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000035",
+   "kind": "observation",
+   "plastic_update_ids": [
+    35
+   ],
+   "seq": 35,
+   "tags": {
+    "answer": "pressure",
+    "fact_key": "Crat|produces|pressure",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What does Crat produce?",
+   "transcript_id": null,
+   "ts": 0.0
+  },
+  {
+   "channel": "transcript",
+   "event_id": "ev000036",
+   "kind": "observation",
+   "plastic_update_ids": [
+    36
+   ],
+   "seq": 36,
+   "tags": {
+    "answer": "pressure",
+    "fact_key": "Crat|produces|pressure",
+    "kind": "qa"
+   },
+   "teacher": "phase3-k4",
+   "text": "What is Crat's output?",
+   "transcript_id": null,
+   "ts": 0.0
+  }
+ ],
+ "seq": 36
+}
