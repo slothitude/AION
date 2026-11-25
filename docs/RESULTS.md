@@ -125,11 +125,26 @@ Preregistered `nav-exam-1.0` (preregistered 2026-11-25, world seed 20261125, 30 
 
 The larql head was trained on larql M6 states and probed on NAV chain-world states — the distribution shift is recorded in the exam records themselves; the 0.20 is a transfer failure, stated plainly. d1-2B is partial: it answers and infers but cannot decide to query.
 
+### 2.5 Phase-3 expression matrix — **all three levers fail; every arm at the frozen floor** (matrix closed 2026-11-26)
+
+Protocol `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked, in-session controls: A frozen floor direct@1=0.250 paraphrase@1=0.125 combination@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000 splits=[0.0, 0.0, 0.0] (retrieval remains structurally blind to composition — the gap plastic must clear).
+
+| Arm | Mechanism | direct@1 | paraphrase@1 | combination@1 | D6_success | restart |
+|---|---|---|---|---|---|---|
+| ARM-1a | density k=4 (9749 s) | 0.200 | 0.125 | 0.400 | False | bitwise |
+| ARM-1b | density k=16 (15306 s; 960 connections) | 0.200 | 0.125 | 0.400 | False | bitwise |
+| ARM-2a | alignment k=1 (16396 s) | 0.200 | 0.125 | 0.400 | False | bitwise |
+| ARM-3 | combined | **NOT RUN** — locked D8 rule: both mechanisms failed independently, never combine two failed mechanisms | | | | |
+
+Foundation bit-identical after the matrix: True; matrix errors: 0. Total runtime 725.8 min on real Qwen3.5-4B-Base (CPU BF16, frozen), 20-rel world, 43 questions, held-out splits [5, 5, 5]. Sources: Lappy `p3run.log` and `runs/teacher_student_p3/p3-c5-s0-200451/report.json` (+ `results.jsonl`).
+
+**Stated plain:** density (4 or 16 connections per relationship) and alignment (k=1) leave expression **exactly at the frozen floor** — no metric moved by any amount in any arm. This is consistent with Phase 1 (empty answers), Phase 2 (bitwise-A variants; γ real but sub-threshold), and the interventions run (degenerate argmax). Four experiments now measure the same boundary: **the plastic state acquires, stores, corrects, retains and survives — and none of it reaches the frozen host's answer-selection through the pathways tested.** The γ pathway transmits (real gradient-magnitude signal at the decoder, gold prob 0.175→0.187 in Phase 2) but sub-threshold; scaling it was not an approved lever. The next central question — whether the learning objective itself must change to target expression (learn-toward-expression), rather than bolting expression onto a prediction-trained state — belongs to the owner's review of this report, per the no-automatic-progression law.
+
 ---
 
 ## 3. What is in flight (no verdicts claimed)
 
-**Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **First two arms landed 2026-11-26 — the density lever FAILS at both settings.** ARM-1a density k=4 (9749.1s) and ARM-1b density k=16 (15306.3s) both scored direct@1=0.200 paraphrase@1=0.125 combination@1=0.400 — at or below the in-session frozen floor (0.250/0.125/0.400) on all three metrics, D6_success=False, restart bitwise-exact in both. Per the locked ARM-3 rule, density does not carry into any combined arm; the gate is enforced in code and fails closed. Remaining: ARM-2a (alignment k=1, the last untested mechanism) → ARM-3 only from independently successful settings. **No Phase-3 verdict is claimed here — the full-matrix report is reviewed when the matrix closes.**
+**Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **Phase-3 expression matrix — CLOSED 2026-11-26; verdict recorded in §2.5.** All three arms at the frozen floor (density k=4, density k=16, alignment k=1), ARM-3 correctly not run (locked rule). The matrix report awaits the owner's review per the no-automatic-progression law; no follow-on experiment launches before that review.
 
 **Pending, explicitly:** the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling.
 
