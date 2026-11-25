@@ -1,6 +1,6 @@
 # Dream Engine Reimplementation Specification — Real Replay + Reality-Grounded Evaluation
 
-**Status:** Decision document for owner review. This document prepares a decision; it decides nothing and implements nothing.
+**Status:** APPROVED — STAGED REIMPLEMENTATION (owner decisions D1–D6 recorded 2026-11-25, §6a). D1-only replay validation is the first gate; the full six-configuration experiment requires its own frozen preregistration and is NOT automatically authorised.
 **Date:** 2026-11-25. **Scope:** docs-only — zero code changes, zero runs.
 **Derives from:** the owner-deferred reimplementation (options 2 + 3), recorded as deferred in `README.md` stage-04 row: *"Diagnosed + bookkeeping repaired; real replay + reality-grounded evaluation deferred (owner decision); dream-side consolidation routing unblocked."*
 **Register context:** `docs/RESULTS.md` §2.1 records D2-vs-D1 as *unanswered, with a reimplementation pending*. Until the owner decides, this document does not change that record.
@@ -119,16 +119,23 @@ If the re-run instead reproduces artifact signatures, that falsifies the diagnos
 
 ---
 
-## 6. Decision points for the owner
+## 6a. OWNER DECISIONS — RECORDED 2026-11-25 (binding)
 
-| # | Decision | Options | Default if deferred |
-|---|---|---|---|
-| D1 | Approve this spec as the reimplementation of record | approve / amend (name the section) / defer again | stays deferred; `docs/RESULTS.md` §2.1 unchanged |
-| D2 | Storage rebuild (§2 R1): ring rebuilt for fixed-shape windows vs compatibility shim over flattened store | rebuild (clean, discards stored flat vectors) / shim (keeps both) | — |
-| D3 | Measurement isolation (§3 E1): lightweight copy of affected state vs install-then-restore on the live network | copy (safer, more memory) / install-restore (cheaper, needs strict restore proof) | — |
-| D4 | Evaluator weight vector and ε (§3 E2–E3): confirm 0.3/0.2/utility-slot/0.2/0.3 layout and ε default | confirm / amend values | — |
-| D5 | Effort approval (estimates below are engineering estimates, not measurements; CPU-only machine, `docs/RESULTS.md` §4) | — | — |
-| D6 | What the first re-run measures: full six-config matrix now, or D1-only first (replay validity alone) as a staged gate | full / staged | — |
+| # | Decision | Owner choice |
+|---|---|---|
+| D1 | Spec approval | **APPROVE**, with the safeguards in §5 |
+| D2 | Storage (§2 R1) | **REBUILD** the ring around fixed-shape experience windows. Archive old flattened records; do NOT treat them as replayable experiences. |
+| D3 | Measurement isolation (§3 E1) | **COPY affected state.** Prefer isolation over install-and-restore risk. |
+| D4 | Evaluator weights | **consistency 0.25 · novelty 0.15 · utility 0.25 · efficiency 0.10 · non-forgetting 0.25** (sums to 1.0). ε = **0.0**, but improvement must be positive beyond measurement noise across repeated held-out measurements. |
+| D5 | Engineering effort | **APPROVE the staged engineering work**, subject to tests and freeze requirements. |
+| D6 | First experiment | **D1-ONLY FIRST.** Validate real replay before authorising the full six-configuration experiment. |
+
+**Three additional conditions (binding):**
+1. **The θ-write bypass must be eliminated.** All dream-side slow-weight changes go through the connection's output-preserving `consolidate()` law — the two bypass paths (§1.2, consolidator lines 222 and 305–337) are retired or disabled behind a flag when the new path lands (§3 E5).
+2. **The composed-weight norm guard must be calibrated** against valid compositions as well as pathological ones. A guard that rejects legitimate discoveries is another failure.
+3. **D1 replay must demonstrate**, before D2 imagination is evaluated: actual network updates (measured state deltas), correct provenance (replayed=true tagging, §2 R5), bounded compute (§2 R4 budget accounting), and measurable state changes.
+
+**D1-only is a gate, not a new success claim.** Once replay is validated, the six-configuration experiment requires its own frozen preregistration (holdout + seeds). No automatic progression. **Owner fix 4 acceptance recorded:** live lr/blend inheritance for dream-created connections has landed (consolidator 29–42, 203–219); the remaining identified defect is the direct θ-write bypass only — the inheritance defect is no longer listed as outstanding anywhere.
 
 **Effort estimate per section** (rough, CPU-bound, single-machine):
 

@@ -1,6 +1,6 @@
 # Compliance Request — DRAFT for organiser ruling (owner edits and sends)
 
-**Status: DRAFT.** This document is a draft written request for an organiser ruling. The **owner** edits it, decides whether to send it, and sends it. **Nothing is sent by anyone else, and no submission channel is contacted from this project.** Nothing in this document is a claim; it prepares a question.
+**Status: DRAFT — HOLD per owner decision S1 (2026-11-25).** Hold briefly pending factual reconciliation (S2) and recipient verification (S4); then send for an organiser ruling. The **owner** edits it, decides whether to send it, and sends it. **Nothing is sent by anyone else, and no submission channel is contacted from this project.** Nothing in this document is a claim; it prepares a question. Silence is not permission: the project treats the absence of a ruling as *no ruling*.
 
 **Date drafted:** 2026-11-25. **Project:** AION (code package `nnfs`, `C:\Users\aaron\Desktop\nnfs`).
 **Why now:** `docs/RESULTS.md` §3 records the state plainly: *"the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling."* This draft turns that pending item into a sendable question.
@@ -26,12 +26,12 @@ The three scopes below sit on the same substrate facts, all from this repository
 |---|---|
 | Pith-E2B is the seed substrate of the project: "Pith-E2B artifact exists (post-QAT behaviour gate pending); Qwen3.5-4B-Base hosted on Lappy" (stage 00) | `README.md` line 94 |
 | Interface proven on BOTH substrates: Qwen dense (4/4 smoke, bit-exact identity) + **Pith factor-executed (4/4, bit-exact under bf16-forward-v1)** (stage 01) | `README.md` line 95 |
-| Pith-E2B v1 = dual-svid, 1.5 BPW + PLE rowwise8; **FACTOR-EXECUTED**; its behaviour gate currently **fails** (hidden cosine 0.118, argmax 0/53; logits cosine median 0.14) and running the smoke against v1 was **FORBIDDEN** | `aion/experiments/pith_interface_smoke.py` lines 1–6, 288 |
+| Pith-E2B v1 = dual-svid, 1.5 BPW + PLE rowwise8; **FACTOR-EXECUTED**. **Two facts, kept distinct:** (i) the interface smoke (4/4 bit-exact) ran against THIS v1 artifact as a **plumbing test only** — artifact identity: `pith-e2b-1p5-dualsvid` at Lappy `/home/aaron/pith-pilot/runs/`; (ii) v1's **behaviour gate FAILS** (hidden cosine 0.118, argmax 0/53; logits cosine median 0.14) — the v1 brain is degraded, and **behaviour testing and any learning on v1 are FORBIDDEN** | `aion/experiments/pith_interface_smoke.py` lines 1–6, 22, 288; behaviour numbers from the R3b dense-baseline comparison |
 | Hidden states extract from the **REAL Gemma-4 tree** via the runner's `run_layer` isolation; "Gemma-4-E2B measured topology"; smoke scope is "Interface-level plumbing; **no Pith learning**" | same file, lines 12, 50, 22 |
 | AION's own evaluation batteries (independent of any substrate): disconnect battery (12 seed relations, one seed), NAV exam (30 scenarios, preregistered), hostmode exam (20 episodes/arm) | `docs/RESULTS.md` §1.4, §2.4, §1.5 |
 | The proposed substrate-cost baseline is task 27 in the project register and is explicitly pending this ruling | `docs/RESULTS.md` §3 |
 
-**Relationship between the artefacts (stated so the organiser sees it plainly):** Pith-E2B is a Gemma-4-derived, factor-executed compressed substrate (per the project record; the upstream artefact identity `togethercomputer/pith` is **reported, not verified in this repo** — marked unknown). The two facts in the table above are sequenced as the project recorded them: an interface-level smoke proven bit-exact, while the v1 artefact's own behaviour gate is failing and gated FORBIDDEN. The owner should reconcile the timeline if the organiser asks.
+**Relationship between the artefacts (stated so the organiser sees it plainly):** Pith-E2B is a Gemma-4-derived, factor-executed compressed substrate (the upstream artefact identity `togethercomputer/pith` is **reported, not verified in this repo** — marked unknown). **What the 4/4 interface result establishes and what it does not:** it establishes that AION's interface attaches to the factor-executed substrate bit-exactly under the specified execution contract — plumbing. It does NOT establish that the substrate is behaviourally valid: Pith-E2B v1 currently **fails its own behaviour gate**, and no behavioural, learning, or capability claim is made against it. The exact artefact behind every result in this request is the dual-svid v1 specimen identified above; if any result is later obtained against a different artefact or execution target, it will be named separately. **Bit-exact plumbing does not establish a usable or healthy substrate.**
 
 ---
 
@@ -53,12 +53,12 @@ The question is deliberately asked **three times, separately**, so the ruling ca
 **The exact question:**
 > Does AION's interface-level attachment to Pith-E2B — loading and executing the factor-executed substrate for bit-exact interface verification, with no learning, no fine-tuning, and no competition-task use — constitute **use of competition-relevant weights requiring a written organiser ruling** under the compliance rules, including **retroactively** for the interface work already recorded?
 
-### Scope C — Any future AION learning work on Pith (not started)
+### Scope C — Any future AION learning involving Pith-derived weights (not started; scope drawn WIDE per owner decision S3)
 
-**What it is:** any future work in which AION's plastic mechanism learns **on or through** the Pith substrate — Pith-seeded learning, substrate-hosted plasticity, or any pipeline where Pith weights participate in or receive AION's learning. Nothing of this kind has been run (the smoke explicitly excludes it; no Pith-learning code exists in this repo).
+**What it is:** **any future learning conducted on, through, or materially involving Pith-derived weights** — Pith-seeded learning, substrate-hosted plasticity, learning on derived artifacts, or any downstream learning that materially involves Pith-derived weights. Nothing of this kind has been run (the smoke explicitly excludes learning; no Pith-learning code exists in this repo). The boundary of "materially involving" is deliberately **asked of the organiser rather than assumed by us**.
 
 **The exact question:**
-> Does any future AION learning work conducted on or through the Pith-E2B substrate — where Pith weights participate in, host, or receive AION's plastic learning process — constitute **use of competition-relevant weights requiring a written organiser ruling** under the compliance rules; and if yes, **what disclosure, segregation, or provenance conditions** would such a ruling require for results derived from that work?
+> Does **any** future AION learning work conducted on, through, or materially involving Pith-E2B or any Pith-derived weights — including derived artifacts, downstream learning, and any pipeline in which Pith-derived weights participate in, host, or receive AION's plastic learning process — constitute **use of competition-relevant weights requiring a written organiser ruling** under the compliance rules; and if yes, **what disclosure, segregation, or provenance conditions** would such a ruling require for results derived from that work? We ask the organiser to **define the boundary** of this scope rather than leaving it to our interpretation.
 
 ---
 
@@ -74,15 +74,15 @@ One request, three rulings:
 
 ---
 
-## 5. Owner send-decision points
+## 5. Owner send-decision points — DECIDED 2026-11-25 (recorded, binding)
 
-| # | Decision | Notes |
+| # | Decision | OWNER DECISION (2026-11-25) |
 |---|---|---|
-| S1 | Send or hold | The draft is complete but the owner may hold it until the Pith behaviour-gate question (below) is resolved, so the organiser sees a coherent substrate state |
-| S2 | Reconcile the two substrate facts | Stage-01's "4/4 bit-exact" interface smoke vs the v1 behaviour-gate failure (`pith_interface_smoke.py` line 6) — the owner should confirm the sequencing wording in §2 before sending |
-| S3 | Scope C wording | Confirm the future-work scope is drawn wide enough (or narrow it) — this is the ruling with the longest consequences |
-| S4 | Channel and recipient | Owner-only; not specified in this draft |
-| S5 | Attachments | Whether to attach the smoke report or register excerpts; the repo citations in §2 are written to stand alone without attachments |
+| S1 | Send or hold | **HOLD briefly** pending factual reconciliation (S2) and recipient verification (S4). **Then send** for an organiser ruling. |
+| S2 | Reconcile the two substrate facts | **Amend the wording** to distinguish interface plumbing from behavioural validity, and identify the exact artifact/version behind each result. (Applied above: §2 table rewritten; the 4/4 result is named to the dualsvid v1 artifact as a plumbing-only test.) |
+| S3 | Scope C wording | **WIDE** — any future learning on, through, or materially involving Pith-derived weights, including derived artifacts and downstream learning. The organiser is asked to define the boundary (§3 Scope C). |
+| S4 | Channel and recipient | **Official competition organiser compliance/contact channel; verify the actual recipient before sending.** Owner-only action; not specified in this draft. |
+| S5 | Attachments | **Attach** the interface smoke report + concise results-register excerpts, with artifact identity and hashes where available. **Do NOT attach model weights.** |
 
 ---
 
