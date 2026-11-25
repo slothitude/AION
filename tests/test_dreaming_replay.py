@@ -750,3 +750,114 @@ class TestD1NotD0:
         assert entry["provenance_count"] > 0
         assert entry["replay_wall_clock_s"] >= 0.0
         assert entry["replay_budget"] == 4
+
+
+# ----------------------------------------------------------------------
+# Stage 2 (owner GO): D2 arm vs D1 arm comparison harness
+# ----------------------------------------------------------------------
+class TestD2VsD1Harness:
+    def _run_arm(self, seed, imagination, cycles=2):
+        """Run one dream arm (D1: imagination off; D2: imagination on) on a
+        trained network and return (engine, cycle outputs, final state)."""
+        torch.manual_seed(seed)
+        net = make_network(seed=seed)
+        g = torch.Generator().manual_seed(seed + 1)
+        # train enough for the recombiner to find chains with real structure
+        for _ in range(60):
+            net.step(torch.randn(2, 8, 8, generator=g),
+                     target_next=torch.randn(2, 8, 8, generator=g), learn=True)
+        eng = make_engine(net, enable_recombination=imagination, replay_budget=4)
+        store_random_experiences(eng, n=16, seed=seed + 100)
+        outs = []
+        for _ in range(cycles):
+            outs.append(eng.run_dream_cycle())
+        state = (
+            [c.plasticity.u_fast.detach().clone() for c in net.connections.values()],
+            [c.plasticity.theta_slow.detach().clone() for c in net.connections.values()],
+        )
+        return eng, outs, state
+
+    def test_d2_measurement_loop_runs_and_is_measured(self):
+        eng, outs, _ = self._run_arm(seed=50, imagination=True)
+        total_generated = sum(o.hypotheses_generated for o in outs)
+        total_guard = sum(o.hypotheses_guard_rejected for o in outs)
+        total_sims = sum(o.simulations_run for o in outs)
+        assert total_generated > 0, "trained network must generate hypotheses"
+        # every surviving hypothesis reached the MEASUREMENT loop (E1), not a
+        # constant table: guard-rejected + measured sims == generated
+        assert total_guard + total_sims == total_generated
+        for entry in eng.cycle_log:
+            assert entry["measured_evaluations"] == (
+                entry["hypotheses_generated"] - entry["hypotheses_guard_rejected"])
+            # the pilot collapse signature cannot recur: every acceptance, if
+            # any, carried measured beyond-noise evidence
+            assert entry["accepted_all_measured"] is True
+
+    def test_d2_acceptance_is_evidence_based_not_arithmetic(self):
+        eng, outs, _ = self._run_arm(seed=51, imagination=True, cycles=3)
+        accepted = sum(o.accepted for o in outs)
+        generated = sum(o.hypotheses_generated for o in outs)
+        deferred = sum(o.deferred for o in outs)
+        rejected = sum(o.rejected for o in outs)
+        # accounting closes: every hypothesis lands in exactly one bucket
+        assert accepted + deferred + rejected + sum(
+            o.hypotheses_guard_rejected for o in outs) == generated
+        # the evaluator's acceptance law: acceptance implies measured,
+        # beyond-noise utility (structural; the 60/60 row cannot recur)
+        for entry in eng.cycle_log:
+            if entry["accepted"] > 0:
+                assert entry["accepted_all_measured"] is True
+
+    def test_d2_vs_d1_state_equality_iff_nothing_accepted(self):
+        _, outs1, state1 = self._run_arm(seed=52, imagination=False)
+        _, outs2, state2 = self._run_arm(seed=52, imagination=True)
+        accepted_d2 = sum(o.accepted for o in outs2)
+        same = all(torch.equal(a, b) for u1, u2 in zip(state1[0], state2[0])
+                   for a, b in [(u1, u2)]) and all(
+            torch.equal(a, b) for a, b in zip(state1[1], state2[1]))
+        if accepted_d2 == 0:
+            # no dream-side consolidation happened beyond replay: D2 state
+            # must equal the D1 state exactly (same RNG stream, no writes)
+            assert same, "with zero acceptances D2 must not diverge from D1"
+        else:
+            assert not same, "accepted hypotheses must change state vs D1"
+
+    def test_d2_created_connections_carry_theta_zero(self):
+        torch.manual_seed(53)
+        net = make_network(seed=53)
+        g = torch.Generator().manual_seed(54)
+        for _ in range(60):
+            net.step(torch.randn(2, 8, 8, generator=g),
+                     target_next=torch.randn(2, 8, 8, generator=g), learn=True)
+        keys_before = set(net.connections.keys())
+        eng = make_engine(net, enable_recombination=True, replay_budget=4)
+        store_random_experiences(eng, n=16, seed=153)
+        created = 0
+        for _ in range(3):
+            out = eng.run_dream_cycle()
+            created += out.connections_created
+        keys_after = set(net.connections.keys())
+        new_keys = keys_after - keys_before
+        assert len(new_keys) == created, (
+            "owner fix 1: dream-side creations must be counted and match the "
+            f"topology change (counted={created}, new keys={len(new_keys)})")
+        for key in new_keys:
+            conn = net.connections[key]
+            theta_norm = float(conn.plasticity.theta_slow.detach().norm())
+            assert theta_norm == 0.0, (
+                f"dream-created {key} must start from theta=0 (hypothesis in "
+                f"the fast channel); got norm {theta_norm}")
+
+    def test_d2_dream_compute_exceeds_d1(self):
+        eng1, outs1, _ = self._run_arm(seed=54, imagination=False)
+        eng2, outs2, _ = self._run_arm(seed=54, imagination=True)
+        t1 = sum(o.total_duration for o in outs1)
+        t2 = sum(o.total_duration for o in outs2)
+        # the measurement loop is the expensive part: D2 must cost more dream
+        # compute than D1 at the same replay budget (5.5x in the pilot era)
+        assert t2 > t1
+
+    def test_d2_zero_unmeasured_evaluations_with_experiences(self):
+        eng, outs, _ = self._run_arm(seed=55, imagination=True)
+        assert eng.evaluator.get_stats().get("unmeasured", 0) == 0, \
+            "with stored experiences available, every evaluation must be measured"

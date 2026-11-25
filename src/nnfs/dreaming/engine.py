@@ -378,6 +378,7 @@ class DreamEngine(nn.Module):
 
         # Phase 5: Dream Evaluation (measured acceptance law, owner D4)
         evaluations: List[EvaluationResult] = []
+        accept_evals: List[EvaluationResult] = []
         if self.enable_consolidation and sim_results:
             for i, sim in enumerate(sim_results):
                 verdict = guard_verdicts[i] if i < len(guard_verdicts) else None
@@ -396,10 +397,10 @@ class DreamEngine(nn.Module):
                     cycle_result.rejected += 1
                 else:
                     cycle_result.deferred += 1
+            accept_evals = [e for e in evaluations if e.acceptance == "accept"]
 
         # Phase 6: Consolidation (routed through the connection's own law)
         if self.enable_consolidation and evaluations:
-            accept_evals = [e for e in evaluations if e.acceptance == "accept"]
             if accept_evals:
                 cons_results = self.consolidator.consolidate(accept_evals)
                 cycle_result.consolidations_performed = len(cons_results)
@@ -451,7 +452,22 @@ class DreamEngine(nn.Module):
             "provenance_count": cycle_result.provenance_count,
             "hypotheses_generated": cycle_result.hypotheses_generated,
             "hypotheses_guard_rejected": cycle_result.hypotheses_guard_rejected,
+            "hypotheses_rejected": cycle_result.rejected,
+            "hypotheses_deferred": cycle_result.deferred,
+            "measured_evaluations": sum(
+                1 for e in evaluations if e.simulation_result.measured),
             "accepted": cycle_result.accepted,
+            # falsifiable-prediction evidence (spec §4): every acceptance must
+            # carry measured, beyond-noise evidence -- the pilot's 60/60
+            # constant-table collapse structurally cannot recur when this is
+            # True alongside accepted==len(accept_evals).
+            "accepted_all_measured": (
+                all(e.simulation_result.measured and e.beyond_noise
+                    for e in accept_evals)
+                if accept_evals else True
+            ),
+            "consolidations_performed": cycle_result.consolidations_performed,
+            "connections_updated": cycle_result.connections_updated,
             "connections_created": cycle_result.connections_created,
         })
 

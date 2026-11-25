@@ -36,6 +36,7 @@ import torch.nn.functional as F
 from typing import Optional, Dict, List, Tuple, Any
 from dataclasses import dataclass, field
 import copy
+import gc
 import pickle
 
 from nnfs.dreaming.recombiner import HypothesizedRelationship
@@ -240,11 +241,14 @@ class DreamSimulator(nn.Module):
         utility_folds = self._split_folds(experiences_utility, self.num_folds)
         consistency_folds = self._split_folds(experiences_consistency, self.num_folds)
         clone = self._make_clone()
+        utility_err = self._measure_errors(clone, utility_folds)
+        consistency_err = self._measure_errors(clone, consistency_folds)
+        del clone
         return {
             "utility_folds": utility_folds,
             "consistency_folds": consistency_folds,
-            "utility_err_baseline": self._measure_errors(clone, utility_folds),
-            "consistency_err_baseline": self._measure_errors(clone, consistency_folds),
+            "utility_err_baseline": utility_err,
+            "consistency_err_baseline": consistency_err,
         }
 
     def _measured_consistency(self, baseline_err: float, installed_err: float) -> float:
@@ -327,6 +331,7 @@ class DreamSimulator(nn.Module):
         self._install_hypothesis(inst_clone, hypothesis)
         err_base = self._measure_errors(base_clone, folds)
         err_inst = self._measure_errors(inst_clone, folds)
+        del base_clone, inst_clone
         increase = (err_inst - err_base) / max(abs(err_base), 1e-12)
         return float(max(0.0, min(1.0, increase)))
 
@@ -412,7 +417,9 @@ class DreamSimulator(nn.Module):
                 self._install_hypothesis(inst_fold, hypothesis)
                 err_base = self._measure_errors(base_fold, [fold])
                 err_inst = self._measure_errors(inst_fold, [fold])
+                del base_fold, inst_fold
                 per_fold_deltas.append(err_base - err_inst)
+            gc.collect()
         if len(per_fold_deltas) > 1:
             deltas = torch.tensor(per_fold_deltas, dtype=torch.float64)
             noise_floor = float(deltas.std(unbiased=False))
@@ -461,6 +468,11 @@ class DreamSimulator(nn.Module):
             install_mode=install_mode,
         )
 
+        # Measurement-clone teardown: deepcopy'd modules are reference cycles,
+        # so drop them explicitly before returning (the caller also collects).
+        del inst_clone
+        gc.collect()
+
         self.simulations_run.add_(1)
         if recommendation == "accept":
             self.hypotheses_accepted.add_(1)
@@ -484,6 +496,7 @@ class DreamSimulator(nn.Module):
         baseline = None
         if experiences_utility or experiences_consistency:
             baseline = self.baseline_session(experiences_utility, experiences_consistency)
+            gc.collect()
         for hyp in hypotheses:
             result = self.simulate_hypothesis(
                 hyp, initial_state, context, None,
@@ -492,6 +505,9 @@ class DreamSimulator(nn.Module):
                 baseline=baseline,
             )
             results.append(result)
+        # measurement clones are reference cycles: collect between hypotheses
+        # so the loop's memory stays bounded across long dream sessions
+        gc.collect()
         return results
 
     def get_stats(self) -> Dict:
