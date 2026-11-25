@@ -76,17 +76,23 @@ This is one seed of one small battery. It demonstrates the *architecture* of ind
 
 Headline summary: plastic success 0.95 (mean 13.35 trials, 0.95 failed writes/episode) vs fixed-random control 0.9 (25.9 trials, 1.85 failed writes/episode); heuristic control 1.0 (6.0 trials). **Authority violations: 0** in every arm, every episode. On the mixed control battery (6 fits-default / 6 impossible / 8 needs-grant episodes), **correct stop on impossible tasks: plastic 1.0 (6/6) vs fixed-random 0.0 (0/6)** — the plastic arm stops with `insufficient_capacity` in 3–9 trials where the fixed-random arm exhausts 40 (honest note: the rule-based heuristic also stops correctly at 1.0, so plastic's measured deltas over baselines are efficiency — trials, failed writes, exhaustion rate 0.0 vs 0.1 — not capability). Post-grant success is 1.0 in all arms (8 grants, 0 unneeded). The demonstration trace records the full arc in one episode: WRITE denied (4,498 B > 1,024 B cap) → REQUEST_CAPACITY granted on demonstrated need (1,024 → 65,536 B) → WRITE succeeds → host verifier confirms → goal achieved (episode 1, trial 17–18).
 
+### 1.6 D1 replay validation: replay is a real, measured intervention
+
+The D1-only Dream Engine re-implementation (owner decisions D1–D6, `docs/DREAM_REIMPL_SPEC.md` §6a; validation plan `docs/D1_REPLAY_VALIDATION_PLAN.md`) passed its validation gate: **18 runs** (3 arms × 2 benchmarks × 3 seeds, ~60 min), **54/54 replay cycles** produced measured state deltas ‖Δu_fast‖ 0.47–2.15 against the D0 control's measured **exactly 0.0**; **1,728 decision records** all `replayed=true` with (cycle_id, step, effective_lr); budget honoured exactly (`min(32, retrieved)`, 1 step each); the θ-write bypass is **eliminated** (instrumentation: all θ changes occur inside `consolidate()` windows, outside exactly 0.000e+00; source scan clean); the norm guard is calibrated both ways (3/3 valid accepted, 3/3 pathological rejected, margin 65.2×). Storage was rebuilt per owner D2 (fixed-shape windows; flattened records archived, never replayed). Frozen baseline v2 byte-identical throughout. Results: `pilot_results/d1_validation_results.json`.
+
+**Honest scope:** replay is a real intervention on learning *state*; whether it improves downstream learning remains the six-configuration question (§2.1) — at this dose the held-out batteries barely moved, stated plain.
+
 ---
 
 ## 2. What is measured-negative (stated plain)
 
-### 2.1 D2 vs D1 — **unanswered, with a reimplementation pending**
+### 2.1 D2 vs D1 — **unanswered; the reimplementation is built and gate-passed, the preregistered re-run awaits owner approval**
 
 This question — does imagination add anything over replay? — is **not answered**. What is on record:
 
-- **Replay was inert.** D1 is bit-identical to D0 on every field, every seed (e.g. rotation final MSE 0.7580715894699097 in both; 0 hypotheses; theta 0 → 0; topology unchanged) — replay is a stub for blend-1.0 plastic variants, partly by design (`consolidate()` no-ops at blend ≥ 1.0; `scripts/eval_fix_report.md`, finding 2). With a broken replay lane, D1 is not a valid baseline, so no D2-vs-D1 conclusion can be drawn.
+- **Replay was inert in the pilot.** D1 is bit-identical to D0 on every field, every seed (e.g. rotation final MSE 0.7580715894699097 in both; 0 hypotheses; theta 0 → 0; topology unchanged) — the pilot's replay was a stub for blend-1.0 plastic variants, partly by design (`consolidate()` no-ops at blend ≥ 1.0; `scripts/eval_fix_report.md`, finding 2). With a broken replay lane, D1 is not a valid baseline, so no D2-vs-D1 conclusion could be drawn.
 - **D2's writes were artifacts.** D2 accepted 60/60 hypotheses (precision 1.0) with no held-out effect (A→C 0.9694 vs 0.9696) and hurt rotation retention (1.0810 vs 1.0029); its dream-side consolidation moved theta to norm 9.81 while the connection counters recorded 0 created as topology grew 36 → 61/72 — the engine's creation path bypassed the instrumentation (`scripts/eval_fix_report.md`, research row 4 and finding 3). Under equal compute (D1x2, 2× dream budget), D2 ties exactly (0.9696 vs 0.9696) at ~2× the dream compute (0.33 s vs 0.17 s per the report table).
-- **Status:** diagnosed; bookkeeping repaired; the Dream Engine **re-implementation (real replay + reality-grounded evaluation) is deferred pending owner decision** (`README.md` stage 04 row). Until that rerun, the register records D2-vs-D1 as unanswered — never as "reported either way".
+- **Status update (2026-11-25): the reimplementation is BUILT and D1-gate-validated** (`docs/D1_REPLAY_VALIDATION_PLAN.md`: 54/54 cycles with real state deltas; provenance complete; budget honoured; θ-bypass eliminated; frozen as `freeze/DREAM_D1_BASELINE_20261125.tar.gz`). The preregistered six-configuration re-run — which would finally answer D2-vs-D1 — is **drafted and awaiting the collected-report review and explicit owner approval**. Until that re-run, the register records D2-vs-D1 as unanswered — never as "reported either way".
 
 ### 2.2 Phase-1 conversational acquisition — **FAIL: a negative result for the mechanism**
 
