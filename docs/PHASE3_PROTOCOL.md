@@ -1,6 +1,6 @@
 # Phase 3 Protocol — Closing the Expression Gap (DRAFT FOR OWNER REVIEW)
 
-**Status:** DRAFT protocol for owner review. Nothing in this document has been run. Every owner-decision point is marked **[D1]–[D9]** and is OPEN. No code is changed by this document; the code citations below describe where a knob *would* go if the owner approves.
+**Status:** APPROVED FOR EXECUTION — owner decisions **[D1]–[D9] LOCKED 2026-11-25** (see §5). No further design changes after the first run without a new preregistration.
 **Sources (read-only, all numbers copied from them):**
 - Phase-2 measured results: `runs/teacher_student_p2/p2-qwen-c5-s0-022716/report.json` (Qwen3.5-4B-Base @ `/mnt/seagate/aion-models/Qwen3.5-4B-Base`, CPU BF16 frozen, seed 0, 5 chains / 20 relationships / 60 experiences; foundation bit-identical after the full run, 426 params fingerprinted)
 - Phase-2 harness (the file a Phase-3 knob would extend): `aion/experiments/teacher_student.py`
@@ -138,17 +138,23 @@ Frozen across every arm: Qwen foundation frozen + identical ICL scaffold; same f
 
 ---
 
-## 5. Decision points for the owner
+## 5. OWNER DECISIONS — LOCKED 2026-11-25
 
-1. **[D1] Arm order.** Proposal: ARM-1 (density) first — one knob, cheapest to spec, and Phase-2 E shows the γ pathway alive but under-fed — then ARM-2, then ARM-3. Alternative: alignment first (cheaper: no teach-loop cost increase; Option 1's instrumentation is nearly free).
-2. **[D2] What "γ fixed" means in ARM-1.** Proposal: γ *training procedure* identical to E (gate_lr 100.0, 2 steps/QA, sequencing law) so k is the only difference. Alternative: γ numerically frozen at E's measured values [10.371428, 11.180095, 0.522552] during the density sweep.
-3. **[D3] Gate budget under k.** Proposal: gate steps stay fixed per experience (density changes only the plasticity rate). Alternative: scale gate steps ×k.
-4. **[D4] Alignment sub-option for ARM-2b.** Inference-time fixed per-pair scale (preregistered s values) vs per-pair γ training targets.
-5. **[D5] Whether Option 3 (per-candidate γ) is permitted at all**, given the per-class-prior leakage risk; if yes, its freeze-before-exam rule applies.
-6. **[D6] The final success numbers.** Draft proposal: combination ≥ 0.50 acc@1 AND ablation delta ≥ +0.10 AND 2-of-3 splits. The owner sets the pass line; once set it is not moved after results.
-7. **[D7] Controls per session.** Re-run A and B in every Phase-3 session for in-session comparability (A ≈ 46 min, B ≈ 10 min measured) vs reuse the measured Phase-2 A/B rows.
-8. **[D8] Budget and scope.** Estimated per arm (derived from measured Phase-2 rates): ARM-1a ≈ 2.3–2.5 h, ARM-1b ≈ 3.2–3.5 h, ARM-2a/b ≈ E's 2.6 h, ARM-3 ≈ 3–4 h. Which arms are approved, in what order, and whether Option 1's position-gated readout (a code change) is approved as the sole code delta vs a new Phase-3 experiment file.
-9. **[D9] Failure reporting.** Proposal: every arm reports a full `report.json` under `runs/teacher_student_p3/`, a headline block in the Phase-2 format, and a measured-negative row in `docs/RESULTS.md` §2; no re-run without a new preregistration.
+| Decision | Locked choice |
+|---|---|
+| **[D1] Arm order** | **Density first → alignment → combined.** |
+| **[D2] γ fixed** | E's γ-training procedure identical: same learning rate, sequencing and schedule. Do NOT numerically freeze γ. γ may arrive at different final values — a downstream experimental result, not a tuning variable. |
+| **[D3] Gate budget** | Fixed at **2 gate steps per QA experience**, independent of k. Never scale gate steps with plastic passes. |
+| **[D4] ARM-2b alignment** | Per-layer scaling NOT run in this protocol. **ARM-2a is the alignment experiment** (position-gated residual — tests the answer-position problem directly). Per-layer scaling reserved for a future experiment. |
+| **[D5] Per-candidate γ** | **NOT PERMITTED.** Option 3 excluded. |
+| **[D6] Success numbers** | **Combination ≥ 0.50** · plastic ablation delta **≥ +0.10** · success on **≥ 2 of 3 held-out splits**. ALL THREE REQUIRED. |
+| **[D7] Controls** | Re-run **A and B in-session**. |
+| **[D8] Budget and scope** | Approved: **ARM-1a (E-k4), ARM-1b (E-k16), ARM-2a (E-align-1, k=1), ARM-3 (combined)** — subject to the stop rules. Option 1's position-gated readout is the **sole mechanism code change**. |
+| **[D9] Failure reporting** | Full `report.json`, Phase-2-format headline, measured-negative row in `docs/RESULTS.md`. No reruns without a new preregistration. |
+
+**Implementation clarifications (owner-issued):** D2+D3 together — k is the experimental variable; the γ training procedure and gate budget remain constant; γ may arrive at different final values because the plastic state it receives has changed (downstream result, not a tuning variable). D4: ARM-2a is the cleanest first alignment test; per-layer scaling would add a second mechanism and blur interpretation. **D8 approved sequence:** ARM-1a → ARM-1b → ARM-2a → ARM-3. If density fails its preregistered stopping condition, ARM-3 uses alignment-only settings. If alignment fails, ARM-3 uses the best density setting ONLY if density independently demonstrated behavioural improvement. **Never combine two failed mechanisms and call the result a meaningful combined test.**
+
+**Success and failure rules — LOCKED:** combination ≥ 0.50 · ablation ≥ +0.10 · ≥ 2 held-out splits · direct and paraphrase safeguards in force · frozen-foundation and exact-restart checks pass. **Primary result = behavioural accuracy from plastic provenance on unseen composition tasks.** Larger u_fast, larger γ, greater residual magnitude, or improved candidate ranking without correct answers is a **negative result**. Reporting: preserve per-question residual magnitude → candidate-margin/rank movement → answer correctness data — how useful alignment is distinguished from merely moving logits.
 
 ---
 
