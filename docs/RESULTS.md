@@ -129,7 +129,9 @@ The larql head was trained on larql M6 states and probed on NAV chain-world stat
 
 ## 3. What is in flight (no verdicts claimed)
 
-**Phase 2 A–E on real Qwen.** The harness is dry-run validated: `runs/teacher_student_p2/p2-tiny-c3-s0-022348/report.json` (tiny-standin `Llama-4L-64D`, CPU, frozen; 3 chains × 36 experiences; variants A frozen-base, B retrieval control, C plastic, D plastic + question-format learning, E plastic + question + gamma expression pathway; gamma-sequencing law "plasticity first, gate learning second (E only)"; measure sets test 12 / retention-paraphrase 3 / freeform 14). The real-Qwen Phase 2 run is **in flight** (Lane G on Lappy): local artifacts show the A/B partial only (`runs/teacher_student_p2/p2-tiny-c3-s0-022448/` holds `episodic_A.json` and `episodic_B.json`; C–E not yet present at time of writing). **No Phase 2 result is claimed in this document.**
+**Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **First arm landed 2026-11-25 — ARM-1a density k=4: NEGATIVE.** direct@1=0.200 paraphrase@1=0.125 combination@1=0.400 (at or below floor on all three), D6_success=False, restart bitwise-exact (`p3run.log`, ARM-1a done 9749.1s). Per the locked ARM-3 rule, k=4 does not carry into any combined arm; the gate is enforced in code and fails closed. Remaining arms running: ARM-1b (k=16) → ARM-2a (alignment) → ARM-3 only from independently successful settings. **No Phase-3 verdict is claimed here — the full-matrix report is reviewed when the matrix closes.**
+
+**Pending, explicitly:** the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling.
 
 **Pending, explicitly:** the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling.
 
