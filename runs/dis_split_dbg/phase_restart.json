@@ -1,0 +1,51 @@
+{
+ "bitwise_tensors": "ALL-BITWISE-EQUAL",
+ "phase": "restart",
+ "post_restart_provenance": {
+  "combine": {
+   "PLASTIC": 2
+  },
+  "learn_new": {
+   "RETRIEVED": 4
+  },
+  "predict": {
+   "PLASTIC": 18,
+   "RETRIEVED": 6
+  },
+  "recognise": {
+   "PLASTIC": 13,
+   "RETRIEVED": 3
+  },
+  "self_correct": {
+   "NONE": 1,
+   "PLASTIC": 2
+  }
+ },
+ "post_restart_scores": {
+  "combine": 1.0,
+  "learn_new": 0.0,
+  "predict": 0.75,
+  "recognise": 0.8125,
+  "self_correct": 1.0
+ },
+ "probes_exact": true,
+ "state_restored_exact": true,
+ "status": "RUN",
+ "step": 6,
+ "structural_zero_host_touches": {
+  "host_touches_since_close": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "host_touches_total": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "iface_absent": true,
+  "monitor_closed": true,
+  "poison_loader_intact": true
+ },
+ "tensor_diffs": []
+}

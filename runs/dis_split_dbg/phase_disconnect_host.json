@@ -1,0 +1,21 @@
+{
+ "host_gate": "CLOSED",
+ "phase": "disconnect_host",
+ "status": "RUN",
+ "step": 2,
+ "structural": {
+  "host_touches_since_close": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "host_touches_total": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "iface_absent": true,
+  "monitor_closed": true,
+  "poison_loader_intact": true
+ }
+}

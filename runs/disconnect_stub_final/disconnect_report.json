@@ -1,0 +1,1768 @@
+{
+ "battery_id": "disconnect-tiny",
+ "completed_phases": [
+  "teach",
+  "disconnect_teacher",
+  "disconnect_host",
+  "retest",
+  "observe",
+  "simulate",
+  "restart",
+  "register"
+ ],
+ "execution_mode": "stub-build (REAL RUN NOT-RUN: gated on Phase 2 landing + owner)",
+ "experiment": "disconnect",
+ "phases": {
+  "disconnect_host": {
+   "host_gate": "CLOSED",
+   "phase": "disconnect_host",
+   "status": "RUN",
+   "step": 2,
+   "structural": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   }
+  },
+  "disconnect_teacher": {
+   "evidence": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   },
+   "phase": "disconnect_teacher",
+   "status": "RUN",
+   "step": 1,
+   "teacher_calls_in_lane_lifetime": 0,
+   "teacher_gate": "CLOSED"
+  },
+  "observe": {
+   "consolidation_invariant_ok": true,
+   "new_relations": 4,
+   "note": "new facts entered via the direct-feed encoder only (no LLM assistance)",
+   "phase": "observe",
+   "provenance_histogram": {
+    "PLASTIC": 4
+   },
+   "rows": [
+    {
+     "answer": {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Rinpo",
+      "full_hit": true,
+      "gold": "Rinpo",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Rinpo",
+      "plastic_hit": true,
+      "prompt": "Mavok operates",
+      "provenance": "PLASTIC",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true
+     },
+     "key": "Mavok|operates|Rinpo",
+     "pass": true,
+     "present": true
+    },
+    {
+     "answer": {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Drel",
+      "full_hit": true,
+      "gold": "Drel",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Drel",
+      "plastic_hit": true,
+      "prompt": "Rinpo routes-to",
+      "provenance": "PLASTIC",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true
+     },
+     "key": "Rinpo|routes-to|Drel",
+     "pass": true,
+     "present": true
+    },
+    {
+     "answer": {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Crat",
+      "full_hit": true,
+      "gold": "Crat",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Crat",
+      "plastic_hit": true,
+      "prompt": "Drel controls",
+      "provenance": "PLASTIC",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true
+     },
+     "key": "Drel|controls|Crat",
+     "pass": true,
+     "present": true
+    },
+    {
+     "answer": {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "mist",
+      "full_hit": true,
+      "gold": "mist",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "mist",
+      "plastic_hit": true,
+      "prompt": "Crat produces",
+      "provenance": "PLASTIC",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true
+     },
+     "key": "Crat|produces|mist",
+     "pass": true,
+     "present": true
+    }
+   ],
+   "score": 1.0,
+   "status": "RUN",
+   "step": 4,
+   "structural_zero_host_touches": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   }
+  },
+  "register": {
+   "phase": "register",
+   "register": {
+    "capabilities": {
+     "combine": {
+      "owned_rows": 2,
+      "provenance_histogram": {
+       "PLASTIC": 2
+      },
+      "retrieved_rows_NEVER_OWNED": 0,
+      "survival_ratio": 1.0,
+      "verdict": "fully-survives",
+      "with_host": 1.0,
+      "without_host_post_restart": 1.0,
+      "without_host_pre_restart": 1.0
+     },
+     "learn_new": {
+      "owned_rows": 4,
+      "provenance_histogram": {
+       "PLASTIC": 4
+      },
+      "retrieved_rows_NEVER_OWNED": 0,
+      "survival_ratio": 1.0,
+      "verdict": "fully-survives",
+      "with_host": 1.0,
+      "without_host_post_restart": 1.0,
+      "without_host_pre_restart": 1.0
+     },
+     "predict": {
+      "owned_rows": 18,
+      "provenance_histogram": {
+       "PLASTIC": 18,
+       "RETRIEVED": 6
+      },
+      "retrieved_rows_NEVER_OWNED": 6,
+      "survival_ratio": 0.75,
+      "verdict": "degrades",
+      "with_host": 1.0,
+      "without_host_post_restart": 0.75,
+      "without_host_pre_restart": 1.0
+     },
+     "recognise": {
+      "owned_rows": 9,
+      "provenance_histogram": {
+       "PLASTIC": 9,
+       "RETRIEVED": 3
+      },
+      "retrieved_rows_NEVER_OWNED": 3,
+      "survival_ratio": 0.75,
+      "verdict": "degrades",
+      "with_host": 1.0,
+      "without_host_post_restart": 0.75,
+      "without_host_pre_restart": 1.0
+     },
+     "self_correct": {
+      "owned_rows": 3,
+      "provenance_histogram": {
+       "PLASTIC": 3
+      },
+      "retrieved_rows_NEVER_OWNED": 0,
+      "survival_ratio": 1.0,
+      "verdict": "fully-survives",
+      "with_host": 1.0,
+      "without_host_post_restart": 1.0,
+      "without_host_pre_restart": 1.0
+     }
+    },
+    "confound_guard": {
+     "caveat": "CAVEAT: the WITH-host run used the CPU stub substrate, not the frozen 4B foundation \u2014 survival ratios are reported WITH this caveat",
+     "substrate_capability_with_host": {
+      "combine": 1.0,
+      "learn_new": 1.0,
+      "predict": 1.0,
+      "recognise": 1.0,
+      "self_correct": 1.0
+     },
+     "substrate_degraded": true,
+     "substrate_with_host_run": "stub-tiny-llama"
+    },
+    "register": "capability-survival (owner-corrected): BOTH runs reported; ratio = without_host/with_host on the SAME battery; post-restart disconnected scores; RETRIEVED never owned",
+    "structural_disconnection": {
+     "host_touches_since_close": {
+      "foundation_forward": 0,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "host_touches_total": {
+      "foundation_forward": 0,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "iface_absent": true,
+     "monitor_closed": true,
+     "poison_loader_intact": true
+    }
+   },
+   "status": "RUN"
+  },
+  "restart": {
+   "bitwise_tensors": "ALL-BITWISE-EQUAL",
+   "phase": "restart",
+   "post_restart_provenance": {
+    "combine": {
+     "PLASTIC": 2
+    },
+    "learn_new": {
+     "PLASTIC": 4
+    },
+    "predict": {
+     "PLASTIC": 18,
+     "RETRIEVED": 6
+    },
+    "recognise": {
+     "PLASTIC": 9,
+     "RETRIEVED": 3
+    },
+    "self_correct": {
+     "PLASTIC": 3
+    }
+   },
+   "post_restart_scores": {
+    "combine": 1.0,
+    "learn_new": 1.0,
+    "predict": 0.75,
+    "recognise": 0.75,
+    "self_correct": 1.0
+   },
+   "probes_exact": true,
+   "state_restored_exact": true,
+   "status": "RUN",
+   "step": 6,
+   "structural_zero_host_touches": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   },
+   "tensor_diffs": []
+  },
+  "retest": {
+   "inventory": [
+    {
+     "consolidated": 0.0,
+     "full": 0.022113,
+     "key": "Belro|controls|Ryvok",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.98589,
+         "error_uncertainty": 0.097504,
+         "plasticity_u_fast_norm": 0.173759,
+         "plasticity_weight_change": 0.000114,
+         "prediction_mse": 0.015187,
+         "psi_norm": 0.097968,
+         "trace_active_count": 3994,
+         "trace_active_fraction": 0.975098,
+         "trace_max": 0.023961,
+         "trace_mean": 0.002823,
+         "uncertainty_scale": 0.911159,
+         "weight_norm": 0.115458
+        }
+       }
+      },
+      "tags": {
+       "answer": "Ryvok",
+       "kind": "lesson",
+       "surface": "Belro controls Ryvok"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       25,
+       26
+      ]
+     },
+     "object": "Ryvok",
+     "pair_index": 0,
+     "plastic": 0.03159,
+     "registered_at_seq": 27,
+     "relation": "controls",
+     "subject": "Belro",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.023822,
+     "key": "Dravy|operates|Plin",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.988913,
+         "error_uncertainty": 0.095471,
+         "plasticity_u_fast_norm": 0.139603,
+         "plasticity_weight_change": 0.000119,
+         "prediction_mse": 0.01528,
+         "psi_norm": 0.097043,
+         "trace_active_count": 3978,
+         "trace_active_fraction": 0.971191,
+         "trace_max": 0.02471,
+         "trace_mean": 0.002588,
+         "uncertainty_scale": 0.912849,
+         "weight_norm": 0.091451
+        }
+       }
+      },
+      "tags": {
+       "answer": "Plin",
+       "kind": "lesson",
+       "surface": "Dravy operates Plin"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       19,
+       20
+      ]
+     },
+     "object": "Plin",
+     "pair_index": 0,
+     "plastic": 0.034032,
+     "registered_at_seq": 21,
+     "relation": "operates",
+     "subject": "Dravy",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.02497,
+     "key": "Kimo|controls|Zor",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.993869,
+         "error_uncertainty": 0.0954,
+         "plasticity_u_fast_norm": 0.068556,
+         "plasticity_weight_change": 0.000117,
+         "prediction_mse": 0.015434,
+         "psi_norm": 0.09572,
+         "trace_active_count": 3945,
+         "trace_active_fraction": 0.963135,
+         "trace_max": 0.01647,
+         "trace_mean": 0.001929,
+         "uncertainty_scale": 0.912908,
+         "weight_norm": 0.039903
+        }
+       }
+      },
+      "tags": {
+       "answer": "Zor",
+       "kind": "lesson",
+       "surface": "Kimo controls Zor"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       7,
+       8
+      ]
+     },
+     "object": "Zor",
+     "pair_index": 0,
+     "plastic": 0.035672,
+     "registered_at_seq": 9,
+     "relation": "controls",
+     "subject": "Kimo",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.02413,
+     "key": "Neral|operates|Tav",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.997579,
+         "error_uncertainty": 0.099482,
+         "plasticity_u_fast_norm": 0.031069,
+         "plasticity_weight_change": 0.000115,
+         "prediction_mse": 0.015549,
+         "psi_norm": 0.098655,
+         "trace_active_count": 3547,
+         "trace_active_fraction": 0.865967,
+         "trace_max": 0.013273,
+         "trace_mean": 0.000968,
+         "uncertainty_scale": 0.90952,
+         "weight_norm": 0.010897
+        }
+       }
+      },
+      "tags": {
+       "answer": "Tav",
+       "kind": "lesson",
+       "surface": "Neral operates Tav"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       1,
+       2
+      ]
+     },
+     "object": "Tav",
+     "pair_index": 0,
+     "plastic": 0.034471,
+     "registered_at_seq": 3,
+     "relation": "operates",
+     "subject": "Neral",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.02326,
+     "key": "Plin|routes-to|Belro",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.986964,
+         "error_uncertainty": 0.094003,
+         "plasticity_u_fast_norm": 0.156947,
+         "plasticity_weight_change": 0.000117,
+         "prediction_mse": 0.01522,
+         "psi_norm": 0.09513,
+         "trace_active_count": 4002,
+         "trace_active_fraction": 0.977051,
+         "trace_max": 0.022302,
+         "trace_mean": 0.002684,
+         "uncertainty_scale": 0.914075,
+         "weight_norm": 0.103383
+        }
+       }
+      },
+      "tags": {
+       "answer": "Belro",
+       "kind": "lesson",
+       "surface": "Plin routes-to Belro"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       22,
+       23
+      ]
+     },
+     "object": "Belro",
+     "pair_index": 0,
+     "plastic": 0.033229,
+     "registered_at_seq": 24,
+     "relation": "routes-to",
+     "subject": "Plin",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.02241,
+     "key": "Rhoka|controls|Tolvo",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.982539,
+         "error_uncertainty": 0.10275,
+         "plasticity_u_fast_norm": 0.208127,
+         "plasticity_weight_change": 0.000118,
+         "prediction_mse": 0.015084,
+         "psi_norm": 0.104727,
+         "trace_active_count": 4004,
+         "trace_active_fraction": 0.977539,
+         "trace_max": 0.024605,
+         "trace_mean": 0.00303,
+         "uncertainty_scale": 0.906824,
+         "weight_norm": 0.139538
+        }
+       }
+      },
+      "tags": {
+       "answer": "Tolvo",
+       "kind": "lesson",
+       "surface": "Rhoka controls Tolvo"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       31,
+       32
+      ]
+     },
+     "object": "Tolvo",
+     "pair_index": 0,
+     "plastic": 0.032014,
+     "registered_at_seq": 33,
+     "relation": "controls",
+     "subject": "Rhoka",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.023773,
+     "key": "Ryvok|produces|chime",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.984061,
+         "error_uncertainty": 0.093932,
+         "plasticity_u_fast_norm": 0.190952,
+         "plasticity_weight_change": 0.000114,
+         "prediction_mse": 0.015131,
+         "psi_norm": 0.094706,
+         "trace_active_count": 3970,
+         "trace_active_fraction": 0.969238,
+         "trace_max": 0.024529,
+         "trace_mean": 0.002901,
+         "uncertainty_scale": 0.914133,
+         "weight_norm": 0.127359
+        }
+       }
+      },
+      "tags": {
+       "answer": "chime",
+       "kind": "lesson",
+       "surface": "Ryvok produces chime"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       28,
+       29
+      ]
+     },
+     "object": "chime",
+     "pair_index": 0,
+     "plastic": 0.033961,
+     "registered_at_seq": 30,
+     "relation": "produces",
+     "subject": "Ryvok",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.021922,
+     "key": "Sorni|controls|Vask",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.992228,
+         "error_uncertainty": 0.100504,
+         "plasticity_u_fast_norm": 0.104661,
+         "plasticity_weight_change": 0.000115,
+         "prediction_mse": 0.015383,
+         "psi_norm": 0.100187,
+         "trace_active_count": 3996,
+         "trace_active_fraction": 0.975586,
+         "trace_max": 0.022047,
+         "trace_mean": 0.002313,
+         "uncertainty_scale": 0.908675,
+         "weight_norm": 0.067279
+        }
+       }
+      },
+      "tags": {
+       "answer": "Vask",
+       "kind": "lesson",
+       "surface": "Sorni controls Vask"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       13,
+       14
+      ]
+     },
+     "object": "Vask",
+     "pair_index": 0,
+     "plastic": 0.031318,
+     "registered_at_seq": 15,
+     "relation": "controls",
+     "subject": "Sorni",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.021885,
+     "key": "Tav|routes-to|Kimo",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.996741,
+         "error_uncertainty": 0.104927,
+         "plasticity_u_fast_norm": 0.047578,
+         "plasticity_weight_change": 0.00012,
+         "prediction_mse": 0.015523,
+         "psi_norm": 0.105765,
+         "trace_active_count": 3911,
+         "trace_active_fraction": 0.954834,
+         "trace_max": 0.015285,
+         "trace_mean": 0.001661,
+         "uncertainty_scale": 0.905038,
+         "weight_norm": 0.026484
+        }
+       }
+      },
+      "tags": {
+       "answer": "Kimo",
+       "kind": "lesson",
+       "surface": "Tav routes-to Kimo"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       4,
+       5
+      ]
+     },
+     "object": "Kimo",
+     "pair_index": 0,
+     "plastic": 0.031264,
+     "registered_at_seq": 6,
+     "relation": "routes-to",
+     "subject": "Tav",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.02698,
+     "key": "Tolvo|produces|pulse",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.979244,
+         "error_uncertainty": 0.094235,
+         "plasticity_u_fast_norm": 0.226808,
+         "plasticity_weight_change": 0.000116,
+         "prediction_mse": 0.014983,
+         "psi_norm": 0.095905,
+         "trace_active_count": 4010,
+         "trace_active_fraction": 0.979004,
+         "trace_max": 0.033192,
+         "trace_mean": 0.003055,
+         "uncertainty_scale": 0.913881,
+         "weight_norm": 0.151843
+        }
+       }
+      },
+      "tags": {
+       "answer": "pulse",
+       "kind": "lesson",
+       "surface": "Tolvo produces pulse"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       34,
+       35
+      ]
+     },
+     "object": "pulse",
+     "pair_index": 0,
+     "plastic": 0.038544,
+     "registered_at_seq": 36,
+     "relation": "produces",
+     "subject": "Tolvo",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.022081,
+     "key": "Vask|produces|frost",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.989498,
+         "error_uncertainty": 0.10118,
+         "plasticity_u_fast_norm": 0.122903,
+         "plasticity_weight_change": 0.000116,
+         "prediction_mse": 0.015299,
+         "psi_norm": 0.101751,
+         "trace_active_count": 3988,
+         "trace_active_fraction": 0.973633,
+         "trace_max": 0.0254,
+         "trace_mean": 0.002506,
+         "uncertainty_scale": 0.908117,
+         "weight_norm": 0.079327
+        }
+       }
+      },
+      "tags": {
+       "answer": "frost",
+       "kind": "lesson",
+       "surface": "Vask produces frost"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       16,
+       17
+      ]
+     },
+     "object": "frost",
+     "pair_index": 0,
+     "plastic": 0.031544,
+     "registered_at_seq": 18,
+     "relation": "produces",
+     "subject": "Vask",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    },
+    {
+     "consolidated": 0.0,
+     "full": 0.023228,
+     "key": "Zor|produces|heat",
+     "meta": {
+      "stats": {
+       "nnfs": {
+        "pair0": {
+         "error_norm": 0.991999,
+         "error_uncertainty": 0.094267,
+         "plasticity_u_fast_norm": 0.088726,
+         "plasticity_weight_change": 0.000118,
+         "prediction_mse": 0.015376,
+         "psi_norm": 0.09518,
+         "trace_active_count": 3966,
+         "trace_active_fraction": 0.968262,
+         "trace_max": 0.023649,
+         "trace_mean": 0.00213,
+         "uncertainty_scale": 0.913854,
+         "weight_norm": 0.054095
+        }
+       }
+      },
+      "tags": {
+       "answer": "heat",
+       "kind": "lesson",
+       "surface": "Zor produces heat"
+      },
+      "teacher": "direct-observation",
+      "update_ids": [
+       10,
+       11
+      ]
+     },
+     "object": "heat",
+     "pair_index": 0,
+     "plastic": 0.033183,
+     "registered_at_seq": 12,
+     "relation": "produces",
+     "subject": "Zor",
+     "superseded_by": null,
+     "theta_slow_norm": 0.0,
+     "u_fast_norm": 0.226808
+    }
+   ],
+   "phase": "retest",
+   "provenance_histogram": {
+    "combine": {
+     "PLASTIC": 2
+    },
+    "predict": {
+     "PLASTIC": 24
+    },
+    "recognise": {
+     "PLASTIC": 12
+    }
+   },
+   "rows": {
+    "combine": [
+     {
+      "correct": true,
+      "gold": "frost",
+      "owned": true,
+      "path": [
+       "Sorni|controls|Vask",
+       "Vask|produces|frost"
+      ],
+      "provenance": "PLASTIC",
+      "query": "Sorni reach",
+      "terminal": "frost"
+     },
+     {
+      "correct": true,
+      "gold": "pulse",
+      "owned": true,
+      "path": [
+       "Rhoka|controls|Tolvo",
+       "Tolvo|produces|pulse"
+      ],
+      "provenance": "PLASTIC",
+      "query": "Rhoka reach",
+      "terminal": "pulse"
+     }
+    ],
+    "predict": [
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Tav",
+      "full_hit": true,
+      "gold": "Tav",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Tav",
+      "plastic_hit": true,
+      "prompt": "Neral operates",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_00",
+      "question_text": "Neral operates what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Neral operates"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Tav",
+      "full_hit": true,
+      "gold": "Tav",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Tav",
+      "plastic_hit": true,
+      "prompt": "operates Neral",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_00",
+      "question_text": "Neral operates what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "operates Neral"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Kimo",
+      "full_hit": true,
+      "gold": "Kimo",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Kimo",
+      "plastic_hit": true,
+      "prompt": "Tav routes-to",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_01",
+      "question_text": "Tav routes-to what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Tav routes-to"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Kimo",
+      "full_hit": true,
+      "gold": "Kimo",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Kimo",
+      "plastic_hit": true,
+      "prompt": "routes-to Tav",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_01",
+      "question_text": "Tav routes-to what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "routes-to Tav"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Zor",
+      "full_hit": true,
+      "gold": "Zor",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Zor",
+      "plastic_hit": true,
+      "prompt": "Kimo controls",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_02",
+      "question_text": "Kimo controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Kimo controls"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Zor",
+      "full_hit": true,
+      "gold": "Zor",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Zor",
+      "plastic_hit": true,
+      "prompt": "controls Kimo",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_02",
+      "question_text": "Kimo controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "controls Kimo"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "heat",
+      "full_hit": true,
+      "gold": "heat",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "heat",
+      "plastic_hit": true,
+      "prompt": "Zor produces",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_03",
+      "question_text": "Zor produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Zor produces"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "heat",
+      "full_hit": true,
+      "gold": "heat",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "heat",
+      "plastic_hit": true,
+      "prompt": "produces Zor",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_03",
+      "question_text": "Zor produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "produces Zor"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Vask",
+      "full_hit": true,
+      "gold": "Vask",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Vask",
+      "plastic_hit": true,
+      "prompt": "Sorni controls",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_04",
+      "question_text": "Sorni controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Sorni controls"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Vask",
+      "full_hit": true,
+      "gold": "Vask",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Vask",
+      "plastic_hit": true,
+      "prompt": "controls Sorni",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_04",
+      "question_text": "Sorni controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "controls Sorni"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "frost",
+      "full_hit": true,
+      "gold": "frost",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "frost",
+      "plastic_hit": true,
+      "prompt": "Vask produces",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_05",
+      "question_text": "Vask produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Vask produces"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "frost",
+      "full_hit": true,
+      "gold": "frost",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "frost",
+      "plastic_hit": true,
+      "prompt": "produces Vask",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_05",
+      "question_text": "Vask produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "produces Vask"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Plin",
+      "full_hit": true,
+      "gold": "Plin",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Plin",
+      "plastic_hit": true,
+      "prompt": "Dravy operates",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_06",
+      "question_text": "Dravy operates what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Dravy operates"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Plin",
+      "full_hit": true,
+      "gold": "Plin",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Plin",
+      "plastic_hit": true,
+      "prompt": "operates Dravy",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_06",
+      "question_text": "Dravy operates what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "operates Dravy"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Belro",
+      "full_hit": true,
+      "gold": "Belro",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Belro",
+      "plastic_hit": true,
+      "prompt": "Plin routes-to",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_07",
+      "question_text": "Plin routes-to what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Plin routes-to"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Belro",
+      "full_hit": true,
+      "gold": "Belro",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Belro",
+      "plastic_hit": true,
+      "prompt": "routes-to Plin",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_07",
+      "question_text": "Plin routes-to what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "routes-to Plin"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Ryvok",
+      "full_hit": true,
+      "gold": "Ryvok",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Ryvok",
+      "plastic_hit": true,
+      "prompt": "Belro controls",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_08",
+      "question_text": "Belro controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Belro controls"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Ryvok",
+      "full_hit": true,
+      "gold": "Ryvok",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Ryvok",
+      "plastic_hit": true,
+      "prompt": "controls Belro",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_08",
+      "question_text": "Belro controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "controls Belro"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "chime",
+      "full_hit": true,
+      "gold": "chime",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "chime",
+      "plastic_hit": true,
+      "prompt": "Ryvok produces",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_09",
+      "question_text": "Ryvok produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Ryvok produces"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "chime",
+      "full_hit": true,
+      "gold": "chime",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "chime",
+      "plastic_hit": true,
+      "prompt": "produces Ryvok",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_09",
+      "question_text": "Ryvok produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "produces Ryvok"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Tolvo",
+      "full_hit": true,
+      "gold": "Tolvo",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Tolvo",
+      "plastic_hit": true,
+      "prompt": "Rhoka controls",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_10",
+      "question_text": "Rhoka controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Rhoka controls"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "Tolvo",
+      "full_hit": true,
+      "gold": "Tolvo",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "Tolvo",
+      "plastic_hit": true,
+      "prompt": "controls Rhoka",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_10",
+      "question_text": "Rhoka controls what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "controls Rhoka"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "pulse",
+      "full_hit": true,
+      "gold": "pulse",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "pulse",
+      "plastic_hit": true,
+      "prompt": "Tolvo produces",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_11",
+      "question_text": "Tolvo produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "Tolvo produces"
+     },
+     {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "pulse",
+      "full_hit": true,
+      "gold": "pulse",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "pulse",
+      "plastic_hit": true,
+      "prompt": "produces Tolvo",
+      "provenance": "PLASTIC",
+      "qid": "q_pred_11",
+      "question_text": "Tolvo produces what?",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": true,
+      "surface": "produces Tolvo"
+     }
+    ],
+    "recognise": [
+     {
+      "consolidated_active": false,
+      "key": "Neral|operates|Tav",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Tav|routes-to|Kimo",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Kimo|controls|Zor",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Zor|produces|heat",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Sorni|controls|Vask",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Vask|produces|frost",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Dravy|operates|Plin",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Plin|routes-to|Belro",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Belro|controls|Ryvok",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Ryvok|produces|chime",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Rhoka|controls|Tolvo",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     },
+     {
+      "consolidated_active": false,
+      "key": "Tolvo|produces|pulse",
+      "owned": true,
+      "plastic_active": true,
+      "provenance": "PLASTIC",
+      "recognised": true,
+      "superseded": null
+     }
+    ]
+   },
+   "scores": {
+    "combine": 1.0,
+    "predict": 1.0,
+    "recognise": 1.0
+   },
+   "status": "RUN",
+   "step": 3,
+   "structural_zero_host_touches": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   }
+  },
+  "simulate": {
+   "corrections": 1,
+   "interventions": 2,
+   "note": "predictions walked the lane's own belief graph (rmem index + live plastic strengths) and were scored against the graph ground truth; wrong predictions were corrected by plastic updates and re-scored",
+   "phase": "simulate",
+   "rows": [
+    {
+     "correction_applied": false,
+     "gold": "frost",
+     "id": "int_sim",
+     "observation_key": "Tav|routes-to|Sorni",
+     "old_facts_intact": true,
+     "path_provenance": "PLASTIC",
+     "post_correct": true,
+     "post_path": [
+      "Neral|operates|Tav",
+      "Tav|routes-to|Sorni",
+      "Sorni|controls|Vask",
+      "Vask|produces|frost"
+     ],
+     "post_prediction": "frost",
+     "pre_correct": true,
+     "pre_path": [
+      "Neral|operates|Tav",
+      "Tav|routes-to|Sorni",
+      "Sorni|controls|Vask",
+      "Vask|produces|frost"
+     ],
+     "pre_prediction": "frost",
+     "provenance": "PLASTIC",
+     "question": "Tav is rerouted to relay Sorni. What does Neral reach now?",
+     "relied_on_edges": [
+      "Neral|operates|Tav",
+      "Sorni|controls|Vask",
+      "Vask|produces|frost"
+     ],
+     "self_correct_pass": true,
+     "start": "Neral"
+    },
+    {
+     "correction_applied": true,
+     "gold": "glow",
+     "id": "int_gap",
+     "observation_key": "Plin|routes-to|Glova",
+     "old_facts_intact": true,
+     "old_strengths_before_correction": {
+      "Glova|controls|Huvla": null,
+      "Huvla|produces|glow": null
+     },
+     "path_provenance": "PLASTIC",
+     "post_correct": true,
+     "post_path": [
+      "Dravy|operates|Plin",
+      "Plin|routes-to|Glova",
+      "Glova|controls|Huvla",
+      "Huvla|produces|glow"
+     ],
+     "post_prediction": "glow",
+     "pre_correct": false,
+     "pre_path": [
+      "Dravy|operates|Plin",
+      "Plin|routes-to|Glova"
+     ],
+     "pre_prediction": "Glova",
+     "provenance": "PLASTIC",
+     "question": "Plin is rerouted to relay Glova. What does Dravy reach now?",
+     "relied_on_edges": [
+      "Dravy|operates|Plin"
+     ],
+     "self_correct_pass": true,
+     "start": "Dravy"
+    },
+    {
+     "answer": {
+      "consolidated_answer": "",
+      "consolidated_hit": false,
+      "correct": true,
+      "full_answer": "vapor",
+      "full_hit": true,
+      "gold": "vapor",
+      "owned": true,
+      "owned_or_full": true,
+      "plastic_answer": "vapor",
+      "plastic_hit": true,
+      "prompt": "Zor produces",
+      "provenance": "PLASTIC",
+      "retrieval_score": 0.6667,
+      "retrieved_hit": false
+     },
+     "new_key": "Zor|produces|vapor",
+     "new_learned": true,
+     "old_retained": true,
+     "old_strength_after": 0.038334,
+     "old_strength_before": 0.035977,
+     "replaces": "Zor|produces|heat",
+     "self_correct_pass": true
+    }
+   ],
+   "score": 1.0,
+   "status": "RUN",
+   "step": 5,
+   "structural_zero_host_touches": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   }
+  },
+  "teach": {
+   "disconnected": {
+    "consolidation_invariant_ok": true,
+    "indexed_relations": 12,
+    "structural": {
+     "host_touches_since_close": {
+      "foundation_forward": 0,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "host_touches_total": {
+      "foundation_forward": 0,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "iface_absent": true,
+     "monitor_closed": true,
+     "poison_loader_intact": true
+    }
+   },
+   "disconnected_seed_keys": [
+    "Neral|operates|Tav",
+    "Tav|routes-to|Kimo",
+    "Kimo|controls|Zor",
+    "Zor|produces|heat",
+    "Sorni|controls|Vask",
+    "Vask|produces|frost",
+    "Dravy|operates|Plin",
+    "Plin|routes-to|Belro",
+    "Belro|controls|Ryvok",
+    "Ryvok|produces|chime",
+    "Rhoka|controls|Tolvo",
+    "Tolvo|produces|pulse"
+   ],
+   "host": {
+    "consolidation_invariant_ok": true,
+    "indexed_relations": 21,
+    "monitor": {
+     "close_reason": null,
+     "closed": false,
+     "counts_at_close": null,
+     "counts_since_close": {
+      "foundation_forward": 92,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "counts_total": {
+      "foundation_forward": 92,
+      "foundation_load": 0,
+      "teacher_call": 0
+     },
+     "name": "host-control"
+    },
+    "scores": {
+     "combine": 1.0,
+     "learn_new": 1.0,
+     "predict": 1.0,
+     "recognise": 1.0,
+     "self_correct": 1.0
+    },
+    "substrate": "stub-tiny-llama"
+   },
+   "note": "WITH-host control run measured here (register denominator). The disconnected lane has learned the same seeds through direct observation ONLY; steps 1-6 follow.",
+   "phase": "teach",
+   "seed_relations": 12,
+   "status": "RUN",
+   "step": 0
+  }
+ },
+ "register": {
+  "capabilities": {
+   "combine": {
+    "owned_rows": 2,
+    "provenance_histogram": {
+     "PLASTIC": 2
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   },
+   "learn_new": {
+    "owned_rows": 4,
+    "provenance_histogram": {
+     "PLASTIC": 4
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   },
+   "predict": {
+    "owned_rows": 18,
+    "provenance_histogram": {
+     "PLASTIC": 18,
+     "RETRIEVED": 6
+    },
+    "retrieved_rows_NEVER_OWNED": 6,
+    "survival_ratio": 0.75,
+    "verdict": "degrades",
+    "with_host": 1.0,
+    "without_host_post_restart": 0.75,
+    "without_host_pre_restart": 1.0
+   },
+   "recognise": {
+    "owned_rows": 9,
+    "provenance_histogram": {
+     "PLASTIC": 9,
+     "RETRIEVED": 3
+    },
+    "retrieved_rows_NEVER_OWNED": 3,
+    "survival_ratio": 0.75,
+    "verdict": "degrades",
+    "with_host": 1.0,
+    "without_host_post_restart": 0.75,
+    "without_host_pre_restart": 1.0
+   },
+   "self_correct": {
+    "owned_rows": 3,
+    "provenance_histogram": {
+     "PLASTIC": 3
+    },
+    "retrieved_rows_NEVER_OWNED": 0,
+    "survival_ratio": 1.0,
+    "verdict": "fully-survives",
+    "with_host": 1.0,
+    "without_host_post_restart": 1.0,
+    "without_host_pre_restart": 1.0
+   }
+  },
+  "confound_guard": {
+   "caveat": "CAVEAT: the WITH-host run used the CPU stub substrate, not the frozen 4B foundation \u2014 survival ratios are reported WITH this caveat",
+   "substrate_capability_with_host": {
+    "combine": 1.0,
+    "learn_new": 1.0,
+    "predict": 1.0,
+    "recognise": 1.0,
+    "self_correct": 1.0
+   },
+   "substrate_degraded": true,
+   "substrate_with_host_run": "stub-tiny-llama"
+  },
+  "register": "capability-survival (owner-corrected): BOTH runs reported; ratio = without_host/with_host on the SAME battery; post-restart disconnected scores; RETRIEVED never owned",
+  "structural_disconnection": {
+   "host_touches_since_close": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "host_touches_total": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "iface_absent": true,
+   "monitor_closed": true,
+   "poison_loader_intact": true
+  }
+ },
+ "run_dir": "runs/disconnect_stub_final",
+ "seed": 0,
+ "substrate": {
+  "disconnected": "direct-feed-observations",
+  "host": "stub-tiny-llama"
+ }
+}

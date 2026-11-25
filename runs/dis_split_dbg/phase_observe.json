@@ -1,0 +1,113 @@
+{
+ "consolidation_invariant_ok": true,
+ "new_relations": 4,
+ "note": "new facts entered via the direct-feed encoder only (no LLM assistance)",
+ "phase": "observe",
+ "provenance_histogram": {
+  "RETRIEVED": 4
+ },
+ "rows": [
+  {
+   "answer": {
+    "consolidated_answer": "",
+    "consolidated_hit": false,
+    "correct": true,
+    "full_answer": "Plin",
+    "full_hit": false,
+    "gold": "Rinpo",
+    "owned": false,
+    "owned_or_full": false,
+    "plastic_answer": "Plin",
+    "plastic_hit": false,
+    "prompt": "Mavok operates",
+    "provenance": "RETRIEVED",
+    "retrieval_score": 0.6667,
+    "retrieved_hit": true
+   },
+   "key": "Mavok|operates|Rinpo",
+   "pass": false,
+   "present": true
+  },
+  {
+   "answer": {
+    "consolidated_answer": "",
+    "consolidated_hit": false,
+    "correct": true,
+    "full_answer": "Kimo",
+    "full_hit": false,
+    "gold": "Drel",
+    "owned": false,
+    "owned_or_full": false,
+    "plastic_answer": "Kimo",
+    "plastic_hit": false,
+    "prompt": "Rinpo routes-to",
+    "provenance": "RETRIEVED",
+    "retrieval_score": 0.6667,
+    "retrieved_hit": true
+   },
+   "key": "Rinpo|routes-to|Drel",
+   "pass": false,
+   "present": true
+  },
+  {
+   "answer": {
+    "consolidated_answer": "",
+    "consolidated_hit": false,
+    "correct": true,
+    "full_answer": "Tolvo",
+    "full_hit": false,
+    "gold": "Crat",
+    "owned": false,
+    "owned_or_full": false,
+    "plastic_answer": "Tolvo",
+    "plastic_hit": false,
+    "prompt": "Drel controls",
+    "provenance": "RETRIEVED",
+    "retrieval_score": 0.6667,
+    "retrieved_hit": true
+   },
+   "key": "Drel|controls|Crat",
+   "pass": false,
+   "present": true
+  },
+  {
+   "answer": {
+    "consolidated_answer": "",
+    "consolidated_hit": false,
+    "correct": true,
+    "full_answer": "heat",
+    "full_hit": false,
+    "gold": "mist",
+    "owned": false,
+    "owned_or_full": false,
+    "plastic_answer": "heat",
+    "plastic_hit": false,
+    "prompt": "Crat produces",
+    "provenance": "RETRIEVED",
+    "retrieval_score": 0.6667,
+    "retrieved_hit": true
+   },
+   "key": "Crat|produces|mist",
+   "pass": false,
+   "present": true
+  }
+ ],
+ "score": 0.0,
+ "status": "RUN",
+ "step": 4,
+ "structural_zero_host_touches": {
+  "host_touches_since_close": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "host_touches_total": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "iface_absent": true,
+  "monitor_closed": true,
+  "poison_loader_intact": true
+ }
+}

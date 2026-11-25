@@ -1,0 +1,76 @@
+{
+ "battery_id": "disconnect-tiny",
+ "completed_phases": [
+  "teach",
+  "disconnect_teacher",
+  "disconnect_host",
+  "retest",
+  "observe",
+  "simulate",
+  "restart",
+  "register"
+ ],
+ "events": {
+  "step1_teacher_disconnected": {
+   "note": "no external teaching or answer assistance from this step onward",
+   "teacher_calls_before": 0,
+   "teacher_calls_total": 0,
+   "teacher_gate": "CLOSED"
+  },
+  "step2_host_disconnected": {
+   "host_gate": "CLOSED",
+   "note": "no Qwen hidden states, no logits, no inference API, no cached model outputs from this step onward; direct observation only",
+   "structural": {
+    "host_touches_since_close": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "host_touches_total": {
+     "foundation_forward": 0,
+     "foundation_load": 0,
+     "teacher_call": 0
+    },
+    "iface_absent": true,
+    "monitor_closed": true,
+    "poison_loader_intact": true
+   }
+  },
+  "structural_disconnection": {
+   "host_touches_since_close": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "host_touches_total": {
+    "foundation_forward": 0,
+    "foundation_load": 0,
+    "teacher_call": 0
+   },
+   "iface_absent": true,
+   "monitor_closed": true,
+   "poison_loader_intact": true
+  }
+ },
+ "monitor_host": {
+  "close_reason": null,
+  "closed": false,
+  "counts_at_close": null,
+  "counts_since_close": {
+   "foundation_forward": 92,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "counts_total": {
+   "foundation_forward": 92,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "name": "host-control"
+ },
+ "seed": 0,
+ "substrate": {
+  "disconnected": "direct-feed-observations",
+  "host": "stub-tiny-llama"
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "corrections": 1,
+ "interventions": 2,
+ "note": "predictions walked the lane's own belief graph (rmem index + live plastic strengths) and were scored against the graph ground truth; wrong predictions were corrected by plastic updates and re-scored",
+ "phase": "simulate",
+ "rows": [
+  {
+   "correction_applied": false,
+   "gold": "frost",
+   "id": "int_sim",
+   "observation_key": "Tav|routes-to|Sorni",
+   "old_facts_intact": true,
+   "path_provenance": "PLASTIC",
+   "post_correct": true,
+   "post_path": [
+    "Neral|operates|Tav",
+    "Tav|routes-to|Sorni",
+    "Sorni|controls|Vask",
+    "Vask|produces|frost"
+   ],
+   "post_prediction": "frost",
+   "pre_correct": true,
+   "pre_path": [
+    "Neral|operates|Tav",
+    "Tav|routes-to|Sorni",
+    "Sorni|controls|Vask",
+    "Vask|produces|frost"
+   ],
+   "pre_prediction": "frost",
+   "provenance": "PLASTIC",
+   "question": "Tav is rerouted to relay Sorni. What does Neral reach now?",
+   "relied_on_edges": [
+    "Neral|operates|Tav",
+    "Sorni|controls|Vask",
+    "Vask|produces|frost"
+   ],
+   "self_correct_pass": true,
+   "start": "Neral"
+  },
+  {
+   "correction_applied": true,
+   "gold": "glow",
+   "id": "int_gap",
+   "observation_key": "Plin|routes-to|Glova",
+   "old_facts_intact": true,
+   "old_strengths_before_correction": {
+    "Glova|controls|Huvla": null,
+    "Huvla|produces|glow": null
+   },
+   "path_provenance": "PLASTIC",
+   "post_correct": true,
+   "post_path": [
+    "Dravy|operates|Plin",
+    "Plin|routes-to|Glova",
+    "Glova|controls|Huvla",
+    "Huvla|produces|glow"
+   ],
+   "post_prediction": "glow",
+   "pre_correct": false,
+   "pre_path": [
+    "Dravy|operates|Plin",
+    "Plin|routes-to|Glova"
+   ],
+   "pre_prediction": "Glova",
+   "provenance": "PLASTIC",
+   "question": "Plin is rerouted to relay Glova. What does Dravy reach now?",
+   "relied_on_edges": [
+    "Dravy|operates|Plin"
+   ],
+   "self_correct_pass": true,
+   "start": "Dravy"
+  },
+  {
+   "answer": {
+    "consolidated_answer": "",
+    "consolidated_hit": false,
+    "correct": true,
+    "full_answer": "vapor",
+    "full_hit": true,
+    "gold": "vapor",
+    "owned": true,
+    "owned_or_full": true,
+    "plastic_answer": "vapor",
+    "plastic_hit": true,
+    "prompt": "Zor produces",
+    "provenance": "PLASTIC",
+    "retrieval_score": 0.6667,
+    "retrieved_hit": false
+   },
+   "new_key": "Zor|produces|vapor",
+   "new_learned": true,
+   "old_retained": true,
+   "old_strength_after": 0.038334,
+   "old_strength_before": 0.035977,
+   "replaces": "Zor|produces|heat",
+   "self_correct_pass": true
+  }
+ ],
+ "score": 1.0,
+ "status": "RUN",
+ "step": 5,
+ "structural_zero_host_touches": {
+  "host_touches_since_close": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "host_touches_total": {
+   "foundation_forward": 0,
+   "foundation_load": 0,
+   "teacher_call": 0
+  },
+  "iface_absent": true,
+  "monitor_closed": true,
+  "poison_loader_intact": true
+ }
+}
