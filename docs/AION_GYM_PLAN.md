@@ -5,14 +5,16 @@
 
 ---
 
-## 1. Locked choices
+## 1. Locked choices — **AMENDED 2026-11-25: Ant's is the Gym foundation** (supersedes the separate-repo decision)
 
 | Choice | Decision |
 |---|---|
-| Repository | **Separate**: `slothitude/AION-Gym` — the Gym is the public-facing way people raise, observe and interact with their own AION, decoupled from any one Python runtime or substrate |
+| Repository | **SUPERSEDED — Ant's hosts the Gym.** `slothitude/AION-Gym` (standalone) is retired as the shell and preserved as the validated design reference (145/145 client tests; its schema.gd/event-bus/state-cache/client core transplants into Ant's). One Godot application, one mobile experience, shared infrastructure. `ants/` is on the project's editable list, so the transplant is legitimate. |
 | Visual direction | **Hybrid** — immersive living habitat at the centre, full scientific instrumentation around it |
-| Engine | **Godot 4.7.1** (house-pinned version; owner's draft said 4.6 — flagged, confirm or override) |
-| Authority | Python (the AION runtime) remains authoritative. Godot subscribes to events and requests permitted actions. **It never writes directly into plastic state and never bypasses the runtime's authority controls.** |
+| Engine | **Godot 4.7.1** (Ant's house version) |
+| Authority | Python (the AION runtime) remains authoritative. The Gym — inside Ant's — subscribes to events and requests permitted actions **through AION's authenticated bridge** (which retains independent authority checks). It never writes directly into plastic state and never bypasses the runtime's authority controls. Ant's HTTP server stays 127.0.0.1/Tailscale-bound; it is not exposed directly to the network. |
+
+**The reuse map (owner-identified):** Ant's portrait interface → mobile-first Gym layout · lobby/chat pages → AION selection + conversation · agent tiles/nest canvas → AION activity + relationship visualisation · HTTP API → Gym-to-runtime communication · sequenced event ring → live learning event stream · Android export → native APK · PyBridge → optional on-device Python · Tailscale → remote monitoring. **What must be richer in the Gym:** AION's model is not process+transcript+IDLE/BUSY — it is evolution stages, plasticity+memory, living connection graph, chat/teach/correct, dreams, and experiments.
 
 ---
 

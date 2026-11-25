@@ -8,12 +8,12 @@
     "logistic": {
       "val_accuracy": 1.0,
       "train_fit_accuracy": 1.0,
-      "fit_seconds": 2.14
+      "fit_seconds": 1.91
     },
     "boost": {
       "val_accuracy": 1.0,
       "train_fit_accuracy": 1.0,
-      "fit_seconds": 1.98
+      "fit_seconds": 3.61
     }
   },
   "selection_rule": "higher val accuracy on the last 15% of train rows; tie -> logistic",

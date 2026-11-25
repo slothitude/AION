@@ -1564,6 +1564,789 @@ class VariantsRun:
 
 
 # --------------------------------------------------------------------------- #
+# PHASE 3 — the Expression Bridge (docs/PHASE3_PROTOCOL.md, owner D1–D9 LOCKED)
+#
+#   Question: can the expression gap be closed by TRAINING DENSITY (k passes per
+#   experience) or by RESIDUAL<->CANDIDATE ALIGNMENT (position-gated per-candidate
+#   readout), measured under the Phase-2 instrument on real Qwen?
+#
+#   Locked sequence [D1/D8]: controls A+B in-session [D7] -> ARM-1a (E-k4) ->
+#   ARM-1b (E-k16) -> ARM-2a (E-align-1, k=1) -> ARM-3 (combined, ONLY from
+#   independently successful settings — never two failed mechanisms).
+#
+#   [D2/D3] gamma procedure identical to E (gate_lr 100.0, 2 gate steps per QA
+#   experience, plasticity FIRST gate SECOND); gate budget never scales with k.
+#   [D5] per-candidate gamma PROHIBITED. [D4] per-layer scaling NOT run.
+#   [D8] Option 1's position-gated per-candidate readout is the SOLE mechanism
+#   code change: per-candidate scores decompose into base + plastic parts from
+#   the SAME forward tensors (zero extra forwards); ARM-2a additionally computes
+#   the residual from the PROMPT-ONLY forward (candidate-free context) and gates
+#   it to the answer-position window.
+#
+#   [D6] SUCCESS (all three required): combination PLASTIC acc@1 >= 0.50 AND
+#   plastic ablation delta >= +0.10 AND on >= 2 of 3 held-out splits. Splits are
+#   fixed before the first arm runs. Direct/paraphrase safeguards in force.
+#   BEHAVIOURAL law: u_fast growth, gamma magnitude, residual magnitude or rank
+#   movement WITHOUT correct answers is a NEGATIVE result.
+#
+#   Per-question records preserve residual magnitude -> candidate-margin/rank
+#   movement -> answer correctness (incremental JSONL, detached-run safe).
+# --------------------------------------------------------------------------- #
+
+P3_SPLITS = 3                    # held-out combination splits [D6]
+P3_GATE_LR = 100.0               # [D2] identical to Phase-2 E
+P3_GATE_STEPS_PER_QA = 2         # [D3] fixed, never scales with k
+P3_ARM_WALL_CAP_S = 6 * 3600     # preregistered per-arm compute cap
+P3_AGG_WEIGHTS = {"consistency": 0.25, "novelty": 0.15, "utility": 0.25,
+                  "efficiency": 0.10, "non_forgetting": 0.25}   # owner D4 weights
+
+
+class Phase3Run:
+    """The Expression Bridge: locked arm matrix under the Phase-2 instrument."""
+
+    def __init__(self, args):
+        self.args = args
+        self.model = None
+        self.tok = None
+        self.world = None
+        self.pools: Dict[str, List[str]] = {}
+        self.experiences: List[Dict] = []
+        self.timings: Dict[str, float] = {}
+        self.errors: List[str] = []                # matrix-stop counter
+        self.jsonl = None
+        self.report: Dict = {}
+        self.arm_reports: Dict[str, Dict] = {}
+        self.control_a: Optional[Dict] = None
+        self.control_b: Optional[Dict] = None
+        self.run_tag = ""
+
+    # -- plumbing ------------------------------------------------------------- #
+
+    def log(self, msg: str) -> None:
+        print(f"[phase3] {msg}", flush=True)
+
+    def emit(self, record: Dict) -> None:
+        """Incremental JSONL event (survives detached runs; tail-able live)."""
+        if self.jsonl is None:
+            return
+        self.jsonl.write(json.dumps(record, default=str) + "\n")
+        self.jsonl.flush()
+
+    @property
+    def run_dir(self) -> str:
+        return self.args.run_dir
+
+    def stride(self, qs: List, cap: int) -> List:
+        if cap <= 0 or len(qs) <= cap:
+            return list(qs)
+        step = len(qs) / float(cap)
+        return [qs[int(i * step)] for i in range(cap)]
+
+    def candidates_for(self, q) -> List[str]:
+        m = q.meta
+        if q.battery == BATTERY_DIRECT:
+            return list(self.pools[RELATION_OBJECT_ROLE[m["relation"]]])
+        if q.battery == BATTERY_PARAPHRASE:
+            role = (RELATION_SUBJECT_ROLE[m["relation"]] if m.get("asked_side") == "subject"
+                    else RELATION_OBJECT_ROLE[m["relation"]])
+            return list(self.pools[role])
+        if q.battery == BATTERY_COMBINATION:
+            return ["yes", "no"] if m.get("kind") == "membership" else list(self.pools["output"])
+        raise ValueError(f"battery {q.battery} not measured in Phase 3")
+
+    # -- setup ------------------------------------------------------------------ #
+
+    def setup(self) -> None:
+        t0 = time.perf_counter()
+        self.world = generate_world(seed=self.args.seed, n_chains=self.args.chains)
+        failures = verify_world(self.world)
+        if failures:
+            raise RuntimeError(f"world ground truth inconsistent: {failures[:3]}")
+        self.pools = {"actor": self.world.actors, "conduit": self.world.conduits,
+                      "relay": self.world.relays, "device": self.world.devices,
+                      "output": self.world.outputs}
+        self.experiences = build_p2_experiences(self.world)
+        os.makedirs(self.run_dir, exist_ok=True)
+        self.world.save_json(os.path.join(self.run_dir, "world.json"))
+        self.jsonl = open(os.path.join(self.run_dir, "results.jsonl"), "a", encoding="utf-8")
+
+        # held-out combination splits: FIXED HERE, before any arm runs [D6]. Direct,
+        # deterministic, seed-stable: sorted ids, round-robin into 3 splits of 5.
+        combo = sorted([q for q in self.world.questions if q.battery == BATTERY_COMBINATION],
+                       key=lambda q: q.id)
+        self.combo_questions = combo
+        self.splits: List[List] = [combo[i::P3_SPLITS] for i in range(P3_SPLITS)]
+        self.split_ids = [[q.id for q in s] for s in self.splits]
+        self.direct_questions = self.stride(
+            [q for q in self.world.questions if q.battery == BATTERY_DIRECT], 20)
+        self.para_questions = self.stride(
+            [q for q in self.world.questions if q.battery == BATTERY_PARAPHRASE], 8)
+        self.test_questions = self.direct_questions + self.para_questions + combo
+        self.retention_questions = self.para_questions
+
+        if self.args.foundation == "qwen":
+            handle = load_frozen_base(local_dir=self.args.local_dir, device=self.args.device)
+            self.model = handle.model
+            self.tok = handle.tokenizer
+            self.fingerprint_at_load = handle.fingerprint
+            self.frozen_stats = {"frozen_tensors": handle.n_frozen_tensors,
+                                 "frozen_params": handle.n_frozen_params}
+            self.foundation_label = f"Qwen3.5-4B-Base @ {self.args.local_dir} (CPU BF16, FROZEN)"
+        else:
+            self.model, self.tok = build_tiny_foundation(seed=self.args.seed)
+            self.fingerprint_at_load = foundation_fingerprint(self.model)
+            self.foundation_label = "tiny-standin(Llama-4L-64D, CPU, FROZEN)"
+        self.timings["setup_s"] = round(time.perf_counter() - t0, 1)
+        self.emit({"type": "setup", "foundation": self.foundation_label,
+                   "splits": self.split_ids, "test_questions": len(self.test_questions),
+                   "experiences": len(self.experiences)})
+        self.log(f"setup: {self.foundation_label}; world chains={self.world.n_chains} "
+                 f"relationships={len(self.world.relationships)} experiences={len(self.experiences)}; "
+                 f"test={len(self.test_questions)} questions; held-out splits (fixed): "
+                 f"{[len(s) for s in self.splits]} questions")
+
+    # -- lanes ------------------------------------------------------------------ #
+
+    def fresh_lane(self) -> Dict:
+        iface = RelationalInterface(self.model, cfg=InterfaceConfig(
+            learning_rate=self.args.learning_rate, gate_lr=P3_GATE_LR))
+        student = Student(iface, self.tok, StudentConfig(answer_tokens=self.args.answer_tokens))
+        episodic = EpisodicStore(clock=lambda: 0.0)
+        rmem = RelationalMemory(conns=list(iface.conns), hidden_dim=iface.hidden_dim,
+                                episodic=episodic, blend_ratio=iface.cfg.blend_ratio)
+        return {"iface": iface, "student": student, "episodic": episodic, "rmem": rmem}
+
+    def teardown_lane(self, lane: Dict) -> None:
+        for h in getattr(lane.get("iface"), "_hooks", []) or []:
+            h.remove()
+        lane.clear()
+        gc.collect()
+
+    def probe_sentence(self, lane: Dict, sentence: str):
+        ids = torch.tensor([self.tok.encode(sentence)], dtype=torch.long)
+        with torch.no_grad():
+            res = lane["iface"].forward(ids)
+        pre_i, post_i = lane["iface"].pairs[0]
+        feats = torch.cat([f[0] for f in res["feats"]])       # transmitted r, all pairs
+        return (res["hidden"][pre_i].mean(dim=1)[0].float(),
+                res["hidden"][post_i].mean(dim=1)[0].float(), feats)
+
+    # -- teach (the k knob [D8 scope]; gamma law [D2/D3] untouched) -------------- #
+
+    def teach_arm(self, lane: Dict, k: int, with_gamma: bool) -> Dict:
+        t0 = time.perf_counter()
+        episodic, iface, student = lane["episodic"], lane["iface"], lane["student"]
+        n_nnfs = gate_steps = 0
+        uid = 0
+        chain0_done_at = 3          # experiences 0..2 are chain 0 (declarative + 2 QA)
+        chain0_strengths: Optional[Dict] = None
+        for idx, e in enumerate(self.experiences):
+            uid += 1
+            if e["kind"] == "declarative":
+                student.learn_fact(e["fact"], repeats=k)      # k passes [D8 knob]
+                n_nnfs += k
+            else:
+                ids = torch.tensor([self.tok.encode(e["text"])])
+                for _ in range(k):                            # k passes, ONE mechanism
+                    iface.nnfs_update(ids)
+                    n_nnfs += 1
+            episodic.record(kind="lesson" if e["kind"] == "declarative" else "observation",
+                            text=e["question"] or e["text"], channel="transcript",
+                            teacher=f"phase3-k{k}",
+                            plastic_update_ids=[uid],
+                            tags={"answer": e["answer"], "fact_key": e["key"],
+                                  "kind": e["kind"]})
+            if idx + 1 == chain0_done_at:
+                chain0_strengths = {
+                    relation_key(r.subject, r.relation, r.object):
+                        (lane["rmem"].strength(
+                            relation_key(r.subject, r.relation, r.object), blend=1.0) or 0.0)
+                    for r in self.world.relationships_of_chain(0)}
+        for r in self.world.relationships:                     # storage-evidence probes
+            key = relation_key(r.subject, r.relation, r.object)
+            pre, post, _feats = self.probe_sentence(lane, r.sentence)
+            lane["rmem"].register(key, 0, pre, post,
+                                  meta={"sentence": r.sentence, "chain": r.chain_id})
+        gamma_before = [round(float(g.detach()), 6) for g in iface.gates]
+        if with_gamma:                                         # gamma SECOND, budget [D3]
+            for e in self.experiences:
+                if e["kind"] != "qa":
+                    continue
+                ids = torch.tensor([self.tok.encode(e["text"])])
+                for _ in range(P3_GATE_STEPS_PER_QA):
+                    iface.gate_step(ids)
+                    gate_steps += 1
+        strengths = {relation_key(r.subject, r.relation, r.object):
+                     (lane["rmem"].strength(
+                         relation_key(r.subject, r.relation, r.object), blend=1.0) or 0.0)
+                     for r in self.world.relationships}
+        retained = [min(1.0, strengths[key] / max(v, 1e-12))
+                    for key, v in (chain0_strengths or {}).items()]
+        out = {"k": k, "nnfs_updates": n_nnfs, "gate_steps": gate_steps,
+               "gamma_before_gate_training": gamma_before,
+               "gamma_after": [round(float(g.detach()), 6) for g in iface.gates],
+               "u_fast_norms_after": [round(c.plasticity.u_fast.norm().item(), 6)
+                                      for c in iface.conns],
+               "u_fast_clamp_margin": round(1.0 - max(
+                   c.plasticity.u_fast.abs().max().item() for c in iface.conns) / 10.0, 4),
+               "fact_strengths_min_mean": [round(min(strengths.values()), 6),
+                                           round(sum(strengths.values()) / len(strengths), 6)],
+               "chain0_strength_after_teach": {kk: round(v, 6)
+                                               for kk, v in (chain0_strengths or {}).items()},
+               "chain0_retention_ratio_mean": round(sum(retained) / len(retained), 6)
+                                              if retained else None,
+               "episodic_events": len(episodic),
+               "teach_s": round(time.perf_counter() - t0, 1)}
+        self.log(f"teach k={k}: nnfs={n_nnfs} gate_steps={gate_steps} "
+                 f"gamma={out['gamma_after']} u_fast={out['u_fast_norms_after']} "
+                 f"({out['teach_s']}s)")
+        return out
+
+    # -- CONSTRAINED SCORING with the [D8] decomposition -------------------------- #
+
+    def score_candidates(self, lane: Dict, question: str, candidates: List[str],
+                         mode: str, align: bool) -> Dict:
+        """Per-candidate scores under `mode`, decomposed into base + plastic from the
+        SAME forward tensors (zero extra forwards). align=True (ARM-2a only): the
+        residual is computed from the PROMPT-ONLY forward (candidate-free context)
+        and gated to the answer-position window — the [D8] mechanism."""
+        prompt = FORMAT_SCAFFOLD + f"Question: {question}\nAnswer:"
+        ids_prompt = self.tok.encode(prompt)
+        iface = lane["iface"]
+        delta_prompt = None
+        prompt_residual_norms = None
+        if align:                                              # ARM-2a mechanism
+            with ablated(iface.conns, iface.gates, mode):
+                with torch.no_grad():
+                    res_p = iface.forward(torch.tensor([ids_prompt], dtype=torch.long))
+            delta_prompt = res_p["logits_delta"][0].detach()
+            prompt_residual_norms = [round(float(c.norm().item()), 6)
+                                     for c in res_p["contributions"]]
+        out: Dict[str, Dict] = {}
+        resid_norms_acc: List[List[float]] = []
+        for cand in candidates:
+            ids_c = self.tok.encode(" " + cand)
+            full = torch.tensor([ids_prompt + ids_c], dtype=torch.long)
+            with ablated(iface.conns, iface.gates, mode):
+                with torch.no_grad():
+                    res = iface.forward(full)
+            base = res["base_logits"][0].float()               # (T, V)
+            delta = (delta_prompt if align else res["logits_delta"][0].float())
+            norms = [round(float(c.norm().item()), 6) for c in res["contributions"]]
+            if mode != CONSOLIDATED:                           # with-plastic magnitude only
+                resid_norms_acc.append(norms)
+            lp_base = torch.log_softmax(base, dim=-1)
+            lp_full = torch.log_softmax(base + delta, dim=-1)
+            base_start = len(ids_prompt) - 1                   # positions predicting cand tokens
+            s_base = s_full = 0.0
+            for j, t in enumerate(ids_c):
+                s_base += float(lp_base[base_start + j, t])
+                s_full += float(lp_full[base_start + j, t])
+            out[cand] = {"score": s_full, "base_score": s_base,
+                         "delta_score": s_full - s_base}
+        mean_norms = [round(sum(v[i] for v in resid_norms_acc) / len(resid_norms_acc), 6)
+                      for i in range(len(resid_norms_acc[0]))] if resid_norms_acc else []
+        out["__mean_pair_residual_norms"] = mean_norms
+        if prompt_residual_norms is not None and mode != CONSOLIDATED:
+            out["__prompt_residual_norms"] = prompt_residual_norms
+        return out
+
+    def score_row(self, lane: Dict, q, modes, align: bool, arm: str) -> Dict:
+        cands = self.candidates_for(q)
+        modes_out: Dict[str, Dict] = {}
+        resid_norms: List[float] = []
+        prompt_norms: Optional[List[float]] = None
+        for mode in modes:
+            per = self.score_candidates(lane, q.text, cands, mode, align)
+            if "__mean_pair_residual_norms" in per:
+                norms = per.pop("__mean_pair_residual_norms")
+                if mode == PLASTIC or (mode == FULL and not resid_norms):
+                    resid_norms = norms      # with-plastic magnitude; never the ablated 0s
+            if "__prompt_residual_norms" in per:
+                prompt_norms = per.pop("__prompt_residual_norms")
+            ranked = sorted(cands, key=lambda c: -per[c]["score"])
+            base_ranked = sorted(cands, key=lambda c: -per[c]["base_score"])
+            gold = q.answer
+            distractors = [c for c in cands if c != gold]
+            margin_full = per[gold]["score"] - max(per[d]["score"] for d in distractors)
+            margin_base = per[gold]["base_score"] - max(per[d]["base_score"] for d in distractors)
+            modes_out[mode] = {
+                "argmax": ranked[0], "correct": ranked[0] == gold,
+                "gold_rank": ranked.index(gold) + 1,
+                "base_argmax": base_ranked[0], "base_gold_rank": base_ranked.index(gold) + 1,
+                "gold_base_score": round(per[gold]["base_score"], 6),
+                "gold_delta_score": round(per[gold]["delta_score"], 6),
+                "margin_plastic": round(margin_full, 6),
+                "margin_base": round(margin_base, 6),
+                "candidate_delta_scores": {c: round(per[c]["delta_score"], 6) for c in cands},
+            }
+        retrieved, r_score = self.retrieved_answer(lane, q.text)
+        retrieved_correct = bool(default_grader(retrieved, q.answer))
+        correct_buckets = [m for m in STRONGEST_FIRST
+                           if (m in modes_out and modes_out[m]["correct"])
+                           or (m == RETRIEVED and retrieved_correct)]
+        provenance = (correct_buckets[0] if correct_buckets
+                      else ("FULL_ONLY" if modes_out.get(FULL, {}).get("correct") else "NONE"))
+        rank_move = {}
+        if CONSOLIDATED in modes_out:
+            for m in modes_out:
+                if m != CONSOLIDATED:
+                    rank_move[f"{CONSOLIDATED}_to_{m}"] = (
+                        modes_out[CONSOLIDATED]["gold_rank"] - modes_out[m]["gold_rank"])
+        return {"type": "question", "arm": arm, "qid": q.id, "battery": q.battery,
+                "question": q.text, "gold": q.answer, "candidates": cands,
+                "chance": round(1.0 / len(cands), 4),
+                "modes": modes_out, "retrieved_answer": retrieved,
+                "retrieved_correct": retrieved_correct, "provenance": provenance,
+                "residual_pair_norms_mean": resid_norms,
+                "prompt_residual_norms": prompt_norms,
+                "rank_movement": rank_move,
+                "align": align}
+
+    def retrieved_answer(self, lane: Dict, question: str) -> Tuple[str, float]:
+        hits = lane["episodic"].retrieve(question, k=1)
+        if not hits or hits[0][1] <= 0.0:
+            return "", 0.0
+        ev, score = hits[0]
+        return ev.tags.get("answer", ""), float(score)
+
+    def run_battery(self, lane: Dict, arm: str, questions: List, modes, align: bool, tag: str):
+        rows = []
+        t0 = time.perf_counter()
+        for i, q in enumerate(questions):
+            row = self.score_row(lane, q, modes, align, arm)
+            row["split"] = (next((si for si, ids in enumerate(self.split_ids) if q.id in ids),
+                                 None) if q.battery == BATTERY_COMBINATION else None)
+            rows.append(row)
+            self.emit(row)
+            if (i + 1) % 10 == 0 or i + 1 == len(questions):
+                self.log(f"  [{tag}] {i + 1}/{len(questions)} scored")
+        self.timings[f"battery_{tag}_s"] = round(time.perf_counter() - t0, 1)
+        return rows
+
+    # -- summaries, five scores, [D6] gates --------------------------------------- #
+
+    @staticmethod
+    def battery_summary(rows: List[Dict], modes) -> Dict:
+        n = max(1, len(rows))
+        out = {"n": len(rows), "mean_chance": round(sum(r["chance"] for r in rows) / n, 4),
+               "retrieval_acc": round(sum(r["retrieved_correct"] for r in rows) / n, 4),
+               "modes": {}}
+        for mode in modes:
+            if not rows or mode not in rows[0]["modes"]:
+                continue
+            out["modes"][mode] = {
+                "acc@1": round(sum(r["modes"][mode]["correct"] for r in rows) / n, 4),
+                "mean_gold_rank": round(sum(r["modes"][mode]["gold_rank"] for r in rows) / n, 3),
+                "mean_margin_plastic": round(sum(r["modes"][mode]["margin_plastic"] for r in rows) / n, 4),
+                "mean_margin_base": round(sum(r["modes"][mode]["margin_base"] for r in rows) / n, 4)}
+        hist: Dict[str, int] = {}
+        for r in rows:
+            hist[r["provenance"]] = hist.get(r["provenance"], 0) + 1
+        out["provenance_histogram"] = hist
+        return out
+
+    def arm_verdict(self, arm_rows: List[Dict], modes) -> Dict:
+        """[D6] locked gate: combination >= 0.50, ablation >= +0.10, >= 2/3 splits."""
+        combo = [r for r in arm_rows if r["battery"] == BATTERY_COMBINATION]
+        out: Dict[str, Dict] = {}
+        for mode in (PLASTIC, FULL):
+            if mode not in (modes or ()):
+                continue
+            acc_all = sum(r["modes"][mode]["correct"] for r in combo) / max(1, len(combo))
+            acc_cons = sum(r["modes"][CONSOLIDATED]["correct"] for r in combo) / max(1, len(combo))
+            delta_all = acc_all - acc_cons
+            split_detail = []
+            for si, ids in enumerate(self.split_ids):
+                srows = [r for r in combo if r["qid"] in ids]
+                a = sum(r["modes"][mode]["correct"] for r in srows) / max(1, len(srows))
+                ac = sum(r["modes"][CONSOLIDATED]["correct"] for r in srows) / max(1, len(srows))
+                split_detail.append({"split": si, "n": len(srows), "acc": round(a, 4),
+                                     "consolidated_acc": round(ac, 4),
+                                     "delta": round(a - ac, 4),
+                                     "pass": bool(a >= 0.50 and (a - ac) >= 0.10)})
+            n_pass = sum(1 for s in split_detail if s["pass"])
+            out[mode] = {"combination_acc": round(acc_all, 4),
+                         "consolidated_acc": round(acc_cons, 4),
+                         "ablation_delta": round(delta_all, 4),
+                         "combination_ge_050": bool(acc_all >= 0.50),
+                         "delta_ge_010": bool(delta_all >= 0.10),
+                         "splits": split_detail,
+                         "splits_passed": f"{n_pass}/{P3_SPLITS}",
+                         "splits_ok": bool(n_pass >= 2),
+                         "D6_success": bool(acc_all >= 0.50 and delta_all >= 0.10
+                                            and n_pass >= 2)}
+        safeguards = {}
+        d = [r for r in arm_rows if r["battery"] == BATTERY_DIRECT]
+        p = [r for r in arm_rows if r["battery"] == BATTERY_PARAPHRASE]
+        if PLASTIC in (modes or ()):
+            d_acc = sum(r["modes"][PLASTIC]["correct"] for r in d) / max(1, len(d))
+            p_acc = sum(r["modes"][PLASTIC]["correct"] for r in p) / max(1, len(p))
+            safeguards = {"direct_plastic_acc": round(d_acc, 4),
+                          "direct_safeguard_ok": bool(d_acc >= 0.25 - 0.05),
+                          "paraphrase_plastic_acc": round(p_acc, 4),
+                          "paraphrase_safeguard_ok": bool(p_acc >= 0.125)}
+        return {"modes": out, "safeguards": safeguards}
+
+    def five_scores(self, arm: str, teach: Dict, rows: List[Dict], modes,
+                    fact_feats: List[torch.Tensor]) -> Dict:
+        """The five scores, adapted to this experiment with documented formulas,
+        reported independently + the owner-D4 weighted aggregate. Diagnostics only:
+        the [D6] behavioural gate decides success."""
+        bats = {}
+        for b in (BATTERY_DIRECT, BATTERY_PARAPHRASE, BATTERY_COMBINATION):
+            bros = [r for r in rows if r["battery"] == b]
+            if bros:
+                bats[b] = self.battery_summary(bros, modes)
+        a_ctrl = self.control_a or {}
+        a_safeguard = a_ctrl.get("safeguard_acc", 0.0)
+        safeguard = [bats[b]["modes"][FULL]["acc@1"] for b in
+                     (BATTERY_DIRECT, BATTERY_PARAPHRASE) if b in bats and FULL in modes]
+        arm_safeguard = sum(safeguard) / len(safeguard) if safeguard else 0.0
+        consistency = round(1.0 - max(0.0, a_safeguard - arm_safeguard) / max(a_safeguard, 1e-9), 4)
+        # novelty: mean pairwise cosine distance between per-fact transmitted r vectors
+        nov = 0.0
+        if len(fact_feats) >= 2:
+            norms = [F.normalize(v, dim=0) for v in fact_feats]
+            dists = [float(1.0 - torch.dot(norms[i], norms[j]))
+                     for i in range(len(norms)) for j in range(i + 1, len(norms))]
+            nov = round(sum(dists) / len(dists), 4)
+        deltas_by_battery = {
+            b: s["modes"][FULL]["acc@1"] - s["modes"][CONSOLIDATED]["acc@1"]
+            for b, s in bats.items()
+            if FULL in s["modes"] and CONSOLIDATED in s["modes"]}
+        deltas = list(deltas_by_battery.values())
+        utility = round(sum(deltas) / len(deltas), 6) if deltas else 0.0
+        efficiency = round(min(1.0, utility / max(1.0, teach.get("nnfs_updates", 1) / 60.0)), 6)
+        non_forgetting = teach.get("chain0_retention_ratio_mean")
+        non_forgetting = round(non_forgetting, 4) if non_forgetting is not None else None
+        agg = None
+        if non_forgetting is not None:
+            agg = round(P3_AGG_WEIGHTS["consistency"] * consistency
+                        + P3_AGG_WEIGHTS["novelty"] * nov
+                        + P3_AGG_WEIGHTS["utility"] * max(0.0, utility)
+                        + P3_AGG_WEIGHTS["efficiency"] * max(0.0, efficiency)
+                        + P3_AGG_WEIGHTS["non_forgetting"] * non_forgetting, 4)
+        return {"note": "adapted dream-registry semantics, formulas documented here: "
+                        "consistency = 1 - max(0, A_safeguard - arm_safeguard)/A_safeguard "
+                        "(FULL-mode direct+paraphrase vs the in-session A control); "
+                        "novelty = mean pairwise cosine distance between per-fact "
+                        "transmitted r vectors; utility = mean(FULL - CONSOLIDATED acc@1) "
+                        "across batteries (plastic contribution); efficiency = utility "
+                        "normalised per 60 nnfs updates; non_forgetting = chain-0 fact "
+                        "strength at end-of-teach / strength right after chain-0 taught. "
+                        "DIAGNOSTIC only — the [D6] behavioural gate decides success",
+                "safeguard_acc_full": round(arm_safeguard, 4),
+                "consistency": consistency, "novelty": nov, "utility": utility,
+                "utility_combination": round(deltas_by_battery.get(BATTERY_COMBINATION, 0.0), 6),
+                "efficiency": efficiency, "non_forgetting": non_forgetting,
+                "D4_weighted_aggregate": agg}
+
+    # -- restart / retention ---------------------------------------------------- #
+
+    def restart_lane(self, lane: Dict, arm: str) -> Dict:
+        state_path = os.path.join(self.run_dir, f"state_{arm}.pt")
+        episodic_path = os.path.join(self.run_dir, f"episodic_{arm}.json")
+        snap = PlasticStateSnapshot.capture(lane["iface"], meta={"phase": "p3", "arm": arm})
+        payload = {"plastic": snap.to_payload(), "probes": lane["rmem"].save_probes(),
+                   "index": lane["rmem"].to_dict()}
+        torch.save(payload, state_path)
+        lane["episodic"].save(episodic_path)
+        self.teardown_lane(lane)
+        payload2 = torch.load(state_path, weights_only=False)
+        snap2 = PlasticStateSnapshot.from_payload(payload2["plastic"])
+        lane["iface"] = snap2.build_interface(self.model)
+        lane["student"] = Student(lane["iface"], self.tok,
+                                  StudentConfig(answer_tokens=self.args.answer_tokens))
+        lane["episodic"] = EpisodicStore.load(episodic_path, clock=lambda: 0.0)
+        lane["rmem"] = RelationalMemory.from_dict(payload2["index"],
+                                                  conns=list(lane["iface"].conns),
+                                                  episodic=lane["episodic"],
+                                                  probes=payload2["probes"])
+        recheck = PlasticStateSnapshot.capture(lane["iface"])
+        exact, diffs = snap2.equals(recheck, atol=0.0)
+        os.remove(state_path)
+        return {"state_restored_exact": bool(exact), "restore_diffs": diffs[:5],
+                "episodic_events_reloaded": len(lane["episodic"]),
+                "fact_index_reloaded": len(lane["rmem"].records)}
+
+    # -- arms ------------------------------------------------------------------- #
+
+    def collect_fact_feats(self, lane: Dict) -> List[torch.Tensor]:
+        feats = []
+        for r in self.world.relationships:
+            _pre, _post, f = self.probe_sentence(lane, r.sentence)
+            feats.append(f)
+        return feats
+
+    def run_arm(self, arm_id: str, k: int, align: bool) -> Dict:
+        t0 = time.perf_counter()
+        self.emit({"type": "arm_start", "arm": arm_id, "k": k, "align": align,
+                   "wall_cap_s": P3_ARM_WALL_CAP_S})
+        modes = (FULL, PLASTIC, CONSOLIDATED)
+        lane = self.fresh_lane()
+        teach = self.teach_arm(lane, k=k, with_gamma=True)
+        fact_feats = self.collect_fact_feats(lane)
+        rows = self.run_battery(lane, arm_id, self.test_questions, modes, align, f"{arm_id}-test")
+        by_battery = {b: self.battery_summary([r for r in rows if r["battery"] == b], modes)
+                      for b in (BATTERY_DIRECT, BATTERY_PARAPHRASE, BATTERY_COMBINATION)}
+        verdict = self.arm_verdict(rows, modes)
+        scores = self.five_scores(arm_id, teach, rows, modes, fact_feats)
+        restart = self.restart_lane(lane, arm_id)
+        post_rows = self.run_battery(lane, arm_id, self.retention_questions, modes,
+                                     align, f"{arm_id}-post-restart")
+        pre_para = {r["qid"]: r for r in rows if r["battery"] == BATTERY_PARAPHRASE}
+        identity = {m: round(sum(1 for r in post_rows
+                                 if pre_para[r["qid"]]["modes"][m]["argmax"]
+                                 == r["modes"][m]["argmax"]) / max(1, len(post_rows)), 4)
+                    for m in modes}
+        out = {"arm": arm_id, "k": k, "align": align, "teach": teach,
+               "test": {"rows": rows, "batteries": by_battery},
+               "verdict": verdict, "five_scores": scores, "restart": restart,
+               "retention": {"paraphrase_answers_identical_fraction": identity,
+                             "survival_ok": bool(restart["state_restored_exact"]
+                                                 and all(v == 1.0 for v in identity.values()))},
+               "behavioural_success": verdict["modes"].get(PLASTIC, {}).get("D6_success", False)
+                                      or verdict["modes"].get(FULL, {}).get("D6_success", False),
+               "wall_cap_exceeded": (time.perf_counter() - t0) > P3_ARM_WALL_CAP_S,
+               "arm_s": round(time.perf_counter() - t0, 1)}
+        self.emit({"type": "arm_summary", "arm": arm_id,
+                   "D6_success": out["behavioural_success"],
+                   "verdict": {m: v for m, v in verdict["modes"].items()},
+                   "safeguards": verdict["safeguards"],
+                   "five_scores": scores, "restart_exact": restart["state_restored_exact"]})
+        self.log(f"ARM {arm_id} done ({out['arm_s']}s): "
+                 + " ".join(f"{b}:FULL@1={by_battery[b]['modes'][FULL]['acc@1']:.3f}"
+                            for b in by_battery)
+                 + f" | D6_success={out['behavioural_success']} "
+                 f"| restart_exact={restart['state_restored_exact']}")
+        self.teardown_lane(lane)
+        self.arm_reports[arm_id] = out
+        return out
+
+    def run_control_a(self) -> Dict:
+        """[D7] frozen floor, re-measured in-session (FULL mode + decomposition)."""
+        t0 = time.perf_counter()
+        lane = self.fresh_lane()
+        rows = self.run_battery(lane, "A", self.test_questions, (FULL,), False, "A-control")
+        by_battery = {b: self.battery_summary([r for r in rows if r["battery"] == b], (FULL,))
+                      for b in (BATTERY_DIRECT, BATTERY_PARAPHRASE, BATTERY_COMBINATION)}
+        safeguard = (by_battery[BATTERY_DIRECT]["modes"][FULL]["acc@1"]
+                     + by_battery[BATTERY_PARAPHRASE]["modes"][FULL]["acc@1"]) / 2.0
+        combo_acc = by_battery[BATTERY_COMBINATION]["modes"][FULL]["acc@1"]
+        self.teardown_lane(lane)
+        out = {"control": "A", "test": {"rows": rows, "batteries": by_battery},
+               "safeguard_acc": round(safeguard, 4), "combination_acc_frozen": combo_acc,
+               "note": "frozen floor for [D6] (>frozen-chance) and the consistency measure",
+               "control_s": round(time.perf_counter() - t0, 1)}
+        self.log(f"CONTROL A: direct@1={by_battery[BATTERY_DIRECT]['modes'][FULL]['acc@1']:.3f} "
+                 f"para@1={by_battery[BATTERY_PARAPHRASE]['modes'][FULL]['acc@1']:.3f} "
+                 f"combo@1={combo_acc:.3f} (frozen floor, in-session)")
+        self.control_a = out
+        return out
+
+    def run_control_b(self) -> Dict:
+        """[D7] retrieval control, re-measured in-session."""
+        t0 = time.perf_counter()
+        lane = self.fresh_lane()
+        for e in self.experiences:
+            lane["episodic"].record(kind="lesson" if e["kind"] == "declarative" else "observation",
+                                    text=e["question"] or e["text"], channel="transcript",
+                                    teacher="retrieval-control",
+                                    tags={"answer": e["answer"], "fact_key": e["key"],
+                                          "kind": e["kind"]})
+        rows = self.run_battery(lane, "B", self.test_questions, (), False, "B-control")
+        by_battery = {b: self.battery_summary([r for r in rows if r["battery"] == b], ())
+                      for b in (BATTERY_DIRECT, BATTERY_PARAPHRASE, BATTERY_COMBINATION)}
+        b_combo = by_battery[BATTERY_COMBINATION]["retrieval_acc"]
+        split_accs = []
+        for ids in self.split_ids:
+            srows = [r for r in rows if r["qid"] in ids]
+            split_accs.append(round(sum(r["retrieved_correct"] for r in srows)
+                                    / max(1, len(srows)), 4))
+        self.teardown_lane(lane)
+        out = {"control": "B", "test": {"rows": rows, "batteries": by_battery},
+               "combination_retrieval_acc": b_combo, "combination_split_accs": split_accs,
+               "control_s": round(time.perf_counter() - t0, 1)}
+        self.log(f"CONTROL B: retrieval direct={by_battery[BATTERY_DIRECT]['retrieval_acc']:.3f} "
+                 f"para={by_battery[BATTERY_PARAPHRASE]['retrieval_acc']:.3f} "
+                 f"combo={b_combo:.3f} splits={split_accs} (in-session)")
+        self.control_b = out
+        return out
+
+    # -- matrix ----------------------------------------------------------------- #
+
+    def run(self) -> int:
+        t_start = time.perf_counter()
+        slug = "full" if self.args.full else f"c{self.args.chains}"
+        self.run_tag = f"p3-{slug}-s{self.args.seed}-{time.strftime('%H%M%S')}"
+        if not self.args.run_dir:
+            self.args.run_dir = os.path.join(_REPO_ROOT, "runs", "teacher_student_p3", self.run_tag)
+        try:
+            self.setup()
+            want = [w.strip().lower() for w in self.args.p3_arms.split(",") if w.strip()]
+            # ---- controls in-session [D7] ---- #
+            if "controls" in want:
+                self.run_control_a()
+                self.run_control_b()
+            # ---- locked sequence [D1/D8] ---- #
+            for arm_id, k, align in (("ARM-1a", 4, False), ("ARM-1b", 16, False),
+                                     ("ARM-2a", 1, True)):
+                if arm_id.replace("ARM-", "").lower() not in want:
+                    continue
+                if len(self.errors) >= 2:
+                    self.log("MATRIX STOP: two irreversible errors recorded")
+                    break
+                try:
+                    started = time.perf_counter()
+                    self.run_arm(arm_id, k, align)
+                    if (time.perf_counter() - started) > P3_ARM_WALL_CAP_S:
+                        self.errors.append(f"{arm_id} exceeded the preregistered wall cap")
+                except Exception as exc:                    # noqa: BLE001 — matrix-stop law
+                    import traceback
+                    tb = traceback.format_exc()[-2000:]
+                    self.errors.append(f"{arm_id}: {type(exc).__name__}: {exc}")
+                    self.emit({"type": "arm_error", "arm": arm_id, "error": str(exc),
+                               "traceback": tb})
+                    self.log(f"ARM {arm_id} IRREVERSIBLE ERROR: {type(exc).__name__}: {exc}")
+            # ---- ARM-3: only from independently successful settings [D8] ---- #
+            ran_arms = {a.replace("ARM-", "").lower() for a in self.arm_reports}
+            density_arms = {a: r for a, r in self.arm_reports.items()
+                            if a in ("ARM-1a", "ARM-1b") and r["behavioural_success"]}
+            alignment_ok = self.arm_reports.get("ARM-2a", {}).get("behavioural_success", False)
+            arm3_note = "not run: no independently successful mechanism (locked rule)"
+            if "3" not in want:
+                arm3_note = "not requested (--p3-arms)"
+            elif density_arms and alignment_ok:
+                best_k = max(density_arms.values(),
+                             key=lambda r: r["verdict"]["modes"].get(
+                                 PLASTIC, {}).get("combination_acc", 0.0))["k"]
+                self.log(f"ARM-3 combining density k={best_k} + alignment (both succeeded)")
+                self.run_arm("ARM-3", best_k, True)
+                arm3_note = f"combined: density k={best_k} + alignment (both independently passed)"
+            elif "3" in want and density_arms:
+                best_k = max(density_arms.values(),
+                             key=lambda r: r["verdict"]["modes"].get(
+                                 PLASTIC, {}).get("combination_acc", 0.0))["k"]
+                self.log(f"ARM-3 density-only k={best_k} (alignment failed its gate)")
+                self.run_arm("ARM-3", best_k, False)
+                arm3_note = f"density-only k={best_k} (alignment failed; locked rule)"
+            elif "3" in want and alignment_ok and ran_arms & {"1a", "1b"}:
+                self.log("ARM-3 alignment-only k=1 (density failed its gate)")
+                self.run_arm("ARM-3", 1, True)
+                arm3_note = "alignment-only k=1 (density failed; locked rule)"
+            else:
+                self.log("ARM-3 NOT RUN: both mechanisms failed independently — "
+                         "never combine two failed mechanisms [D8]")
+            self.report_phase(arm3_note)
+        finally:
+            if self.jsonl:
+                self.jsonl.close()
+        self.timings["total_s"] = round(time.perf_counter() - t_start, 1)
+        print(f"TOTAL RUNTIME: {self.timings['total_s']}s "
+              f"({self.timings['total_s'] / 60:.1f} min)")
+        return 0
+
+    def report_phase(self, arm3_note: str) -> None:
+        fp_ok, fp_diffs = fingerprints_equal(
+            self.fingerprint_at_load, foundation_fingerprint(self.model))
+        headline_rows = {}
+        for arm_id, rep in self.arm_reports.items():
+            bats = rep["test"]["batteries"]
+            headline_rows[arm_id] = {
+                "direct@1": bats[BATTERY_DIRECT]["modes"][FULL]["acc@1"],
+                "paraphrase@1": bats[BATTERY_PARAPHRASE]["modes"][FULL]["acc@1"],
+                "combination@1_PLASTIC": rep["verdict"]["modes"].get(
+                    PLASTIC, {}).get("combination_acc"),
+                "ablation_delta_PLASTIC": rep["verdict"]["modes"].get(
+                    PLASTIC, {}).get("ablation_delta"),
+                "splits_passed": rep["verdict"]["modes"].get(PLASTIC, {}).get("splits_passed"),
+                "D6_success": rep["behavioural_success"],
+                "gamma_after": rep["teach"]["gamma_after"],
+                "u_fast_norms": rep["teach"]["u_fast_norms_after"],
+                "restart_exact": rep["restart"]["state_restored_exact"]}
+        any_success = any(r["D6_success"] for r in headline_rows.values())
+        headline = ("BEHAVIOURAL SUCCESS: plastic-provenance answers on unseen combinations "
+                    "passed [D6] in: " + ", ".join(a for a, r in headline_rows.items()
+                                                   if r["D6_success"])
+                    if any_success else
+                    "NEGATIVE RESULT (owner law): no arm produced correct answers from its "
+                    "own plastic state on unseen combinations — mechanistic growth without "
+                    "behavioural movement is recorded as measured-negative [D9]")
+        self.report = {
+            "phase": 3, "tag": self.run_tag, "date": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "protocol": "docs/PHASE3_PROTOCOL.md (owner D1-D9 LOCKED 2026-11-25)",
+            "foundation": self.foundation_label,
+            "seed": self.args.seed, "chains": self.world.n_chains,
+            "experiences": len(self.experiences),
+            "held_out_splits_fixed": self.split_ids,
+            "D6_thresholds": {"combination": 0.50, "ablation_delta": 0.10, "splits": ">=2/3"},
+            "controls_in_session": {"A": {k: v for k, v in self.control_a.items()
+                                          if k != "test"},
+                                    "B": {k: v for k, v in self.control_b.items()
+                                          if k != "test"}},
+            "arms": self.arm_reports,
+            "arm3_decision": arm3_note,
+            "headline_rows": headline_rows,
+            "headline": headline,
+            "matrix_errors": self.errors,
+            "timings_s": self.timings,
+            "foundation_integrity": {"bit_identical_after_full_run": bool(fp_ok),
+                                     "differing_params": fp_diffs[:5],
+                                     "n_params_checked": len(self.fingerprint_at_load)},
+        }
+        with open(os.path.join(self.run_dir, "report.json"), "w", encoding="utf-8") as f:
+            json.dump(self.report, f, indent=1, default=str)
+
+        print("\n" + "=" * 96)
+        print(f"AION-1 PHASE 3 — EXPRESSION BRIDGE ({self.run_tag})")
+        print(f"foundation: {self.foundation_label}  |  protocol: D1-D9 locked")
+        print("=" * 96)
+        a = self.control_a["test"]["batteries"]
+        b = self.control_b["test"]["batteries"]
+        print(f"{'A frozen (in-session)':36s} direct@1={a[BATTERY_DIRECT]['modes'][FULL]['acc@1']:.3f} "
+              f"para@1={a[BATTERY_PARAPHRASE]['modes'][FULL]['acc@1']:.3f} "
+              f"combo@1={a[BATTERY_COMBINATION]['modes'][FULL]['acc@1']:.3f} (floor)")
+        print(f"{'B retrieval (in-session)':36s} "
+              f"combo@1={b[BATTERY_COMBINATION]['retrieval_acc']:.3f} "
+              f"splits={self.control_b['combination_split_accs']} (target to beat, NOT sufficient)")
+        print("-" * 96)
+        print(f"{'arm':8s} {'k':>3s} {'align':>5s} {'combo@1':>8s} {'abldelta':>9s} "
+              f"{'splits':>7s} {'D6':>5s} {'direct@1':>9s} {'para@1':>7s} {'restart':>8s}")
+        for arm_id, r in headline_rows.items():
+            print(f"{arm_id:8s} {self.arm_reports[arm_id]['k']:3d} "
+                  f"{str(self.arm_reports[arm_id]['align']):>5s} "
+                  f"{r['combination@1_PLASTIC']:8.3f} {r['ablation_delta_PLASTIC']:+9.3f} "
+                  f"{r['splits_passed']:>7s} {str(r['D6_success']):>5s} "
+                  f"{r['direct@1']:9.3f} {r['paraphrase@1']:7.3f} "
+                  f"{str(r['restart_exact']):>8s}")
+        print("-" * 96)
+        print("MAGNITUDE -> RANK -> ACCURACY (per-arm means over all scored questions):")
+        for arm_id, rep in self.arm_reports.items():
+            rows = rep["test"]["rows"]
+            with_pl = [r for r in rows if "PLASTIC" in r["modes"]]
+            moved = sum(1 for r in with_pl if any(v != 0 for v in r["rank_movement"].values()))
+            improved = sum(1 for r in with_pl
+                           if r["rank_movement"].get(f"{CONSOLIDATED}_to_{PLASTIC}", 0) > 0)
+            mean_resid = (sum(sum(r["residual_pair_norms_mean"]) / max(1, len(r["residual_pair_norms_mean"]))
+                              for r in with_pl) / max(1, len(with_pl)))
+            converted = sum(1 for r in with_pl
+                            if r["rank_movement"].get(f"{CONSOLIDATED}_to_{PLASTIC}", 0) > 0
+                            and r["modes"][PLASTIC]["correct"]
+                            and not r["modes"][CONSOLIDATED]["correct"])
+            print(f"  {arm_id:8s} mean||gamma.r||={mean_resid:.3f}  rank-moved {moved}/{len(with_pl)} "
+                  f"(improved {improved})  -> rank-gain-to-correct conversions: {converted}")
+        print("-" * 96)
+        print("HEADLINE:", self.report["headline"])
+        print(f"ARM-3: {arm3_note}")
+        print(f"foundation bit-identical after the matrix: "
+              f"{self.report['foundation_integrity']['bit_identical_after_full_run']}; "
+              f"matrix errors: {len(self.errors)}")
+        print(f"report: {os.path.join(self.run_dir, 'report.json')} "
+              f"(JSONL: {os.path.join(self.run_dir, 'results.jsonl')})")
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
@@ -1572,6 +2355,14 @@ def main() -> int:
     ap.add_argument("--phase2", action="store_true",
                     help="run the PHASE 2 five-variant central experiment (A/B/C/D/E) instead "
                          "of the Phase 1 single-run harness")
+    ap.add_argument("--phase3", action="store_true",
+                    help="run the PHASE 3 Expression Bridge arm matrix (docs/"
+                         "PHASE3_PROTOCOL.md, D1-D9 locked): controls A+B in-session, "
+                         "ARM-1a (E-k4), ARM-1b (E-k16), ARM-2a (E-align-1), ARM-3 "
+                         "(combined, only from independently successful settings)")
+    ap.add_argument("--p3-arms", default="controls,1a,1b,2a,3",
+                    help="Phase 3 subset to run (comma list from: controls,1a,1b,2a,3); "
+                         "ARM-3 stays conditional on the locked rule regardless")
     ap.add_argument("--foundation", default="tiny", choices=("tiny", "qwen"),
                     help="tiny = in-memory stand-in (Rog CPU debug); qwen = real frozen "
                          "Qwen3.5-4B-Base (Lappy)")
@@ -1613,6 +2404,8 @@ def main() -> int:
                     help="PHASE 2 variant E only: gate steps per QA experience")
     ap.add_argument("--run-dir", default=None)
     args = ap.parse_args()
+    if args.phase3:
+        return Phase3Run(args).run()
     if args.phase2:
         return VariantsRun(args).run()
     if args.teacher == "endpoint" and args.foundation == "tiny":
