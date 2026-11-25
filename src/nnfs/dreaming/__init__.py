@@ -2,6 +2,7 @@
 
 from nnfs.dreaming.retriever import MemoryRetriever, RetrievedExperience, create_retriever
 from nnfs.dreaming.replay import ExperienceReplay, create_experience_replay
+from nnfs.dreaming.guard import ComposedWeightNormGuard, GuardVerdict, calibrate_guard
 from nnfs.dreaming.recombiner import PatternRecombiner, HypothesizedRelationship, create_pattern_recombiner
 from nnfs.dreaming.simulator import DreamSimulator, SimulationResult, create_dream_simulator
 from nnfs.dreaming.evaluator import DreamEvaluator, EvaluationResult, create_dream_evaluator
@@ -23,6 +24,9 @@ __all__ = [
     "create_retriever",
     "ExperienceReplay",
     "create_experience_replay",
+    "ComposedWeightNormGuard",
+    "GuardVerdict",
+    "calibrate_guard",
     "PatternRecombiner",
     "HypothesizedRelationship",
     "create_pattern_recombiner",
