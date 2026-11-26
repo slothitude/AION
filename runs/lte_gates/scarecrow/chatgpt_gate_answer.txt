@@ -1,0 +1,60 @@
+**No. The two checks together do not soundly verify that the implemented gradient descends the actual candidate-scoring loss.** There is a precise remaining failure mode in which both checks pass while the gradient is wrong.
+
+## The failure mode: sign-consistent, magnitude-consistent gradient error
+
+The implemented autograd gradient \(\widehat{\nabla} F\) is *negated* relative to the true gradient:
+
+\[
+\widehat{\nabla} F = -\, \nabla F .
+\]
+
+More generally, it suffices that the error satisfy \(\widehat{\nabla} F = -\nabla F + \mathbf{n}\) where \(\mathbf{n}\) is a direction-agnostic noise or bias term small enough to evade both checks.
+
+### Why both checks pass
+
+**1. Float64-reference decrease check passes.**  
+The gate takes the step
+
+\[
+u^{+}=u-\eta_{\text{gate}}\widehat{\nabla} F
+      =u+\eta_{\text{gate}}\nabla F .
+\]
+
+Because \(u^+\) moves *uphill* along the true gradient, the first-order change is
+
+\[
+F(u^+) \approx F(u) + \eta_{\text{gate}}\|\nabla F\|^2 > F(u),
+\]
+
+so the function increases, not decreases. **However**, if \(\eta_{\text{gate}}\) is larger than \(2/\lambda_{\max}(\nabla^2 F)\) along the true-gradient direction, the quadratic overshoot dominates:
+
+\[
+F(u+\eta\nabla F) \approx F(u) + \eta\|\nabla F\|^2 + \frac{1}{2}\eta^2 \nabla F^\top (\nabla^2 F)\nabla F.
+\]
+
+For sufficiently large \(\eta\) (steep convex quadratics, or non-convex regions where the step lands in a lower basin far enough away), this expression can still be \(< F(u)\). The gate observes a decrease in the float64 reference and passes, even though the implemented gradient had the wrong sign. Equivalently, the decrease check only verifies *net descent after one finite step*, not descent *along the implemented gradient direction*.
+
+**2. Autograd vs central-difference agreement passes.**  
+Central differences approximate the *same* (wrong) quantity that autograd computes. If autograd implements \(-\nabla F\) consistently throughout the graph, then
+
+\[
+\text{CD}(\widehat{\nabla} F) \approx \widehat{\nabla} F = -\nabla F,
+\]
+
+so the two agree to within the repeatability-based tolerance. The check verifies internal consistency of the implementation, not correctness relative to the true mathematical gradient of the actual loss.
+
+### Why the caching/hybrid-precision setup does not close the gap
+
+The float64 reference evaluates \(F\) over cached fixed host outputs; the plastic-objective math is also float64. This removes forward-precision and recomputation mismatches, but it does not change the fact that both the reference evaluation and the central-difference probe are measuring the **same implemented objective function** whose gradient is \(\widehat{\nabla} F\). If \(\widehat{\nabla} F\) is systematically the negative of the true scoring loss gradient, then:
+
+- the true loss actually *increases* along \(-\widehat{\nabla} F\),
+- but the gate only checks whether \(F\) (the same potentially-wrong objective implemented in float64) decreases after the step,
+- and the CD check only confirms that autograd matches its own finite-difference approximation.
+
+Both can be satisfied while the direction is adversarial with respect to the actual candidate-scoring loss.
+
+### What would be needed to rule this out
+
+To close the gap, one must verify the gradient against an independent, trusted implementation of the *actual* scoring loss (e.g., a separately coded analytic gradient or a high-accuracy finite difference computed from an independent forward pass), and/or check the descent condition specifically along the implemented gradient direction with a sufficiently small step (Armijo/backtracking) rather than accepting any net decrease after a potentially oversized step.
+
+**Summary:** The checks verify (a) that one finite step happened to lower the cached float64 objective, and (b) that autograd is self-consistent with central differences. They do **not** verify that the implemented gradient is the gradient of the actual candidate-scoring loss or that it points downhill. A consistent sign flip (or other coherent error) in the autograd graph, combined with a step size large enough to cause overshoot/descent despite moving uphill infinitesimally, is a precise failure mode where both checks pass and the gradient is wrong.

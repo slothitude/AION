@@ -1,0 +1,33 @@
+SCARECROW NVAPI REVIEW — gate_question.md
+(lane nvapi, temp 0.2, thinking off, usage: {"prompt_tokens": 1277, "completion_tokens": 1206, "total_tokens": 2483, "prompt_tokens_details": {"cached_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0}})
+
+VERDICT: MAJOR-REWORK
+
+FINDINGS:
+
+1. FATAL — Location: GATE 2 description ("decreased = F_float64(stepped) < F_float64(u_state)").
+   The paper claims Gate 2 proves the gradient "descends the actual candidate-scoring loss," but the check only verifies decrease along the *implemented* gradient direction `g` under the *implemented* objective `F`. It does not establish that `F` equals the actual candidate-scoring loss. A wrong gradient that happens to be a descent direction for the buggy `F` will pass Gate 2 while failing to descend the true loss. No concrete link between `F` and the candidate-scoring loss is verified by either gate.
+
+2. FATAL — Location: Mirror-fidelity assertion ("compares mirror vs real forward at ONE state (fact-0 prompt states, u = u0) with max|diff| < 1e-5").
+   A single-state forward match does not verify gradient connectivity. The mirror can match the real forward at `u0` yet have an incorrect Jacobian with respect to `u` (e.g., a constant offset, a wrong blend coefficient that cancels at `u0`, or a detached term whose value happens to match at one point). Gate 1 only checks the directional derivative of the mirror's own `F`, so both gates can pass while `∇_u F_mirror ≠ ∇_u F_real` and the gradient is disconnected from the actual candidate-scoring loss.
+
+3. FATAL — Location: `psi` precomputation ("psi ... is precomputed once per fact with no_grad from frozen host hidden states (comment: 'constant in the fixture: no u dependence')").
+   If `psi` is treated as constant but the actual candidate-scoring loss depends on `u` through host hidden states or relationship features, then `∂F/∂u` computed through the mirror omits this dependence. Gate 1 verifies agreement between autograd and finite differences of this truncated objective; Gate 2 verifies decrease of this truncated objective. Both pass while the true gradient of the actual loss (which includes the omitted `u`-dependence through `psi`) is different and possibly not a descent direction.
+
+4. FATAL — Location: Gate 1 tolerance ("Pass: |D_AD - D_FD(eps)| / max(1, |D_AD|) <= max(10*n_rep, 1e-4)").
+   The relative tolerance with `max(1, |D_AD|)` in the denominator is vacuous when `|D_AD|` is small: the check reduces to an absolute tolerance of `1e-4` (or `10*n_rep`), which can be satisfied by a gradient whose directional derivative is near zero or whose sign is wrong but small in magnitude. Gate 2's decrease check can still pass if `eta_gate` is small enough that even a tiny correct directional component dominates numerical noise, or if the wrong gradient happens to point downhill locally. Thus both gates can pass while the gradient is wrong in magnitude or even sign for the true loss.
+
+5. MAJOR — Location: `L_disc` precondition ("Precondition asserted: L_disc > 0 at the gate state (both hinge terms active)").
+   Restricting verification to a state where both hinge terms are active does not verify gradient correctness elsewhere. The gradient may be correct only in this local region (e.g., due to a bug that is masked when hinges are active) and wrong at other states encountered during optimization. The paper overclaims that the gate verifies the gradient generally; it only verifies local directional consistency at one preconditioned state.
+
+6. MAJOR — Location: `L_disc` definition ("f_i = sum_k r_k(fact_i) normalized").
+   The paper claims the gradient descends the "actual candidate-scoring loss," but `L_disc` operates on normalized relationship features `f_i`, not directly on candidate scores. There is no verification that the gradient of `L_disc` with respect to `u` is connected to changes in candidate scores. A gradient can decrease `F` (and pass both gates) while candidate scores move in the wrong direction or remain unchanged.
+
+7. MAJOR — Location: Gate 2 step size ("eta_gate = 0.1 * eta_e").
+   A single decrease check at one fixed step size does not prove the gradient is a descent direction in a verifiable, robust sense. If `eta_gate` is too small, floating-point noise in the float64 reference evaluation can produce a spurious decrease; if too large, the step may leave the local region where the linear approximation holds. The check is not a sound proof of descent for the actual loss, only an empirical observation for one step on one objective.
+
+8. POLISH — Location: "float64 diagnostic re-run ... explicitly NOT the pass criterion."
+   The paper should either justify why float64 is insufficient for the pass criterion or use it as the criterion. Relying on native-precision host outputs while casting only the plastic math to float64 creates a mixed-precision evaluation whose numerical behavior is not fully specified, weakening the claim that Gate 2 is a sound reference check.
+
+9. POLISH — Location: "Recorded evidence also separates L_rank and L_disc before/after the step, to prove both gradient paths were exercised by the step."
+   Observing that both loss terms change after a step does not prove the gradient is correct or connected to the actual loss; it only shows the step was not orthogonal to both terms in the implemented objective. This language overstates the evidentiary value of the recording.

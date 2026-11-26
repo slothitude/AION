@@ -150,6 +150,8 @@ The next central question — whether the learning objective itself must change 
 
 ## 3. What is in flight (no verdicts claimed)
 
+**LTE-1 step 2 — real-host gradient gates (RUNNING on Lappy).** Per the owner's step-2 GO (boundaries recorded in `docs/LTE_PROTOCOL.md` §10): demonstrating Gates 1–2 on the real Qwen3.5-4B-Base host with literal §2.2 per-candidate frozen-host scoring and literal §2.3 masked per-fact features. Implementation `aion/experiments/lte_gates_real.py` (staged to Lappy, md5 `ad5f36c7…` verified identical to the locally audited version); Lane AUDIT-R verdict SOUND (8/8 checks); run in progress. Stop-on-fail per the owner's decision rule; **no step-2 verdict is claimed here.** Step-1 evidence (complete): both gates PASS on the tiny stand-in under Rev 7 — `runs/lte_gates/gates_standin_20261126_121601.json`.
+
 **Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **Phase-3 expression matrix — CLOSED 2026-11-26; verdict recorded in §2.5. Owner decision 2026-11-26: LEARN-TOWARD-EXPRESSION.** The owner reviewed §2.5 and authorised the design and preregistration of the Learn-Toward-Expression experiment (`docs/LTE_PROTOCOL.md`) — NOT its execution. Free-decode pathway and the dreaming six-config rerun are HELD; the compliance ruling remains a separate gate. No mechanism changes or runs until the LTE protocol is reviewed.
 
 **Pending, explicitly:** the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling.
