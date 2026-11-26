@@ -1,0 +1,153 @@
+{
+  "step": "LTE-1 step 1 \u2014 gates on tiny stand-in",
+  "protocol": "docs/LTE_PROTOCOL.md frozen Revision 6 (commit 7b7642c2ae547b5047234e54a16f629960642a2e; freeze a88d50d)",
+  "authorisation": "owner conditional sign-off 2026-11-26: step 1 ONLY",
+  "config": {
+    "lambda_r": 1.0,
+    "lambda_d": 0.5,
+    "tau_d": 0.2,
+    "eta_e_fixture": 0.001,
+    "n_repeats": 5,
+    "fd_epsilons": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "pass_epsilons": [
+      0.01,
+      0.001
+    ],
+    "numerical_floor": 0.0001,
+    "seed": 20261126,
+    "layer_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "gamma_fixture": 1.0
+  },
+  "fixture_losses_at_gate_state": {
+    "L_rank": 0.47716158628463745,
+    "L_disc": 0.7990415692329407,
+    "disc_hinge_active": true
+  },
+  "gate1": {
+    "D_AD": -0.016689863055944443,
+    "grad_norm": 0.016689863055944443,
+    "F_u": 0.8766824007034302,
+    "L_rank_at_gate_state": 0.47716158628463745,
+    "L_disc_at_gate_state": 0.7990415692329407,
+    "per_epsilon": {
+      "0.01": {
+        "eps": 0.01,
+        "D_FD": -0.016692280769348145,
+        "rel_error": 2.4177134037017822e-06,
+        "n_rep": 0.0,
+        "tolerance": 0.0001,
+        "repeats": [
+          -0.016692280769348145,
+          -0.016692280769348145,
+          -0.016692280769348145,
+          -0.016692280769348145,
+          -0.016692280769348145
+        ],
+        "F_plus": 0.8765154480934143,
+        "F_minus": 0.8768492937088013,
+        "pass": true
+      },
+      "0.001": {
+        "eps": 0.001,
+        "D_FD": -0.01677870750427246,
+        "rel_error": 8.884444832801819e-05,
+        "n_rep": 0.0,
+        "tolerance": 0.0001,
+        "repeats": [
+          -0.01677870750427246,
+          -0.01677870750427246,
+          -0.01677870750427246,
+          -0.01677870750427246,
+          -0.01677870750427246
+        ],
+        "F_plus": 0.8766657710075378,
+        "F_minus": 0.8766993284225464,
+        "pass": true
+      },
+      "0.0001": {
+        "eps": 0.0001,
+        "D_FD": -0.01609325408935547,
+        "rel_error": 0.000596608966588974,
+        "n_rep": 0.0,
+        "tolerance": 0.0001,
+        "repeats": [
+          -0.01609325408935547,
+          -0.01609325408935547,
+          -0.01609325408935547,
+          -0.01609325408935547,
+          -0.01609325408935547
+        ],
+        "F_plus": 0.8766806125640869,
+        "F_minus": 0.8766838312149048
+      }
+    },
+    "pass": true,
+    "float64_diagnostic": {
+      "D_AD": -0.01668985734658137,
+      "grad_norm": 0.016689857346581384,
+      "note": "diagnostic only \u2014 pass criterion uses the float32 evaluation",
+      "per_epsilon": {
+        "0.01": {
+          "D_FD": -0.016689854208201682,
+          "rel_error": 3.1383796880724013e-09,
+          "F_plus": 0.8765155842804961,
+          "F_minus": 0.8768493813646602
+        },
+        "0.001": {
+          "D_FD": -0.016689857315344003,
+          "rel_error": 3.123736685983758e-11,
+          "F_plus": 0.8766657553275935,
+          "F_minus": 0.8766991350422242
+        },
+        "0.0001": {
+          "D_FD": -0.016689857346152692,
+          "rel_error": 4.2867792648948466e-13,
+          "F_plus": 0.876680775822795,
+          "F_minus": 0.8766841137942643
+        }
+      }
+    }
+  },
+  "gate2": {
+    "eta_gate": 0.0001,
+    "F_before": 0.8766824007034302,
+    "F_after": 0.8766824007034302,
+    "decreased": false,
+    "restored_bitwise": true,
+    "both_loss_terms_in_F": true,
+    "pass": false,
+    "L_rank_before": 0.47716158628463745,
+    "L_disc_before": 0.7990415692329407,
+    "L_rank_after": 0.47716158628463745,
+    "L_disc_after": 0.7990415692329407,
+    "float64_diagnostic": {
+      "F_before": 0.8766824448047272,
+      "F_after": 0.8766824200651318,
+      "decrease": 2.473959548332516e-08,
+      "note": "diagnostic only \u2014 the gate criterion uses the mandated float32 recomputation"
+    }
+  },
+  "verdict": "FAIL \u2014 stop, report to owner",
+  "wall_s": 6.1
+}
