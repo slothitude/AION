@@ -184,7 +184,7 @@ D_FD(ε) = [ F(u + ε·d) − F(u − ε·d) ] / (2ε)
 1. Capture `F = λ_r·L_rank,train + λ_d·L_disc,train` before the step — **both loss terms**, on identical inputs.
 2. Compute the **raw, unscaled gradient** ∇F.
 3. Apply `u_fast ← u_fast − η_gate·∇F` with **η_gate = 0.1·η_e** — the learning rate is applied **exactly once** to the unscaled gradient. (Equivalently: `u_fast ← u_fast + (η_gate/η_e)·Δu_expr`. The Rev-5 form `u_fast + η_gate·Δu_expr` applied η_e twice — an effective step of −0.1·η_e²·∇F — and is withdrawn.) Expression gradient only: prediction channel, gates, and all other state frozen for the duration of the check.
-4. Recompute `F` with the identical candidate batch in identical order, float32 reference, **both ranking and discrimination terms included**.
+4. Recompute `F` with the identical candidate batch in identical order, **float64 reference (Rev 7 amendment)** — a higher-precision evaluation of the defined plastic objective over fixed host outputs; the host forward itself runs in its native precision and is never re-run in float64. **Both ranking and discrimination terms included**.
 5. **Verify F decreased.**
 6. **Restore the fixture's original plastic state exactly** — the gate step is a measurement, not a training step; restoration is verified bitwise against the captured pre-gate state before any training proceeds.
 Failure of Gate 1 or Gate 2 aborts the run before training; gate results are recorded.
@@ -217,7 +217,7 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 | Direction | Status |
 |---|---|
-| LTE-1 | **FROZEN at Revision 6 (freeze record §10); conditional sign-off 2026-11-26 — step 1 only: build + demonstrate Gates 1–2 on the tiny stand-in** |
+| LTE-1 | **FROZEN (Rev 7 amendment applied); step 1 COMPLETE (both gates PASS on the stand-in, evidence `runs/lte_gates/gates_standin_20261126_121601.json`); owner GO 2026-11-26 for STEP 2 ONLY: demonstrate Gates 1–2 on the real Qwen host with literal §2.2 scoring and §2.3 features** |
 | Free-decode pathway | HOLD |
 | Dreaming six-config rerun | HOLD |
 | Compliance ruling | separate owner gate |
@@ -249,9 +249,11 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 | Item | Value |
 |---|---|
-| Frozen protocol | LTE-1 **Revision 6**, commit `7b7642c2ae547b5047234e54a16f629960642a2e`, doc SHA-256 prefix `09a2c17b7f00fd9a` |
-| Owner sign-off | **CONDITIONAL, 2026-11-26** — Rev 6 passes mathematical review; two documentary references fixed in this freeze commit (§8 → Revision 6; §6.3 → step 4) |
-| Authorised now | **STEP 1 ONLY: build Gates 1 and 2 on the tiny stand-in, demonstrate both, record the evidence. Stop if either gate fails.** |
-| NOT authorised by this sign-off | real-host gate work, harness/split-manifest implementation beyond step 1, training, calibration, controls, exam |
+| Frozen protocol | LTE-1 **Revision 6**, commit `7b7642c2ae547b5047234e54a16f629960642a2e`, doc SHA-256 prefix `09a2c17b7f00fd9a`; **Revision 7 amendment** (commit `f1a4a02`): Gate-2 decrease criterion and FD diagnostics use a FLOAT64 reference |
+| Owner sign-off | **CONDITIONAL, 2026-11-26** — Rev 6 passes mathematical review; two documentary references fixed in the freeze commit (§8; §6.3 → step 4) |
+| Step-1 result | **COMPLETE 2026-11-26** — mirror fidelity PASS; Gate 1 PASS (rel 2.4e-6 / 8.9e-5 ≤ 1e-4; float64 diagnostics exact quadratic convergence 3e-9 → 3e-11 → 4e-13); Gate 2 initially honest-FAIL (true decrease 2.474e-8 = 0.41 ULP of float32 F — resolution dead-end, diagnosed and recorded `227c638`) → owner chose the float64 reference (Rev 7) → rerun **both gates PASS** (evidence `runs/lte_gates/gates_standin_20261126_121601.json`, commit `717624f`) |
+| Step-2 authorisation | **GO, 2026-11-26 — STEP 2 ONLY: demonstrate Gates 1–2 on the real Qwen host.** Boundaries: (a) literal §2.2 candidate scoring — each candidate scored by the actual frozen-host computation with the plastic residual injected at the answer positions; (b) literal §2.3 per-fact features — γ-scaled plastic residual at the answer position from that fact's own connection set via MASKED forward, float32 cosine, zero-norm ⇒ cos 0; (c) Rev 7 gate mathematics preserved; (d) precision auditable — host-forward dtype, cached-logit dtype, residual dtype, objective dtype recorded, and the float64 calculation described as higher-precision plastic-objective evaluation over fixed host outputs, NEVER float64 Qwen inference; (e) stop at the step-2 boundary — a failing gate stops the run and is reported |
+| Authorised now | **STEP 2 ONLY (real-host gates, per the boundaries above).** |
+| NOT authorised | host-immutable step 3, harness or split-manifest work, controls, calibration, training, the final exam |
 | Split manifest | to be generated at step 4 and committed before any training run; this record will cite its path + commit SHA at that point |
-| Implementation order (owner's demonstrated order) | (1) Gates 1–2 on tiny stand-in → (2) gates on real host → (3) host immutability → (4) harness + split-manifest verification → (5) controls + calibration → (6) final exam exactly once |
+| Implementation order (owner's demonstrated order) | (1) Gates 1–2 on tiny stand-in ✅ → **(2) gates on real host ← HERE** → (3) host immutability → (4) harness + split-manifest verification → (5) controls + calibration → (6) final exam exactly once |
