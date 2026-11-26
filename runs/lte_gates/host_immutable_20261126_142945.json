@@ -1,0 +1,58 @@
+{
+ "fixture": {
+  "facts": 4,
+  "n_conns": 4,
+  "n_host_tensors": 426
+ },
+ "point1_no_optimizer": {
+  "optimizers_in_process": 0,
+  "pass": true
+ },
+ "fingerprint_before": {
+  "aggregate": "10a11371e0ab187568ae0764bd6f55cde9675abeac199c41dccb1b2201381992",
+  "n_tensors": 426,
+  "n_params": 4205751296
+ },
+ "phase_A_fixture_build": {
+  "aggregate_unchanged": true,
+  "all_tensors_unchanged": true,
+  "n_tensors": 426,
+  "pass": true
+ },
+ "gradient_quality": {
+  "finite": true,
+  "nonzero": true,
+  "grad_norm": 0.11491499139724254
+ },
+ "phase_B_gradient_computation": {
+  "aggregate_unchanged": true,
+  "all_tensors_unchanged": true,
+  "n_tensors": 426,
+  "pass": true
+ },
+ "phase_C_gate_style_step": {
+  "aggregate_unchanged": true,
+  "all_tensors_unchanged": true,
+  "n_tensors": 426,
+  "pass": true
+ },
+ "gate_style_step": {
+  "F_before": 1.5707746744155884,
+  "F_after": 1.5707745552062988,
+  "decreased": true,
+  "eta_gate": 0.0001
+ },
+ "point2_3_fingerprint_after": {
+  "aggregate_unchanged": true,
+  "all_tensors_unchanged": true,
+  "aggregate_before": "10a11371e0ab187568ae0764bd6f55cde9675abeac199c41dccb1b2201381992",
+  "aggregate_after": "10a11371e0ab187568ae0764bd6f55cde9675abeac199c41dccb1b2201381992",
+  "pass": true
+ },
+ "point4_gradient_finiteness": {
+  "finite": true,
+  "pass": true
+ },
+ "verdict": "PASS",
+ "wall_s": 238.9
+}
