@@ -1,8 +1,8 @@
-# LTE-1 — Learn-Toward-Expression Protocol (REVISION 3 — execution still HELD)
+# LTE-1 — Learn-Toward-Expression Protocol (REVISION 4 — execution still HELD)
 
-**Status:** REVISION 3, resolving the owner's five review findings on Revision 2. **Not yet approved for implementation. Execution remains held — no implementation, no training, no run until the owner's final review.** On sign-off, implementation proceeds in the owner's order: (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
+**Status:** REVISION 4, resolving the owner's three final findings on Revision 3. **Not yet approved for implementation. Execution remains held — no implementation, no training, no run until the owner signs off.** On sign-off: freeze the protocol, then implement in the owner's order (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
 
-**Revision 3 changes:** (1) DEV-leakage eliminated — training-time discrimination uses TRAIN carriers only; DEV is calibration-only; exam features are extraction-only at final evaluation; (2) Gate 1 replaced with a genuine numerical central-difference comparison against autograd, tolerance justified by measured noise floor; (3) swap-test criterion moved to held-out EXAM carriers, post-freeze; (4) calibration made deterministic (grid, metric, tie-breaks); (5) split-manifest freeze mechanics specified (path + commit SHA recorded at implementation step 2, before any run).
+**Revision 4 changes:** (1) Gate 1's noise floor redefined — repeatability noise from repeated IDENTICAL evaluations at fixed ε and state (K = 5), separate from convergence (central differences at all three ε kept for the convergence record); the undefined ε′ relation withdrawn; (2) the §5/§2.3 contradiction removed — novelty is computed from TRAIN-carrier features ONLY, ever; DEV contributes combination accuracy alone (generalisation), never features; an in-harness assertion forbids feature extraction on DEV carriers; (3) calibration rewritten as ONE deterministic nested sequence — same procedure applied identically to both λ_d configurations (fair comparison), λ_r retry handled per grid point inside each configuration, final selection and freeze explicit.
 
 ---
 
@@ -64,6 +64,8 @@ DEV carriers are used for **calibration only** (§5) — never inside any gradie
 
 **Exact relation between the measures (owner item A, Rev 2, unchanged):** novelty ≡ 1 − cos̄; since `(·)⁺` is convex, `L_disc ≥ (cos̄ − τ_d)⁺`; therefore `L_disc = 0` ⟺ every pair cos ≤ τ_d ⟹ novelty ≥ 1 − τ_d = 0.80 (one-way implication). **Preregistered discrimination criterion: `L_disc,exam = 0`; `novelty(exam features) ≥ 0.80` recorded as its exact mean-form consequence.** The training-time analogue (`L_disc,train → 0` on train carriers) is reported as the learning curve, never as the criterion.
 
+**Carrier-source rule (owner, Rev 4 — stated as a hard invariant):** novelty and L_disc are computed from **TRAIN-carrier features only, always** — during training, during calibration, and at exam. **DEV contributes exactly one quantity: combination accuracy@1, as a generalisation evaluation. Feature extraction on DEV carriers is forbidden**, and the harness enforces it with an assertion (any masked-feature-extraction call on a DEV carrier aborts the run as an instrument fault). DEV can evaluate generalisation; it can never become a hidden source of feature diagnostics.
+
 ### 2.4 Total objective and what does NOT change
 
 ```
@@ -114,23 +116,25 @@ Untouched: ψ, the forward map, dual-timescale structure, the 0.7 factor inside 
 
 ---
 
-## 5. Calibration — DETERMINISTIC procedure (owner finding 4; replaces all discretionary adjustment)
+## 5. Calibration — ONE deterministic nested sequence (owner finding on Rev 3: ordering ambiguity resolved)
 
-**η_e selection (single pass over a preregistered grid, in order):**
-- Grid: `η_e ∈ {1e-4, 3e-4, 1e-3, 3e-3, 1e-2}`.
-- Selection metric: highest **dev combination accuracy@1** on the 4 dev-combination questions.
-- Tie-break 1: highest dev mean gold-margin. Tie-break 2: smallest η_e.
-- All five results recorded in the calibration report; η_e frozen at the winner; **no other values considered**.
+Everything below runs AFTER the gradient gates and host-immutability gates pass (§6.2, §3.1). The identical procedure is applied to BOTH λ_d configurations, so the comparison is fair. Feature extraction never touches DEV carriers (§2.3 hard invariant); the only DEV quantity read anywhere in calibration is dev combination accuracy@1 (plus dev mean gold-margin for tie-breaking).
 
-**λ_r rule:** start 1.0. Adjusted only on measured training instability, defined as: train `L_rank` increasing over a full training pass, or any NaN in the expression loss. If triggered: λ_r ← 0.5, retry; still unstable → λ_r ← 0.25, retry; still unstable → run aborts as an instrument fault (recorded, not tuned further).
+**Configuration grid:** config A (λ_d = 0.5) and config B (λ_d = 0), identical in everything else.
 
-**λ_d rule (deterministic two-config dev comparison, cost noted in §3):**
-1. Train two dev-configured models, identical in everything except λ_d: config A (λ_d = 0.5), config B (λ_d = 0).
-2. Measure on DEV: novelty of train-carrier features post-teach (for B this is the un-pressured baseline) and dev combination@1.
-3. **Retain λ_d = 0.5 iff novelty_A ≥ 0.80 AND dev-combo@1(A) ≥ dev-combo@1(B) − 0.05.** Otherwise λ_d = 0. Ties → 0.5.
-4. Both configs' numbers recorded; decision and justification frozen before the final exam.
+**Per-configuration procedure (identical for A and B):**
+1. For each η_e in grid order {1e-4, 3e-4, 1e-3, 3e-3, 1e-2}, with λ_r = 1.0:
+   a. Train the dev-configured model (TRAIN data only; consolidation disabled).
+   b. Instability check per grid point: train `L_rank` rising over a full pass, or any NaN in the expression loss → retry with λ_r ← 0.5; still unstable → λ_r ← 0.25; still unstable → mark this grid point ABORTED and continue to the next η_e (the point's data is recorded; it is not tuned further).
+   c. Score DEV: combination@1 and mean gold-margin. Nothing else is read from DEV.
+2. Select η_e*(c) for the configuration: highest dev combination@1; tie-break 1: highest dev mean gold-margin; tie-break 2: smallest η_e. (If all five points aborted: the configuration is void and recorded as an instrument fault.)
+3. Record for the selected point: λ_r used, dev combo@1, dev gold-margin, and novelty from TRAIN-carrier features post-teach.
 
-**Freeze:** after calibration, η_e, λ_r, λ_d, and the chosen config are committed to the calibration report; the final exam is scored exactly once per arm; any exam-adjacent adjustment voids the run and is recorded as such.
+**λ_d decision (after both configurations complete):** retain λ_d = 0.5 (config A) iff `novelty_A ≥ 0.80` AND `dev-combo@1(A) ≥ dev-combo@1(B) − 0.05`; otherwise λ_d = 0. Ties → 0.5.
+
+**Final freeze:** the winning configuration (λ_r, λ_d, η_e) is committed to the calibration report with every grid point's numbers; the primary LTE-1 run then trains with exactly that configuration. **The final exam is scored exactly once per arm.** Any exam-adjacent adjustment voids the run and is recorded as such.
+
+**Budget note:** 2 configurations × 5 η_e points = up to 10 dev trainings (plus λ_r retries). Full LTE-1 block ≈ 24 h wall (uncertainty ±30 %, co-tenant load), as in Phase-3.
 
 ---
 
@@ -153,14 +157,18 @@ Sign: Δ_swap > 0 ⇒ j's features favour j's answer relative to how i's feature
 
 ### 6.2 Gradient verification — two run gates (owner finding 2 + §4 of prior review)
 
-**Gate 1 — GENUINE numerical derivative comparison (Rev 3: no longer an algebraic self-check).**
+**Gate 1 — GENUINE numerical derivative comparison (REVISED Rev 4: noise floor from repeatability, not cross-ε differences).**
 Let `F = λ_r·L_rank,train + λ_d·L_disc,train` at the current state, and `d = Δu_expr / ‖Δu_expr‖` (the actual planned step direction). Autograd gives `D_AD = ∇F(u)·d`. Numerical central differences give, for ε ∈ {1e-2, 1e-3, 1e-4}:
 
 ```
 D_FD(ε) = [ F(u + ε·d) − F(u − ε·d) ] / (2ε)
 ```
 
-**Tolerance is measured, not assumed:** before training, a tolerance-calibration run on the real host measures the FD noise floor `n(ε) = |D_FD(ε) − D_FD(ε')| / max(1, |D_AD|)` (ε' = next-larger grid ε). **Pass criterion: `|D_AD − D_FD(ε)| / max(1, |D_AD|) ≤ max(10·n(ε), 1e-4)` at ε = 1e-2 and ε = 1e-3.** D_AD, every D_FD(ε), every relative error, and the loss values at each ε are recorded in the run report. Gate 1 runs on the tiny standin AND once on the real host, before any training.
+**Repeatability noise (the tolerance's basis — owner correction):** at each ε, repeat the IDENTICAL central-difference evaluation at the IDENTICAL state K = 5 times; `n_rep(ε)` = the maximum absolute deviation among the 5 `D_FD(ε)` values, normalised: `n_rep(ε) = max_k |D_FD^{(k)}(ε) − D_FD^{(1)}(ε)| / max(1, |D_AD|)`. This measures evaluation noise, not step-size sensitivity.
+
+**Convergence record (separate from the pass criterion):** central differences at all three ε are kept and reported as the convergence pattern of D_FD across step sizes; they inform interpretation and are recorded, but the pass criterion rests on repeatability-normalised agreement.
+
+**Pass criterion:** `|D_AD − D_FD(ε)| / max(1, |D_AD|) ≤ max(10 · n_rep(ε), 1e-4)` at ε = 1e-2 and ε = 1e-3, where 1e-4 is the separately specified numerical floor. D_AD, every D_FD(ε) (all repeats), every relative error, the per-ε loss values, and the measured n_rep are recorded in the run report. Gate 1 runs on the tiny standin AND once on the real host, before any training.
 
 **Gate 2 — gradient-direction test (independent step size and isolation, per owner):**
 1. Capture F before the update.
@@ -208,12 +216,14 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 ## 9. Review ledger
 
-| Owner review item (Rev-2 review) | Disposition in Revision 3 |
+**Revision-2 review (resolved in Rev 3):** DEV-leakage in L_disc carriers · algebraic self-check Gate 1 · swap on DEV carriers · non-deterministic calibration · unverifiable split manifest — all FIXED in Revision 3, confirmed by the owner's Rev-3 review.
+
+**Revision-3 review (resolved in THIS revision):**
+
+| Owner finding | Disposition in Revision 4 |
 |---|---|
-| 1. L_disc consumed DEV (critical) | **FIXED** — training features from TRAIN carriers; DEV calibration-only; exam features extraction-only post-scoring; L_disc,train vs L_disc,exam distinguished, §2.3 |
-| 2. Gate 1 was an algebraic self-check (critical) | **FIXED** — genuine central-difference D_FD vs autograd D_AD at three ε; both values, relative errors, loss values recorded; tolerance from measured noise floor; loss-decrease retained; §6.2 |
-| 3. Swap carrier wording (DEV → criterion contamination) | **FIXED** — exam carriers, post-freeze, never tuned on; same carrier + same candidates under both states; only fact i's block replaced, §6.1 |
-| 4. Calibration rule not deterministic | **FIXED** — η_e grid + metric + tie-breaks; λ_r instability rule with abort; λ_d two-config rule with thresholds; §5 |
-| 5. Split manifest unverifiable | **SPECIFIED** — manifest born at step 2, committed before any run, freeze record cites path + SHA; §6.3 |
+| 1. n(ε) undefined at grid top; cross-ε differences measure step-size sensitivity, not noise | **FIXED** — repeatability noise from K = 5 identical evaluations at fixed ε and state; central differences at all three ε retained for the convergence record; tolerance = max(10·n_rep(ε), 1e-4 floor), §6.2 |
+| 2. §5 "novelty on DEV" contradicted §2.3's no-DEV-diagnostics rule | **FIXED** — novelty/L_disc from TRAIN carriers only, always; DEV contributes combination accuracy@1 (+ gold-margin tie-break) alone; harness assertion aborts any DEV feature extraction, §2.3, §5 |
+| 3. Calibration composition ambiguous (η_e × λ_d nesting, λ_r independence, final selection) | **FIXED** — one deterministic nested sequence: identical per-configuration procedure for A and B, λ_r retry ladder per grid point inside each configuration, η_e*(c) selection rule, explicit λ_d decision, final freeze, §5 |
 
 **Implementation order on owner sign-off (owner's order, recorded):** (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
