@@ -199,7 +199,7 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 | DEV | 12 questions | 8 direct + 4 untaught combinations — calibration ONLY (§5) |
 | FINAL EXAM | 43 questions | Phase-3 structure: direct + paraphrase + 15-combination battery; all unseen; held-out splits re-derived per the LTE seed and frozen before teach; combinations are unseen combinations of individually taught facts |
 
-**Split-manifest freeze mechanics (owner finding 5):** the manifest does not yet exist — it is produced by the split generator at implementation **step 2** (owner's order), and is **committed to the repository BEFORE any training run**. It contains: question ids, template ids, combination pairs, the generation seed, and the disjointness-assertion output. This protocol's freeze record (a final commit on owner sign-off) will cite the manifest's repository path and exact commit SHA; a manifest not demonstrably asserting disjointness voids the run.
+**Split-manifest freeze mechanics (owner finding 5):** the manifest does not yet exist — it is produced by the split generator at implementation **step 4** (harness and split-manifest verification, per the recorded order), and is **committed to the repository BEFORE any training run**. It contains: question ids, template ids, combination pairs, the generation seed, and the disjointness-assertion output. The freeze record (§10) commits to citing the manifest's repository path and exact commit SHA at that point; a manifest not demonstrably asserting disjointness voids the run.
 
 ---
 
@@ -217,7 +217,7 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 | Direction | Status |
 |---|---|
-| LTE-1 | **design + prereg (this revision); implementation awaits the owner's final review of Revision 5** |
+| LTE-1 | **FROZEN at Revision 6 (freeze record §10); conditional sign-off 2026-11-26 — step 1 only: build + demonstrate Gates 1–2 on the tiny stand-in** |
 | Free-decode pathway | HOLD |
 | Dreaming six-config rerun | HOLD |
 | Compliance ruling | separate owner gate |
@@ -242,3 +242,16 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 **Implementation order on owner sign-off (owner's demonstrated order, recorded):** (1) build and demonstrate Gates 1–2 on the tiny stand-in → (2) demonstrate both gates on the real host → (3) verify host immutability → (4) only then harness and split-manifest verification → (5) controls and calibration → (6) final exam exactly once.
 
 *Owner caveat recorded: the gates are specified but NOT yet implemented or demonstrated — demonstration is the first thing implementation does, before anything else runs.*
+
+---
+
+## 10. Freeze record
+
+| Item | Value |
+|---|---|
+| Frozen protocol | LTE-1 **Revision 6**, commit `7b7642c2ae547b5047234e54a16f629960642a2e`, doc SHA-256 prefix `09a2c17b7f00fd9a` |
+| Owner sign-off | **CONDITIONAL, 2026-11-26** — Rev 6 passes mathematical review; two documentary references fixed in this freeze commit (§8 → Revision 6; §6.3 → step 4) |
+| Authorised now | **STEP 1 ONLY: build Gates 1 and 2 on the tiny stand-in, demonstrate both, record the evidence. Stop if either gate fails.** |
+| NOT authorised by this sign-off | real-host gate work, harness/split-manifest implementation beyond step 1, training, calibration, controls, exam |
+| Split manifest | to be generated at step 4 and committed before any training run; this record will cite its path + commit SHA at that point |
+| Implementation order (owner's demonstrated order) | (1) Gates 1–2 on tiny stand-in → (2) gates on real host → (3) host immutability → (4) harness + split-manifest verification → (5) controls + calibration → (6) final exam exactly once |
