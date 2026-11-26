@@ -150,7 +150,7 @@ The next central question — whether the learning objective itself must change 
 
 ## 3. What is in flight (no verdicts claimed)
 
-**Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **Phase-3 expression matrix — CLOSED 2026-11-26; verdict recorded in §2.5.** All three arms at the frozen floor (density k=4, density k=16, alignment k=1), ARM-3 correctly not run (locked rule). The matrix report awaits the owner's review per the no-automatic-progression law; no follow-on experiment launches before that review.
+**Phase-3 expression matrix (Lane G, Lappy — RUNNING).** Protocol: `docs/PHASE3_PROTOCOL.md`, decisions D1–D9 locked; in-session controls on the 20-rel world / 43 questions: A frozen floor direct@1=0.250 para@1=0.125 combo@1=0.400; B retrieval direct=1.000 para=0.625 combo=0.000. **Phase-3 expression matrix — CLOSED 2026-11-26; verdict recorded in §2.5. Owner decision 2026-11-26: LEARN-TOWARD-EXPRESSION.** The owner reviewed §2.5 and authorised the design and preregistration of the Learn-Toward-Expression experiment (`docs/LTE_PROTOCOL.md`) — NOT its execution. Free-decode pathway and the dreaming six-config rerun are HELD; the compliance ruling remains a separate gate. No mechanism changes or runs until the LTE protocol is reviewed.
 
 **Pending, explicitly:** the substrate-cost baseline (task 27) and the substrate ruling itself are **pending** the compliance ruling. No substrate-level claim rides on an unresolved ruling.
 
