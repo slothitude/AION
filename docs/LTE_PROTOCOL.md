@@ -1,12 +1,8 @@
-# LTE-1 — Learn-Toward-Expression Protocol (REVISION 2 — post owner review, execution still HELD)
+# LTE-1 — Learn-Toward-Expression Protocol (REVISION 3 — execution still HELD)
 
-**Status:** REVISION 2, incorporating the owner's review of 2026-11-26 in full. Design direction: ACCEPTED. **Execution remains explicitly held — no implementation, no training, no run until the owner reviews this corrected protocol.**
+**Status:** REVISION 3, resolving the owner's five review findings on Revision 2. **Not yet approved for implementation. Execution remains held — no implementation, no training, no run until the owner's final review.** On sign-off, implementation proceeds in the owner's order: (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
 
-**Revision 2 changes:** (1) gradient-sign correction — expression update is DESCENT on the full objective, with the 0.7 blend Jacobian entering only through the actual forward computation; (2) L_disc gradient included; (3) finite-difference verification of the new gradient required; (4) five open items decided by the owner and recorded; (5) novelty/cosine-hinge relation made exact; (6) swap test given an exact score, candidate construction and sign convention; (7) dev split fully specified; (8) host-immutability strengthened to the four-point test; (9) gradient-direction test added as a run gate; (10) consolidation DISABLED in LTE-1 (owner decision).
-
-**Central requirement (owner verbatim):** *Learning a fact must create a distinguishable representation that can subsequently move the correct answer ahead of its distractors on unseen questions.*
-
-**Design law (owner verbatim):** *The learning objective and the expression objective must describe the same computation. We do not bolt another readout onto a representation that has never learned to carry the information that readout needs.*
+**Revision 3 changes:** (1) DEV-leakage eliminated — training-time discrimination uses TRAIN carriers only; DEV is calibration-only; exam features are extraction-only at final evaluation; (2) Gate 1 replaced with a genuine numerical central-difference comparison against autograd, tolerance justified by measured noise floor; (3) swap-test criterion moved to held-out EXAM carriers, post-freeze; (4) calibration made deterministic (grid, metric, tie-breaks); (5) split-manifest freeze mechanics specified (path + commit SHA recorded at implementation step 2, before any run).
 
 ---
 
@@ -19,11 +15,9 @@
 | Per-fact features nearly collinear (novelty 0.0013–0.0071); density multiplied signal without decorrelating | Discrimination must be a property of the objective |
 | The current objective (`connection_prediction_mse`) never references the decoder | The expression objective enters the update law itself |
 
-**The change, stated plainly:** the plastic update law gains an **expression-descent term** whose gradient is computed at the frozen host's candidate selection and flows back through the frozen host (gradients only — zero host weight updates) into the plastic state. The existing prediction term is untouched.
-
 ---
 
-## 2. Objective and equations (REVISED — sign corrected)
+## 2. Objective and equations
 
 ### 2.1 The two channels of the update
 
@@ -33,61 +27,54 @@ Prediction channel — the corrected plasticity law, **exactly as frozen in base
 Δu_pred = 0.7 · η_p · δ_pred · ψ
 ```
 
-Expression channel — **gradient DESCENT** on the weighted expression objective:
+Expression channel — **gradient DESCENT** on the weighted TRAINING expression objective:
 
 ```
-Δu_expr = − η_e · ∇_{u_fast} ( λ_r·L_rank + λ_d·L_disc )
+Δu_expr = − η_e · ∇_{u_fast} ( λ_r · L_rank,train + λ_d · L_disc,train )
+u_fast  ← u_fast + Δu_pred + Δu_expr
 ```
 
-Combined update:
+Both loss terms in the gradient are computed on **TRAIN data only** (§6.3): L_rank,train on training questions and their candidate sets; L_disc,train on per-fact features extracted from TRAIN carrier questions. The gradient flows through the plastic forward and the frozen host (gradients only — zero host weight updates).
 
-```
-u_fast ← u_fast + Δu_pred + Δu_expr
-```
-
-**Jacobian note (owner):** the gradient ∇_{u_fast} is taken through the *effective connection* — the actual forward computation, in which the effective strength is `a = 0.7·u_fast + 0.3·θ_slow`. The 0.7 blend therefore enters the gradient **naturally, through the forward's Jacobian**. The expression path must NOT multiply the gradient by another 0.7 factor.
+**Jacobian law (owner):** ∇_{u_fast} is taken through the *effective connection* — the actual forward, in which `a = 0.7·u_fast + 0.3·θ_slow`. The 0.7 blend enters the gradient naturally through the forward's Jacobian. The expression path is NEVER multiplied by another 0.7.
 
 ### 2.2 The ranking loss (answer alignment — constraint 2)
 
 At the answer position, for a training question with candidate set {c_1..c_K} (gold = g):
 
 ```
-L_rank = − log softmax_g( s_1 .. s_K )
-s_k    = candidate logit from the frozen host's scoring of c_k with the plastic residual injected
+L_rank,train = − log softmax_g( s_1 .. s_K )
+s_k          = candidate logit from the frozen host's scoring of c_k with the plastic residual injected
 ```
 
-CE-over-candidates is chosen because it is the *same computation* as the Phase-2/3 scoring instrument — the loss and the exam measure the same quantity by construction.
+CE-over-candidates: the loss and the exam's scoring instrument are the same computation by construction.
 
-### 2.3 The discrimination term (fact discrimination — constraint 1)
+### 2.3 Discrimination — two strictly separated contexts (REVISED per owner finding 1)
 
-Definitions first, so the two discrimination measures cannot disagree:
+Definitions (unchanged): `cos(f_i,f_j)` in float32 (zero-norm ⇒ cos = 0); per-fact feature = γ-scaled plastic residual at the answer position from fact i's connection set only (masked forward); `novelty = mean_{i≠j}(1 − cos(f_i,f_j))`; hinge `L_disc = mean_{i≠j} max(0, cos(f_i,f_j) − τ_d)`, τ_d = 0.20.
 
-- `cos(f_i, f_j) = ⟨f_i, f_j⟩ / (‖f_i‖·‖f_j‖)`, computed in float32 from BF16 features; zero-norm features give cos = 0 (distance 1).
-- **Per-fact feature** `f_i`: the γ-scaled plastic residual contributed at the answer position by fact i's connection set only — extracted by a masked forward in which every connection not belonging to fact i contributes zero (masking, not retraining), on fact i's canonical dev-bank question. Identical construction for all facts.
-- **Novelty** (the Lane G diagnostic, exact definition): `novelty = mean_{i≠j} ( 1 − cos(f_i, f_j) )`.
+**The two contexts are now explicitly distinct and never mixed:**
 
-The training pressure is a pairwise hinge:
+| Context | Carrier questions | When | Role |
+|---|---|---|---|
+| `f_i^train` / `L_disc,train` | **TRAIN carriers** (fact i's canonical teach-question) | during training, inside the gradient | learning pressure |
+| `f_i^exam` / `L_disc,exam` | fact i's **exam** direct question | **final evaluation only**, state frozen, **no update taken** | diagnostic criterion |
 
-```
-L_disc = mean_{i≠j} max( 0, cos(f_i, f_j) − τ_d )        τ_d = 0.20 (owner: provisionally fixed)
-```
+DEV carriers are used for **calibration only** (§5) — never inside any gradient, never as a diagnostic source. The exam diagnostic is extracted after the final exam is scored, from the frozen end-state, and no update follows it.
 
-**Exact relation between the two measures (owner item A):** with `cos̄ = mean_{i≠j} cos(f_i,f_j)`, novelty `= 1 − cos̄` identically. Since `(·)⁺` is convex, `L_disc = mean (cos − τ_d)⁺ ≥ (cos̄ − τ_d)⁺`. Therefore:
-
-- `L_disc = 0` ⟺ every pair has cos ≤ τ_d ⟹ `novelty ≥ 1 − τ_d = 0.80`. *(one-way implication — a high novelty does NOT imply every pair is separated)*
-- The preregistered **discrimination criterion is `L_disc = 0` on exam-extracted features** (the trained quantity, pairwise-strict); **novelty ≥ 0.80 is recorded alongside it as the exact mean-form consequence**. One mechanism, two readings, relation proven — they cannot disagree silently.
+**Exact relation between the measures (owner item A, Rev 2, unchanged):** novelty ≡ 1 − cos̄; since `(·)⁺` is convex, `L_disc ≥ (cos̄ − τ_d)⁺`; therefore `L_disc = 0` ⟺ every pair cos ≤ τ_d ⟹ novelty ≥ 1 − τ_d = 0.80 (one-way implication). **Preregistered discrimination criterion: `L_disc,exam = 0`; `novelty(exam features) ≥ 0.80` recorded as its exact mean-form consequence.** The training-time analogue (`L_disc,train → 0` on train carriers) is reported as the learning curve, never as the criterion.
 
 ### 2.4 Total objective and what does NOT change
 
 ```
-L = L_pred + λ_r·L_rank + λ_d·L_disc
+L = L_pred + λ_r·L_rank,train + λ_d·L_disc,train
 ```
 
-Untouched: ψ, the forward map, dual-timescale structure, the 0.7 factor inside Δu_pred, the consolidation law itself, the γ-sequencing law (plasticity first, gate learning second), rate ≤ 0 hard-disable, HostMode authority, the gym zero-direct-write law, and the frozen-fingerprint foundation instrument.
+Untouched: ψ, the forward map, dual-timescale structure, the 0.7 factor inside Δu_pred, the consolidation LAW (disabled for this run only), the γ-sequencing law, rate ≤ 0 hard-disable, HostMode authority, gym zero-direct-write, the frozen-fingerprint instrument.
 
-**Consolidation (owner decision):** consolidation is **DISABLED during LTE-1** (rate 0 hard-disable path). The existing law stays intact everywhere else; its interaction with LTE is a LATER, separately preregistered experiment. LTE-1 isolates one variable: the learning objective.
+**Consolidation (owner decision, Rev 2, confirmed):** DISABLED during LTE-1 (rate 0 hard-disable). Interaction with LTE is a later, separately preregistered experiment.
 
-**Protected-property note:** the update law is extended by an ADDITIVE descent term with its own coefficient; Δu_pred is byte-identical to baseline v2. ψ is unmodified, so the ψ-independence scope condition is unaffected. This amendment stands or falls by LTE-1's own gates.
+**Protected-property note:** the update law gains an ADDITIVE descent term; Δu_pred is byte-identical to baseline v2; ψ unmodified (ψ-independence scope condition unaffected). The amendment stands or falls by LTE-1's own gates.
 
 ---
 
@@ -97,151 +84,136 @@ Untouched: ψ, the forward map, dual-timescale structure, the 0.7 factor inside 
 |---|---|---|
 | Harness | `aion/experiments/teacher_student.py` | new `--lte` mode; Phase-1/2/3 paths untouched |
 | Candidate scoring | exists (Phase-2/3) | batched (K candidates per forward) |
-| Backward through frozen host | new | autograd pass; `requires_grad` on the injected residual only |
+| Backward through frozen host | new | autograd; `requires_grad` on injected residual only |
 | Host-immutability guard | strengthened | four-point test, §3.1 |
-| Novelty / L_disc extraction | new (extends Lane G machinery) | masked forwards, §2.3 definitions |
-| Swap test | new | exact score, §6.1 |
-| Gradient verification | new | finite-difference + direction tests, §6.2 |
-| Question splits | existing world bank | train/dev/exam, §6.3 |
+| Feature extraction (train/exam) | new | masked forwards per §2.3, per-context |
+| Swap test | new | §6.1, exam carriers, post-freeze |
+| Gradient gates | new | §6.2, genuine FD comparison |
+| Split generator + manifest | new | §6.3, committed before any run |
 
-**Budget estimate (honest, CPU BF16, Lappy):** expression channel adds forward+backward per training question (~8–10 s per 6-candidate batch): teach ≈ 3.0–3.6 ks/config; exam incl. ablation rerun, swap tests, gradient tests ≈ 2.5–3 h. Per-config ≈ 6 h; the full LTE-1 block (controls + arm + analyses) ≈ 12–14 h, wall uncertainty ±30 % (co-tenant load), as in Phase-3.
+**Budget estimate (honest, CPU BF16, Lappy):** teach ≈ 3.0–3.6 ks/config; exam + ablation + swap + gates ≈ 2.5–3 h per config. The deterministic λ_d decision (§5) requires TWO dev-configured trainings (λ_d = 0.5 vs λ_d = 0): add ≈ 6 h. Full LTE-1 block ≈ 18–20 h wall, uncertainty ±30 % (co-tenant load), as in Phase-3.
 
-### 3.1 Host immutability — the four-point test (owner item D; `host_grad_count == 0` alone is NOT sufficient)
+### 3.1 Host immutability — four-point test (owner item D; unchanged from Rev 2)
 
-A frozen host legitimately transmits gradients to the injected residual while its parameters receive no updates. Required, all four:
+1. Host parameters have no optimizer (no optimizer object constructed over any foundation parameter).
+2. Host parameter fingerprints identical before and after the run (426-tensor instrument).
+3. No host parameter receives an update — fingerprints re-verified at teach-end AND exam-end.
+4. Gradients to the plastic state are finite and nonzero where expected: `isfinite(Δu_expr).all()` and `‖Δu_expr‖ > 0` on every expression step; zero/NaN = run-aborting instrument fault.
 
-1. **Host parameters have no optimizer.** No optimizer object is constructed over any foundation parameter.
-2. **Host parameter fingerprints are identical before and after** the run (the existing 426-tensor fingerprint instrument).
-3. **No host parameter receives an update** — per-phase check that each foundation tensor's data is unchanged (fingerprint re-verified at teach-end and exam-end, not just run-end).
-4. **Gradients to the plastic state are finite and nonzero where expected** — assert `isfinite(Δu_expr).all()` and `‖Δu_expr‖ > 0` on expression steps; a zero or NaN expression gradient is a run-aborting instrument fault, not a silent skip.
-
-`host_grad_count == 0` is retained as an additional check, never as the definition of immutability.
+`host_grad_count == 0` retained as an additional check, never the definition.
 
 ---
 
-## 4. Controls (constraint 6: frozen evaluation)
+## 4. Controls (constraint 6)
 
 | Control | Purpose |
 |---|---|
 | A — frozen floor | the Phase-3 floor, re-measured in-session |
-| B — retrieval | the structural ceiling for transfer; blind to composition (0.000) |
-| C — old objective, same harness | **the null that must replicate the Phase-3 floor** — if C moves, the instrument changed, and the comparison is void (instruments-before-science law) |
+| B — retrieval | the structural transfer ceiling; blind to composition (0.000) |
+| C — old objective, same harness | **must replicate the Phase-3 floor** — if C moves, the instrument changed and the comparison is void (instruments-before-science law) |
 
 ---
 
-## 5. Tuning law — owner decisions recorded (no tuning against the final exam)
+## 5. Calibration — DETERMINISTIC procedure (owner finding 4; replaces all discretionary adjustment)
 
-| Item | Owner decision |
-|---|---|
-| λ_r | **1.0 starting value; dev-only adjustment** |
-| λ_d | **0.5 starting value; retained only if dev evidence justifies it** |
-| τ_d | **0.20 cosine-similarity threshold, provisionally fixed** |
-| η_e | **specified and frozen after dev calibration** |
-| Dev split | **explicitly defined before execution** (§6.3) |
-| Swap threshold | **+0.10 retained, with the precise scoring definition of §6.1** |
-| Consolidation eligibility | **NO — excluded from LTE-1** (owner: isolating one variable; consolidation interaction is a later, separately preregistered experiment) |
+**η_e selection (single pass over a preregistered grid, in order):**
+- Grid: `η_e ∈ {1e-4, 3e-4, 1e-3, 3e-3, 1e-2}`.
+- Selection metric: highest **dev combination accuracy@1** on the 4 dev-combination questions.
+- Tie-break 1: highest dev mean gold-margin. Tie-break 2: smallest η_e.
+- All five results recorded in the calibration report; η_e frozen at the winner; **no other values considered**.
 
-Dev questions are the ONLY surface where λ_r, λ_d, η_e may be adjusted. One dev pass, choices recorded with the values and the dev numbers that justified them, then frozen. The final exam is scored exactly once per arm. Any exam-adjacent adjustment voids the run and is recorded as such.
+**λ_r rule:** start 1.0. Adjusted only on measured training instability, defined as: train `L_rank` increasing over a full training pass, or any NaN in the expression loss. If triggered: λ_r ← 0.5, retry; still unstable → λ_r ← 0.25, retry; still unstable → run aborts as an instrument fault (recorded, not tuned further).
+
+**λ_d rule (deterministic two-config dev comparison, cost noted in §3):**
+1. Train two dev-configured models, identical in everything except λ_d: config A (λ_d = 0.5), config B (λ_d = 0).
+2. Measure on DEV: novelty of train-carrier features post-teach (for B this is the un-pressured baseline) and dev combination@1.
+3. **Retain λ_d = 0.5 iff novelty_A ≥ 0.80 AND dev-combo@1(A) ≥ dev-combo@1(B) − 0.05.** Otherwise λ_d = 0. Ties → 0.5.
+4. Both configs' numbers recorded; decision and justification frozen before the final exam.
+
+**Freeze:** after calibration, η_e, λ_r, λ_d, and the chosen config are committed to the calibration report; the final exam is scored exactly once per arm; any exam-adjacent adjustment voids the run and is recorded as such.
 
 ---
 
-## 6. Tests and splits (owner items B and C; owner §4)
+## 6. Tests and splits
 
-### 6.1 Swap test — exact definition (owner item B)
+### 6.1 Swap test — EXAM carriers, post-freeze (owner finding 3)
 
-For each ordered fact pair (i, j), i ≠ j, sharing a relation template, with gold answers a_i and a_j:
+For each ordered fact pair (i, j), i ≠ j, sharing a relation template, golds a_i, a_j:
 
-- Carrier question: Q_i (the question whose gold is a_i, from the DEV bank).
-- Candidates scored: the pair {a_i, a_j}.
-- **Native scoring:** `s_{f_i}(c)` = candidate score with the full native plastic state.
-- **Swapped scoring:** `s_{f_j}(c)` = candidate score with fact i's per-fact residual block REPLACED by fact j's (masked-forward machinery as §2.3 — swap is a state substitution at exam time, no retraining).
-
-```
-Δ_swap(i, j) = [ s_{f_j}(a_j) − s_{f_j}(a_i) ]  −  [ s_{f_i}(a_j) − s_{f_i}(a_i) ]
-```
-
-**Sign convention:** Δ_swap > 0 means j's features favour j's answer over i's answer, *relative to* how i's features score that pair — i.e. the state carries fact-specific information. The collinear Phase-3 null predicts Δ_swap ≈ 0 (features-i ≈ features-j ⇒ the two brackets cancel).
-
-**Preregistered criterion:** `mean over ordered pairs Δ_swap ≥ +0.10` log-prob (owner: threshold retained). The score s is the candidate's log-probability at the answer position under the standard scoring instrument. All swap measurements are preserved per-pair in results.jsonl.
-
-### 6.2 Gradient verification — two run gates (owner §1 and §4)
-
-**Gate 1 — finite-difference check of the new gradient.** On the tiny standin AND once on the real host before training: compute Δu_expr at the current state; numerically verify the directional derivative agreement
+- **Carrier: the held-out EXAM direct question for fact i** — measured during final evaluation only, after calibration is frozen. **Never used for tuning.** (Rev-2's dev-bank carrier wording is withdrawn.)
+- Candidates scored: the pair {a_i, a_j} — the same two candidates under both states.
+- Native scoring `s_{f_i}`: full native plastic state.
+- Swapped scoring `s_{f_j}`: fact i's per-fact residual block REPLACED by fact j's; **all other state identical** (masked-forward substitution, no retraining).
 
 ```
-⟨ ∇L, Δu_expr ⟩  ≈  −(1/η_e) · ‖Δu_expr‖²     (relative error ≤ 1e-4, float32 reference)
+Δ_swap(i, j) = [ s_{f_j}(a_j) − s_{f_j}(a_i) ] − [ s_{f_i}(a_j) − s_{f_i}(a_i) ]
 ```
 
-and that `L(u_fast + ε·Δu_expr) < L(u_fast)` for ε ∈ {1e-2, 1e-3}. This verifies BOTH the sign (descent, not ascent) and the connection to the candidate-scoring computation, numerically — not by asserting autograd ran.
+Sign: Δ_swap > 0 ⇒ j's features favour j's answer relative to how i's features do ⇒ fact-specific state. The collinear Phase-3 null predicts ≈ 0. **Criterion: mean over ordered pairs ≥ +0.10 log-prob**, score = candidate log-probability at the answer position under the standard instrument, all per-pair values preserved in results.jsonl. A train-carrier swap diagnostic may additionally be logged during development, but carries NO criterion weight.
 
-**Gate 2 — gradient-direction test (owner §4, verbatim procedure).**
-1. Capture the expression loss before an update.
-2. Calculate the proposed plastic update.
-3. Apply a small update using the expression gradient alone.
-4. Recalculate the same loss with everything else fixed.
-5. Verify that the loss decreases.
+### 6.2 Gradient verification — two run gates (owner finding 2 + §4 of prior review)
 
-Failure of either gate aborts the run before any training. Gate results are recorded in the run report.
+**Gate 1 — GENUINE numerical derivative comparison (Rev 3: no longer an algebraic self-check).**
+Let `F = λ_r·L_rank,train + λ_d·L_disc,train` at the current state, and `d = Δu_expr / ‖Δu_expr‖` (the actual planned step direction). Autograd gives `D_AD = ∇F(u)·d`. Numerical central differences give, for ε ∈ {1e-2, 1e-3, 1e-4}:
 
-### 6.3 Question splits (owner item C — question-level distinctness)
+```
+D_FD(ε) = [ F(u + ε·d) − F(u − ε·d) ] / (2ε)
+```
 
-One RNG seed fixed at preregistration: **seed 20261126**. The split is generated by the world bank's template allocator with disjoint allocation, verified by an in-harness assertion (no question, template, or combination appears in two splits), and committed as a manifest before any run:
+**Tolerance is measured, not assumed:** before training, a tolerance-calibration run on the real host measures the FD noise floor `n(ε) = |D_FD(ε) − D_FD(ε')| / max(1, |D_AD|)` (ε' = next-larger grid ε). **Pass criterion: `|D_AD − D_FD(ε)| / max(1, |D_AD|) ≤ max(10·n(ε), 1e-4)` at ε = 1e-2 and ε = 1e-3.** D_AD, every D_FD(ε), every relative error, and the loss values at each ε are recorded in the run report. Gate 1 runs on the tiny standin AND once on the real host, before any training.
+
+**Gate 2 — gradient-direction test (independent step size and isolation, per owner):**
+1. Capture F before the update.
+2. Compute Δu_expr.
+3. Apply `u_fast ← u_fast + η_gate · Δu_expr` with **η_gate = 0.1·η_e** (recorded), **expression gradient alone** — prediction channel, gates, and all other state frozen for the duration of the check (state isolation).
+4. Recompute F with the identical candidate batch in identical order, float32 reference.
+5. **Verify F decreased.**
+Failure of Gate 1 or Gate 2 aborts the run before training; gate results are recorded.
+
+### 6.3 Question splits (owner item C, Rev 2; manifest mechanics per finding 5)
+
+One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allocation (no question, template, or combination in two splits), verified by an in-harness assertion whose output is part of the manifest:
 
 | Split | Count | Content |
 |---|---|---|
-| TRAIN (teach) | 60 experiences | 20 relationships × 3 teach facts — the existing teach set |
-| DEV | 12 questions | 8 direct (untaught question-templates) + 4 untaught combinations — the ONLY tuning surface (§5) |
-| FINAL EXAM | 43 questions | the Phase-3 structure: direct + paraphrase + 15-question combination battery; all unseen; held-out splits re-derived per the LTE seed and frozen before teach; combination questions are unseen combinations of individually taught facts |
+| TRAIN (teach) | 60 experiences | 20 relationships × 3 teach facts — also the L_rank,train / L_disc,train surface |
+| DEV | 12 questions | 8 direct + 4 untaught combinations — calibration ONLY (§5) |
+| FINAL EXAM | 43 questions | Phase-3 structure: direct + paraphrase + 15-combination battery; all unseen; held-out splits re-derived per the LTE seed and frozen before teach; combinations are unseen combinations of individually taught facts |
 
-Rules: (a) every exam direct/paraphrase question uses a question-template never used in teach or dev; (b) exam combinations and dev combinations are disjoint pairs; (c) the split manifest (question ids, templates, seeds) is committed alongside this protocol's freeze; (d) the final exam is scored exactly once per arm.
-
----
-
-## 7. Success / failure criteria (fixed now — unchanged from draft except where owner-tightened)
-
-**Behavioural success (all required):**
-- combination@1 ≥ 0.50 (untaught combinations — constraint 3)
-- ablation delta ≥ +0.10 (plastic-state zeroed rerun drops by ≥ this — constraint 4)
-- ≥ 2/3 held-out splits pass (constraint 6)
-
-**State criteria (diagnostic, reported regardless):**
-- discrimination: **L_disc = 0 on exam-extracted features** under τ_d = 0.20; **novelty ≥ 0.80** recorded as its exact mean-form consequence (§2.3)
-- differentiator tests: swap ≥ +0.10 (§6.1); margin decomposition gold Δmargin ≥ +0.10 with gold-helped ≥ 2/3; rank-gain→correct conversions > 0
-- retention battery: corrections, 20-old-fact intactness, transcript purge, bitwise restart — all PASS (constraint 5)
-- host immutability four-point test: PASS (§3.1)
-- gradient gates 1 and 2: PASS before training (§6.2)
-
-**Any behavioural criterion failing = the experiment's negative result, recorded in RESULTS.md §2 by name, with the full decomposition data.** A pass on state criteria with a behavioural fail is the Phase-3 signature — recorded as such, never upgraded.
+**Split-manifest freeze mechanics (owner finding 5):** the manifest does not yet exist — it is produced by the split generator at implementation **step 2** (owner's order), and is **committed to the repository BEFORE any training run**. It contains: question ids, template ids, combination pairs, the generation seed, and the disjointness-assertion output. This protocol's freeze record (a final commit on owner sign-off) will cite the manifest's repository path and exact commit SHA; a manifest not demonstrably asserting disjointness voids the run.
 
 ---
 
-## 8. What is NOT authorised under this protocol
+## 7. Success / failure criteria (fixed)
+
+**Behavioural success (all required):** combination@1 ≥ 0.50 · ablation delta ≥ +0.10 · ≥ 2/3 held-out splits pass.
+
+**State criteria (diagnostic, reported regardless):** `L_disc,exam = 0` with novelty(exam) ≥ 0.80 (§2.3) · swap ≥ +0.10 on exam carriers (§6.1) · margin decomposition (gold Δmargin ≥ +0.10, gold-helped ≥ 2/3) · rank conversions > 0 · retention battery all-PASS (corrections, 20-old-fact intactness, transcript purge, bitwise restart) · host four-point test PASS · gradient Gates 1–2 PASS before training.
+
+**Any behavioural criterion failing = the experiment's negative result, recorded in RESULTS.md §2 by name with full decomposition data.** State-pass + behavioural-fail is the Phase-3 signature — recorded as such, never upgraded.
+
+---
+
+## 8. What is NOT authorised
 
 | Direction | Status |
 |---|---|
-| Learn-toward-expression | **design + prereg (this revision); execution awaits owner review of THIS corrected protocol** |
-| Free-decode pathway | HOLD (owner: risks bypassing rather than solving ownership) |
-| Dreaming six-config rerun | HOLD (does not answer the expression failure) |
-| Compliance ruling | separate owner gate, untouched |
-| Consolidation interaction with LTE | later, separately preregistered experiment (owner decision) |
+| LTE-1 | **design + prereg (this revision); implementation awaits the owner's final review of Revision 3** |
+| Free-decode pathway | HOLD |
+| Dreaming six-config rerun | HOLD |
+| Compliance ruling | separate owner gate |
+| Consolidation × LTE interaction | later, separately preregistered |
 
 ---
 
-## 9. Review ledger (owner review 2026-11-26 → this revision)
+## 9. Review ledger
 
-| Owner review item | Disposition in Revision 2 |
+| Owner review item (Rev-2 review) | Disposition in Revision 3 |
 |---|---|
-| Gradient sign (ascent error) | **FIXED** — Δu_expr = −η_e·∇(λ_r·L_rank + λ_d·L_disc), §2.1 |
-| L_disc gradient missing | **FIXED** — included in the same descent step, §2.1 |
-| No extra 0.7 on the expression gradient; blend Jacobian via the forward | **RECORDED as a design law**, §2.1 |
-| Finite-difference verification required | **ADDED** as run Gate 1, §6.2 |
-| λ_r = 1.0 / λ_d = 0.5 / τ_d = 0.20 / η_e post-dev | **RECORDED**, §5 |
-| Dev split defined before execution | **SPECIFIED**, §6.3 |
-| Swap threshold +0.10 with precise definition | **SPECIFIED** — exact score, candidates, sign, §6.1 |
-| Consolidation eligibility: NO | **APPLIED** — consolidation disabled in LTE-1, §2.4 |
-| Novelty ↔ hinge relation | **PROVEN** — novelty ≡ 1 − cos̄; L_disc = 0 ⟹ novelty ≥ 1 − τ_d; criterion restated as L_disc = 0 with novelty ≥ 0.80 recorded, §2.3 |
-| Swap test precision | **SPECIFIED**, §6.1 |
-| Host immutability four-point test | **ADOPTED**, §3.1 |
-| Gradient-direction test | **ADDED** as run Gate 2, §6.2 |
+| 1. L_disc consumed DEV (critical) | **FIXED** — training features from TRAIN carriers; DEV calibration-only; exam features extraction-only post-scoring; L_disc,train vs L_disc,exam distinguished, §2.3 |
+| 2. Gate 1 was an algebraic self-check (critical) | **FIXED** — genuine central-difference D_FD vs autograd D_AD at three ε; both values, relative errors, loss values recorded; tolerance from measured noise floor; loss-decrease retained; §6.2 |
+| 3. Swap carrier wording (DEV → criterion contamination) | **FIXED** — exam carriers, post-freeze, never tuned on; same carrier + same candidates under both states; only fact i's block replaced, §6.1 |
+| 4. Calibration rule not deterministic | **FIXED** — η_e grid + metric + tie-breaks; λ_r instability rule with abort; λ_d two-config rule with thresholds; §5 |
+| 5. Split manifest unverifiable | **SPECIFIED** — manifest born at step 2, committed before any run, freeze record cites path + SHA; §6.3 |
 
-*Remaining open item: none — all five draft open items are owner-decided. This revision awaits the owner's final review before freeze and any implementation.*
+**Implementation order on owner sign-off (owner's order, recorded):** (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
