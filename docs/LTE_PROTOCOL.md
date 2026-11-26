@@ -1,8 +1,8 @@
-# LTE-1 — Learn-Toward-Expression Protocol (REVISION 4 — execution still HELD)
+# LTE-1 — Learn-Toward-Expression Protocol (REVISION 5 — execution still HELD)
 
-**Status:** REVISION 4, resolving the owner's three final findings on Revision 3. **Not yet approved for implementation. Execution remains held — no implementation, no training, no run until the owner signs off.** On sign-off: freeze the protocol, then implement in the owner's order (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
+**Status:** REVISION 5, resolving the owner's four findings on Revision 4. **Not yet approved for implementation. Execution remains held — no implementation, no training, no calibration, no run until the owner signs off.** On sign-off: freeze the protocol, then implement in the owner's order (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
 
-**Revision 4 changes:** (1) Gate 1's noise floor redefined — repeatability noise from repeated IDENTICAL evaluations at fixed ε and state (K = 5), separate from convergence (central differences at all three ε kept for the convergence record); the undefined ε′ relation withdrawn; (2) the §5/§2.3 contradiction removed — novelty is computed from TRAIN-carrier features ONLY, ever; DEV contributes combination accuracy alone (generalisation), never features; an in-harness assertion forbids feature extraction on DEV carriers; (3) calibration rewritten as ONE deterministic nested sequence — same procedure applied identically to both λ_d configurations (fair comparison), λ_r retry handled per grid point inside each configuration, final selection and freeze explicit.
+**Revision 5 changes:** (1) the carrier-source rule's contradiction with the exam diagnostic removed — TRAIN carriers feed every gradient and calibration context; DEV extraction forbidden absolutely; held-out EXAM carriers permitted ONLY for post-freeze, post-behavioural-scoring diagnostics (extraction-only, never gradients/calibration/updates); (2) calibration retries given an explicit reset rule (same frozen initial state, identical experience sequence and RNG state; failed attempts' state never carried forward; every attempt recorded); (3) the nonzero-gradient requirement scoped — finiteness required everywhere, nonzero required only on designated gradient-verification fixtures, legitimate zero-gradient steps recorded not aborted; (4) stale budget and revision references corrected.
 
 ---
 
@@ -64,7 +64,16 @@ DEV carriers are used for **calibration only** (§5) — never inside any gradie
 
 **Exact relation between the measures (owner item A, Rev 2, unchanged):** novelty ≡ 1 − cos̄; since `(·)⁺` is convex, `L_disc ≥ (cos̄ − τ_d)⁺`; therefore `L_disc = 0` ⟺ every pair cos ≤ τ_d ⟹ novelty ≥ 1 − τ_d = 0.80 (one-way implication). **Preregistered discrimination criterion: `L_disc,exam = 0`; `novelty(exam features) ≥ 0.80` recorded as its exact mean-form consequence.** The training-time analogue (`L_disc,train → 0` on train carriers) is reported as the learning curve, never as the criterion.
 
-**Carrier-source rule (owner, Rev 4 — stated as a hard invariant):** novelty and L_disc are computed from **TRAIN-carrier features only, always** — during training, during calibration, and at exam. **DEV contributes exactly one quantity: combination accuracy@1, as a generalisation evaluation. Feature extraction on DEV carriers is forbidden**, and the harness enforces it with an assertion (any masked-feature-extraction call on a DEV carrier aborts the run as an instrument fault). DEV can evaluate generalisation; it can never become a hidden source of feature diagnostics.
+**Carrier-source rule (owner, REVISED Rev 5 — resolves the Rev-4 contradiction with the exam diagnostic):**
+
+| Context | Carrier | Permitted operations |
+|---|---|---|
+| Gradient / training | TRAIN carriers only | feature extraction, L_disc,train, gradients, updates |
+| Calibration | TRAIN carriers only | feature extraction, novelty (selection evidence) |
+| **Exam diagnostic** | **held-out EXAM carriers** | **extraction ONLY — post-freeze, after behavioural scoring; no gradients, no calibration, no parameter updates, ever** |
+| DEV carriers | — | **feature extraction forbidden ABSOLUTELY** (harness assertion aborts as an instrument fault); DEV contributes combination accuracy@1 (+ gold-margin tie-break) only |
+
+This preserves the preregistered exam diagnostic — `L_disc,exam = 0`, `novelty(exam features) ≥ 0.80` — without reintroducing DEV leakage: exam features leave the frozen end-state after behavioural scoring and nothing follows them but the record.
 
 ### 2.4 Total objective and what does NOT change
 
@@ -93,14 +102,14 @@ Untouched: ψ, the forward map, dual-timescale structure, the 0.7 factor inside 
 | Gradient gates | new | §6.2, genuine FD comparison |
 | Split generator + manifest | new | §6.3, committed before any run |
 
-**Budget estimate (honest, CPU BF16, Lappy):** teach ≈ 3.0–3.6 ks/config; exam + ablation + swap + gates ≈ 2.5–3 h per config. The deterministic λ_d decision (§5) requires TWO dev-configured trainings (λ_d = 0.5 vs λ_d = 0): add ≈ 6 h. Full LTE-1 block ≈ 18–20 h wall, uncertainty ±30 % (co-tenant load), as in Phase-3.
+**Budget estimate (honest, CPU BF16, Lappy):** teach ≈ 3.0–3.6 ks/config; exam + ablation + swap + gates ≈ 2.5–3 h per config. Calibration (§5) requires up to TEN dev trainings (2 λ_d configurations × 5 η_e points, plus λ_r retries): add ≈ 9–12 h. Full LTE-1 block ≈ **24 h wall**, uncertainty ±30 % (co-tenant load), as in Phase-3.
 
 ### 3.1 Host immutability — four-point test (owner item D; unchanged from Rev 2)
 
 1. Host parameters have no optimizer (no optimizer object constructed over any foundation parameter).
 2. Host parameter fingerprints identical before and after the run (426-tensor instrument).
 3. No host parameter receives an update — fingerprints re-verified at teach-end AND exam-end.
-4. Gradients to the plastic state are finite and nonzero where expected: `isfinite(Δu_expr).all()` and `‖Δu_expr‖ > 0` on every expression step; zero/NaN = run-aborting instrument fault.
+4. **Finiteness everywhere, nonzero where mathematically expected (REVISED Rev 5 — owner finding 3):** `isfinite(Δu_expr).all()` is required on every expression step (NaN/Inf = run-aborting instrument fault). The `‖Δu_expr‖ > 0` requirement applies ONLY on the designated gradient-verification fixtures (Gates 1–2), where a nonzero gradient is mathematically expected. A legitimate zero-gradient training step — e.g. the objective already satisfied for that batch — is **recorded, not aborted**; zero-gradient step counts are reported per run.
 
 `host_grad_count == 0` retained as an additional check, never the definition.
 
@@ -126,6 +135,7 @@ Everything below runs AFTER the gradient gates and host-immutability gates pass 
 1. For each η_e in grid order {1e-4, 3e-4, 1e-3, 3e-3, 1e-2}, with λ_r = 1.0:
    a. Train the dev-configured model (TRAIN data only; consolidation disabled).
    b. Instability check per grid point: train `L_rank` rising over a full pass, or any NaN in the expression loss → retry with λ_r ← 0.5; still unstable → λ_r ← 0.25; still unstable → mark this grid point ABORTED and continue to the next η_e (the point's data is recorded; it is not tuned further).
+      **Retry reset rule (owner, Rev 5):** every retry — and every new grid point — starts from the SAME frozen initial plastic state, the IDENTICAL experience sequence, and the IDENTICAL RNG state as the original attempt. A failed attempt's state is never carried into a retry or into another grid point. Each attempt is recorded separately (config, η_e, λ_r, attempt number, outcome, final train L_rank).
    c. Score DEV: combination@1 and mean gold-margin. Nothing else is read from DEV.
 2. Select η_e*(c) for the configuration: highest dev combination@1; tie-break 1: highest dev mean gold-margin; tie-break 2: smallest η_e. (If all five points aborted: the configuration is void and recorded as an instrument fault.)
 3. Record for the selected point: λ_r used, dev combo@1, dev gold-margin, and novelty from TRAIN-carrier features post-teach.
@@ -206,7 +216,7 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 | Direction | Status |
 |---|---|
-| LTE-1 | **design + prereg (this revision); implementation awaits the owner's final review of Revision 3** |
+| LTE-1 | **design + prereg (this revision); implementation awaits the owner's final review of Revision 5** |
 | Free-decode pathway | HOLD |
 | Dreaming six-config rerun | HOLD |
 | Compliance ruling | separate owner gate |
@@ -218,12 +228,17 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 **Revision-2 review (resolved in Rev 3):** DEV-leakage in L_disc carriers · algebraic self-check Gate 1 · swap on DEV carriers · non-deterministic calibration · unverifiable split manifest — all FIXED in Revision 3, confirmed by the owner's Rev-3 review.
 
-**Revision-3 review (resolved in THIS revision):**
+**Revision-3 review (resolved in Rev 4):** repeatability-based noise floor · DEV feature-extraction prohibition · deterministic nested calibration — all FIXED, confirmed by the owner's Rev-4 review.
 
-| Owner finding | Disposition in Revision 4 |
+**Revision-4 review (resolved in THIS revision):**
+
+| Owner finding | Disposition in Revision 5 |
 |---|---|
-| 1. n(ε) undefined at grid top; cross-ε differences measure step-size sensitivity, not noise | **FIXED** — repeatability noise from K = 5 identical evaluations at fixed ε and state; central differences at all three ε retained for the convergence record; tolerance = max(10·n_rep(ε), 1e-4 floor), §6.2 |
-| 2. §5 "novelty on DEV" contradicted §2.3's no-DEV-diagnostics rule | **FIXED** — novelty/L_disc from TRAIN carriers only, always; DEV contributes combination accuracy@1 (+ gold-margin tie-break) alone; harness assertion aborts any DEV feature extraction, §2.3, §5 |
-| 3. Calibration composition ambiguous (η_e × λ_d nesting, λ_r independence, final selection) | **FIXED** — one deterministic nested sequence: identical per-configuration procedure for A and B, λ_r retry ladder per grid point inside each configuration, η_e*(c) selection rule, explicit λ_d decision, final freeze, §5 |
+| 1. Carrier-source rule ("TRAIN only, always, at exam") contradicted the exam diagnostic (critical) | **FIXED** — rule recast as a context table: TRAIN carriers for gradient/calibration; EXAM carriers for post-freeze, post-scoring extraction-only diagnostics; DEV extraction forbidden absolutely; exam features never enter gradients, calibration or updates, §2.3 |
+| 2. Calibration retries lacked a state-reset rule | **FIXED** — every retry/grid point starts from the same frozen initial state, identical experience sequence and RNG state; failed attempts' state never carried forward; every attempt recorded separately, §5 |
+| 3. Nonzero-gradient requirement too absolute | **FIXED** — finiteness required on every step; nonzero required only on Gates 1–2 fixtures; legitimate zero-gradient steps recorded with per-run counts, not aborted, §3.1 |
+| 4. Stale details (budget 18–20 h / two dev trainings; "Revision 3" reference) | **FIXED** — budget now up to ten dev trainings / ≈24 h (§3); §8 references Revision 5 |
 
 **Implementation order on owner sign-off (owner's order, recorded):** (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
+
+*Owner caveat recorded: the gates are specified but NOT yet implemented or demonstrated — demonstration is the first thing implementation does, before anything else runs.*
