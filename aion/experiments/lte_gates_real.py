@@ -25,11 +25,16 @@ section 10: "demonstrate Gates 1-2 on the real Qwen host with literal 2.2 scorin
   (e) Stop at the step-2 boundary. A failing gate stops the run and is reported;
       criteria are never weakened.
 
-Gate 1 (protocol 6.2): D_AD = grad F(u) . d  vs central differences
+Gate 1 (protocol 6.2, REVISION 8 — commit 57b1fef, owner ruling on the Rev-7 run):
+  the comparison criterion itself is evaluated in FLOAT64 over cached fixed host
+  outputs (the host forward is never re-run in float64):
+  D_AD = grad F(u) . d  vs central differences
   D_FD(eps) = [F(u + eps d) - F(u - eps d)] / (2 eps),  eps in {1e-2, 1e-3, 1e-4},
   K = 5 identical repeats give the repeatability noise n_rep(eps);
-  pass: |D_AD - D_FD| / max(1, |D_AD|) <= max(10 * n_rep, 1e-4) at {1e-2, 1e-3}.
-  Float64 FD diagnostics recorded alongside (Rev 7).
+  pass: |D_AD - D_FD| / max(1, |D_AD|) <= max(10 * n_rep, 1e-4) at {1e-2, 1e-3},
+  all in float64. The float32 pair is recorded as a DIAGNOSTIC only (the Rev-7
+  run's float32 eps=1e-3 rel 1.013e-04 vs floor 1e-4 was float32 FD cancellation).
+Gate 2 unchanged (Rev 7 float64 reference criterion).
 
 Gate 2 (protocol 6.2, Rev 6 form + Rev 7 criterion): F (both terms) before ->
   RAW unscaled gradient -> u -= eta_gate * grad with eta_gate = 0.1 * eta_e applied
@@ -116,6 +121,16 @@ def sha256_tensor(t: torch.Tensor, n: int = 64) -> str:
     return sha256_bytes(x.view(torch.uint8).numpy().tobytes(), n)
 
 
+def rss_gb() -> Optional[float]:
+    """Peak RSS of this process in GiB (Linux ru_maxrss), for the memory record."""
+    try:
+        import resource
+        return round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+                     / (1024.0 * 1024.0), 2)
+    except Exception:
+        return None
+
+
 # --------------------------------------------------------------------------- #
 # Fixture: real frozen host + cached per-candidate host outputs + mirror
 # --------------------------------------------------------------------------- #
@@ -126,6 +141,7 @@ class RealHostFixture:
 
     def __init__(self, seed: int = SEED):
         t0 = time.time()
+        torch.manual_seed(seed)   # fixture RNG: governs the relationship W draws
         from transformers import AutoModelForCausalLM, AutoTokenizer
         # EXACTLY as teacher_student.setup_foundation does for --foundation qwen
         # (READ-ONLY landed code; same load, freeze, fingerprint order).
@@ -179,16 +195,26 @@ class RealHostFixture:
         self.blend = float(self.iface.cfg.blend_ratio)   # mirror tied to the real conns
         # Mirror head: float32 view of the (BF16-valued) output head. The cast is
         # EXACT (BF16 -> float32 loses nothing), so the mirror math is unchanged;
-        # it lets the float32 mirror matmul against the head on a BF16 host. The
-        # float64 reference casts this float32 copy onward (also exact).
+        # it lets the float32 mirror matmul against the head on a BF16 host.
         self.head_w = self.iface.base.get_output_embeddings().weight.detach().float()
         self.head_w_dtype = str(self.iface.base.get_output_embeddings().weight.dtype)
+        # ONE PERSISTENT float64 view of the head, allocated once. The autograd
+        # matmul RETAINS its head operand, so a fresh cast per candidate retained
+        # 8 x 3.1 GB in the float64 criterion graph — the two earlier attempts were
+        # kernel-OOM-killed (28.9 / 29.4 GB RSS) by exactly that. With the
+        # persistent view, `t.double()` on the already-double tensor ALIASES it and
+        # the graph retains one 3.1 GB copy total. Values are identical either way.
+        self.head_w64 = self.head_w.double()
         self.hidden_dim = self.iface.hidden_dim
         self.n_conns = len(self.iface.conns)
         assert self.n_conns == N_FACTS
         self.theta = [conn.plasticity.theta_slow.detach().clone()
                       for conn in self.iface.conns]
         self.host_param_dtype = str(next(model.parameters()).dtype)
+        # captured for the evidence before the host may be freed (free_host)
+        self.relation_type = self.iface.cfg.relation_type
+        self.normalize_states = self.iface.cfg.normalize_states
+        self.pairs = list(self.iface.pairs)
         del layers
         gc.collect()
 
@@ -300,7 +326,12 @@ class RealHostFixture:
             rs = self._context_residuals(u_list, fact, ci, cast)
             delta = torch.stack(rs, dim=0).sum(dim=0)       # (D,) total residual
             base = cast(self.cache[fact][ci]["base_logits"])  # (T, V)
-            head = cast(self.head_w)                        # (V, D)
+            # persistent head views: float32 for the production evaluation,
+            # float64 for the reference — NEVER a fresh cast per candidate (the
+            # autograd matmul retains the head; see the head_w64 note above).
+            # Dispatch on the residual's OWN dtype (some callers pass an identity
+            # cast, so `cast is None` is not a reliable dtype marker).
+            head = self.head_w64 if delta.dtype == torch.float64 else self.head_w
             logits_delta = delta @ head.T                   # (V,)
             base_pos = cand["prompt_len"] - 1               # position predicting token 0
             rows = torch.tensor([base_pos + j for j in range(len(cand["ids"]))],
@@ -374,6 +405,66 @@ class RealHostFixture:
         every evaluation)."""
         L_rank, L_disc = self.loss_parts(u_list, cast)
         return LAMBDA_R * L_rank + LAMBDA_D * L_disc
+
+    def grad_F_chunked(self, u_list, cast=None):
+        """grad F by FACT-CHUNKED backward — mathematically identical to one
+        backward of F, bounded memory:
+          - the rank term is a MEAN over facts: lambda_r * mean_i CE_i =
+            sum_i (lambda_r / n_facts) * CE_i, so backwarding each fact's
+            (lambda_r / n) * CE_i separately and ACCUMULATING gives the exact
+            rank gradient;
+          - the disc term is kept whole (its graph is tiny: the per-fact features
+            are D-wide vectors).
+        This bounds the retained autograd graph to one fact's per-candidate chain
+        (psi / w / transmitted for 2 candidates) + the ONE shared head view —
+        the two earlier OOM kills were the un-chunked graph retaining
+        per-candidate psi/w/transmitted AND a fresh 3.1 GB float64 head per
+        candidate. Exactness is verified numerically (self-check) in run_gate1.
+        Returns (grad_list, chunk_record)."""
+        cast = cast or (lambda t: t)
+        n = len(self.items)
+        acc = [torch.zeros_like(u) for u in u_list]
+        rank_chunk_losses = []
+        for fact in range(n):
+            leaves = [u.detach().clone().requires_grad_(True) for u in u_list]
+            scores = self._candidate_scores(leaves, fact, cast)
+            gold = self.items[fact]["cands"][0]["gold_index"]
+            L_fact = torch.nn.functional.cross_entropy(
+                scores.unsqueeze(0), torch.tensor([gold]))
+            ((LAMBDA_R / n) * L_fact).backward()
+            for k in range(len(acc)):
+                acc[k] = acc[k] + leaves[k].grad.detach()
+            rank_chunk_losses.append(float(L_fact.detach()))
+            del leaves, scores, L_fact
+        leaves = [u.detach().clone().requires_grad_(True) for u in u_list]
+        _raw, normalized, _norms = self._features(leaves, cast)
+        cos_terms = []
+        for i in range(n):
+            for j in range(n):
+                if i == j:
+                    continue
+                cos = torch.dot(normalized[i], normalized[j])
+                cos_terms.append(torch.clamp(cos - TAU_D, min=0.0))
+        L_disc = torch.stack(cos_terms).mean()
+        (LAMBDA_D * L_disc).backward()
+        for k in range(len(acc)):
+            acc[k] = acc[k] + leaves[k].grad.detach()
+        disc_val = float(L_disc.detach())
+        del leaves, normalized, cos_terms, L_disc
+        rec = {"rank_chunk_losses": rank_chunk_losses, "L_disc": disc_val,
+               "note": ("chunked backward: rank term accumulated per fact with the "
+                        "lambda_r/n factor (exact mean), disc term whole; mathematically "
+                        "identical to one backward of F (verified by self-check)")}
+        return acc, rec
+
+    def grad_F_whole(self, u_list, cast=None):
+        """One backward of F (whole graph). Used by the chunking self-check and
+        the small float32 graphs; NOT for the float64 criterion (memory)."""
+        leaves = [u.detach().clone().requires_grad_(True) for u in u_list]
+        F0 = self.eval_F(leaves, cast)
+        F0.backward()
+        g = [t.grad.detach().clone() for t in leaves]
+        return g, float(F0.detach())
 
     def state_diagnostics(self, u_list, cast=None) -> Dict:
         """Feature norms + ALL pairwise cosines + both loss terms at a state
@@ -548,6 +639,18 @@ class RealHostFixture:
               f"delta_rel={delta_rel_max:.3e}  score_max_diff={score_nat_max:.3e} nats")
         return rec
 
+    # ---- host lifetime ------------------------------------------------------ #
+
+    def free_host(self) -> None:
+        """Release the frozen host + interface BEFORE the gate arithmetic. Every
+        gate evaluation reads only the CACHED host outputs (per-candidate base
+        logits, states, psi), so the ~8 GB BF16 model is dead weight during the
+        float64 criterion — the first attempt's kernel OOM-kill (28.9 GB RSS,
+        dmesg 12:57:38) happened exactly in that phase. Called only AFTER the
+        mirror-fidelity probes (which need the live interface)."""
+        self.iface = None
+        gc.collect()
+
     # ---- fixture plastic state (owner-boundary construction) --------------- #
 
     def build_gate_state(self) -> Dict:
@@ -629,22 +732,58 @@ class RealHostFixture:
 # --------------------------------------------------------------------------- #
 
 def run_gate1(fx: RealHostFixture) -> Dict:
-    print("\n[lte-gates-real] ===== GATE 1: genuine numerical derivative comparison =====",
-          flush=True)
+    print("\n[lte-gates-real] ===== GATE 1: genuine numerical derivative comparison "
+          "(REVISION 8: comparison criterion evaluated in FLOAT64) =====", flush=True)
+    cast64 = lambda t: t.double()
     state = fx.get_state()
     with torch.no_grad():
-        L_rank0, L_disc0 = fx.loss_parts([s for s in state])
-        L_rank0_v, L_disc0_v = float(L_rank0), float(L_disc0)
-    assert L_disc0_v > 0.0, (
-        f"discrimination hinge INACTIVE at gate state (L_disc={L_disc0_v}) — the gates "
+        L_rank32, L_disc32 = fx.loss_parts([s for s in state])
+        L_rank32_v, L_disc32_v = float(L_rank32), float(L_disc32)
+        L_rank64, L_disc64 = fx.loss_parts([s.double() for s in state], cast=cast64)
+        L_rank64_v, L_disc64_v = float(L_rank64), float(L_disc64)
+    assert L_disc32_v > 0.0, (
+        f"discrimination hinge INACTIVE at gate state (L_disc={L_disc32_v}) — the gates "
         f"would pass while proving nothing about the disc gradient path")
-    assert L_rank0_v > 0.0, "L_rank must be positive at the gate state"
-    print(f"  at gate state: L_rank={L_rank0_v:.6f}  L_disc={L_disc0_v:.6f}  "
-          f"(both loss terms ACTIVE)")
-    leaves = [s.detach().clone().requires_grad_(True) for s in state]
-    F0 = fx.eval_F(leaves)
-    F0.backward()
-    g = [t.grad.detach().clone() for t in leaves]
+    assert L_rank32_v > 0.0, "L_rank must be positive at the gate state"
+    print(f"  at gate state (float32): L_rank={L_rank32_v:.6f}  L_disc={L_disc32_v:.6f}")
+    print(f"  at gate state (float64): L_rank={L_rank64_v:.10f}  "
+          f"L_disc={L_disc64_v:.10f}   (both loss terms ACTIVE)")
+
+    out: Dict = {
+        "criterion": ("Rev 8 (commit 57b1fef): |D_AD - D_FD(eps)| / max(1, |D_AD|) <= "
+                      "max(10 * n_rep, 1e-4) at eps in {1e-2, 1e-3}, with the comparison "
+                      "evaluated in FLOAT64 over cached fixed host outputs (the host "
+                      "forward is never re-run in float64). The float32 pair is recorded "
+                      "as a diagnostic only."),
+        "gate_state_losses": {"L_rank_float32": L_rank32_v, "L_disc_float32": L_disc32_v,
+                              "L_rank_float64": L_rank64_v, "L_disc_float64": L_disc64_v,
+                              "both_terms_active": bool(L_disc32_v > 0.0 and L_rank32_v > 0.0)},
+        "per_epsilon": {},           # float64 CRITERION results
+        "float32_diagnostic": {"per_epsilon": {}},
+        "pass": True}
+
+    # ---- CRITERION: the comparison in float64 over cached fixed host outputs - #
+    # grad F via the FACT-CHUNKED backward (exact; see grad_F_chunked). The
+    # whole-graph float64 backward retained per-candidate psi/w/transmitted AND a
+    # fresh 3.1 GB float64 head per candidate — this is what kernel-OOM-killed
+    # the two earlier attempts (28.9 / 29.4 GB RSS). F_u from a no_grad
+    # evaluation (no graph).
+    with torch.no_grad():
+        F0 = fx.eval_F([s.double() for s in state], cast=cast64)
+    l64 = [s.detach().double().requires_grad_(True) for s in state]
+    g, chunk_rec = fx.grad_F_chunked(l64, cast=cast64)
+    # exactness self-check: chunked vs whole backward, verified in float32 (the
+    # identity being checked is dtype-independent and the whole float32 graph is
+    # small enough to build safely)
+    g32_whole, _ = fx.grad_F_whole([s.detach().clone() for s in state])
+    g32_chunk, _ = fx.grad_F_chunked([s.detach().clone() for s in state])
+    diffs = [float((a - b).abs().max()) for a, b in zip(g32_whole, g32_chunk)]
+    scale = max(float(a.abs().max()) for a in g32_whole)
+    chk_rel = (max(diffs) / scale) if scale > 0.0 else 0.0
+    assert chk_rel < 1e-5, \
+        f"chunked-gradient self-check FAILED: rel={chk_rel:.3e} (grads must be identical)"
+    del l64, g32_whole, g32_chunk
+    gc.collect()
     g_flat = torch.cat([t.reshape(-1) for t in g])
     g_norm = float(g_flat.norm())
     assert g_norm > 0 and bool(torch.isfinite(g_flat).all()), \
@@ -657,80 +796,114 @@ def run_gate1(fx: RealHostFixture) -> Dict:
         d_list.append(d_flat[off:off + n].reshape(t.shape))
         off += n
     D_AD = float(torch.dot(g_flat, d_flat))
-    print(f"  F(u) = {F0.item():.6f}   |grad F| = {g_norm:.6f}   D_AD = {D_AD:.6f}")
+    del g, g_flat, d_flat
+    gc.collect()
+    out["grad_chunking_selfcheck"] = {
+        "max_abs_diff": max(diffs), "max_rel_diff": chk_rel, "tolerance_relative": 1e-5,
+        "pass": True,
+        "note": "chunked backward verified IDENTICAL to the whole-graph backward"}
+    out["chunk_record"] = chunk_rec
+    print(f"  [float64] F(u) = {float(F0.detach()):.10f}   |grad F| = {g_norm:.8f}   "
+          f"D_AD = {D_AD:.10f}   (peak RSS {rss_gb()} GiB)", flush=True)
+    print(f"  [self-check] chunked grad == whole grad: max_rel={chk_rel:.3e}  PASS",
+          flush=True)
 
-    def F_value(u_list: List[torch.Tensor]) -> float:
+    def F_value64(u_list: List[torch.Tensor]) -> float:
         with torch.no_grad():
-            return float(fx.eval_F([u for u in u_list]))
+            return float(fx.eval_F([u for u in u_list], cast=cast64))
 
-    def perturb(sgn: float, eps: float) -> List[torch.Tensor]:
-        return [s + sgn * eps * dv for s, dv in zip(state, d_list)]
+    def perturb64(sgn: float, eps: float) -> List[torch.Tensor]:
+        return [s.double() + sgn * eps * dv for s, dv in zip(state, d_list)]
 
-    out: Dict = {"D_AD": D_AD, "grad_norm": g_norm, "F_u": F0.item(),
-                 "L_rank_at_gate_state": L_rank0_v, "L_disc_at_gate_state": L_disc0_v,
-                 "per_epsilon": {}, "pass": True}
     for eps in FD_EPSILONS:
         t_e = time.time()
         d_fds = []
         for _ in range(N_REPEATS):
-            F_plus = F_value(perturb(+1.0, eps))
-            F_minus = F_value(perturb(-1.0, eps))
+            F_plus = F_value64(perturb64(+1.0, eps))
+            F_minus = F_value64(perturb64(-1.0, eps))
             d_fds.append((F_plus - F_minus) / (2.0 * eps))
         n_rep = max(abs(d - d_fds[0]) for d in d_fds) / max(1.0, abs(D_AD))
         D_FD = d_fds[0]
         rel = abs(D_AD - D_FD) / max(1.0, abs(D_AD))
         tol = max(10.0 * n_rep, NUMERICAL_FLOOR)
         ok = (rel <= tol) if eps in PASS_EPSILONS else None
-        record = {"eps": eps, "D_FD": D_FD, "rel_error": rel, "n_rep": n_rep,
-                  "tolerance": tol, "repeats": d_fds,
-                  "F_plus": F_value(perturb(+1.0, eps)),
-                  "F_minus": F_value(perturb(-1.0, eps)),
+        record = {"eps": eps, "dtype": "float64", "D_FD": D_FD, "rel_error": rel,
+                  "n_rep": n_rep, "tolerance": tol, "repeats": d_fds,
+                  "F_plus": F_value64(perturb64(+1.0, eps)),
+                  "F_minus": F_value64(perturb64(-1.0, eps)),
                   "eval_s": round(time.time() - t_e, 1)}
         if ok is not None:
             record["pass"] = bool(ok)
             out["pass"] = out["pass"] and bool(ok)
         out["per_epsilon"][str(eps)] = record
-        print(f"  eps={eps:.0e}  D_FD={D_FD:+.6f}  rel={rel:.3e}  n_rep={n_rep:.3e}  "
-              f"tol={tol:.3e}  {'PASS' if ok is True else ('fail' if ok is False else 'record')}",
+        print(f"  eps={eps:.0e}  [f64 CRITERION]  D_FD={D_FD:+.10f}  rel={rel:.3e}  "
+              f"n_rep={n_rep:.3e}  tol={tol:.3e}  "
+              f"{'PASS' if ok is True else ('fail' if ok is False else 'record')}",
               flush=True)
+    out.update({"D_AD": D_AD, "grad_norm": g_norm, "F_u": float(F0),
+                "comparison_dtype": "torch.float64",
+                "objective_reference_dtype": "torch.float64"})
 
-    # ---- float64 diagnostic (NOT the pass criterion; Rev 7) ----------------- #
-    # The protocol pass criterion above runs at the production float32 evaluation
-    # over fixed host outputs. This diagnostic re-runs the same comparison entirely
-    # in float64 to separate genuine derivative error from float32 central-
-    # difference cancellation (protocol 6.2 convergence record).
-    cast64 = lambda t: t.double()
-    l64 = [s.detach().double().requires_grad_(True) for s in state]
-    F64 = fx.eval_F(l64, cast=cast64)
-    F64.backward()
-    g64 = torch.cat([t.grad.detach().reshape(-1) for t in l64])
-    d64_flat = -g64 / g64.norm()
-    D_AD64 = float(torch.dot(g64, d64_flat))
-    d64_list = []
+    # ---- float32 pair: DIAGNOSTIC ONLY (recorded, not pass-critical) -------- #
+    # The Rev-7 run showed the float32 central difference at eps=1e-3 sits AT the
+    # 1e-4 floor from pure float32 FD cancellation (step-1: rel 8.9e-5; Rev-7 real
+    # run: 1.013e-4). Under Rev 8 the criterion is the float64 comparison above;
+    # this block records the production-dtype pair for the evidence.
+    leaves = [s.detach().clone().requires_grad_(True) for s in state]
+    F0_32 = fx.eval_F(leaves)
+    F0_32.backward()
+    g32 = [t.grad.detach().clone() for t in leaves]
+    g32_flat = torch.cat([t.reshape(-1) for t in g32])
+    g32_norm = float(g32_flat.norm())
+    assert g32_norm > 0 and bool(torch.isfinite(g32_flat).all())
+    d32_flat = (-g32_flat / g32_norm)
+    d32_list = []
     off = 0
-    for t in l64:
+    for t in g32:
         n = t.numel()
-        d64_list.append(d64_flat[off:off + n].reshape(t.shape))
+        d32_list.append(d32_flat[off:off + n].reshape(t.shape))
         off += n
+    D_AD32 = float(torch.dot(g32_flat, d32_flat))
+    del leaves, g32, g32_flat, d32_flat
+    gc.collect()
 
-    def F_value64(offs: List[torch.Tensor]) -> float:
+    def F_value32(u_list: List[torch.Tensor]) -> float:
         with torch.no_grad():
-            return float(fx.eval_F(offs, cast=cast64))
+            return float(fx.eval_F([u for u in u_list]))
 
-    diag64: Dict = {"D_AD": D_AD64, "grad_norm": float(g64.norm()),
-                    "note": ("diagnostic only — the pass criterion uses the float32 "
-                             "production evaluation over fixed host outputs"),
+    def perturb32(sgn: float, eps: float) -> List[torch.Tensor]:
+        return [s + sgn * eps * dv for s, dv in zip(state, d32_list)]
+
+    diag32: Dict = {"D_AD": D_AD32, "grad_norm": g32_norm, "F_u": float(F0_32.detach()),
+                    "note": ("diagnostic only under Revision 8 — the pass criterion is "
+                             "the float64 comparison; this records the float32 "
+                             "production-dtype pair"),
                     "per_epsilon": {}}
+    print(f"  [float32 diag] F(u) = {float(F0_32):.6f}   |grad F| = {g32_norm:.6f}   "
+          f"D_AD = {D_AD32:.6f}")
     for eps in FD_EPSILONS:
-        fp = F_value64([s.double() + eps * dv for s, dv in zip(state, d64_list)])
-        fm = F_value64([s.double() - eps * dv for s, dv in zip(state, d64_list)])
-        dfd = (fp - fm) / (2.0 * eps)
-        rel64 = abs(D_AD64 - dfd) / max(1.0, abs(D_AD64))
-        diag64["per_epsilon"][str(eps)] = {"D_FD": dfd, "rel_error": rel64,
-                                           "F_plus": fp, "F_minus": fm}
-        print(f"  [f64 diag] eps={eps:.0e}  D_FD={dfd:+.8f}  rel={rel64:.3e}")
-    out["float64_diagnostic"] = diag64
-    out["objective_reference_dtype"] = "torch.float64"
+        d_fds = []
+        for _ in range(N_REPEATS):
+            F_plus = F_value32(perturb32(+1.0, eps))
+            F_minus = F_value32(perturb32(-1.0, eps))
+            d_fds.append((F_plus - F_minus) / (2.0 * eps))
+        n_rep = max(abs(d - d_fds[0]) for d in d_fds) / max(1.0, abs(D_AD32))
+        D_FD = d_fds[0]
+        rel = abs(D_AD32 - D_FD) / max(1.0, abs(D_AD32))
+        tol = max(10.0 * n_rep, NUMERICAL_FLOOR)
+        ok = (rel <= tol) if eps in PASS_EPSILONS else None
+        record = {"eps": eps, "dtype": "float32", "D_FD": D_FD, "rel_error": rel,
+                  "n_rep": n_rep, "tolerance": tol, "repeats": d_fds,
+                  "F_plus": F_value32(perturb32(+1.0, eps)),
+                  "F_minus": F_value32(perturb32(-1.0, eps))}
+        if ok is not None:
+            record["pass"] = bool(ok)
+        diag32["per_epsilon"][str(eps)] = record
+        print(f"  eps={eps:.0e}  [f32 DIAGNOSTIC] D_FD={D_FD:+.8f}  rel={rel:.3e}  "
+              f"n_rep={n_rep:.3e}  tol={tol:.3e}  "
+              f"{'PASS' if ok is True else ('fail' if ok is False else 'record')}",
+              flush=True)
+    out["float32_diagnostic"] = diag32
     return out
 
 
@@ -817,10 +990,10 @@ def reproducibility_block(fx: RealHostFixture, state_rec: Dict) -> Dict:
         "fingerprint_digest_sha256": fx.fingerprint_digest,
         "fingerprint_tensors": {k: list(v) for k, v in sorted(fx.fingerprint.items())},
         "rng": {"fixture_seed": SEED,
-                "seed_stream": ("torch.manual_seed(20261126) before interface "
-                                "construction (relationship W draws deterministic); "
-                                "torch.manual_seed(20261127) for the literal-state "
-                                "diagnostic draw")},
+                "seed_stream": ("torch.manual_seed(20261126) at fixture __init__, "
+                                "BEFORE interface construction (relationship W draws "
+                                "deterministic); torch.manual_seed(20261133) (= "
+                                "SEED+7) for the literal-state diagnostic draw")},
         "layer_pairs": [list(p) for p in fx.layer_pairs],
         "pair_selection": fx.pair_selection_note,
         "pairs_desc": fx.pairs_desc,
@@ -830,8 +1003,9 @@ def reproducibility_block(fx: RealHostFixture, state_rec: Dict) -> Dict:
         "head_weight_native_dtype": fx.head_w_dtype,
         "head_weight_mirror_view_dtype": str(fx.head_w.dtype),
         "blend_ratio": fx.blend,
-        "relation_type": fx.iface.cfg.relation_type,
-        "normalize_states": fx.iface.cfg.normalize_states,
+        "relation_type": fx.relation_type,
+        "normalize_states": fx.normalize_states,
+        "pairs_attribute": [list(p) for p in fx.pairs],
         "candidate_tokens_and_ordering": [
             {"fact": it["fact"], "question": it["question"], "gold": it["gold"],
              "distractor": it["distractor"],
@@ -877,8 +1051,8 @@ def main() -> int:
     print("[lte-gates-real] LTE-1 STEP 2 — Gate 1 + Gate 2 on the REAL Qwen host "
           f"({MODEL_DIR})", flush=True)
     print("[lte-gates-real] authorisation: owner GO 2026-11-26 — STEP 2 ONLY "
-          "(literal 2.2 scoring + 2.3 features; Rev 7 gate mathematics; stop at the "
-          "step-2 boundary)")
+          "(literal 2.2 scoring + 2.3 features; Revision 8 gate mathematics — "
+          "Gate-1 comparison in float64; stop at the step-2 boundary)")
     fx = RealHostFixture()
     print(f"[lte-gates-real] foundation loaded + frozen + fingerprinted in "
           f"{fx.load_s}s (fingerprint digest {fx.fingerprint_digest}, "
@@ -887,20 +1061,44 @@ def main() -> int:
     print(f"[lte-gates-real] host caches: {len(fx.items)} facts x "
           f"{len(fx.cache[0])} candidates = {len(fx.forward_times)} frozen-host "
           f"forwards, {fx.caches_s}s total; logits dtype "
-          f"{fx.logits_dtype_observed}")
+          f"{fx.logits_dtype_observed}; peak RSS {rss_gb()} GiB")
+    rss_after_caches = rss_gb()
 
     state_rec = fx.build_gate_state()
     fidelity = fx.assert_mirror_fidelity()
+    rss_after_fidelity = rss_gb()
+    # Every gate evaluation reads only the CACHED host outputs — release the
+    # ~8 GB frozen host before the float64 gate arithmetic (the Rev-7 first
+    # attempt was kernel-OOM-killed at 28.9 GB RSS in exactly that phase).
+    fx.free_host()
+    print(f"[lte-gates-real] frozen host released before the gate arithmetic "
+          f"(peak RSS was {rss_after_fidelity} GiB); gates read cached host "
+          f"outputs only", flush=True)
 
     g1 = run_gate1(fx)
     g2 = run_gate2(fx)
+    rss_after_gates = rss_gb()
 
     report = {
         "step": "LTE-1 step 2 — gates on the REAL Qwen host (literal 2.2 scoring, "
                 "literal 2.3 features)",
-        "protocol": ("docs/LTE_PROTOCOL.md frozen Revision 6 + Revision 7 amendment "
-                     "(commits 7b7642c2..., f1a4a02); freeze record section 10"),
+        "protocol": ("docs/LTE_PROTOCOL.md Revision 8 (commit 57b1fef; owner ruling "
+                     "2026-11-26: Gate-1 comparison criterion evaluated in float64 over "
+                     "cached fixed host outputs, float32 pair recorded as diagnostic; "
+                     "built on frozen Revision 6 + Rev 7, commits 7b7642c2..., f1a4a02)"),
         "authorisation": "owner GO 2026-11-26: STEP 2 ONLY",
+        "rerun_note": ("attempt 1 (Rev-7 criteria) kernel-OOM-killed in the float64 "
+                       "Gate-1 block (dmesg 12:57:38, 28.9 GB RSS); attempt 2 (Rev-8, "
+                       "host released) STILL OOM-killed (13:33:10, 29.4 GB RSS) — the "
+                       "autograd matmul retained its head operand, so the per-candidate "
+                       "float64 head cast accumulated 8 x 3.1 GB in the criterion graph; "
+                       "attempt 3 (this run) persists ONE shared float64 head view "
+                       "(aliased, not copied, by the cast), releases the frozen host "
+                       "before the gates, chunks the criterion backward per fact "
+                       "(exact — self-check recorded), and records peak RSS per "
+                       "milestone; swap on the host is FULL (7/7 GB), so peak RSS is "
+                       "kept well under the ~29 GB level at which the kernel OOM-killer "
+                       "fired"),
         "config": {"lambda_r": LAMBDA_R, "lambda_d": LAMBDA_D, "tau_d": TAU_D,
                    "eta_e_fixture": ETA_E, "n_repeats": N_REPEATS,
                    "fd_epsilons": list(FD_EPSILONS),
@@ -925,6 +1123,10 @@ def main() -> int:
         "gate2": g2,
         "precision_audit": precision_audit(fx),
         "reproducibility": reproducibility_block(fx, state_rec),
+        "peak_rss_gb": {"after_caches": rss_after_caches,
+                        "after_fidelity": rss_after_fidelity,
+                        "after_gates": rss_after_gates,
+                        "note": "ru_maxrss (peak to that point) of this process"},
         "verdict": "PASS" if (g1["pass"] and g2["pass"]) else "FAIL — stop, report to owner",
         "wall_s": round(time.time() - t0, 1),
     }
