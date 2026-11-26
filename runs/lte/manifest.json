@@ -1,0 +1,3108 @@
+{
+  "artifact": "LTE-1 split manifest (protocol section 6.3) \u2014 committed BEFORE any training run; freeze record cites this path + commit SHA",
+  "protocol": "docs/LTE_PROTOCOL.md Revision 8, section 6.3 (frozen Revision 6 + Rev 7/8 amendments)",
+  "generated_at": "2026-11-26 14:49:24",
+  "generation_seed": 20261126,
+  "seed_lineage": {
+    "world_rng": "generate_world(seed=20261126, n_chains=5) (aion/worlds/generator internal Random)",
+    "split_rng": "random.Random(20261126) \u2014 recorded draw order: dev-direct relationship sample: [1, 2, 3, 5, 9, 10, 14, 15] | dev-combo yes chains: [0, 2] | dev-combo no (chain, other) picks: [(3, 1), (1, 3)] | exam-paraphrase relationship sample: [3, 5, 7, 11, 12, 17, 18, 19] | exam-paraphrase rel 3 variant: 0 | exam-paraphrase rel 5 variant: 0 | exam-paraphrase rel 7 variant: 0 | exam-paraphrase rel 11 variant: 1 | exam-paraphrase rel 12 variant: 1 | exam-paraphrase rel 17 variant: 1 | exam-paraphrase rel 18 variant: 1 | exam-paraphrase rel 19 variant: 1"
+  },
+  "world": {
+    "seed": 20261126,
+    "n_chains": 5,
+    "relationships": 20,
+    "verify_world": "OK (all answers graph-derivable)",
+    "chains": [
+      [
+        "Neral",
+        "Tav",
+        "Kimo",
+        "Zor",
+        "heat"
+      ],
+      [
+        "Sula",
+        "Rinpo",
+        "Drel",
+        "Blun",
+        "light"
+      ],
+      [
+        "Dravy",
+        "Skell",
+        "Vash",
+        "Crat",
+        "pressure"
+      ],
+      [
+        "Ombit",
+        "Morva",
+        "Osten",
+        "Dovel",
+        "torque"
+      ],
+      [
+        "Quelos",
+        "Plin",
+        "Belro",
+        "Errik",
+        "steam"
+      ]
+    ]
+  },
+  "counts": {
+    "train": 60,
+    "dev": 12,
+    "exam": 43
+  },
+  "train": {
+    "surface": "L_rank,train / L_disc,train (protocol section 6.3)",
+    "canonical_carrier_per_fact": {
+      "0": {
+        "carrier_exp_index": 1,
+        "carrier_question": "Who does Neral operate?",
+        "carrier_candidate": "Tav",
+        "carrier_template_id": "TEACH_Q1:operates"
+      },
+      "1": {
+        "carrier_exp_index": 4,
+        "carrier_question": "Where does Tav route?",
+        "carrier_candidate": "Kimo",
+        "carrier_template_id": "TEACH_Q1:routes-to"
+      },
+      "2": {
+        "carrier_exp_index": 7,
+        "carrier_question": "Who does Kimo control?",
+        "carrier_candidate": "Zor",
+        "carrier_template_id": "TEACH_Q1:controls"
+      },
+      "3": {
+        "carrier_exp_index": 10,
+        "carrier_question": "What does Zor produce?",
+        "carrier_candidate": "heat",
+        "carrier_template_id": "TEACH_Q1:produces"
+      },
+      "4": {
+        "carrier_exp_index": 13,
+        "carrier_question": "Who does Sula operate?",
+        "carrier_candidate": "Rinpo",
+        "carrier_template_id": "TEACH_Q1:operates"
+      },
+      "5": {
+        "carrier_exp_index": 16,
+        "carrier_question": "Where does Rinpo route?",
+        "carrier_candidate": "Drel",
+        "carrier_template_id": "TEACH_Q1:routes-to"
+      },
+      "6": {
+        "carrier_exp_index": 19,
+        "carrier_question": "Who does Drel control?",
+        "carrier_candidate": "Blun",
+        "carrier_template_id": "TEACH_Q1:controls"
+      },
+      "7": {
+        "carrier_exp_index": 22,
+        "carrier_question": "What does Blun produce?",
+        "carrier_candidate": "light",
+        "carrier_template_id": "TEACH_Q1:produces"
+      },
+      "8": {
+        "carrier_exp_index": 25,
+        "carrier_question": "Who does Dravy operate?",
+        "carrier_candidate": "Skell",
+        "carrier_template_id": "TEACH_Q1:operates"
+      },
+      "9": {
+        "carrier_exp_index": 28,
+        "carrier_question": "Where does Skell route?",
+        "carrier_candidate": "Vash",
+        "carrier_template_id": "TEACH_Q1:routes-to"
+      },
+      "10": {
+        "carrier_exp_index": 31,
+        "carrier_question": "Who does Vash control?",
+        "carrier_candidate": "Crat",
+        "carrier_template_id": "TEACH_Q1:controls"
+      },
+      "11": {
+        "carrier_exp_index": 34,
+        "carrier_question": "What does Crat produce?",
+        "carrier_candidate": "pressure",
+        "carrier_template_id": "TEACH_Q1:produces"
+      },
+      "12": {
+        "carrier_exp_index": 37,
+        "carrier_question": "Who does Ombit operate?",
+        "carrier_candidate": "Morva",
+        "carrier_template_id": "TEACH_Q1:operates"
+      },
+      "13": {
+        "carrier_exp_index": 40,
+        "carrier_question": "Where does Morva route?",
+        "carrier_candidate": "Osten",
+        "carrier_template_id": "TEACH_Q1:routes-to"
+      },
+      "14": {
+        "carrier_exp_index": 43,
+        "carrier_question": "Who does Osten control?",
+        "carrier_candidate": "Dovel",
+        "carrier_template_id": "TEACH_Q1:controls"
+      },
+      "15": {
+        "carrier_exp_index": 46,
+        "carrier_question": "What does Dovel produce?",
+        "carrier_candidate": "torque",
+        "carrier_template_id": "TEACH_Q1:produces"
+      },
+      "16": {
+        "carrier_exp_index": 49,
+        "carrier_question": "Who does Quelos operate?",
+        "carrier_candidate": "Plin",
+        "carrier_template_id": "TEACH_Q1:operates"
+      },
+      "17": {
+        "carrier_exp_index": 52,
+        "carrier_question": "Where does Plin route?",
+        "carrier_candidate": "Belro",
+        "carrier_template_id": "TEACH_Q1:routes-to"
+      },
+      "18": {
+        "carrier_exp_index": 55,
+        "carrier_question": "Who does Belro control?",
+        "carrier_candidate": "Errik",
+        "carrier_template_id": "TEACH_Q1:controls"
+      },
+      "19": {
+        "carrier_exp_index": 58,
+        "carrier_question": "What does Errik produce?",
+        "carrier_candidate": "steam",
+        "carrier_template_id": "TEACH_Q1:produces"
+      }
+    },
+    "experiences": [
+      {
+        "exp_index": 0,
+        "kind": "declarative",
+        "fact_index": 0,
+        "chain": 0,
+        "relation": "operates",
+        "subject": "Neral",
+        "object": "Tav",
+        "template_id": "TEACH_DECL:operates",
+        "template": "{subject} operates {object}.",
+        "text": "Neral operates Tav.",
+        "question": null,
+        "answer": "Tav",
+        "key": "Neral|operates|Tav",
+        "rank_candidates": [],
+        "gold_candidate": "Tav"
+      },
+      {
+        "exp_index": 1,
+        "kind": "qa",
+        "fact_index": 0,
+        "chain": 0,
+        "relation": "operates",
+        "subject": "Neral",
+        "object": "Tav",
+        "template_id": "TEACH_Q1:operates",
+        "template": "Who does {subject} operate?",
+        "text": "Question: Who does Neral operate?\nAnswer: Tav.",
+        "question": "Who does Neral operate?",
+        "answer": "Tav",
+        "key": "Neral|operates|Tav",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Tav"
+      },
+      {
+        "exp_index": 2,
+        "kind": "qa",
+        "fact_index": 0,
+        "chain": 0,
+        "relation": "operates",
+        "subject": "Neral",
+        "object": "Tav",
+        "template_id": "TEACH_Q2:operates",
+        "template": "{subject} operates what?",
+        "text": "Question: Neral operates what?\nAnswer: Tav.",
+        "question": "Neral operates what?",
+        "answer": "Tav",
+        "key": "Neral|operates|Tav",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Tav"
+      },
+      {
+        "exp_index": 3,
+        "kind": "declarative",
+        "fact_index": 1,
+        "chain": 0,
+        "relation": "routes-to",
+        "subject": "Tav",
+        "object": "Kimo",
+        "template_id": "TEACH_DECL:routes-to",
+        "template": "{subject} routes to relay {object}.",
+        "text": "Tav routes to relay Kimo.",
+        "question": null,
+        "answer": "Kimo",
+        "key": "Tav|routes-to|Kimo",
+        "rank_candidates": [],
+        "gold_candidate": "Kimo"
+      },
+      {
+        "exp_index": 4,
+        "kind": "qa",
+        "fact_index": 1,
+        "chain": 0,
+        "relation": "routes-to",
+        "subject": "Tav",
+        "object": "Kimo",
+        "template_id": "TEACH_Q1:routes-to",
+        "template": "Where does {subject} route?",
+        "text": "Question: Where does Tav route?\nAnswer: Kimo.",
+        "question": "Where does Tav route?",
+        "answer": "Kimo",
+        "key": "Tav|routes-to|Kimo",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Kimo"
+      },
+      {
+        "exp_index": 5,
+        "kind": "qa",
+        "fact_index": 1,
+        "chain": 0,
+        "relation": "routes-to",
+        "subject": "Tav",
+        "object": "Kimo",
+        "template_id": "TEACH_Q2:routes-to",
+        "template": "{subject} routes to which relay?",
+        "text": "Question: Tav routes to which relay?\nAnswer: Kimo.",
+        "question": "Tav routes to which relay?",
+        "answer": "Kimo",
+        "key": "Tav|routes-to|Kimo",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Kimo"
+      },
+      {
+        "exp_index": 6,
+        "kind": "declarative",
+        "fact_index": 2,
+        "chain": 0,
+        "relation": "controls",
+        "subject": "Kimo",
+        "object": "Zor",
+        "template_id": "TEACH_DECL:controls",
+        "template": "{subject} controls device {object}.",
+        "text": "Kimo controls device Zor.",
+        "question": null,
+        "answer": "Zor",
+        "key": "Kimo|controls|Zor",
+        "rank_candidates": [],
+        "gold_candidate": "Zor"
+      },
+      {
+        "exp_index": 7,
+        "kind": "qa",
+        "fact_index": 2,
+        "chain": 0,
+        "relation": "controls",
+        "subject": "Kimo",
+        "object": "Zor",
+        "template_id": "TEACH_Q1:controls",
+        "template": "Who does {subject} control?",
+        "text": "Question: Who does Kimo control?\nAnswer: Zor.",
+        "question": "Who does Kimo control?",
+        "answer": "Zor",
+        "key": "Kimo|controls|Zor",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Zor"
+      },
+      {
+        "exp_index": 8,
+        "kind": "qa",
+        "fact_index": 2,
+        "chain": 0,
+        "relation": "controls",
+        "subject": "Kimo",
+        "object": "Zor",
+        "template_id": "TEACH_Q2:controls",
+        "template": "{subject} controls which device?",
+        "text": "Question: Kimo controls which device?\nAnswer: Zor.",
+        "question": "Kimo controls which device?",
+        "answer": "Zor",
+        "key": "Kimo|controls|Zor",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Zor"
+      },
+      {
+        "exp_index": 9,
+        "kind": "declarative",
+        "fact_index": 3,
+        "chain": 0,
+        "relation": "produces",
+        "subject": "Zor",
+        "object": "heat",
+        "template_id": "TEACH_DECL:produces",
+        "template": "{subject} produces {object}.",
+        "text": "Zor produces heat.",
+        "question": null,
+        "answer": "heat",
+        "key": "Zor|produces|heat",
+        "rank_candidates": [],
+        "gold_candidate": "heat"
+      },
+      {
+        "exp_index": 10,
+        "kind": "qa",
+        "fact_index": 3,
+        "chain": 0,
+        "relation": "produces",
+        "subject": "Zor",
+        "object": "heat",
+        "template_id": "TEACH_Q1:produces",
+        "template": "What does {subject} produce?",
+        "text": "Question: What does Zor produce?\nAnswer: heat.",
+        "question": "What does Zor produce?",
+        "answer": "heat",
+        "key": "Zor|produces|heat",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "heat"
+      },
+      {
+        "exp_index": 11,
+        "kind": "qa",
+        "fact_index": 3,
+        "chain": 0,
+        "relation": "produces",
+        "subject": "Zor",
+        "object": "heat",
+        "template_id": "TEACH_Q2:produces",
+        "template": "What is {subject}'s output?",
+        "text": "Question: What is Zor's output?\nAnswer: heat.",
+        "question": "What is Zor's output?",
+        "answer": "heat",
+        "key": "Zor|produces|heat",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "heat"
+      },
+      {
+        "exp_index": 12,
+        "kind": "declarative",
+        "fact_index": 4,
+        "chain": 1,
+        "relation": "operates",
+        "subject": "Sula",
+        "object": "Rinpo",
+        "template_id": "TEACH_DECL:operates",
+        "template": "{subject} operates {object}.",
+        "text": "Sula operates Rinpo.",
+        "question": null,
+        "answer": "Rinpo",
+        "key": "Sula|operates|Rinpo",
+        "rank_candidates": [],
+        "gold_candidate": "Rinpo"
+      },
+      {
+        "exp_index": 13,
+        "kind": "qa",
+        "fact_index": 4,
+        "chain": 1,
+        "relation": "operates",
+        "subject": "Sula",
+        "object": "Rinpo",
+        "template_id": "TEACH_Q1:operates",
+        "template": "Who does {subject} operate?",
+        "text": "Question: Who does Sula operate?\nAnswer: Rinpo.",
+        "question": "Who does Sula operate?",
+        "answer": "Rinpo",
+        "key": "Sula|operates|Rinpo",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Rinpo"
+      },
+      {
+        "exp_index": 14,
+        "kind": "qa",
+        "fact_index": 4,
+        "chain": 1,
+        "relation": "operates",
+        "subject": "Sula",
+        "object": "Rinpo",
+        "template_id": "TEACH_Q2:operates",
+        "template": "{subject} operates what?",
+        "text": "Question: Sula operates what?\nAnswer: Rinpo.",
+        "question": "Sula operates what?",
+        "answer": "Rinpo",
+        "key": "Sula|operates|Rinpo",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Rinpo"
+      },
+      {
+        "exp_index": 15,
+        "kind": "declarative",
+        "fact_index": 5,
+        "chain": 1,
+        "relation": "routes-to",
+        "subject": "Rinpo",
+        "object": "Drel",
+        "template_id": "TEACH_DECL:routes-to",
+        "template": "{subject} routes to relay {object}.",
+        "text": "Rinpo routes to relay Drel.",
+        "question": null,
+        "answer": "Drel",
+        "key": "Rinpo|routes-to|Drel",
+        "rank_candidates": [],
+        "gold_candidate": "Drel"
+      },
+      {
+        "exp_index": 16,
+        "kind": "qa",
+        "fact_index": 5,
+        "chain": 1,
+        "relation": "routes-to",
+        "subject": "Rinpo",
+        "object": "Drel",
+        "template_id": "TEACH_Q1:routes-to",
+        "template": "Where does {subject} route?",
+        "text": "Question: Where does Rinpo route?\nAnswer: Drel.",
+        "question": "Where does Rinpo route?",
+        "answer": "Drel",
+        "key": "Rinpo|routes-to|Drel",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Drel"
+      },
+      {
+        "exp_index": 17,
+        "kind": "qa",
+        "fact_index": 5,
+        "chain": 1,
+        "relation": "routes-to",
+        "subject": "Rinpo",
+        "object": "Drel",
+        "template_id": "TEACH_Q2:routes-to",
+        "template": "{subject} routes to which relay?",
+        "text": "Question: Rinpo routes to which relay?\nAnswer: Drel.",
+        "question": "Rinpo routes to which relay?",
+        "answer": "Drel",
+        "key": "Rinpo|routes-to|Drel",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Drel"
+      },
+      {
+        "exp_index": 18,
+        "kind": "declarative",
+        "fact_index": 6,
+        "chain": 1,
+        "relation": "controls",
+        "subject": "Drel",
+        "object": "Blun",
+        "template_id": "TEACH_DECL:controls",
+        "template": "{subject} controls device {object}.",
+        "text": "Drel controls device Blun.",
+        "question": null,
+        "answer": "Blun",
+        "key": "Drel|controls|Blun",
+        "rank_candidates": [],
+        "gold_candidate": "Blun"
+      },
+      {
+        "exp_index": 19,
+        "kind": "qa",
+        "fact_index": 6,
+        "chain": 1,
+        "relation": "controls",
+        "subject": "Drel",
+        "object": "Blun",
+        "template_id": "TEACH_Q1:controls",
+        "template": "Who does {subject} control?",
+        "text": "Question: Who does Drel control?\nAnswer: Blun.",
+        "question": "Who does Drel control?",
+        "answer": "Blun",
+        "key": "Drel|controls|Blun",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Blun"
+      },
+      {
+        "exp_index": 20,
+        "kind": "qa",
+        "fact_index": 6,
+        "chain": 1,
+        "relation": "controls",
+        "subject": "Drel",
+        "object": "Blun",
+        "template_id": "TEACH_Q2:controls",
+        "template": "{subject} controls which device?",
+        "text": "Question: Drel controls which device?\nAnswer: Blun.",
+        "question": "Drel controls which device?",
+        "answer": "Blun",
+        "key": "Drel|controls|Blun",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Blun"
+      },
+      {
+        "exp_index": 21,
+        "kind": "declarative",
+        "fact_index": 7,
+        "chain": 1,
+        "relation": "produces",
+        "subject": "Blun",
+        "object": "light",
+        "template_id": "TEACH_DECL:produces",
+        "template": "{subject} produces {object}.",
+        "text": "Blun produces light.",
+        "question": null,
+        "answer": "light",
+        "key": "Blun|produces|light",
+        "rank_candidates": [],
+        "gold_candidate": "light"
+      },
+      {
+        "exp_index": 22,
+        "kind": "qa",
+        "fact_index": 7,
+        "chain": 1,
+        "relation": "produces",
+        "subject": "Blun",
+        "object": "light",
+        "template_id": "TEACH_Q1:produces",
+        "template": "What does {subject} produce?",
+        "text": "Question: What does Blun produce?\nAnswer: light.",
+        "question": "What does Blun produce?",
+        "answer": "light",
+        "key": "Blun|produces|light",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "light"
+      },
+      {
+        "exp_index": 23,
+        "kind": "qa",
+        "fact_index": 7,
+        "chain": 1,
+        "relation": "produces",
+        "subject": "Blun",
+        "object": "light",
+        "template_id": "TEACH_Q2:produces",
+        "template": "What is {subject}'s output?",
+        "text": "Question: What is Blun's output?\nAnswer: light.",
+        "question": "What is Blun's output?",
+        "answer": "light",
+        "key": "Blun|produces|light",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "light"
+      },
+      {
+        "exp_index": 24,
+        "kind": "declarative",
+        "fact_index": 8,
+        "chain": 2,
+        "relation": "operates",
+        "subject": "Dravy",
+        "object": "Skell",
+        "template_id": "TEACH_DECL:operates",
+        "template": "{subject} operates {object}.",
+        "text": "Dravy operates Skell.",
+        "question": null,
+        "answer": "Skell",
+        "key": "Dravy|operates|Skell",
+        "rank_candidates": [],
+        "gold_candidate": "Skell"
+      },
+      {
+        "exp_index": 25,
+        "kind": "qa",
+        "fact_index": 8,
+        "chain": 2,
+        "relation": "operates",
+        "subject": "Dravy",
+        "object": "Skell",
+        "template_id": "TEACH_Q1:operates",
+        "template": "Who does {subject} operate?",
+        "text": "Question: Who does Dravy operate?\nAnswer: Skell.",
+        "question": "Who does Dravy operate?",
+        "answer": "Skell",
+        "key": "Dravy|operates|Skell",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Skell"
+      },
+      {
+        "exp_index": 26,
+        "kind": "qa",
+        "fact_index": 8,
+        "chain": 2,
+        "relation": "operates",
+        "subject": "Dravy",
+        "object": "Skell",
+        "template_id": "TEACH_Q2:operates",
+        "template": "{subject} operates what?",
+        "text": "Question: Dravy operates what?\nAnswer: Skell.",
+        "question": "Dravy operates what?",
+        "answer": "Skell",
+        "key": "Dravy|operates|Skell",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Skell"
+      },
+      {
+        "exp_index": 27,
+        "kind": "declarative",
+        "fact_index": 9,
+        "chain": 2,
+        "relation": "routes-to",
+        "subject": "Skell",
+        "object": "Vash",
+        "template_id": "TEACH_DECL:routes-to",
+        "template": "{subject} routes to relay {object}.",
+        "text": "Skell routes to relay Vash.",
+        "question": null,
+        "answer": "Vash",
+        "key": "Skell|routes-to|Vash",
+        "rank_candidates": [],
+        "gold_candidate": "Vash"
+      },
+      {
+        "exp_index": 28,
+        "kind": "qa",
+        "fact_index": 9,
+        "chain": 2,
+        "relation": "routes-to",
+        "subject": "Skell",
+        "object": "Vash",
+        "template_id": "TEACH_Q1:routes-to",
+        "template": "Where does {subject} route?",
+        "text": "Question: Where does Skell route?\nAnswer: Vash.",
+        "question": "Where does Skell route?",
+        "answer": "Vash",
+        "key": "Skell|routes-to|Vash",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Vash"
+      },
+      {
+        "exp_index": 29,
+        "kind": "qa",
+        "fact_index": 9,
+        "chain": 2,
+        "relation": "routes-to",
+        "subject": "Skell",
+        "object": "Vash",
+        "template_id": "TEACH_Q2:routes-to",
+        "template": "{subject} routes to which relay?",
+        "text": "Question: Skell routes to which relay?\nAnswer: Vash.",
+        "question": "Skell routes to which relay?",
+        "answer": "Vash",
+        "key": "Skell|routes-to|Vash",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Vash"
+      },
+      {
+        "exp_index": 30,
+        "kind": "declarative",
+        "fact_index": 10,
+        "chain": 2,
+        "relation": "controls",
+        "subject": "Vash",
+        "object": "Crat",
+        "template_id": "TEACH_DECL:controls",
+        "template": "{subject} controls device {object}.",
+        "text": "Vash controls device Crat.",
+        "question": null,
+        "answer": "Crat",
+        "key": "Vash|controls|Crat",
+        "rank_candidates": [],
+        "gold_candidate": "Crat"
+      },
+      {
+        "exp_index": 31,
+        "kind": "qa",
+        "fact_index": 10,
+        "chain": 2,
+        "relation": "controls",
+        "subject": "Vash",
+        "object": "Crat",
+        "template_id": "TEACH_Q1:controls",
+        "template": "Who does {subject} control?",
+        "text": "Question: Who does Vash control?\nAnswer: Crat.",
+        "question": "Who does Vash control?",
+        "answer": "Crat",
+        "key": "Vash|controls|Crat",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Crat"
+      },
+      {
+        "exp_index": 32,
+        "kind": "qa",
+        "fact_index": 10,
+        "chain": 2,
+        "relation": "controls",
+        "subject": "Vash",
+        "object": "Crat",
+        "template_id": "TEACH_Q2:controls",
+        "template": "{subject} controls which device?",
+        "text": "Question: Vash controls which device?\nAnswer: Crat.",
+        "question": "Vash controls which device?",
+        "answer": "Crat",
+        "key": "Vash|controls|Crat",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Crat"
+      },
+      {
+        "exp_index": 33,
+        "kind": "declarative",
+        "fact_index": 11,
+        "chain": 2,
+        "relation": "produces",
+        "subject": "Crat",
+        "object": "pressure",
+        "template_id": "TEACH_DECL:produces",
+        "template": "{subject} produces {object}.",
+        "text": "Crat produces pressure.",
+        "question": null,
+        "answer": "pressure",
+        "key": "Crat|produces|pressure",
+        "rank_candidates": [],
+        "gold_candidate": "pressure"
+      },
+      {
+        "exp_index": 34,
+        "kind": "qa",
+        "fact_index": 11,
+        "chain": 2,
+        "relation": "produces",
+        "subject": "Crat",
+        "object": "pressure",
+        "template_id": "TEACH_Q1:produces",
+        "template": "What does {subject} produce?",
+        "text": "Question: What does Crat produce?\nAnswer: pressure.",
+        "question": "What does Crat produce?",
+        "answer": "pressure",
+        "key": "Crat|produces|pressure",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "pressure"
+      },
+      {
+        "exp_index": 35,
+        "kind": "qa",
+        "fact_index": 11,
+        "chain": 2,
+        "relation": "produces",
+        "subject": "Crat",
+        "object": "pressure",
+        "template_id": "TEACH_Q2:produces",
+        "template": "What is {subject}'s output?",
+        "text": "Question: What is Crat's output?\nAnswer: pressure.",
+        "question": "What is Crat's output?",
+        "answer": "pressure",
+        "key": "Crat|produces|pressure",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "pressure"
+      },
+      {
+        "exp_index": 36,
+        "kind": "declarative",
+        "fact_index": 12,
+        "chain": 3,
+        "relation": "operates",
+        "subject": "Ombit",
+        "object": "Morva",
+        "template_id": "TEACH_DECL:operates",
+        "template": "{subject} operates {object}.",
+        "text": "Ombit operates Morva.",
+        "question": null,
+        "answer": "Morva",
+        "key": "Ombit|operates|Morva",
+        "rank_candidates": [],
+        "gold_candidate": "Morva"
+      },
+      {
+        "exp_index": 37,
+        "kind": "qa",
+        "fact_index": 12,
+        "chain": 3,
+        "relation": "operates",
+        "subject": "Ombit",
+        "object": "Morva",
+        "template_id": "TEACH_Q1:operates",
+        "template": "Who does {subject} operate?",
+        "text": "Question: Who does Ombit operate?\nAnswer: Morva.",
+        "question": "Who does Ombit operate?",
+        "answer": "Morva",
+        "key": "Ombit|operates|Morva",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Morva"
+      },
+      {
+        "exp_index": 38,
+        "kind": "qa",
+        "fact_index": 12,
+        "chain": 3,
+        "relation": "operates",
+        "subject": "Ombit",
+        "object": "Morva",
+        "template_id": "TEACH_Q2:operates",
+        "template": "{subject} operates what?",
+        "text": "Question: Ombit operates what?\nAnswer: Morva.",
+        "question": "Ombit operates what?",
+        "answer": "Morva",
+        "key": "Ombit|operates|Morva",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Morva"
+      },
+      {
+        "exp_index": 39,
+        "kind": "declarative",
+        "fact_index": 13,
+        "chain": 3,
+        "relation": "routes-to",
+        "subject": "Morva",
+        "object": "Osten",
+        "template_id": "TEACH_DECL:routes-to",
+        "template": "{subject} routes to relay {object}.",
+        "text": "Morva routes to relay Osten.",
+        "question": null,
+        "answer": "Osten",
+        "key": "Morva|routes-to|Osten",
+        "rank_candidates": [],
+        "gold_candidate": "Osten"
+      },
+      {
+        "exp_index": 40,
+        "kind": "qa",
+        "fact_index": 13,
+        "chain": 3,
+        "relation": "routes-to",
+        "subject": "Morva",
+        "object": "Osten",
+        "template_id": "TEACH_Q1:routes-to",
+        "template": "Where does {subject} route?",
+        "text": "Question: Where does Morva route?\nAnswer: Osten.",
+        "question": "Where does Morva route?",
+        "answer": "Osten",
+        "key": "Morva|routes-to|Osten",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Osten"
+      },
+      {
+        "exp_index": 41,
+        "kind": "qa",
+        "fact_index": 13,
+        "chain": 3,
+        "relation": "routes-to",
+        "subject": "Morva",
+        "object": "Osten",
+        "template_id": "TEACH_Q2:routes-to",
+        "template": "{subject} routes to which relay?",
+        "text": "Question: Morva routes to which relay?\nAnswer: Osten.",
+        "question": "Morva routes to which relay?",
+        "answer": "Osten",
+        "key": "Morva|routes-to|Osten",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Osten"
+      },
+      {
+        "exp_index": 42,
+        "kind": "declarative",
+        "fact_index": 14,
+        "chain": 3,
+        "relation": "controls",
+        "subject": "Osten",
+        "object": "Dovel",
+        "template_id": "TEACH_DECL:controls",
+        "template": "{subject} controls device {object}.",
+        "text": "Osten controls device Dovel.",
+        "question": null,
+        "answer": "Dovel",
+        "key": "Osten|controls|Dovel",
+        "rank_candidates": [],
+        "gold_candidate": "Dovel"
+      },
+      {
+        "exp_index": 43,
+        "kind": "qa",
+        "fact_index": 14,
+        "chain": 3,
+        "relation": "controls",
+        "subject": "Osten",
+        "object": "Dovel",
+        "template_id": "TEACH_Q1:controls",
+        "template": "Who does {subject} control?",
+        "text": "Question: Who does Osten control?\nAnswer: Dovel.",
+        "question": "Who does Osten control?",
+        "answer": "Dovel",
+        "key": "Osten|controls|Dovel",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Dovel"
+      },
+      {
+        "exp_index": 44,
+        "kind": "qa",
+        "fact_index": 14,
+        "chain": 3,
+        "relation": "controls",
+        "subject": "Osten",
+        "object": "Dovel",
+        "template_id": "TEACH_Q2:controls",
+        "template": "{subject} controls which device?",
+        "text": "Question: Osten controls which device?\nAnswer: Dovel.",
+        "question": "Osten controls which device?",
+        "answer": "Dovel",
+        "key": "Osten|controls|Dovel",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Dovel"
+      },
+      {
+        "exp_index": 45,
+        "kind": "declarative",
+        "fact_index": 15,
+        "chain": 3,
+        "relation": "produces",
+        "subject": "Dovel",
+        "object": "torque",
+        "template_id": "TEACH_DECL:produces",
+        "template": "{subject} produces {object}.",
+        "text": "Dovel produces torque.",
+        "question": null,
+        "answer": "torque",
+        "key": "Dovel|produces|torque",
+        "rank_candidates": [],
+        "gold_candidate": "torque"
+      },
+      {
+        "exp_index": 46,
+        "kind": "qa",
+        "fact_index": 15,
+        "chain": 3,
+        "relation": "produces",
+        "subject": "Dovel",
+        "object": "torque",
+        "template_id": "TEACH_Q1:produces",
+        "template": "What does {subject} produce?",
+        "text": "Question: What does Dovel produce?\nAnswer: torque.",
+        "question": "What does Dovel produce?",
+        "answer": "torque",
+        "key": "Dovel|produces|torque",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "torque"
+      },
+      {
+        "exp_index": 47,
+        "kind": "qa",
+        "fact_index": 15,
+        "chain": 3,
+        "relation": "produces",
+        "subject": "Dovel",
+        "object": "torque",
+        "template_id": "TEACH_Q2:produces",
+        "template": "What is {subject}'s output?",
+        "text": "Question: What is Dovel's output?\nAnswer: torque.",
+        "question": "What is Dovel's output?",
+        "answer": "torque",
+        "key": "Dovel|produces|torque",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "torque"
+      },
+      {
+        "exp_index": 48,
+        "kind": "declarative",
+        "fact_index": 16,
+        "chain": 4,
+        "relation": "operates",
+        "subject": "Quelos",
+        "object": "Plin",
+        "template_id": "TEACH_DECL:operates",
+        "template": "{subject} operates {object}.",
+        "text": "Quelos operates Plin.",
+        "question": null,
+        "answer": "Plin",
+        "key": "Quelos|operates|Plin",
+        "rank_candidates": [],
+        "gold_candidate": "Plin"
+      },
+      {
+        "exp_index": 49,
+        "kind": "qa",
+        "fact_index": 16,
+        "chain": 4,
+        "relation": "operates",
+        "subject": "Quelos",
+        "object": "Plin",
+        "template_id": "TEACH_Q1:operates",
+        "template": "Who does {subject} operate?",
+        "text": "Question: Who does Quelos operate?\nAnswer: Plin.",
+        "question": "Who does Quelos operate?",
+        "answer": "Plin",
+        "key": "Quelos|operates|Plin",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Plin"
+      },
+      {
+        "exp_index": 50,
+        "kind": "qa",
+        "fact_index": 16,
+        "chain": 4,
+        "relation": "operates",
+        "subject": "Quelos",
+        "object": "Plin",
+        "template_id": "TEACH_Q2:operates",
+        "template": "{subject} operates what?",
+        "text": "Question: Quelos operates what?\nAnswer: Plin.",
+        "question": "Quelos operates what?",
+        "answer": "Plin",
+        "key": "Quelos|operates|Plin",
+        "rank_candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ],
+        "gold_candidate": "Plin"
+      },
+      {
+        "exp_index": 51,
+        "kind": "declarative",
+        "fact_index": 17,
+        "chain": 4,
+        "relation": "routes-to",
+        "subject": "Plin",
+        "object": "Belro",
+        "template_id": "TEACH_DECL:routes-to",
+        "template": "{subject} routes to relay {object}.",
+        "text": "Plin routes to relay Belro.",
+        "question": null,
+        "answer": "Belro",
+        "key": "Plin|routes-to|Belro",
+        "rank_candidates": [],
+        "gold_candidate": "Belro"
+      },
+      {
+        "exp_index": 52,
+        "kind": "qa",
+        "fact_index": 17,
+        "chain": 4,
+        "relation": "routes-to",
+        "subject": "Plin",
+        "object": "Belro",
+        "template_id": "TEACH_Q1:routes-to",
+        "template": "Where does {subject} route?",
+        "text": "Question: Where does Plin route?\nAnswer: Belro.",
+        "question": "Where does Plin route?",
+        "answer": "Belro",
+        "key": "Plin|routes-to|Belro",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Belro"
+      },
+      {
+        "exp_index": 53,
+        "kind": "qa",
+        "fact_index": 17,
+        "chain": 4,
+        "relation": "routes-to",
+        "subject": "Plin",
+        "object": "Belro",
+        "template_id": "TEACH_Q2:routes-to",
+        "template": "{subject} routes to which relay?",
+        "text": "Question: Plin routes to which relay?\nAnswer: Belro.",
+        "question": "Plin routes to which relay?",
+        "answer": "Belro",
+        "key": "Plin|routes-to|Belro",
+        "rank_candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ],
+        "gold_candidate": "Belro"
+      },
+      {
+        "exp_index": 54,
+        "kind": "declarative",
+        "fact_index": 18,
+        "chain": 4,
+        "relation": "controls",
+        "subject": "Belro",
+        "object": "Errik",
+        "template_id": "TEACH_DECL:controls",
+        "template": "{subject} controls device {object}.",
+        "text": "Belro controls device Errik.",
+        "question": null,
+        "answer": "Errik",
+        "key": "Belro|controls|Errik",
+        "rank_candidates": [],
+        "gold_candidate": "Errik"
+      },
+      {
+        "exp_index": 55,
+        "kind": "qa",
+        "fact_index": 18,
+        "chain": 4,
+        "relation": "controls",
+        "subject": "Belro",
+        "object": "Errik",
+        "template_id": "TEACH_Q1:controls",
+        "template": "Who does {subject} control?",
+        "text": "Question: Who does Belro control?\nAnswer: Errik.",
+        "question": "Who does Belro control?",
+        "answer": "Errik",
+        "key": "Belro|controls|Errik",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Errik"
+      },
+      {
+        "exp_index": 56,
+        "kind": "qa",
+        "fact_index": 18,
+        "chain": 4,
+        "relation": "controls",
+        "subject": "Belro",
+        "object": "Errik",
+        "template_id": "TEACH_Q2:controls",
+        "template": "{subject} controls which device?",
+        "text": "Question: Belro controls which device?\nAnswer: Errik.",
+        "question": "Belro controls which device?",
+        "answer": "Errik",
+        "key": "Belro|controls|Errik",
+        "rank_candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ],
+        "gold_candidate": "Errik"
+      },
+      {
+        "exp_index": 57,
+        "kind": "declarative",
+        "fact_index": 19,
+        "chain": 4,
+        "relation": "produces",
+        "subject": "Errik",
+        "object": "steam",
+        "template_id": "TEACH_DECL:produces",
+        "template": "{subject} produces {object}.",
+        "text": "Errik produces steam.",
+        "question": null,
+        "answer": "steam",
+        "key": "Errik|produces|steam",
+        "rank_candidates": [],
+        "gold_candidate": "steam"
+      },
+      {
+        "exp_index": 58,
+        "kind": "qa",
+        "fact_index": 19,
+        "chain": 4,
+        "relation": "produces",
+        "subject": "Errik",
+        "object": "steam",
+        "template_id": "TEACH_Q1:produces",
+        "template": "What does {subject} produce?",
+        "text": "Question: What does Errik produce?\nAnswer: steam.",
+        "question": "What does Errik produce?",
+        "answer": "steam",
+        "key": "Errik|produces|steam",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "steam"
+      },
+      {
+        "exp_index": 59,
+        "kind": "qa",
+        "fact_index": 19,
+        "chain": 4,
+        "relation": "produces",
+        "subject": "Errik",
+        "object": "steam",
+        "template_id": "TEACH_Q2:produces",
+        "template": "What is {subject}'s output?",
+        "text": "Question: What is Errik's output?\nAnswer: steam.",
+        "question": "What is Errik's output?",
+        "answer": "steam",
+        "key": "Errik|produces|steam",
+        "rank_candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ],
+        "gold_candidate": "steam"
+      }
+    ]
+  },
+  "dev": {
+    "role": "calibration ONLY (protocol section 5); DEV carriers are feature-extraction-forbidden (section 2.3 hard invariant)",
+    "questions": [
+      {
+        "qid": "dev-direct-00",
+        "battery": "direct",
+        "template_id": "DEV_Q:routes-to",
+        "template": "To which relay does {subject} route?",
+        "text": "To which relay does Tav route?",
+        "answer": "Kimo",
+        "fact_index": 1,
+        "chain": 0,
+        "meta": {
+          "subject": "Tav",
+          "relation": "routes-to",
+          "object": "Kimo"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "dev-direct-01",
+        "battery": "direct",
+        "template_id": "DEV_Q:controls",
+        "template": "Which device is {subject} in control of?",
+        "text": "Which device is Kimo in control of?",
+        "answer": "Zor",
+        "fact_index": 2,
+        "chain": 0,
+        "meta": {
+          "subject": "Kimo",
+          "relation": "controls",
+          "object": "Zor"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "dev-direct-02",
+        "battery": "direct",
+        "template_id": "DEV_Q:produces",
+        "template": "What is produced by {subject}?",
+        "text": "What is produced by Zor?",
+        "answer": "heat",
+        "fact_index": 3,
+        "chain": 0,
+        "meta": {
+          "subject": "Zor",
+          "relation": "produces",
+          "object": "heat"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "dev-direct-03",
+        "battery": "direct",
+        "template_id": "DEV_Q:routes-to",
+        "template": "To which relay does {subject} route?",
+        "text": "To which relay does Rinpo route?",
+        "answer": "Drel",
+        "fact_index": 5,
+        "chain": 1,
+        "meta": {
+          "subject": "Rinpo",
+          "relation": "routes-to",
+          "object": "Drel"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "dev-direct-04",
+        "battery": "direct",
+        "template_id": "DEV_Q:routes-to",
+        "template": "To which relay does {subject} route?",
+        "text": "To which relay does Skell route?",
+        "answer": "Vash",
+        "fact_index": 9,
+        "chain": 2,
+        "meta": {
+          "subject": "Skell",
+          "relation": "routes-to",
+          "object": "Vash"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "dev-direct-05",
+        "battery": "direct",
+        "template_id": "DEV_Q:controls",
+        "template": "Which device is {subject} in control of?",
+        "text": "Which device is Vash in control of?",
+        "answer": "Crat",
+        "fact_index": 10,
+        "chain": 2,
+        "meta": {
+          "subject": "Vash",
+          "relation": "controls",
+          "object": "Crat"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "dev-direct-06",
+        "battery": "direct",
+        "template_id": "DEV_Q:controls",
+        "template": "Which device is {subject} in control of?",
+        "text": "Which device is Osten in control of?",
+        "answer": "Dovel",
+        "fact_index": 14,
+        "chain": 3,
+        "meta": {
+          "subject": "Osten",
+          "relation": "controls",
+          "object": "Dovel"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "dev-direct-07",
+        "battery": "direct",
+        "template_id": "DEV_Q:produces",
+        "template": "What is produced by {subject}?",
+        "text": "What is produced by Dovel?",
+        "answer": "torque",
+        "fact_index": 15,
+        "chain": 3,
+        "meta": {
+          "subject": "Dovel",
+          "relation": "produces",
+          "object": "torque"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "dev-combo-00",
+        "battery": "combination",
+        "template_id": "DEV_COMBO_MEMBER_RELAY",
+        "template": "Does {actor} reach relay {relay}?",
+        "text": "Does Neral reach relay Kimo?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 0,
+        "meta": {
+          "kind": "membership_relay",
+          "start": "Neral",
+          "target": "Kimo"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "dev-combo-01",
+        "battery": "combination",
+        "template_id": "DEV_COMBO_MEMBER_RELAY",
+        "template": "Does {actor} reach relay {relay}?",
+        "text": "Does Dravy reach relay Vash?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 2,
+        "meta": {
+          "kind": "membership_relay",
+          "start": "Dravy",
+          "target": "Vash"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "dev-combo-02",
+        "battery": "combination",
+        "template_id": "DEV_COMBO_MEMBER_RELAY",
+        "template": "Does {actor} reach relay {relay}?",
+        "text": "Does Ombit reach relay Drel?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 3,
+        "meta": {
+          "kind": "membership_relay",
+          "start": "Ombit",
+          "target": "Drel"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "dev-combo-03",
+        "battery": "combination",
+        "template_id": "DEV_COMBO_MEMBER_RELAY",
+        "template": "Does {actor} reach relay {relay}?",
+        "text": "Does Sula reach relay Osten?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 1,
+        "meta": {
+          "kind": "membership_relay",
+          "start": "Sula",
+          "target": "Osten"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      }
+    ]
+  },
+  "final_exam": {
+    "structure": "Phase-3 exam (teacher_student.py --phase3): direct + paraphrase + 15-combination battery",
+    "carrier_per_fact": {
+      "0": "exam-direct-00",
+      "1": "exam-direct-01",
+      "2": "exam-direct-02",
+      "3": "exam-direct-03",
+      "4": "exam-direct-04",
+      "5": "exam-direct-05",
+      "6": "exam-direct-06",
+      "7": "exam-direct-07",
+      "8": "exam-direct-08",
+      "9": "exam-direct-09",
+      "10": "exam-direct-10",
+      "11": "exam-direct-11",
+      "12": "exam-direct-12",
+      "13": "exam-direct-13",
+      "14": "exam-direct-14",
+      "15": "exam-direct-15",
+      "16": "exam-direct-16",
+      "17": "exam-direct-17",
+      "18": "exam-direct-18",
+      "19": "exam-direct-19"
+    },
+    "questions": [
+      {
+        "qid": "exam-direct-00",
+        "battery": "direct",
+        "template_id": "EXAM_Q:operates",
+        "template": "What does {subject} operate on?",
+        "text": "What does Neral operate on?",
+        "answer": "Tav",
+        "fact_index": 0,
+        "chain": 0,
+        "meta": {
+          "subject": "Neral",
+          "relation": "operates",
+          "object": "Tav"
+        },
+        "candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ]
+      },
+      {
+        "qid": "exam-direct-01",
+        "battery": "direct",
+        "template_id": "EXAM_Q:routes-to",
+        "template": "Where does {subject} route to?",
+        "text": "Where does Tav route to?",
+        "answer": "Kimo",
+        "fact_index": 1,
+        "chain": 0,
+        "meta": {
+          "subject": "Tav",
+          "relation": "routes-to",
+          "object": "Kimo"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-direct-02",
+        "battery": "direct",
+        "template_id": "EXAM_Q:controls",
+        "template": "Which device does {subject} control?",
+        "text": "Which device does Kimo control?",
+        "answer": "Zor",
+        "fact_index": 2,
+        "chain": 0,
+        "meta": {
+          "subject": "Kimo",
+          "relation": "controls",
+          "object": "Zor"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-direct-03",
+        "battery": "direct",
+        "template_id": "EXAM_Q:produces",
+        "template": "Which output does {subject} produce?",
+        "text": "Which output does Zor produce?",
+        "answer": "heat",
+        "fact_index": 3,
+        "chain": 0,
+        "meta": {
+          "subject": "Zor",
+          "relation": "produces",
+          "object": "heat"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-direct-04",
+        "battery": "direct",
+        "template_id": "EXAM_Q:operates",
+        "template": "What does {subject} operate on?",
+        "text": "What does Sula operate on?",
+        "answer": "Rinpo",
+        "fact_index": 4,
+        "chain": 1,
+        "meta": {
+          "subject": "Sula",
+          "relation": "operates",
+          "object": "Rinpo"
+        },
+        "candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ]
+      },
+      {
+        "qid": "exam-direct-05",
+        "battery": "direct",
+        "template_id": "EXAM_Q:routes-to",
+        "template": "Where does {subject} route to?",
+        "text": "Where does Rinpo route to?",
+        "answer": "Drel",
+        "fact_index": 5,
+        "chain": 1,
+        "meta": {
+          "subject": "Rinpo",
+          "relation": "routes-to",
+          "object": "Drel"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-direct-06",
+        "battery": "direct",
+        "template_id": "EXAM_Q:controls",
+        "template": "Which device does {subject} control?",
+        "text": "Which device does Drel control?",
+        "answer": "Blun",
+        "fact_index": 6,
+        "chain": 1,
+        "meta": {
+          "subject": "Drel",
+          "relation": "controls",
+          "object": "Blun"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-direct-07",
+        "battery": "direct",
+        "template_id": "EXAM_Q:produces",
+        "template": "Which output does {subject} produce?",
+        "text": "Which output does Blun produce?",
+        "answer": "light",
+        "fact_index": 7,
+        "chain": 1,
+        "meta": {
+          "subject": "Blun",
+          "relation": "produces",
+          "object": "light"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-direct-08",
+        "battery": "direct",
+        "template_id": "EXAM_Q:operates",
+        "template": "What does {subject} operate on?",
+        "text": "What does Dravy operate on?",
+        "answer": "Skell",
+        "fact_index": 8,
+        "chain": 2,
+        "meta": {
+          "subject": "Dravy",
+          "relation": "operates",
+          "object": "Skell"
+        },
+        "candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ]
+      },
+      {
+        "qid": "exam-direct-09",
+        "battery": "direct",
+        "template_id": "EXAM_Q:routes-to",
+        "template": "Where does {subject} route to?",
+        "text": "Where does Skell route to?",
+        "answer": "Vash",
+        "fact_index": 9,
+        "chain": 2,
+        "meta": {
+          "subject": "Skell",
+          "relation": "routes-to",
+          "object": "Vash"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-direct-10",
+        "battery": "direct",
+        "template_id": "EXAM_Q:controls",
+        "template": "Which device does {subject} control?",
+        "text": "Which device does Vash control?",
+        "answer": "Crat",
+        "fact_index": 10,
+        "chain": 2,
+        "meta": {
+          "subject": "Vash",
+          "relation": "controls",
+          "object": "Crat"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-direct-11",
+        "battery": "direct",
+        "template_id": "EXAM_Q:produces",
+        "template": "Which output does {subject} produce?",
+        "text": "Which output does Crat produce?",
+        "answer": "pressure",
+        "fact_index": 11,
+        "chain": 2,
+        "meta": {
+          "subject": "Crat",
+          "relation": "produces",
+          "object": "pressure"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-direct-12",
+        "battery": "direct",
+        "template_id": "EXAM_Q:operates",
+        "template": "What does {subject} operate on?",
+        "text": "What does Ombit operate on?",
+        "answer": "Morva",
+        "fact_index": 12,
+        "chain": 3,
+        "meta": {
+          "subject": "Ombit",
+          "relation": "operates",
+          "object": "Morva"
+        },
+        "candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ]
+      },
+      {
+        "qid": "exam-direct-13",
+        "battery": "direct",
+        "template_id": "EXAM_Q:routes-to",
+        "template": "Where does {subject} route to?",
+        "text": "Where does Morva route to?",
+        "answer": "Osten",
+        "fact_index": 13,
+        "chain": 3,
+        "meta": {
+          "subject": "Morva",
+          "relation": "routes-to",
+          "object": "Osten"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-direct-14",
+        "battery": "direct",
+        "template_id": "EXAM_Q:controls",
+        "template": "Which device does {subject} control?",
+        "text": "Which device does Osten control?",
+        "answer": "Dovel",
+        "fact_index": 14,
+        "chain": 3,
+        "meta": {
+          "subject": "Osten",
+          "relation": "controls",
+          "object": "Dovel"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-direct-15",
+        "battery": "direct",
+        "template_id": "EXAM_Q:produces",
+        "template": "Which output does {subject} produce?",
+        "text": "Which output does Dovel produce?",
+        "answer": "torque",
+        "fact_index": 15,
+        "chain": 3,
+        "meta": {
+          "subject": "Dovel",
+          "relation": "produces",
+          "object": "torque"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-direct-16",
+        "battery": "direct",
+        "template_id": "EXAM_Q:operates",
+        "template": "What does {subject} operate on?",
+        "text": "What does Quelos operate on?",
+        "answer": "Plin",
+        "fact_index": 16,
+        "chain": 4,
+        "meta": {
+          "subject": "Quelos",
+          "relation": "operates",
+          "object": "Plin"
+        },
+        "candidates": [
+          "Tav",
+          "Rinpo",
+          "Skell",
+          "Morva",
+          "Plin"
+        ]
+      },
+      {
+        "qid": "exam-direct-17",
+        "battery": "direct",
+        "template_id": "EXAM_Q:routes-to",
+        "template": "Where does {subject} route to?",
+        "text": "Where does Plin route to?",
+        "answer": "Belro",
+        "fact_index": 17,
+        "chain": 4,
+        "meta": {
+          "subject": "Plin",
+          "relation": "routes-to",
+          "object": "Belro"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-direct-18",
+        "battery": "direct",
+        "template_id": "EXAM_Q:controls",
+        "template": "Which device does {subject} control?",
+        "text": "Which device does Belro control?",
+        "answer": "Errik",
+        "fact_index": 18,
+        "chain": 4,
+        "meta": {
+          "subject": "Belro",
+          "relation": "controls",
+          "object": "Errik"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-direct-19",
+        "battery": "direct",
+        "template_id": "EXAM_Q:produces",
+        "template": "Which output does {subject} produce?",
+        "text": "Which output does Errik produce?",
+        "answer": "steam",
+        "fact_index": 19,
+        "chain": 4,
+        "meta": {
+          "subject": "Errik",
+          "relation": "produces",
+          "object": "steam"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-para-00",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:produces:0",
+        "template": "{object} is produced by which device?",
+        "text": "heat is produced by which device?",
+        "answer": "Zor",
+        "fact_index": 3,
+        "chain": 0,
+        "meta": {
+          "subject": "Zor",
+          "relation": "produces",
+          "object": "heat",
+          "asked_side": "subject"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-para-01",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:routes-to:0",
+        "template": "Which relay does {subject} route to?",
+        "text": "Which relay does Rinpo route to?",
+        "answer": "Drel",
+        "fact_index": 5,
+        "chain": 1,
+        "meta": {
+          "subject": "Rinpo",
+          "relation": "routes-to",
+          "object": "Drel",
+          "asked_side": "object"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-para-02",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:produces:0",
+        "template": "{object} is produced by which device?",
+        "text": "light is produced by which device?",
+        "answer": "Blun",
+        "fact_index": 7,
+        "chain": 1,
+        "meta": {
+          "subject": "Blun",
+          "relation": "produces",
+          "object": "light",
+          "asked_side": "subject"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-para-03",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:produces:1",
+        "template": "{subject} emits what?",
+        "text": "Crat emits what?",
+        "answer": "pressure",
+        "fact_index": 11,
+        "chain": 2,
+        "meta": {
+          "subject": "Crat",
+          "relation": "produces",
+          "object": "pressure",
+          "asked_side": "object"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-para-04",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:operates:1",
+        "template": "{object} is operated by whom?",
+        "text": "Morva is operated by whom?",
+        "answer": "Ombit",
+        "fact_index": 12,
+        "chain": 3,
+        "meta": {
+          "subject": "Ombit",
+          "relation": "operates",
+          "object": "Morva",
+          "asked_side": "subject"
+        },
+        "candidates": [
+          "Neral",
+          "Sula",
+          "Dravy",
+          "Ombit",
+          "Quelos"
+        ]
+      },
+      {
+        "qid": "exam-para-05",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:routes-to:1",
+        "template": "{subject} sends its flow through which relay?",
+        "text": "Plin sends its flow through which relay?",
+        "answer": "Belro",
+        "fact_index": 17,
+        "chain": 4,
+        "meta": {
+          "subject": "Plin",
+          "relation": "routes-to",
+          "object": "Belro",
+          "asked_side": "object"
+        },
+        "candidates": [
+          "Kimo",
+          "Drel",
+          "Vash",
+          "Osten",
+          "Belro"
+        ]
+      },
+      {
+        "qid": "exam-para-06",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:controls:1",
+        "template": "{subject} governs which device?",
+        "text": "Belro governs which device?",
+        "answer": "Errik",
+        "fact_index": 18,
+        "chain": 4,
+        "meta": {
+          "subject": "Belro",
+          "relation": "controls",
+          "object": "Errik",
+          "asked_side": "object"
+        },
+        "candidates": [
+          "Zor",
+          "Blun",
+          "Crat",
+          "Dovel",
+          "Errik"
+        ]
+      },
+      {
+        "qid": "exam-para-07",
+        "battery": "paraphrase",
+        "template_id": "EXAM_PARA:produces:1",
+        "template": "{subject} emits what?",
+        "text": "Errik emits what?",
+        "answer": "steam",
+        "fact_index": 19,
+        "chain": 4,
+        "meta": {
+          "subject": "Errik",
+          "relation": "produces",
+          "object": "steam",
+          "asked_side": "object"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-reach-000",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_REACH",
+        "template": "What does {actor} reach?",
+        "text": "What does Neral reach?",
+        "answer": "heat",
+        "fact_index": null,
+        "chain": 0,
+        "meta": {
+          "kind": "reach",
+          "start": "Neral"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-yes-000",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Neral reach Zor?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 0,
+        "meta": {
+          "kind": "membership",
+          "start": "Neral",
+          "target": "Zor"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-no-000",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Neral reach Crat?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 0,
+        "meta": {
+          "kind": "membership",
+          "start": "Neral",
+          "target": "Crat"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-reach-001",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_REACH",
+        "template": "What does {actor} reach?",
+        "text": "What does Sula reach?",
+        "answer": "light",
+        "fact_index": null,
+        "chain": 1,
+        "meta": {
+          "kind": "reach",
+          "start": "Sula"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-yes-001",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Sula reach Blun?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 1,
+        "meta": {
+          "kind": "membership",
+          "start": "Sula",
+          "target": "Blun"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-no-001",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Sula reach Dovel?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 1,
+        "meta": {
+          "kind": "membership",
+          "start": "Sula",
+          "target": "Dovel"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-reach-002",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_REACH",
+        "template": "What does {actor} reach?",
+        "text": "What does Dravy reach?",
+        "answer": "pressure",
+        "fact_index": null,
+        "chain": 2,
+        "meta": {
+          "kind": "reach",
+          "start": "Dravy"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-yes-002",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Dravy reach Crat?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 2,
+        "meta": {
+          "kind": "membership",
+          "start": "Dravy",
+          "target": "Crat"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-no-002",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Dravy reach Dovel?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 2,
+        "meta": {
+          "kind": "membership",
+          "start": "Dravy",
+          "target": "Dovel"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-reach-003",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_REACH",
+        "template": "What does {actor} reach?",
+        "text": "What does Ombit reach?",
+        "answer": "torque",
+        "fact_index": null,
+        "chain": 3,
+        "meta": {
+          "kind": "reach",
+          "start": "Ombit"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-yes-003",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Ombit reach Dovel?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 3,
+        "meta": {
+          "kind": "membership",
+          "start": "Ombit",
+          "target": "Dovel"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-no-003",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Ombit reach Errik?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 3,
+        "meta": {
+          "kind": "membership",
+          "start": "Ombit",
+          "target": "Errik"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-reach-004",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_REACH",
+        "template": "What does {actor} reach?",
+        "text": "What does Quelos reach?",
+        "answer": "steam",
+        "fact_index": null,
+        "chain": 4,
+        "meta": {
+          "kind": "reach",
+          "start": "Quelos"
+        },
+        "candidates": [
+          "heat",
+          "light",
+          "pressure",
+          "torque",
+          "steam"
+        ]
+      },
+      {
+        "qid": "exam-combo-yes-004",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Quelos reach Errik?",
+        "answer": "yes",
+        "fact_index": null,
+        "chain": 4,
+        "meta": {
+          "kind": "membership",
+          "start": "Quelos",
+          "target": "Errik"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "qid": "exam-combo-no-004",
+        "battery": "combination",
+        "template_id": "EXAM_COMBO_MEMBER_DEVICE",
+        "template": "Does {actor} reach {device}?",
+        "text": "Does Quelos reach Blun?",
+        "answer": "no",
+        "fact_index": null,
+        "chain": 4,
+        "meta": {
+          "kind": "membership",
+          "start": "Quelos",
+          "target": "Blun"
+        },
+        "candidates": [
+          "yes",
+          "no"
+        ]
+      }
+    ]
+  },
+  "template_registry": {
+    "TEACH_DECL:operates": {
+      "template": "{subject} operates {object}.",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q1:operates": {
+      "template": "Who does {subject} operate?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q2:operates": {
+      "template": "{subject} operates what?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_DECL:routes-to": {
+      "template": "{subject} routes to relay {object}.",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q1:routes-to": {
+      "template": "Where does {subject} route?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q2:routes-to": {
+      "template": "{subject} routes to which relay?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_DECL:controls": {
+      "template": "{subject} controls device {object}.",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q1:controls": {
+      "template": "Who does {subject} control?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q2:controls": {
+      "template": "{subject} controls which device?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_DECL:produces": {
+      "template": "{subject} produces {object}.",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q1:produces": {
+      "template": "What does {subject} produce?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "TEACH_Q2:produces": {
+      "template": "What is {subject}'s output?",
+      "split": "train",
+      "n_questions": 5
+    },
+    "DEV_Q:routes-to": {
+      "template": "To which relay does {subject} route?",
+      "split": "dev",
+      "n_questions": 3
+    },
+    "DEV_Q:controls": {
+      "template": "Which device is {subject} in control of?",
+      "split": "dev",
+      "n_questions": 3
+    },
+    "DEV_Q:produces": {
+      "template": "What is produced by {subject}?",
+      "split": "dev",
+      "n_questions": 2
+    },
+    "DEV_COMBO_MEMBER_RELAY": {
+      "template": "Does {actor} reach relay {relay}?",
+      "split": "dev",
+      "n_questions": 4
+    },
+    "EXAM_Q:operates": {
+      "template": "What does {subject} operate on?",
+      "split": "exam",
+      "n_questions": 5
+    },
+    "EXAM_Q:routes-to": {
+      "template": "Where does {subject} route to?",
+      "split": "exam",
+      "n_questions": 5
+    },
+    "EXAM_Q:controls": {
+      "template": "Which device does {subject} control?",
+      "split": "exam",
+      "n_questions": 5
+    },
+    "EXAM_Q:produces": {
+      "template": "Which output does {subject} produce?",
+      "split": "exam",
+      "n_questions": 5
+    },
+    "EXAM_PARA:produces:0": {
+      "template": "{object} is produced by which device?",
+      "split": "exam",
+      "n_questions": 2
+    },
+    "EXAM_PARA:routes-to:0": {
+      "template": "Which relay does {subject} route to?",
+      "split": "exam",
+      "n_questions": 1
+    },
+    "EXAM_PARA:produces:1": {
+      "template": "{subject} emits what?",
+      "split": "exam",
+      "n_questions": 2
+    },
+    "EXAM_PARA:operates:1": {
+      "template": "{object} is operated by whom?",
+      "split": "exam",
+      "n_questions": 1
+    },
+    "EXAM_PARA:routes-to:1": {
+      "template": "{subject} sends its flow through which relay?",
+      "split": "exam",
+      "n_questions": 1
+    },
+    "EXAM_PARA:controls:1": {
+      "template": "{subject} governs which device?",
+      "split": "exam",
+      "n_questions": 1
+    },
+    "EXAM_COMBO_REACH": {
+      "template": "What does {actor} reach?",
+      "split": "exam",
+      "n_questions": 5
+    },
+    "EXAM_COMBO_MEMBER_DEVICE": {
+      "template": "Does {actor} reach {device}?",
+      "split": "exam",
+      "n_questions": 10
+    }
+  },
+  "combination_pairs": {
+    "dev": [
+      {
+        "qid": "dev-combo-00",
+        "kind": "membership_relay",
+        "start": "Neral",
+        "target": "Kimo"
+      },
+      {
+        "qid": "dev-combo-01",
+        "kind": "membership_relay",
+        "start": "Dravy",
+        "target": "Vash"
+      },
+      {
+        "qid": "dev-combo-02",
+        "kind": "membership_relay",
+        "start": "Ombit",
+        "target": "Drel"
+      },
+      {
+        "qid": "dev-combo-03",
+        "kind": "membership_relay",
+        "start": "Sula",
+        "target": "Osten"
+      }
+    ],
+    "exam": [
+      {
+        "qid": "exam-combo-reach-000",
+        "kind": "reach",
+        "start": "Neral"
+      },
+      {
+        "qid": "exam-combo-yes-000",
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Zor"
+      },
+      {
+        "qid": "exam-combo-no-000",
+        "kind": "membership",
+        "start": "Neral",
+        "target": "Crat"
+      },
+      {
+        "qid": "exam-combo-reach-001",
+        "kind": "reach",
+        "start": "Sula"
+      },
+      {
+        "qid": "exam-combo-yes-001",
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Blun"
+      },
+      {
+        "qid": "exam-combo-no-001",
+        "kind": "membership",
+        "start": "Sula",
+        "target": "Dovel"
+      },
+      {
+        "qid": "exam-combo-reach-002",
+        "kind": "reach",
+        "start": "Dravy"
+      },
+      {
+        "qid": "exam-combo-yes-002",
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Crat"
+      },
+      {
+        "qid": "exam-combo-no-002",
+        "kind": "membership",
+        "start": "Dravy",
+        "target": "Dovel"
+      },
+      {
+        "qid": "exam-combo-reach-003",
+        "kind": "reach",
+        "start": "Ombit"
+      },
+      {
+        "qid": "exam-combo-yes-003",
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Dovel"
+      },
+      {
+        "qid": "exam-combo-no-003",
+        "kind": "membership",
+        "start": "Ombit",
+        "target": "Errik"
+      },
+      {
+        "qid": "exam-combo-reach-004",
+        "kind": "reach",
+        "start": "Quelos"
+      },
+      {
+        "qid": "exam-combo-yes-004",
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Errik"
+      },
+      {
+        "qid": "exam-combo-no-004",
+        "kind": "membership",
+        "start": "Quelos",
+        "target": "Blun"
+      }
+    ]
+  },
+  "disjointness_assertions": {
+    "law": "protocol section 6.3: no question, template, or combination in two splits; exam direct/paraphrase templates never used in teach or dev; dev combos != exam combos",
+    "assertions": [
+      {
+        "name": "train_count",
+        "pass": true,
+        "detail": {
+          "n": 60,
+          "expected": 60
+        }
+      },
+      {
+        "name": "train_structure_20x3",
+        "pass": true,
+        "detail": {
+          "relationships": 20,
+          "orders": [
+            [
+              "declarative",
+              "qa",
+              "qa"
+            ]
+          ]
+        }
+      },
+      {
+        "name": "dev_count",
+        "pass": true,
+        "detail": {
+          "n": 12,
+          "expected": 12,
+          "direct": 8,
+          "combo": 4
+        }
+      },
+      {
+        "name": "exam_count",
+        "pass": true,
+        "detail": {
+          "n": 43,
+          "expected": 43,
+          "direct": 20,
+          "paraphrase": 8,
+          "combo": 15
+        }
+      },
+      {
+        "name": "text_disjoint_train_vs_dev",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_overlap": 0
+        }
+      },
+      {
+        "name": "text_disjoint_train_vs_exam",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_overlap": 0
+        }
+      },
+      {
+        "name": "text_disjoint_dev_vs_exam",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_overlap": 0
+        }
+      },
+      {
+        "name": "ids_globally_unique",
+        "pass": true,
+        "detail": {
+          "n": 115,
+          "unique": 115
+        }
+      },
+      {
+        "name": "template_disjoint_train_vs_dev",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_a": 12,
+          "n_b": 4
+        }
+      },
+      {
+        "name": "template_disjoint_train_vs_exam",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_a": 12,
+          "n_b": 12
+        }
+      },
+      {
+        "name": "template_disjoint_dev_vs_exam",
+        "pass": true,
+        "detail": {
+          "overlap": [],
+          "n_a": 4,
+          "n_b": 12
+        }
+      },
+      {
+        "name": "exam_direct_paraphrase_templates_new",
+        "pass": true,
+        "detail": {
+          "exam_dp_template_ids": [
+            "EXAM_PARA:controls:1",
+            "EXAM_PARA:operates:1",
+            "EXAM_PARA:produces:0",
+            "EXAM_PARA:produces:1",
+            "EXAM_PARA:routes-to:0",
+            "EXAM_PARA:routes-to:1",
+            "EXAM_Q:controls",
+            "EXAM_Q:operates",
+            "EXAM_Q:produces",
+            "EXAM_Q:routes-to"
+          ],
+          "violations": []
+        }
+      },
+      {
+        "name": "dev_combos_disjoint_from_exam_combos",
+        "pass": true,
+        "detail": {
+          "dev_pairs": [
+            [
+              "Dravy",
+              "Vash"
+            ],
+            [
+              "Neral",
+              "Kimo"
+            ],
+            [
+              "Ombit",
+              "Drel"
+            ],
+            [
+              "Sula",
+              "Osten"
+            ]
+          ],
+          "exam_pair_n": 15,
+          "overlap": []
+        }
+      },
+      {
+        "name": "world_verify",
+        "pass": true,
+        "detail": {
+          "failures": []
+        }
+      },
+      {
+        "name": "answers_graph_derivable",
+        "pass": true,
+        "detail": {
+          "violations": []
+        }
+      },
+      {
+        "name": "candidates_contain_gold",
+        "pass": true,
+        "detail": {
+          "violations": []
+        }
+      },
+      {
+        "name": "template_ids_unique_strings",
+        "pass": true,
+        "detail": {
+          "duplicated": []
+        }
+      },
+      {
+        "name": "registry_covers_all",
+        "pass": true,
+        "detail": {
+          "missing": [],
+          "extra": []
+        }
+      },
+      {
+        "name": "carriers_recorded_per_fact",
+        "pass": true,
+        "detail": {
+          "train_carriers": 20,
+          "exam_carriers": 20
+        }
+      },
+      {
+        "name": "entity_pools_frozen",
+        "pass": true,
+        "detail": {}
+      }
+    ],
+    "all_pass": true
+  },
+  "generation_wall_s": 0.0
+}
