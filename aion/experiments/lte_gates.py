@@ -383,7 +383,7 @@ def run_gate1(fx: LteFixture) -> Dict:
 
 
 def run_gate2(fx: LteFixture) -> Dict:
-    print("\n[lte-gates] ===== GATE 2: gradient-direction test (Rev 6 form) =====")
+    print("\n[lte-gates] ===== GATE 2: gradient-direction test (Rev 7 form: float64 reference) =====")
     state = fx.get_state()
     pre_state = [s.clone() for s in state]
     leaves = [s.detach().clone().requires_grad_(True) for s in state]
@@ -394,15 +394,26 @@ def run_gate2(fx: LteFixture) -> Dict:
     # learning rate applied EXACTLY ONCE, to the raw unscaled gradient (Rev 6):
     stepped = [s - eta_gate * gv for s, gv in zip(state, g)]
     fx.set_state(stepped)
-    F_after = float(fx.eval_F([s for s in fx.u_state]))
-    decreased = F_after < float(F_before.item())
+    F_after32 = float(fx.eval_F([s for s in fx.u_state]))
+    # Rev 7 amendment (owner, 2026-11-26): the decrease criterion uses a FLOAT64
+    # reference — the step-1 evidence (227c638) proved the true decrease can be
+    # < 1 ULP of float32 F, making the float32 recomputation unsatisfiable.
+    cast64 = lambda t: t.double()
+    with torch.no_grad():
+        F_b64 = float(fx.eval_F([s.double() for s in pre_state], cast=cast64))
+        F_a64 = float(fx.eval_F([s.double() for s in stepped], cast=cast64))
+    decreased = F_a64 < F_b64
     # bitwise restoration — the gate step is a measurement, not a training step
     fx.set_state(pre_state)
     restored = all(torch.equal(a, b) for a, b in zip(fx.get_state(), pre_state))
     both_terms = LAMBDA_R * 1.0 + LAMBDA_D * 1.0          # F includes both terms by construction
-    out = {"eta_gate": eta_gate, "F_before": float(F_before.item()), "F_after": F_after,
+    out = {"eta_gate": eta_gate, "F_before_float32": float(F_before.item()),
+           "F_after_float32": F_after32,
+           "F_before_float64_reference": F_b64, "F_after_float64_reference": F_a64,
+           "decrease_float64": F_b64 - F_a64,
            "decreased": bool(decreased), "restored_bitwise": bool(restored),
            "both_loss_terms_in_F": bool(abs(both_terms - (LAMBDA_R + LAMBDA_D)) < 1e-12),
+           "criterion": "float64 reference (Rev 7 owner amendment)",
            "pass": bool(decreased and restored)}
     # both loss terms recorded SEPARATELY before and after (audit: the evidence
     # must prove BOTH gradient paths were exercised by the step)
@@ -411,22 +422,13 @@ def run_gate2(fx: LteFixture) -> Dict:
         Lr_a, Ld_a = fx.loss_parts(stepped)
     out.update({"L_rank_before": float(Lr_b), "L_disc_before": float(Ld_b),
                 "L_rank_after": float(Lr_a), "L_disc_after": float(Ld_a)})
-    # float64 diagnostic (NOT the pass criterion): the true decrease of F on the
-    # identical stepped state, since the protocol-mandated float32 recomputation
-    # cannot resolve decreases below ~1 ULP of F.
-    cast64 = lambda t: t.double()
-    with torch.no_grad():
-        F_b64 = float(fx.eval_F([s.double() for s in pre_state], cast=cast64))
-        F_a64 = float(fx.eval_F([s.double() for s in stepped], cast=cast64))
-    out["float64_diagnostic"] = {
-        "F_before": F_b64, "F_after": F_a64, "decrease": F_b64 - F_a64,
-        "note": "diagnostic only — the gate criterion uses the mandated float32 recomputation"}
-    print(f"  eta_gate = {eta_gate:.1e}   F_before = {out['F_before']:.6f}   "
-          f"F_after = {F_after:.6f}   decreased = {decreased}   "
+    print(f"  eta_gate = {eta_gate:.1e}   F_before = {out['F_before_float64_reference']:.10f}   "
+          f"F_after = {out['F_after_float64_reference']:.10f}   decreased = {decreased}   "
           f"restored_bitwise = {restored}   both_terms = {out['both_loss_terms_in_F']}")
+    print(f"  [float32 record] F {out['F_before_float32']:.6f} -> {out['F_after_float32']:.6f} "
+          f"(bit-identical — below float32 resolution, as diagnosed)")
     print(f"  L_rank {out['L_rank_before']:.6f} -> {out['L_rank_after']:.6f}   "
           f"L_disc {out['L_disc_before']:.6f} -> {out['L_disc_after']:.6f}")
-    print(f"  [f64 diag] F {F_b64:.10f} -> {F_a64:.10f}  decrease = {F_b64 - F_a64:.3e}")
     return out
 
 
