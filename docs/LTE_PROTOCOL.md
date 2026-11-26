@@ -1,8 +1,8 @@
-# LTE-1 — Learn-Toward-Expression Protocol (REVISION 5 — execution still HELD)
+# LTE-1 — Learn-Toward-Expression Protocol (REVISION 6 — execution still HELD)
 
-**Status:** REVISION 5, resolving the owner's four findings on Revision 4. **Not yet approved for implementation. Execution remains held — no implementation, no training, no calibration, no run until the owner signs off.** On sign-off: freeze the protocol, then implement in the owner's order (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
+**Status:** REVISION 6, resolving the owner's single final finding on Revision 5 (Gate 2 double learning-rate). **Not yet approved for implementation. Execution remains held — no implementation, no training, no calibration, no run until the owner signs off.** On sign-off: freeze the protocol, then implement in the owner's demonstrated order: (1) build and demonstrate Gates 1–2 on the tiny stand-in → (2) demonstrate both gates on the real host → (3) verify host immutability → (4) only then harness and split-manifest verification → (5) controls and calibration → (6) final exam exactly once.
 
-**Revision 5 changes:** (1) the carrier-source rule's contradiction with the exam diagnostic removed — TRAIN carriers feed every gradient and calibration context; DEV extraction forbidden absolutely; held-out EXAM carriers permitted ONLY for post-freeze, post-behavioural-scoring diagnostics (extraction-only, never gradients/calibration/updates); (2) calibration retries given an explicit reset rule (same frozen initial state, identical experience sequence and RNG state; failed attempts' state never carried forward; every attempt recorded); (3) the nonzero-gradient requirement scoped — finiteness required everywhere, nonzero required only on designated gradient-verification fixtures, legitimate zero-gradient steps recorded not aborted; (4) stale budget and revision references corrected.
+**Revision 6 change:** Gate 2 now applies the learning rate ONCE — `u_fast ← u_fast − η_gate·∇F` with η_gate = 0.1·η_e on the raw unscaled gradient (equivalently `(η_gate/η_e)·Δu_expr`; the Rev-5 form `η_gate·Δu_expr` produced an effective −0.1·η_e²·∇F and is withdrawn). Gate 2 additionally: captures F with BOTH loss terms on identical inputs, recomputes F identically, and **restores the fixture's original plastic state bitwise after the check** — the gate step is a measurement, not a training step.
 
 ---
 
@@ -180,12 +180,13 @@ D_FD(ε) = [ F(u + ε·d) − F(u − ε·d) ] / (2ε)
 
 **Pass criterion:** `|D_AD − D_FD(ε)| / max(1, |D_AD|) ≤ max(10 · n_rep(ε), 1e-4)` at ε = 1e-2 and ε = 1e-3, where 1e-4 is the separately specified numerical floor. D_AD, every D_FD(ε) (all repeats), every relative error, the per-ε loss values, and the measured n_rep are recorded in the run report. Gate 1 runs on the tiny standin AND once on the real host, before any training.
 
-**Gate 2 — gradient-direction test (independent step size and isolation, per owner):**
-1. Capture F before the update.
-2. Compute Δu_expr.
-3. Apply `u_fast ← u_fast + η_gate · Δu_expr` with **η_gate = 0.1·η_e** (recorded), **expression gradient alone** — prediction channel, gates, and all other state frozen for the duration of the check (state isolation).
-4. Recompute F with the identical candidate batch in identical order, float32 reference.
+**Gate 2 — gradient-direction test (REVISED Rev 6: single learning-rate application, state restoration, F composition).**
+1. Capture `F = λ_r·L_rank,train + λ_d·L_disc,train` before the step — **both loss terms**, on identical inputs.
+2. Compute the **raw, unscaled gradient** ∇F.
+3. Apply `u_fast ← u_fast − η_gate·∇F` with **η_gate = 0.1·η_e** — the learning rate is applied **exactly once** to the unscaled gradient. (Equivalently: `u_fast ← u_fast + (η_gate/η_e)·Δu_expr`. The Rev-5 form `u_fast + η_gate·Δu_expr` applied η_e twice — an effective step of −0.1·η_e²·∇F — and is withdrawn.) Expression gradient only: prediction channel, gates, and all other state frozen for the duration of the check.
+4. Recompute `F` with the identical candidate batch in identical order, float32 reference, **both ranking and discrimination terms included**.
 5. **Verify F decreased.**
+6. **Restore the fixture's original plastic state exactly** — the gate step is a measurement, not a training step; restoration is verified bitwise against the captured pre-gate state before any training proceeds.
 Failure of Gate 1 or Gate 2 aborts the run before training; gate results are recorded.
 
 ### 6.3 Question splits (owner item C, Rev 2; manifest mechanics per finding 5)
@@ -230,15 +231,14 @@ One RNG seed fixed at preregistration: **seed 20261126**. Template-disjoint allo
 
 **Revision-3 review (resolved in Rev 4):** repeatability-based noise floor · DEV feature-extraction prohibition · deterministic nested calibration — all FIXED, confirmed by the owner's Rev-4 review.
 
-**Revision-4 review (resolved in THIS revision):**
+**Revision-4 review (resolved in Rev 5):** carrier-rule contradiction · retry reset rule · scoped gradient requirement · stale details — all FIXED, confirmed by the owner's Rev-5 review.
 
-| Owner finding | Disposition in Revision 5 |
+**Revision-5 review (resolved in THIS revision):**
+
+| Owner finding | Disposition in Revision 6 |
 |---|---|
-| 1. Carrier-source rule ("TRAIN only, always, at exam") contradicted the exam diagnostic (critical) | **FIXED** — rule recast as a context table: TRAIN carriers for gradient/calibration; EXAM carriers for post-freeze, post-scoring extraction-only diagnostics; DEV extraction forbidden absolutely; exam features never enter gradients, calibration or updates, §2.3 |
-| 2. Calibration retries lacked a state-reset rule | **FIXED** — every retry/grid point starts from the same frozen initial state, identical experience sequence and RNG state; failed attempts' state never carried forward; every attempt recorded separately, §5 |
-| 3. Nonzero-gradient requirement too absolute | **FIXED** — finiteness required on every step; nonzero required only on Gates 1–2 fixtures; legitimate zero-gradient steps recorded with per-run counts, not aborted, §3.1 |
-| 4. Stale details (budget 18–20 h / two dev trainings; "Revision 3" reference) | **FIXED** — budget now up to ten dev trainings / ≈24 h (§3); §8 references Revision 5 |
+| Gate 2 applied the learning rate twice (η_gate·Δu_expr = −0.1·η_e²·∇F) | **FIXED** — Gate 2 applies η_gate = 0.1·η_e directly to the raw unscaled gradient ∇F (equivalently scales Δu_expr by η_gate/η_e); §6.2. Additionally adopted: F recomputed with BOTH loss terms on identical inputs; fixture's original plastic state restored bitwise after the check |
 
-**Implementation order on owner sign-off (owner's order, recorded):** (1) gradient and host-immutability gates → (2) harness and split-manifest verification → (3) controls and calibration → (4) final exam exactly once.
+**Implementation order on owner sign-off (owner's demonstrated order, recorded):** (1) build and demonstrate Gates 1–2 on the tiny stand-in → (2) demonstrate both gates on the real host → (3) verify host immutability → (4) only then harness and split-manifest verification → (5) controls and calibration → (6) final exam exactly once.
 
 *Owner caveat recorded: the gates are specified but NOT yet implemented or demonstrated — demonstration is the first thing implementation does, before anything else runs.*
